@@ -1,0 +1,496 @@
+1
+00:00:00,270 --> 00:00:03,870
+All right guys in this video we're going to talk about functions that if you have any experience in
+
+2
+00:00:03,870 --> 00:00:09,200
+other languages you know what a function is it's a block of code which runs when it's called.
+
+3
+00:00:09,240 --> 00:00:10,860
+Ok but in Python we do.
+
+4
+00:00:10,860 --> 00:00:15,960
+We don't use parentheses in curly brackets like we do in a lot of other languages a lot of C syntax
+
+5
+00:00:15,960 --> 00:00:26,230
+languages like javascript Python Java C-Sharp we do what we do is we use indentation and we use colons.
+
+6
+00:00:26,250 --> 00:00:27,780
+OK so let me give you an example.
+
+7
+00:00:27,780 --> 00:00:35,070
+So let's say create function and to define a function we don't do function or anything like that or
+
+8
+00:00:35,070 --> 00:00:36,890
+fonk we do DPF.
+
+9
+00:00:36,930 --> 00:00:45,730
+So define we're going to define a function called say hello and instead of doing this we do this with
+
+10
+00:00:45,720 --> 00:00:51,200
+a colon and then to be inside the body you just want to indent over one like that.
+
+11
+00:00:51,260 --> 00:00:51,820
+OK.
+
+12
+00:00:51,900 --> 00:00:54,330
+So this is inside the function this is outside.
+
+13
+00:00:54,330 --> 00:00:55,330
+This is after it.
+
+14
+00:00:55,410 --> 00:01:00,540
+OK so that's very important and if you're using a good text editor you will usually indent for you like
+
+15
+00:01:00,540 --> 00:01:02,150
+I just did for me.
+
+16
+00:01:02,760 --> 00:01:07,910
+So I'm just going to have this say print and let's print string.
+
+17
+00:01:07,920 --> 00:01:08,880
+Hello.
+
+18
+00:01:09,270 --> 00:01:11,940
+OK and that's just defining it to actually run it.
+
+19
+00:01:11,940 --> 00:01:12,870
+We need to call it.
+
+20
+00:01:12,870 --> 00:01:21,760
+So we'll say say hello and then down here let's say Python three functions dot PI and we get hello.
+
+21
+00:01:22,080 --> 00:01:22,350
+All right.
+
+22
+00:01:22,350 --> 00:01:28,330
+Now a lot of functions will take in parameters or arguments so let's say we want to pass in the name
+
+23
+00:01:28,740 --> 00:01:35,970
+and we want to just concatenated onto this name and then down here I'll pass in let's say I don't know
+
+24
+00:01:35,980 --> 00:01:39,390
+Sam and if we run this we get.
+
+25
+00:01:39,390 --> 00:01:40,450
+Hello Sam.
+
+26
+00:01:40,710 --> 00:01:49,880
+So what happens if we don't pass anything in and we were on this we get an error that says missing one
+
+27
+00:01:49,890 --> 00:01:53,040
+required positional argument of name.
+
+28
+00:01:53,040 --> 00:02:00,720
+Now if you want to have a default value you could easily just add an equal sign here and say Sam.
+
+29
+00:02:00,750 --> 00:02:05,100
+Now if I run it even though I didn't pass in a name it says Hello Sam.
+
+30
+00:02:05,100 --> 00:02:10,470
+And of course if I pass something in like let's say Beth that's going to override the default value
+
+31
+00:02:10,920 --> 00:02:11,300
+and we get.
+
+32
+00:02:11,310 --> 00:02:13,340
+Hello Beth.
+
+33
+00:02:13,440 --> 00:02:13,780
+All right.
+
+34
+00:02:13,780 --> 00:02:21,500
+Now remember in the variables file we have these these these triple quotes here and we use basically
+
+35
+00:02:21,520 --> 00:02:27,780
+just use them as comments here but these are actually dark strings and these are used to tell the user
+
+36
+00:02:27,780 --> 00:02:29,730
+what a function does.
+
+37
+00:02:29,730 --> 00:02:32,480
+So usually these will go in the function body.
+
+38
+00:02:32,490 --> 00:02:37,800
+So the first line here and we'll put triple quotes like that.
+
+39
+00:02:37,800 --> 00:02:43,580
+And then the convention is to start with an uppercase letter and then to end the periods so we'd say
+
+40
+00:02:43,590 --> 00:02:45,220
+like Prince.
+
+41
+00:02:46,050 --> 00:02:47,260
+Hello.
+
+42
+00:02:47,730 --> 00:02:50,600
+And then the name like that.
+
+43
+00:02:50,880 --> 00:02:52,380
+OK so you'll see this.
+
+44
+00:02:52,500 --> 00:02:54,360
+And it's just basically a comment.
+
+45
+00:02:54,360 --> 00:02:55,840
+It doesn't parse nothing.
+
+46
+00:02:55,890 --> 00:03:01,260
+It doesn't run or anything it's just there for the developer to see so that they know what the function
+
+47
+00:03:01,260 --> 00:03:02,140
+does.
+
+48
+00:03:02,580 --> 00:03:05,540
+All right so that's a that's pretty simple.
+
+49
+00:03:05,670 --> 00:03:10,110
+Usually you're not going to print something out from a function you're going to return something.
+
+50
+00:03:10,110 --> 00:03:12,300
+So let's say return value.
+
+51
+00:03:12,540 --> 00:03:17,900
+So I'm going to actually define a function called Get some shrieking.
+
+52
+00:03:17,940 --> 00:03:23,140
+Guess what this is going to do it's going to take in two numbers I say number one and number two.
+
+53
+00:03:23,580 --> 00:03:29,580
+And I'm actually going to define a variable in the function called Total And I want to set it to number
+
+54
+00:03:29,580 --> 00:03:32,570
+one plus two.
+
+55
+00:03:32,940 --> 00:03:39,300
+And then we would use the return keyword to return whatever the total is.
+
+56
+00:03:39,690 --> 00:03:45,070
+OK now I could just say return 1 plus 2 but I want to show you why I did this in a second.
+
+57
+00:03:45,150 --> 00:03:50,160
+But first of all let's say print because we didn't do a print in the function so that means we have
+
+58
+00:03:50,160 --> 00:03:56,170
+to do it outside and we'll say get some let's do four and five.
+
+59
+00:03:56,400 --> 00:03:59,520
+OK so if we run this we get nine.
+
+60
+00:03:59,520 --> 00:04:04,160
+Now another thing you could do and what you usually do in this situation is define a variable.
+
+61
+00:04:04,440 --> 00:04:16,070
+Let's call it numb some and we'll set it to that function say two and three and then we can print some
+
+62
+00:04:18,010 --> 00:04:19,600
+with no parentheses.
+
+63
+00:04:19,600 --> 00:04:24,430
+So basically what we've done is we've just taken the return value of the function and assigned it to
+
+64
+00:04:24,430 --> 00:04:26,010
+this variable.
+
+65
+00:04:26,410 --> 00:04:31,150
+So the reason I define this total in here is because I want to show you that if you go outside of the
+
+66
+00:04:31,150 --> 00:04:37,990
+function and we print out that variable if we do that we're going to get an error that says total is
+
+67
+00:04:37,990 --> 00:04:41,990
+not defined because functions have their own scope.
+
+68
+00:04:42,070 --> 00:04:47,950
+OK so whatever variables we define in this function they're not going to be accessible outside of the
+
+69
+00:04:47,950 --> 00:04:49,010
+function.
+
+70
+00:04:49,010 --> 00:04:49,490
+All right.
+
+71
+00:04:49,520 --> 00:04:55,120
+And I mean I could create another total variable outside and that's fine it wouldn't need it wouldn't
+
+72
+00:04:55,120 --> 00:04:59,130
+matter it wouldn't conflict or anything because they're are separate scopes.
+
+73
+00:04:59,150 --> 00:05:04,040
+OK so that's very important to understand and it's like that with most languages.
+
+74
+00:05:04,660 --> 00:05:08,630
+All right so let's create one more simple function.
+
+75
+00:05:09,130 --> 00:05:22,740
+So we get rid of this print and let's define we'll just say add 1 to numb and we'll pass in a number
+
+76
+00:05:23,940 --> 00:05:26,340
+in them will simply turn
+
+77
+00:05:29,860 --> 00:05:36,820
+say no only equals no plus 1.
+
+78
+00:05:36,820 --> 00:05:38,740
+Actually I'm going to do that.
+
+79
+00:05:38,770 --> 00:05:39,400
+I'm going to do
+
+80
+00:05:42,850 --> 00:05:45,580
+and then return.
+
+81
+00:05:45,830 --> 00:05:51,190
+All right so it's going to take in a number and it's going to set this number to whatever's passed in
+
+82
+00:05:51,200 --> 00:05:52,150
+plus one.
+
+83
+00:05:52,190 --> 00:05:56,400
+But an easier way to do this a shorter way would just be to simply do nothing.
+
+84
+00:05:56,840 --> 00:05:59,990
+Plus equals one that's a shorter way to do it.
+
+85
+00:06:00,470 --> 00:06:00,870
+OK.
+
+86
+00:06:00,890 --> 00:06:03,320
+And then if I go ahead and let's say
+
+87
+00:06:06,690 --> 00:06:12,950
+well defined no outside here and I'll just show you that it's fine to have some in here and outside
+
+88
+00:06:12,950 --> 00:06:16,060
+here so set that to five and then we'll say
+
+89
+00:06:18,610 --> 00:06:23,890
+new equals add 1 to none.
+
+90
+00:06:24,120 --> 00:06:29,130
+And I'll pass in Naam which is equal to five and then will print that out.
+
+91
+00:06:31,740 --> 00:06:32,150
+OK.
+
+92
+00:06:32,160 --> 00:06:40,410
+So if I run this we get six guy so down here I want to give you an example of what a lambda function
+
+93
+00:06:40,410 --> 00:06:40,760
+is.
+
+94
+00:06:40,770 --> 00:06:47,520
+OK so lambda is a small anonymous function it's a function that can take any number of arguments but
+
+95
+00:06:47,720 --> 00:06:54,570
+can only have one expression and they're very similar to two one line da javascript aero functions.
+
+96
+00:06:54,900 --> 00:07:00,500
+OK and I know I keep referencing javascript but these are very very similar if you understand aero functions
+
+97
+00:07:00,510 --> 00:07:03,450
+and you're going to understand this pretty easily.
+
+98
+00:07:03,450 --> 00:07:09,870
+So I'm actually going to recreate both of these this get some and add one to Naam in lambda functions.
+
+99
+00:07:09,870 --> 00:07:12,640
+So let's do get some.
+
+100
+00:07:12,670 --> 00:07:20,760
+To create a variable called Get some set to lambda and then we just want to put the arguments or the
+
+101
+00:07:20,760 --> 00:07:27,930
+parameters I'm going to say number one and number two and then we put a colon and then the function
+
+102
+00:07:27,930 --> 00:07:28,660
+body.
+
+103
+00:07:28,830 --> 00:07:31,270
+So we're going to do number one plus two.
+
+104
+00:07:31,290 --> 00:07:33,560
+Now notice I didn't do a return or anything like that.
+
+105
+00:07:33,570 --> 00:07:39,030
+You don't need a return statement just like you don't if it's a single expression arrow function in
+
+106
+00:07:39,030 --> 00:07:40,500
+Javascript.
+
+107
+00:07:40,590 --> 00:07:43,680
+So now I can go down here and I can say print
+
+108
+00:07:46,900 --> 00:08:00,270
+gets 9 to K and we get 11 so it's as easy as that if I want to do the add 1 to numb I could say equals
+
+109
+00:08:00,270 --> 00:08:11,200
+a lambda takes in one one parameter argument and then for the body I'm just going to do plus one.
+
+110
+00:08:11,220 --> 00:08:11,540
+OK.
+
+111
+00:08:11,550 --> 00:08:12,570
+No need to.
+
+112
+00:08:12,720 --> 00:08:14,970
+Typo return or anything like that.
+
+113
+00:08:15,330 --> 00:08:20,670
+And then let's say add two no and we'll pass in 10.
+
+114
+00:08:20,670 --> 00:08:24,040
+Actually let's do something that's going to equal something different than the last one.
+
+115
+00:08:24,060 --> 00:08:26,420
+I'll do five.
+
+116
+00:08:26,790 --> 00:08:27,200
+Run it.
+
+117
+00:08:27,210 --> 00:08:28,870
+And now we get six.
+
+118
+00:08:28,980 --> 00:08:29,600
+OK.
+
+119
+00:08:29,760 --> 00:08:31,410
+So those are lambda functions.
+
+120
+00:08:31,410 --> 00:08:32,460
+They're pretty easy.
+
+121
+00:08:32,460 --> 00:08:37,490
+If as long as they're simple like this but they can get pretty difficult.
+
+122
+00:08:37,500 --> 00:08:37,770
+All right.
+
+123
+00:08:37,770 --> 00:08:38,990
+So that's it for functions.
+
+124
+00:08:39,000 --> 00:08:42,340
+Guys in the next video I want to take a look at conditionals.
+

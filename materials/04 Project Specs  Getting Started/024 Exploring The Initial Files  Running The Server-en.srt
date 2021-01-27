@@ -1,0 +1,660 @@
+1
+00:00:00,150 --> 00:00:00,780
+All right guys.
+
+2
+00:00:00,780 --> 00:00:02,730
+In this video we're going to do a couple of things.
+
+3
+00:00:02,730 --> 00:00:08,820
+First of all I want to just run our server OK so Django actually comes with a dev server that we can
+
+4
+00:00:08,820 --> 00:00:10,610
+run and that's it will be used to.
+
+5
+00:00:10,620 --> 00:00:13,040
+That's what we'll use to develop locally.
+
+6
+00:00:13,320 --> 00:00:15,430
+And then we're going to take a look at the files.
+
+7
+00:00:15,450 --> 00:00:15,900
+OK.
+
+8
+00:00:15,910 --> 00:00:20,850
+And when we run our server it will actually create a file or two as well.
+
+9
+00:00:20,850 --> 00:00:26,790
+So let's go ahead and run it had to do this we use our managed up-I file remember when we did the help
+
+10
+00:00:26,820 --> 00:00:30,020
+we saw the run server command that's what we want to run.
+
+11
+00:00:30,030 --> 00:00:37,420
+So let's say Python manage Daut pie and we want to do run server.
+
+12
+00:00:37,640 --> 00:00:37,980
+All right.
+
+13
+00:00:37,980 --> 00:00:43,370
+So when you run this you're probably going to see this you have 15 unemployed migrations.
+
+14
+00:00:43,380 --> 00:00:44,490
+Don't worry about this.
+
+15
+00:00:44,490 --> 00:00:45,580
+This is normal.
+
+16
+00:00:45,600 --> 00:00:50,280
+I know that they make it look like it's some big error but it's not it just means you have migrations
+
+17
+00:00:50,280 --> 00:00:56,730
+that you haven't ran yet and that just has to do with like some of the the default apps that come with
+
+18
+00:00:56,730 --> 00:01:03,600
+Django like the like like The Office and the admin area stuff that that will be applied to the database
+
+19
+00:01:03,600 --> 00:01:04,620
+that hasn't been yet.
+
+20
+00:01:04,620 --> 00:01:06,450
+So don't worry about that message.
+
+21
+00:01:06,750 --> 00:01:14,430
+But you can see down here that it says starting developer server at 1 2 7 0 0 1 port 8000 and we can
+
+22
+00:01:14,430 --> 00:01:17,120
+quit the server with control C..
+
+23
+00:01:17,190 --> 00:01:17,480
+All right.
+
+24
+00:01:17,480 --> 00:01:22,670
+So let's head on over to our browser and let's go to.
+
+25
+00:01:22,770 --> 00:01:26,120
+We can use that loopback address or local host.
+
+26
+00:01:26,210 --> 00:01:30,460
+So if it's a local host port 8000 in there we go.
+
+27
+00:01:30,460 --> 00:01:32,800
+So now we have Django up and running.
+
+28
+00:01:32,850 --> 00:01:33,230
+All right.
+
+29
+00:01:33,240 --> 00:01:38,280
+Now I'm not going to I mean this is just the landing page here it's it's nothing special.
+
+30
+00:01:38,430 --> 00:01:44,790
+It's a lot better looking than the Django one landing page but there's really nothing here other than
+
+31
+00:01:44,790 --> 00:01:47,970
+links to documentation and stuff like that.
+
+32
+00:01:47,970 --> 00:01:51,360
+All right so we'll obviously replace this with our application.
+
+33
+00:01:51,360 --> 00:01:58,320
+Boy let's go back to the code and notice down here we have a bunch of stuff this is just the logs from
+
+34
+00:01:58,320 --> 00:01:58,920
+our server.
+
+35
+00:01:58,920 --> 00:02:03,000
+So every time we visit a page it's going to show the request and all that.
+
+36
+00:02:03,000 --> 00:02:08,370
+So when we run our server we're going to want to open up another file and just close that up.
+
+37
+00:02:08,460 --> 00:02:15,270
+We're going to want to open up another tab here for our terminal to run commands and we can switch back
+
+38
+00:02:15,270 --> 00:02:15,810
+and forth.
+
+39
+00:02:15,810 --> 00:02:18,700
+So if we want to go back to the server we can do that.
+
+40
+00:02:18,770 --> 00:02:19,490
+All right.
+
+41
+00:02:19,590 --> 00:02:22,060
+Actually what's on this first one here.
+
+42
+00:02:22,280 --> 00:02:24,960
+I can I guess yeah we'll use the first.
+
+43
+00:02:24,970 --> 00:02:26,910
+Why not get rid of the one I just created.
+
+44
+00:02:28,630 --> 00:02:29,230
+All right.
+
+45
+00:02:29,410 --> 00:02:33,760
+So our server is running Actually I'll just leave that one open but I want to now take a look at some
+
+46
+00:02:33,760 --> 00:02:41,080
+of these files so notice that this D-B Eskew a life three file was created when we ran our server actually
+
+47
+00:02:41,080 --> 00:02:42,340
+wasn't here before.
+
+48
+00:02:42,340 --> 00:02:45,020
+Same thing with some of the pie cache files here.
+
+49
+00:02:45,040 --> 00:02:51,910
+Now this D-B Eskew Alite three filed this is this is where your data will be stored if you use the askew
+
+50
+00:02:51,910 --> 00:02:57,250
+a light database which we're not going to be because it's not it's not a database you would use for
+
+51
+00:02:57,250 --> 00:03:01,930
+like a real production application it's nice for prototyping and testing.
+
+52
+00:03:01,950 --> 00:03:07,530
+And maybe if you have a really small Web site that has very little data very little traffic.
+
+53
+00:03:07,690 --> 00:03:10,780
+But it's not really suitable for real production apps.
+
+54
+00:03:11,050 --> 00:03:16,180
+But this is where your data would be stored if you were to use Eskew or light and even if there were
+
+55
+00:03:16,180 --> 00:03:19,520
+data here we couldn't read it within a file like in vs code.
+
+56
+00:03:19,520 --> 00:03:22,650
+We'd need some kind of client to view the data.
+
+57
+00:03:22,870 --> 00:03:23,200
+All right.
+
+58
+00:03:23,200 --> 00:03:25,660
+So we don't really have to worry about that.
+
+59
+00:03:25,840 --> 00:03:27,810
+And that's actually in our Get ignore.
+
+60
+00:03:27,820 --> 00:03:33,340
+So that wouldn't be pushed to our repository whether using it or not we could actually delete it if
+
+61
+00:03:33,340 --> 00:03:34,690
+we wanted to.
+
+62
+00:03:34,840 --> 00:03:40,210
+And then this pie cache folder you're not going to have to worry about this either these will be generated
+
+63
+00:03:40,210 --> 00:03:45,880
+when you run your server and you'll never have to touch them at all it does is really make your program
+
+64
+00:03:45,880 --> 00:03:52,180
+start a little faster when your scripts change they'll be recompiled and even if you delete these files
+
+65
+00:03:52,180 --> 00:03:56,820
+or you delete this whole folder it'll just reappear once you run your server again.
+
+66
+00:03:56,920 --> 00:03:58,920
+OK so no worries about that.
+
+67
+00:03:58,990 --> 00:04:00,990
+We're not really going have to worry about this in net.
+
+68
+00:04:01,050 --> 00:04:02,650
+Py file either.
+
+69
+00:04:02,950 --> 00:04:06,910
+This is always empty to begin with and we usually never touch it.
+
+70
+00:04:06,910 --> 00:04:10,800
+In fact I don't even think we need it after version three point three.
+
+71
+00:04:11,140 --> 00:04:19,240
+Because the purpose of it is to basically make sure that we can use files as packages and it prevents
+
+72
+00:04:19,300 --> 00:04:25,270
+some of the directories with common names like let's say string or something like that from unintentionally
+
+73
+00:04:25,270 --> 00:04:31,870
+hiding valid modules so it just keeps everything in order so that we can use packages but we don't have
+
+74
+00:04:31,870 --> 00:04:33,760
+to worry about that we're not going to touch it.
+
+75
+00:04:35,070 --> 00:04:38,640
+So the settings file is probably the most important one here.
+
+76
+00:04:38,640 --> 00:04:40,580
+I'm just going to make this small are you.
+
+77
+00:04:40,990 --> 00:04:45,690
+So this has just a bunch of like a key value pairs.
+
+78
+00:04:45,750 --> 00:04:52,710
+It imports the the os module which has to do with the operating system or package I should say not module.
+
+79
+00:04:52,950 --> 00:04:59,940
+And this base Durr is our projects base directory and where they're getting it by using a bunch of different
+
+80
+00:04:59,940 --> 00:05:02,420
+methods attached to this OS package.
+
+81
+00:05:02,420 --> 00:05:05,010
+So like OS path to our name and so on.
+
+82
+00:05:05,130 --> 00:05:08,640
+It just ends up getting us the base directory.
+
+83
+00:05:08,640 --> 00:05:13,130
+All right then down here the security key is for production.
+
+84
+00:05:13,140 --> 00:05:18,250
+OK so if you deploy a jingle Web site you never want this to be shared.
+
+85
+00:05:18,440 --> 00:05:19,890
+You want to keep the secret.
+
+86
+00:05:20,070 --> 00:05:25,890
+And later on when we get to deployment I'm going to show you how we can actually hide it so that we
+
+87
+00:05:25,890 --> 00:05:30,910
+don't have to like include this in our good repository or anything like that.
+
+88
+00:05:31,630 --> 00:05:32,220
+Let's see.
+
+89
+00:05:32,220 --> 00:05:40,890
+So de-bug So we have the option to set this debug to True or false which in development we want it set
+
+90
+00:05:40,890 --> 00:05:43,610
+to True but in production we want it set to False.
+
+91
+00:05:43,620 --> 00:05:44,280
+OK.
+
+92
+00:05:44,490 --> 00:05:51,330
+This gives us very helpful error messages and warnings when things go wrong it displays info about our
+
+93
+00:05:51,330 --> 00:05:52,710
+code right in the browser.
+
+94
+00:05:52,710 --> 00:05:58,020
+So in production even if something goes wrong you don't want that information displayed in the browser
+
+95
+00:05:58,020 --> 00:06:02,970
+because that anybody that's using your web site can see it and they can figure things out and say it's
+
+96
+00:06:02,970 --> 00:06:09,390
+a security risk so make sure that before you deploy you change this to false and keep it on true when
+
+97
+00:06:09,390 --> 00:06:10,510
+you're developing.
+
+98
+00:06:10,740 --> 00:06:14,690
+So loud hosts is basically just an empty area at first.
+
+99
+00:06:14,690 --> 00:06:21,040
+But when we deploy when we change debug to false you want to put a list of host domains that this web
+
+100
+00:06:21,040 --> 00:06:22,260
+site can serve.
+
+101
+00:06:22,260 --> 00:06:27,900
+So for instance the Digital Ocean IP address or any domain names anything like that should go in this
+
+102
+00:06:27,900 --> 00:06:29,590
+allowed Host List.
+
+103
+00:06:29,890 --> 00:06:32,440
+All right down here we have installed apps.
+
+104
+00:06:32,460 --> 00:06:39,690
+So Django has a concept of apps and you can have multiple apps per project like our listings app will
+
+105
+00:06:39,690 --> 00:06:45,960
+create will create a realtor's app but these here are actually default apps that come with Django by
+
+106
+00:06:45,960 --> 00:06:53,040
+default so we have like the admin which controls the admin area the off sessions messages all the stuff
+
+107
+00:06:53,040 --> 00:06:55,380
+is included with core Django.
+
+108
+00:06:55,500 --> 00:06:56,760
+Then we have some middleware.
+
+109
+00:06:56,760 --> 00:07:01,850
+So this is just a list of middleware that Django uses like the CSIR af.
+
+110
+00:07:01,860 --> 00:07:07,590
+This is for cross-site forgery a lot of this is security based but yet any middleware that is being
+
+111
+00:07:07,590 --> 00:07:09,300
+used will be put in that list.
+
+112
+00:07:09,690 --> 00:07:11,390
+And this route you are all.
+
+113
+00:07:11,430 --> 00:07:17,670
+This is just a string that represents the full import path to the route you are at a con where your
+
+114
+00:07:17,670 --> 00:07:21,070
+initial where your initial u r l file is.
+
+115
+00:07:21,180 --> 00:07:27,610
+This will usually be the name of your project which is Tiare and then you are Ell's.
+
+116
+00:07:27,960 --> 00:07:34,470
+OK templates are what are used to generate aged female for our application to you know to this display
+
+117
+00:07:34,470 --> 00:07:36,540
+to the user in the browser.
+
+118
+00:07:36,540 --> 00:07:45,440
+And this tells Django where to look for templates what options to use and so on down here W-S G-I application
+
+119
+00:07:45,450 --> 00:07:51,500
+this is the path of the WS G-I application object that jingoes built in servers use.
+
+120
+00:07:51,510 --> 00:07:58,570
+So when we create our project you can see a file here called W-S G-I dot pi.
+
+121
+00:07:58,710 --> 00:08:01,170
+And I'll talk about that in a minute.
+
+122
+00:08:01,170 --> 00:08:07,590
+So database's this is where you want to set up your database parameters as you can see the default engine
+
+123
+00:08:07,590 --> 00:08:09,230
+is eschewing light 3.
+
+124
+00:08:09,300 --> 00:08:14,880
+We're going to be changing this to post-grads while this is also where you put like your password and
+
+125
+00:08:14,880 --> 00:08:16,840
+your user name and stuff like that.
+
+126
+00:08:18,740 --> 00:08:21,720
+See off passwords validators.
+
+127
+00:08:21,760 --> 00:08:30,470
+So this is basically a setting where we just set types of rules for our passwords.
+
+128
+00:08:30,490 --> 00:08:32,240
+Not really going to get into that.
+
+129
+00:08:32,350 --> 00:08:38,400
+And then we have some stuff to do with like language and time and then the static right here.
+
+130
+00:08:38,410 --> 00:08:45,760
+This is actually the path that we want to use for static files like CSSA some javascript images things
+
+131
+00:08:45,760 --> 00:08:46,380
+like that.
+
+132
+00:08:46,540 --> 00:08:51,280
+And you can change this to something else if you want but we're just going to keep it at static.
+
+133
+00:08:51,280 --> 00:08:53,320
+So that's the gist of the settings file.
+
+134
+00:08:53,320 --> 00:08:55,990
+So now let's take a look at you or els dot pi.
+
+135
+00:08:55,990 --> 00:08:58,750
+So this is kind of like our routing file.
+
+136
+00:08:58,870 --> 00:09:05,020
+We have this URL patterns list and we put in paths so you can see there's one here for the admin area
+
+137
+00:09:05,350 --> 00:09:06,360
+and the path.
+
+138
+00:09:06,400 --> 00:09:13,870
+Usually you should have a forward slash at the end and then it can be linked to a view method.
+
+139
+00:09:13,990 --> 00:09:19,480
+OK so we have something called views and you'll see that when we start to create our apps and you can
+
+140
+00:09:19,480 --> 00:09:25,240
+link to a view method or you can link to the or else from another file like in this case we're linking
+
+141
+00:09:25,240 --> 00:09:27,690
+to the admin you are Ell's.
+
+142
+00:09:27,730 --> 00:09:28,290
+All right.
+
+143
+00:09:28,300 --> 00:09:33,910
+And then every app that we create like let's say when we create our listings app it'll create a new
+
+144
+00:09:33,910 --> 00:09:39,410
+folder called listings and we want to create a new you are Elle's dot pie in that listings app.
+
+145
+00:09:39,580 --> 00:09:44,790
+And then in this main you are Ell's dot PI We'll bring that in just like they did with the admin.
+
+146
+00:09:45,040 --> 00:09:47,470
+And then any specific route that we want.
+
+147
+00:09:47,470 --> 00:09:53,600
+Like let's say listings slash ad we would put that in the listings you are l py file.
+
+148
+00:09:53,620 --> 00:10:00,520
+Ok so this is like the collection of all of your your apps you are Elle's links which are look like
+
+149
+00:10:00,520 --> 00:10:01,440
+this.
+
+150
+00:10:01,450 --> 00:10:02,280
+OK.
+
+151
+00:10:02,630 --> 00:10:04,740
+And in a way you'll learn more about this later.
+
+152
+00:10:04,740 --> 00:10:07,170
+This is you know if you're confused don't worry about it.
+
+153
+00:10:07,330 --> 00:10:09,830
+I'll show you exactly what I mean later.
+
+154
+00:10:09,940 --> 00:10:16,840
+So this W-S G-I file this is a little difficult to understand you don't have to completely understand
+
+155
+00:10:16,840 --> 00:10:21,580
+it but basically it stands for web server Gateway Interface.
+
+156
+00:10:21,580 --> 00:10:27,970
+It's a specification that describes how a web server communicates with web applications and how web
+
+157
+00:10:27,970 --> 00:10:32,090
+applications can be chained together to process one request.
+
+158
+00:10:32,170 --> 00:10:37,320
+And it just has a lot to do with hosting your site so that other people can actually access it.
+
+159
+00:10:37,480 --> 00:10:40,450
+And we'll be talking more about that stuff later.
+
+160
+00:10:40,450 --> 00:10:44,250
+And you know when we get into the deployment stuff like that.
+
+161
+00:10:44,260 --> 00:10:48,220
+All right guys so we now have jingoes set up we have a server running.
+
+162
+00:10:48,220 --> 00:10:53,440
+So in the next section we're going to create our first app which is going to be our pages app.
+
+163
+00:10:53,650 --> 00:10:59,310
+I want to create a separate app for any any static like pages because we do want to have like an about
+
+164
+00:10:59,350 --> 00:11:06,400
+page so I want any anything like that the about page the home page should be part of the pages app so
+
+165
+00:11:06,400 --> 00:11:07,730
+we'll get to that next.
+

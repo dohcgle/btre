@@ -1,0 +1,728 @@
+1
+00:00:00,380 --> 00:00:05,380
+Art guys who in the last video we went ahead and created the single page listings.
+
+2
+00:00:05,430 --> 00:00:09,920
+OK so these are now working for the inquiry form but we're going to get to that later.
+
+3
+00:00:09,940 --> 00:00:12,770
+What I want to do now is work on the search.
+
+4
+00:00:12,780 --> 00:00:20,490
+OK and before we do the search submission I want to shore up the template and let me show you what I
+
+5
+00:00:20,490 --> 00:00:20,730
+mean.
+
+6
+00:00:20,730 --> 00:00:27,270
+So if I go to pages index dot index each time how all of the select lists here I want to shorten this
+
+7
+00:00:27,270 --> 00:00:35,130
+up so all these states and and the bedrooms and prices so we can shorten this up by putting these values
+
+8
+00:00:35,130 --> 00:00:40,680
+into a python dictionary and then just importing them and looping through them and then just outputting
+
+9
+00:00:41,610 --> 00:00:43,010
+these from the loop.
+
+10
+00:00:43,020 --> 00:00:44,930
+OK so I'll show you what I mean.
+
+11
+00:00:44,940 --> 00:00:50,280
+I'm going to create a file inside the listings app since these have to do with listings.
+
+12
+00:00:50,280 --> 00:00:54,370
+And we're going to call this choices Daut pi.
+
+13
+00:00:54,830 --> 00:00:55,310
+OK.
+
+14
+00:00:55,320 --> 00:00:57,620
+Now I'm actually going to paste all this stuff in.
+
+15
+00:00:57,630 --> 00:01:03,510
+You can copy it or you can go to the final project files and you can copy it from there and paste it
+
+16
+00:01:03,510 --> 00:01:03,970
+in.
+
+17
+00:01:04,180 --> 00:01:05,340
+I'm going to go through it real quick.
+
+18
+00:01:05,340 --> 00:01:09,700
+Basically we have three dictionaries we have bedroom choices.
+
+19
+00:01:09,860 --> 00:01:10,220
+OK.
+
+20
+00:01:10,230 --> 00:01:13,670
+And then each one has a key a key value pair.
+
+21
+00:01:13,840 --> 00:01:17,810
+OK so the key is going to be used for the value attribute.
+
+22
+00:01:17,990 --> 00:01:23,640
+OK so for like the state this will be the key whenever we assign this will be the value.
+
+23
+00:01:23,890 --> 00:01:24,750
+In the dictionary.
+
+24
+00:01:24,750 --> 00:01:29,430
+So bedroom's we're just going to have 1 1 2 2 and so on pricing.
+
+25
+00:01:29,430 --> 00:01:34,150
+The actual value that's going to be searched in the database will be this.
+
+26
+00:01:34,260 --> 00:01:37,260
+This is what will be displayed to the user in the form.
+
+27
+00:01:37,260 --> 00:01:38,040
+Same thing here.
+
+28
+00:01:38,040 --> 00:01:42,230
+This will be searched and the databases will be displayed to the user base.
+
+29
+00:01:42,270 --> 00:01:48,380
+We just have all the states and all the prices and the bedrooms.
+
+30
+00:01:48,380 --> 00:01:57,460
+We're going to save this file and we want to go to our pages app and then fused up high because the
+
+31
+00:01:57,460 --> 00:02:00,250
+index page the home page is what we're working with.
+
+32
+00:02:00,250 --> 00:02:05,350
+So we want to bring that file and so I'm going to say from and since it's in the listings folder or
+
+33
+00:02:05,350 --> 00:02:12,580
+the listings app we have to save listings dot choices and then I'm going to say imports and we want
+
+34
+00:02:12,580 --> 00:02:22,060
+price choices bedroom choices and state choices and then we just simply want to pass them into the index
+
+35
+00:02:22,060 --> 00:02:24,160
+age him all through the contacts.
+
+36
+00:02:24,160 --> 00:02:32,200
+So I'm going to say state choices will be state choices.
+
+37
+00:02:32,260 --> 00:02:40,030
+Copy this down two more times and this one here will do the bedroom choices
+
+38
+00:02:44,980 --> 00:02:48,770
+bedroom choices and then this one here will be price choices
+
+39
+00:02:51,630 --> 00:02:53,280
+in price choices.
+
+40
+00:02:53,280 --> 00:02:53,770
+OK.
+
+41
+00:02:53,940 --> 00:02:56,740
+So now these are going to get passed in soon to save this.
+
+42
+00:02:56,740 --> 00:02:59,710
+And remember these are just separate dictionaries with values.
+
+43
+00:02:59,730 --> 00:03:06,530
+So now in the index each team now we're going to loop through each of these that have these option fields
+
+44
+00:03:06,540 --> 00:03:11,450
+OK and we want to have a value and just display text so let's start with the states.
+
+45
+00:03:11,550 --> 00:03:16,120
+I'm actually going to we're going to keep this because it's like the heading.
+
+46
+00:03:16,200 --> 00:03:18,450
+It just says you know what this is.
+
+47
+00:03:18,450 --> 00:03:21,510
+And then I'm going to get rid of everything else.
+
+48
+00:03:21,570 --> 00:03:26,340
+OK all these options are going to replace these and that's you'll see it's going to make this file a
+
+49
+00:03:26,340 --> 00:03:27,120
+lot shorter.
+
+50
+00:03:27,120 --> 00:03:30,220
+So just all the options keep the select.
+
+51
+00:03:30,300 --> 00:03:31,190
+So get rid of those.
+
+52
+00:03:31,200 --> 00:03:39,300
+And then we're going to loop through by saying for now we want the key and the value OK meaning key
+
+53
+00:03:39,900 --> 00:03:45,980
+and value not just the value so you could do whatever you want here you could do Cavey.
+
+54
+00:03:46,050 --> 00:03:54,800
+I'm just going to do key value like that and we're going to say in state underscore choices because
+
+55
+00:03:54,870 --> 00:03:56,580
+I was remember that was passed in.
+
+56
+00:03:57,060 --> 00:03:59,050
+And then we want to end the for loop.
+
+57
+00:03:59,220 --> 00:04:11,310
+So it's OK and for OK now for each one what we want to do is output we want to output an option with
+
+58
+00:04:11,310 --> 00:04:12,180
+a value.
+
+59
+00:04:12,330 --> 00:04:20,040
+So let's say option and the value is going to be the key and that sounds a little weird.
+
+60
+00:04:20,080 --> 00:04:24,370
+The value would be the key but the actual value of the dictionary is going to go here that's going to
+
+61
+00:04:24,370 --> 00:04:27,740
+be the text that displays like that.
+
+62
+00:04:28,540 --> 00:04:29,990
+OK so let's save that.
+
+63
+00:04:30,020 --> 00:04:35,470
+Now this should work if we go back to our index and reload we should see the same thing all the.
+
+64
+00:04:35,620 --> 00:04:36,940
+Well that's not right.
+
+65
+00:04:37,970 --> 00:04:39,790
+That is not right.
+
+66
+00:04:40,980 --> 00:04:42,500
+See what happened here.
+
+67
+00:04:42,870 --> 00:04:46,940
+So for key value.
+
+68
+00:04:47,000 --> 00:04:48,660
+Oh you know what it is.
+
+69
+00:04:49,310 --> 00:04:51,360
+We need to do dot items here.
+
+70
+00:04:51,690 --> 00:04:54,220
+I think that that should fix it.
+
+71
+00:04:55,440 --> 00:05:02,900
+Because up to that point it's just getting He is just getting the first letter.
+
+72
+00:05:02,920 --> 00:05:03,550
+There we go.
+
+73
+00:05:03,610 --> 00:05:03,940
+All right.
+
+74
+00:05:03,940 --> 00:05:08,980
+So now we have all the states and it's coming from that choices file.
+
+75
+00:05:09,010 --> 00:05:15,310
+So now let's do the same thing for the other ones I want to copy this whole for loop now for the bedrooms.
+
+76
+00:05:15,760 --> 00:05:19,930
+For some reason we don't have the value here but that's fine because we're going to have it now.
+
+77
+00:05:19,930 --> 00:05:26,230
+So going to replace all of these pay sat in and we're just going to say instead of state choices is
+
+78
+00:05:26,230 --> 00:05:32,140
+going to be from the bedroom choices dictionary and leave the same thing here.
+
+79
+00:05:32,140 --> 00:05:35,410
+Key value that's fine and let's do the same for price.
+
+80
+00:05:35,470 --> 00:05:36,160
+OK leave that.
+
+81
+00:05:36,220 --> 00:05:40,830
+Leave the first option and then just replace all of these.
+
+82
+00:05:41,530 --> 00:05:46,510
+And we're just going to change this to price choices dot items.
+
+83
+00:05:47,260 --> 00:05:49,940
+So let's try that will reload.
+
+84
+00:05:49,990 --> 00:05:55,710
+So for a state that works bedroom's good price good.
+
+85
+00:05:55,780 --> 00:06:00,460
+So now what I want to do is handle this submit if I submit it now it goes.
+
+86
+00:06:00,460 --> 00:06:03,810
+It tries to get a search done each time which isn't even a thing.
+
+87
+00:06:03,820 --> 00:06:05,290
+So we have to change that.
+
+88
+00:06:05,290 --> 00:06:09,130
+First of all so in our form Let's go.
+
+89
+00:06:09,200 --> 00:06:11,370
+Let's see where is the form.
+
+90
+00:06:13,330 --> 00:06:14,460
+Where is the form.
+
+91
+00:06:14,790 --> 00:06:15,970
+I'm missing you right here.
+
+92
+00:06:15,970 --> 00:06:20,110
+So as you can see we have action to search out each time.
+
+93
+00:06:20,140 --> 00:06:24,670
+We don't want that of course so I'm going to go ahead and put our tags in.
+
+94
+00:06:24,790 --> 00:06:31,250
+We actually want this to go to you Arel and then search.
+
+95
+00:06:31,280 --> 00:06:31,860
+OK.
+
+96
+00:06:31,870 --> 00:06:33,090
+So save that.
+
+97
+00:06:33,300 --> 00:06:41,980
+And if we go to our you Earles dot PI inside listings we have search right here and you can see name
+
+98
+00:06:42,010 --> 00:06:43,050
+equal search.
+
+99
+00:06:43,060 --> 00:06:48,550
+So what should happen is it should call this this view method the search method which if we look at
+
+100
+00:06:48,550 --> 00:06:53,720
+the used up high in listings we have right here and it's just going to load searched each time.
+
+101
+00:06:53,860 --> 00:06:58,690
+So what would she have and now once they reload and we submit it to just go to that search template
+
+102
+00:06:58,900 --> 00:07:02,450
+that's what we should see which right now just hasn't H-1 in it.
+
+103
+00:07:02,670 --> 00:07:03,780
+OK.
+
+104
+00:07:03,970 --> 00:07:08,560
+And if we were to put values in here like in the key words and city and cement you can see that they're
+
+105
+00:07:08,560 --> 00:07:09,430
+actually up here.
+
+106
+00:07:09,430 --> 00:07:12,550
+So these are get requests values.
+
+107
+00:07:12,640 --> 00:07:16,570
+So let's let's actually add the markup to the search page.
+
+108
+00:07:16,750 --> 00:07:25,040
+So I'm going to go to back to Sublime Text which has our bootstrap theme and there's a search for each
+
+109
+00:07:25,040 --> 00:07:26,240
+team page.
+
+110
+00:07:26,420 --> 00:07:30,270
+Obviously we don't want the top stuff the top bar nav bar.
+
+111
+00:07:30,410 --> 00:07:33,960
+We want to start let's see what is this.
+
+112
+00:07:33,970 --> 00:07:37,350
+Yeah we want to start right after the NAVs So this section here
+
+113
+00:07:41,260 --> 00:07:45,820
+is second so we want yeah because this is going to have this search.
+
+114
+00:07:45,820 --> 00:07:47,590
+Another search box in it.
+
+115
+00:07:47,590 --> 00:07:50,850
+So let's grab from here all the way down.
+
+116
+00:07:50,980 --> 00:07:54,700
+We're going to do the same thing with the choices that we did in the other form as well.
+
+117
+00:07:56,610 --> 00:08:07,280
+So scrabble all this OK down to right above the footer and then we're going to go back to let's go to
+
+118
+00:08:07,280 --> 00:08:16,410
+templates listings search dot reached him which is right here and we're going to paste all of this in.
+
+119
+00:08:16,410 --> 00:08:24,660
+All right so I'm going to just save this and then go back to our Web site and let's submit the form
+
+120
+00:08:24,660 --> 00:08:26,930
+so it brings us to that page right now.
+
+121
+00:08:26,940 --> 00:08:28,820
+I forgot to extend the base layout.
+
+122
+00:08:28,820 --> 00:08:34,830
+That's why we're not seeing any styling or anything so up at the very top.
+
+123
+00:08:34,890 --> 00:08:36,210
+Let's go ahead and
+
+124
+00:08:39,880 --> 00:08:41,400
+want to extends
+
+125
+00:08:44,390 --> 00:08:52,510
+beseeched him our dog paged him now and we're going to need human eyes as well so let's load that
+
+126
+00:08:57,910 --> 00:09:07,570
+OK and then we have to wrap all this stuff in a block so block content and then down at the very bottom
+
+127
+00:09:07,580 --> 00:09:18,970
+we want to end that block.
+
+128
+00:09:19,080 --> 00:09:19,590
+All right.
+
+129
+00:09:19,660 --> 00:09:23,060
+So I save that we go back to the search page.
+
+130
+00:09:23,080 --> 00:09:26,330
+Now we have the layout and as you can see there's a little form at the top.
+
+131
+00:09:26,500 --> 00:09:28,880
+And then this is going to be just like the listings page.
+
+132
+00:09:28,880 --> 00:09:34,600
+Ok except it's going to actually have our search results if we search for only Massachusetts we should
+
+133
+00:09:34,600 --> 00:09:36,700
+only get those listings.
+
+134
+00:09:36,700 --> 00:09:37,370
+All right.
+
+135
+00:09:37,480 --> 00:09:43,750
+We probably won't get to that in this video but I at least want to get our choices into the HDMI like
+
+136
+00:09:43,750 --> 00:09:45,720
+we did in the other forum.
+
+137
+00:09:45,850 --> 00:09:52,420
+So let's go to this time listings used up high.
+
+138
+00:09:52,450 --> 00:09:59,110
+In fact what I'm going to do is go to the other views dot Pi from pages and just copy this because we're
+
+139
+00:09:59,110 --> 00:10:03,200
+going to bring in all the choices into listings.
+
+140
+00:10:03,310 --> 00:10:10,330
+So up at the top here I'll paste that in and just like we did here we're going to pass in all these
+
+141
+00:10:10,330 --> 00:10:11,650
+choices.
+
+142
+00:10:12,220 --> 00:10:21,650
+So let's go back to listings used up high and we're going to go down to search and actually know what
+
+143
+00:10:21,670 --> 00:10:23,360
+we need a context here.
+
+144
+00:10:26,510 --> 00:10:28,100
+K they will pay so Zen
+
+145
+00:10:31,930 --> 00:10:33,840
+and pass in the context
+
+146
+00:10:36,410 --> 00:10:41,960
+and then we should have access to those dictionaries just like we did in the in the home page.
+
+147
+00:10:41,990 --> 00:10:47,780
+So from the home page I'm just going to copy one of those loops we did this right here.
+
+148
+00:10:49,160 --> 00:10:51,200
+And go to our search.
+
+149
+00:10:51,400 --> 00:10:59,090
+Aged hemol and do the same thing where we have our options so and go away up to the top.
+
+150
+00:10:59,600 --> 00:11:01,640
+See way up here.
+
+151
+00:11:01,780 --> 00:11:04,650
+So for pricing Let's leave the first option.
+
+152
+00:11:04,910 --> 00:11:09,870
+Replace all these OK so this is going to be price choices.
+
+153
+00:11:12,180 --> 00:11:12,710
+Guy.
+
+154
+00:11:12,810 --> 00:11:14,930
+This is going to be the bedrooms.
+
+155
+00:11:14,930 --> 00:11:21,410
+So one through 10 or replace that with price choices.
+
+156
+00:11:21,420 --> 00:11:30,430
+And then we also have states so we're going to replace those that are in that state.
+
+157
+00:11:30,460 --> 00:11:31,490
+All right.
+
+158
+00:11:32,260 --> 00:11:38,170
+And then one thing I forgot to do is on the listings used up pie we don't need to actually say listings
+
+159
+00:11:38,470 --> 00:11:39,960
+because we're already in that out.
+
+160
+00:11:40,060 --> 00:11:46,660
+So we can just do door choices and save and now go back and make sure that that form still shows which
+
+161
+00:11:46,660 --> 00:11:48,140
+it does.
+
+162
+00:11:48,600 --> 00:11:52,200
+Well two prices for bedrooms yet.
+
+163
+00:11:52,290 --> 00:11:54,370
+I must have good prices for a bedroom.
+
+164
+00:11:54,380 --> 00:11:57,490
+So let's go back to the search.
+
+165
+00:11:57,520 --> 00:12:06,430
+Each team will then go down to the bedrooms and right here I just want to change this bedroom choices.
+
+166
+00:12:09,660 --> 00:12:10,860
+Here we go.
+
+167
+00:12:10,870 --> 00:12:11,410
+All right.
+
+168
+00:12:11,410 --> 00:12:13,200
+So we have our search form.
+
+169
+00:12:13,240 --> 00:12:19,580
+One more thing I want to do before I go before we move on to the next video is the breadcrumb which
+
+170
+00:12:19,580 --> 00:12:20,880
+is right below it.
+
+171
+00:12:21,080 --> 00:12:22,540
+And we want to change.
+
+172
+00:12:22,550 --> 00:12:23,870
+Oh no we already did that.
+
+173
+00:12:23,870 --> 00:12:24,590
+Sorry.
+
+174
+00:12:24,910 --> 00:12:26,450
+OK so that's good.
+
+175
+00:12:26,450 --> 00:12:26,960
+All right.
+
+176
+00:12:26,960 --> 00:12:32,330
+So I think what we'll do in the next video is start to work on our queries so when we actually put some
+
+177
+00:12:32,330 --> 00:12:33,390
+search fields in.
+
+178
+00:12:33,390 --> 00:12:37,290
+It's going to get caught in this search method right here.
+
+179
+00:12:37,310 --> 00:12:43,670
+And we're going to have to make some queries we're going to base our extraction from the database or
+
+180
+00:12:43,670 --> 00:12:48,350
+the objects that we take from the listings we're going have to base that on whatever the user puts in
+
+181
+00:12:48,350 --> 00:12:49,430
+the search fields.
+
+182
+00:12:49,430 --> 00:12:51,230
+All right so I'll see you in the next video.
+

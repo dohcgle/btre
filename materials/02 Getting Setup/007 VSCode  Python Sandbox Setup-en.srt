@@ -1,0 +1,360 @@
+1
+00:00:00,150 --> 00:00:03,780
+All right guys in this video we're going to do two things we're going to set up our text editor which
+
+2
+00:00:03,780 --> 00:00:09,510
+is vs code and we're going to set up the python sandbox which is basically just a set of files that
+
+3
+00:00:09,510 --> 00:00:13,850
+we're going to use in the next section when we look at Python fundamentals.
+
+4
+00:00:13,860 --> 00:00:14,790
+OK.
+
+5
+00:00:14,850 --> 00:00:19,830
+Now the next section if you're already if you're already comfortable with Python and things like functions
+
+6
+00:00:19,830 --> 00:00:25,500
+and conditionals in dictionaries and different data types and structures and stuff like that then you
+
+7
+00:00:25,500 --> 00:00:28,860
+can completely skip that section and move on to Django.
+
+8
+00:00:28,860 --> 00:00:33,270
+But if you're not that comfortable with Python or if you've never used Python I would definitely recommend
+
+9
+00:00:33,510 --> 00:00:37,170
+watching the whole next section in using the sandbox.
+
+10
+00:00:37,380 --> 00:00:42,430
+OK now as far as your text editor Of course you don't have to use VS code if you want to use atom or
+
+11
+00:00:42,450 --> 00:00:47,520
+Sublime Text or an idea like pi chalmer eclipse or something like that.
+
+12
+00:00:47,520 --> 00:00:48,990
+That's absolutely fine.
+
+13
+00:00:48,990 --> 00:00:54,940
+But we'll be using Visual Studio code so we're just going to do some some basic setup here.
+
+14
+00:00:55,020 --> 00:01:01,530
+So if you want to download it you can go to cocotte Visual Studio dot com it's cross-platform Mac Windows
+
+15
+00:01:01,530 --> 00:01:02,180
+Linux.
+
+16
+00:01:02,220 --> 00:01:05,280
+I already have it installed so I'm not going to go through the install process.
+
+17
+00:01:05,280 --> 00:01:07,280
+It's very very self-explanatory.
+
+18
+00:01:07,320 --> 00:01:09,410
+So let's jump into VS code.
+
+19
+00:01:09,410 --> 00:01:13,620
+So if you just downloaded it and install it you'll see a welcome screen you can just go ahead and close
+
+20
+00:01:13,620 --> 00:01:14,260
+that up.
+
+21
+00:01:14,460 --> 00:01:20,490
+And with this code you have a whole host of extensions you can install if you click on this icon here.
+
+22
+00:01:20,670 --> 00:01:23,660
+You can see these are the extensions that I have on this machine.
+
+23
+00:01:23,700 --> 00:01:26,420
+We actually want to install the python extension.
+
+24
+00:01:26,430 --> 00:01:29,440
+So if you search for Python it's going to be the first one you can see.
+
+25
+00:01:29,440 --> 00:01:31,530
+There's almost 15 million downloads.
+
+26
+00:01:31,620 --> 00:01:33,390
+So we're going to go ahead and install that.
+
+27
+00:01:33,580 --> 00:01:39,210
+OK once it installs you just click reload and now it's installed and that will give us things like lending
+
+28
+00:01:39,210 --> 00:01:45,030
+Intellisense and highlighting all types of stuff if you want to read more about it you can just click
+
+29
+00:01:45,030 --> 00:01:49,020
+on here and you can go through all of this stuff if you want.
+
+30
+00:01:49,020 --> 00:01:49,350
+All right.
+
+31
+00:01:49,350 --> 00:01:55,800
+So now what I want to do is open up the sandbox files in vs code and if you're using a different text
+
+32
+00:01:55,800 --> 00:01:59,760
+editor just go ahead and open the files up in whatever you're using.
+
+33
+00:01:59,760 --> 00:02:06,900
+So on my desktop I have the python sandbox Stoddard's zip file which you should have in this lecture.
+
+34
+00:02:06,900 --> 00:02:08,840
+I'm going to go ahead and extract that.
+
+35
+00:02:09,090 --> 00:02:15,210
+And this is what I want to open up but I'm just going to rename it to Python sandbox rather than just
+
+36
+00:02:15,450 --> 00:02:17,670
+you know Python sandbox starter.
+
+37
+00:02:17,670 --> 00:02:22,220
+And if I go to this code I'm just going to go to open file or open folder.
+
+38
+00:02:22,230 --> 00:02:29,280
+I'm going to go to my where it's my desktop which I'm on and Python sandbox.
+
+39
+00:02:29,370 --> 00:02:34,830
+OK so in here you see all the different files we just want to click open and we should get all of those
+
+40
+00:02:34,830 --> 00:02:36,420
+on the side here.
+
+41
+00:02:36,930 --> 00:02:42,600
+OK so I'm just going to open up one of these files variable's dot pi is the first one we're actually
+
+42
+00:02:42,600 --> 00:02:43,910
+going to be working with.
+
+43
+00:02:43,920 --> 00:02:45,000
+These are just comments.
+
+44
+00:02:45,000 --> 00:02:46,770
+Nothing is going to come of this.
+
+45
+00:02:46,830 --> 00:02:51,270
+We'll be adding on to this later but I just wanted to open up a python file.
+
+46
+00:02:51,270 --> 00:02:57,930
+Now if you type something in here and then just delete it and save control or command as you may get
+
+47
+00:02:57,930 --> 00:03:01,050
+a pop up that asks about Python lending.
+
+48
+00:03:01,260 --> 00:03:03,570
+It's up to you if you want to use that Linter or not.
+
+49
+00:03:03,580 --> 00:03:08,510
+We're going to use Lanting later on when we get into Django but I'm not going to use it for the the
+
+50
+00:03:09,140 --> 00:03:12,390
+for the next section so you can disable it if you want.
+
+51
+00:03:12,390 --> 00:03:13,720
+Or whatever.
+
+52
+00:03:13,740 --> 00:03:19,830
+So to run these files there's there's a few ways we can do it in vs code.
+
+53
+00:03:19,830 --> 00:03:24,510
+We're going to take the symbols out and just run Python 3.
+
+54
+00:03:24,540 --> 00:03:29,130
+And then whatever the file is like variables dot PI and that will run it.
+
+55
+00:03:29,130 --> 00:03:32,910
+We don't have any output here because there's nothing to output to output.
+
+56
+00:03:32,910 --> 00:03:36,740
+If I said like print 1 here and then we ran it we'd get one.
+
+57
+00:03:36,960 --> 00:03:37,380
+OK.
+
+58
+00:03:37,380 --> 00:03:43,140
+Now it's important to run it with Python 3 and it depends on how your system set up if you're using
+
+59
+00:03:43,140 --> 00:03:45,360
+Windows and you install Python.
+
+60
+00:03:45,360 --> 00:03:52,180
+Chances are if you just do Python that's version 3 and you can easily check by doing a dash dash version.
+
+61
+00:03:52,200 --> 00:03:54,130
+You can see on my system it's too.
+
+62
+00:03:54,270 --> 00:03:58,360
+But if I do Python 3 dash dash version that's version 3.
+
+63
+00:03:58,540 --> 00:04:03,120
+OK and when we start to use virtual environments and stuff we work on that will no longer have to use
+
+64
+00:04:03,120 --> 00:04:07,800
+Python 3 we'll just be able to use Python but we'll get into that later.
+
+65
+00:04:07,800 --> 00:04:10,560
+So that's how we're going to run our files for now.
+
+66
+00:04:11,010 --> 00:04:18,610
+Another thing you could do is go to your debugger in vs code which is this right here.
+
+67
+00:04:18,900 --> 00:04:23,960
+And if you want to set this up you want to do a command shift p.
+
+68
+00:04:23,970 --> 00:04:25,670
+In fact you should do this anyway.
+
+69
+00:04:25,800 --> 00:04:30,130
+And then just search for Python and go to a select interpreter.
+
+70
+00:04:30,180 --> 00:04:30,490
+OK.
+
+71
+00:04:30,480 --> 00:04:35,700
+Now later on when we work in virtual environments our virtual environment will actually show up here
+
+72
+00:04:35,850 --> 00:04:37,290
+and that's what we'll have to choose.
+
+73
+00:04:37,290 --> 00:04:43,950
+But for now we just want to make sure we choose 3.7 or three point whatever whatever version you're
+
+74
+00:04:43,950 --> 00:04:46,820
+using as long as it's Python Python 3.
+
+75
+00:04:46,820 --> 00:04:51,660
+All right then down here you can see that it actually now says Python 3.7.
+
+76
+00:04:51,660 --> 00:04:58,470
+So I could run this file and put the print back here so I could run this file now by simply clicking
+
+77
+00:04:58,470 --> 00:04:59,490
+the play button.
+
+78
+00:05:00,670 --> 00:05:05,980
+And choosing Python and now you can see that it ran.
+
+79
+00:05:06,380 --> 00:05:08,830
+It's going to give us like the whole path and all that stuff.
+
+80
+00:05:08,840 --> 00:05:15,950
+But you can see it ran because it printed out one if I want to change is to say print a string hello
+
+81
+00:05:15,950 --> 00:05:19,010
+world and we'll get into strings and all that stuff later.
+
+82
+00:05:19,040 --> 00:05:25,900
+But if I go ahead and press play and it runs so if you want to do it that way you can but I think just
+
+83
+00:05:25,990 --> 00:05:29,280
+putting in the file name is is an easier way to do it.
+
+84
+00:05:29,290 --> 00:05:34,450
+So it's up to you guys how you want to do it and of course if you're using a different terminal I'm
+
+85
+00:05:34,450 --> 00:05:36,950
+sorry a different text editor.
+
+86
+00:05:37,540 --> 00:05:39,720
+You know you can do it however you want.
+
+87
+00:05:39,720 --> 00:05:43,410
+I'm sure there's different ways to run a file.
+
+88
+00:05:43,420 --> 00:05:49,570
+All right so now we're set up in the next section we're going to start off talking about variables and
+
+89
+00:05:49,570 --> 00:05:56,320
+data types how variables are constructed things like that and we'll go through pretty much all the basics
+
+90
+00:05:56,320 --> 00:05:59,620
+of python and then we'll jump into our Django application.
+

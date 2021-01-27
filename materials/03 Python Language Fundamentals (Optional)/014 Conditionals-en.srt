@@ -1,0 +1,464 @@
+1
+00:00:00,290 --> 00:00:05,340
+All right guys in this video we're going to look at conditionals if else statements which basically
+
+2
+00:00:05,340 --> 00:00:11,610
+are used to decide to do something based on a certain condition if it's true or if it's false.
+
+3
+00:00:11,610 --> 00:00:17,030
+So as you can see here we have some comparison operators like is equal to is not equal to is greater
+
+4
+00:00:17,040 --> 00:00:21,160
+less than greater than or equal to less than or equal to.
+
+5
+00:00:21,300 --> 00:00:27,700
+And then logical operators like and or not we have membership operators like not not in.
+
+6
+00:00:27,750 --> 00:00:30,890
+And then is is not what your identity operators.
+
+7
+00:00:31,020 --> 00:00:35,460
+All right so we're going to just kind of look at the basics here so let's create a couple of variables
+
+8
+00:00:35,740 --> 00:00:39,810
+will do x is 10 y y is 6.
+
+9
+00:00:40,110 --> 00:00:44,310
+And let's look at a simple IF statement.
+
+10
+00:00:44,370 --> 00:00:50,820
+So I'm going to say if x and then the comparison operator I'm going to use as equals to our equals or
+
+11
+00:00:50,820 --> 00:00:51,450
+equal to.
+
+12
+00:00:51,450 --> 00:00:56,940
+However you want to say it equal to Y and we want to put a colon so noticed that I didn't use parentheses.
+
+13
+00:00:56,940 --> 00:01:01,160
+No curly braces this is the syntax for an IF statement in Python.
+
+14
+00:01:01,320 --> 00:01:02,900
+And then of course we want to indent.
+
+15
+00:01:02,910 --> 00:01:05,310
+OK here we're not inside the if statement.
+
+16
+00:01:05,310 --> 00:01:06,530
+Here we are.
+
+17
+00:01:06,540 --> 00:01:08,670
+So let's just do a print.
+
+18
+00:01:09,000 --> 00:01:14,220
+And I'm just going to put an F string here so that I can take the variables that are above I'm going
+
+19
+00:01:14,220 --> 00:01:19,950
+to say x is equal to Y.
+
+20
+00:01:21,090 --> 00:01:21,470
+All right.
+
+21
+00:01:21,510 --> 00:01:30,090
+Now if I run this with Python three conditionals dot pi we get nothing because this is this is not a
+
+22
+00:01:30,090 --> 00:01:31,420
+true statement.
+
+23
+00:01:31,440 --> 00:01:38,700
+If I were to make it true and run it then of course would you get 10 equals 10 or 10 is equal to 10.
+
+24
+00:01:39,090 --> 00:01:40,530
+So if we want to put in.
+
+25
+00:01:40,530 --> 00:01:49,170
+Else let's do a simple if else and use a different comparison operator let's do of x is greater than
+
+26
+00:01:49,170 --> 00:01:53,540
+Y then we'll go ahead and do a print.
+
+27
+00:01:53,970 --> 00:02:05,270
+OK so we'll say x is greater than Y and ancy else and goes to a print and we're going to just change
+
+28
+00:02:05,270 --> 00:02:06,530
+this to less than
+
+29
+00:02:09,640 --> 00:02:11,770
+less than Y.
+
+30
+00:02:11,770 --> 00:02:12,140
+All right.
+
+31
+00:02:12,160 --> 00:02:17,510
+So let's save that and change the y back to 6 and run it.
+
+32
+00:02:18,190 --> 00:02:21,280
+So we get 10 is greater than 6 which is true.
+
+33
+00:02:21,440 --> 00:02:27,030
+We change the Y to 16 then the else should run and we get sick.
+
+34
+00:02:27,100 --> 00:02:29,160
+10 is less than 16.
+
+35
+00:02:29,320 --> 00:02:32,290
+OK so that's a simple if if else.
+
+36
+00:02:32,350 --> 00:02:36,970
+Now if you want to do more than one condition you can use and Aliff which is like an else.
+
+37
+00:02:37,050 --> 00:02:45,220
+If we could do like actually let's just copy this so you could copy that and then in between here we
+
+38
+00:02:45,220 --> 00:02:53,680
+could say Aliff and then another condition like x is equal to Y and then whatever we want to do we could
+
+39
+00:02:54,730 --> 00:03:03,630
+copy this print here and say x is equal to y.
+
+40
+00:03:03,820 --> 00:03:04,550
+OK.
+
+41
+00:03:05,200 --> 00:03:14,290
+So I'm going to comment this out and then run the file and we get 10 is less than 16 k if these were
+
+42
+00:03:14,320 --> 00:03:18,180
+to be equal then the this should run right here.
+
+43
+00:03:18,660 --> 00:03:18,990
+OK.
+
+44
+00:03:19,000 --> 00:03:24,450
+So we get 10 is equal to 10 this this one is also running that's why you see it twice.
+
+45
+00:03:25,300 --> 00:03:33,610
+And then let's see if X is less than the else should run this should run right here and we get 6 is
+
+46
+00:03:33,610 --> 00:03:34,830
+less than 10.
+
+47
+00:03:35,200 --> 00:03:37,330
+OK we can also do nested IFs.
+
+48
+00:03:37,360 --> 00:03:44,320
+So they nested IF.
+
+49
+00:03:44,350 --> 00:03:51,760
+So if I wanted to say if X is let's say greater than 2 and then I wanted to keep going and say if X
+
+50
+00:03:52,510 --> 00:03:58,360
+is less than or equal to 10 then I wanted to do a print
+
+51
+00:04:01,940 --> 00:04:06,670
+K to make sure that this is indented correctly and will say let's see.
+
+52
+00:04:06,670 --> 00:04:13,650
+So X is less than 2 and greater than 10.
+
+53
+00:04:13,650 --> 00:04:17,520
+All right and X right now is 6.
+
+54
+00:04:17,740 --> 00:04:21,340
+So that should be fine for that to run let's comment this
+
+55
+00:04:24,900 --> 00:04:28,890
+OK so we get 6 is less than 2 and greater than 10.
+
+56
+00:04:28,890 --> 00:04:29,120
+All right.
+
+57
+00:04:29,130 --> 00:04:32,060
+Now this is kind of a poor way of writing this.
+
+58
+00:04:32,070 --> 00:04:36,810
+I mean this probably isn't something you would actually write anyways but if you were to do that you'd
+
+59
+00:04:36,810 --> 00:04:40,640
+be better off using it and logical operator.
+
+60
+00:04:40,770 --> 00:04:49,710
+So you could just do if x is greater than two and instead of nesting just simply put and X is less than
+
+61
+00:04:49,710 --> 00:04:51,540
+or equal to 10.
+
+62
+00:04:51,990 --> 00:04:55,220
+OK and then you could just take this.
+
+63
+00:04:55,360 --> 00:04:59,600
+Put that in there.
+
+64
+00:04:59,750 --> 00:05:05,450
+All right so if we run this we should see it twice because it's running here and it's running here.
+
+65
+00:05:05,720 --> 00:05:13,070
+OK but I'm going to comment these action when to copy this one because I want to show you we can also
+
+66
+00:05:13,070 --> 00:05:15,400
+do or not.
+
+67
+00:05:15,710 --> 00:05:23,900
+So I could do or and then would be X is less than 2 or greater than 10.
+
+68
+00:05:23,900 --> 00:05:29,380
+So basically if we do it this way only one of these only one has to match or be true.
+
+69
+00:05:29,510 --> 00:05:31,380
+In this case they both have to.
+
+70
+00:05:31,430 --> 00:05:35,180
+OK so that's the difference between and and or.
+
+71
+00:05:36,110 --> 00:05:39,620
+And this is just basic programming logic.
+
+72
+00:05:39,780 --> 00:05:42,030
+We also have not.
+
+73
+00:05:42,410 --> 00:05:56,020
+So we could do like if not and then pass in like let's say x is equal to Y and then we'll do print
+
+74
+00:06:01,580 --> 00:06:09,590
+and say F X is not equal to Y.
+
+75
+00:06:09,610 --> 00:06:10,000
+All right.
+
+76
+00:06:10,010 --> 00:06:15,530
+So it's clear the sauted run it and we get 6 is not equal to 10 which is a true statement.
+
+77
+00:06:16,070 --> 00:06:21,040
+All right so let's move on here I'm going to just comment this stuff out.
+
+78
+00:06:21,830 --> 00:06:24,140
+I know these are the most exciting examples.
+
+79
+00:06:24,140 --> 00:06:28,650
+Guys I just want just for the beginners that are just learning Python I just want you to get a grasp
+
+80
+00:06:28,650 --> 00:06:33,470
+of the basic syntax before we get started on the fun stuff.
+
+81
+00:06:33,560 --> 00:06:39,560
+So membership operators these are not and not in these are used for things like checking to see if something
+
+82
+00:06:39,560 --> 00:06:40,610
+is in a list.
+
+83
+00:06:40,790 --> 00:06:56,740
+So let's say numbers create a simple list here and let's say let's do in so we'll say if x in numbers.
+
+84
+00:06:56,930 --> 00:07:02,720
+So what this is going to do is it's going to look at the x value which is 6 and it's going to check
+
+85
+00:07:02,720 --> 00:07:04,790
+to see if it's in this list.
+
+86
+00:07:05,080 --> 00:07:05,460
+OK.
+
+87
+00:07:05,480 --> 00:07:14,300
+So if it is I'm just going to print x in numbers and this will actually give me a true or false statement
+
+88
+00:07:14,420 --> 00:07:16,160
+or true or false value.
+
+89
+00:07:16,580 --> 00:07:24,010
+So if we run this we get nothing because this in fact is false.
+
+90
+00:07:24,830 --> 00:07:32,170
+If I do or if we change let's actually add the 6 to the numbers that way it is in it.
+
+91
+00:07:32,190 --> 00:07:33,510
+So out of six.
+
+92
+00:07:33,740 --> 00:07:40,230
+And if we run this we're gonna get true because this right here evaluates to true.
+
+93
+00:07:40,230 --> 00:07:42,810
+We can do NOT in just like we can do in
+
+94
+00:07:46,880 --> 00:07:53,010
+K so I can say if x not in numbers come in.
+
+95
+00:07:53,100 --> 00:08:00,010
+So if I run this we're gonna get nothing because it is six is in numbers.
+
+96
+00:08:00,030 --> 00:08:02,570
+So this doesn't get a chance to run.
+
+97
+00:08:02,730 --> 00:08:09,990
+If I go ahead and get rid of the 6 and run it we get false because this actually equates to false.
+
+98
+00:08:10,010 --> 00:08:13,570
+All right hopefully that makes sense.
+
+99
+00:08:13,590 --> 00:08:16,780
+And lastly we have identity operators.
+
+100
+00:08:17,040 --> 00:08:23,780
+So I mean this is pretty simple it's just is or isn't like we could do.
+
+101
+00:08:24,380 --> 00:08:36,870
+If X is Y and will print X is Y.
+
+102
+00:08:36,940 --> 00:08:40,140
+I just want to comment this stuff for you guys.
+
+103
+00:08:40,270 --> 00:08:41,370
+So this is.
+
+104
+00:08:41,530 --> 00:08:44,830
+So right now these don't match.
+
+105
+00:08:44,830 --> 00:08:50,770
+Let's make a match and then when we run this we should get true because this will if this is true and
+
+106
+00:08:50,770 --> 00:08:56,590
+then what we're printing X is why this will actually give us a true value.
+
+107
+00:08:56,590 --> 00:09:01,790
+So we get true at the same time we can do is not.
+
+108
+00:09:02,420 --> 00:09:10,140
+So it is not.
+
+109
+00:09:10,390 --> 00:09:16,540
+And then I'll change the values so they don't match.
+
+110
+00:09:16,580 --> 00:09:18,200
+And now this should.
+
+111
+00:09:18,230 --> 00:09:23,600
+We want to do is not this should evaluate to true because X is not Y.
+
+112
+00:09:24,200 --> 00:09:25,090
+And there we go.
+
+113
+00:09:25,340 --> 00:09:28,050
+All right so I don't want to spend too much more time with this guys.
+
+114
+00:09:28,100 --> 00:09:34,940
+It's pretty basic stuff but it's also very important for you to know for you know how to format these
+
+115
+00:09:34,940 --> 00:09:36,110
+things.
+
+116
+00:09:36,110 --> 00:09:39,710
+So in the next video we're going to start to get into loops.
+

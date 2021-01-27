@@ -1,0 +1,364 @@
+1
+00:00:00,630 --> 00:00:06,690
+All right guys so before we move on here I just want to be able to have custom titles for each page
+
+2
+00:00:06,690 --> 00:00:13,230
+and this is something I could have done early on but I wanted to get all of our templates all set before
+
+3
+00:00:13,230 --> 00:00:14,020
+I did that.
+
+4
+00:00:14,070 --> 00:00:20,970
+OK and now I think we have every single template every page every HTL page is now incorporated into
+
+5
+00:00:20,970 --> 00:00:22,200
+our application.
+
+6
+00:00:22,200 --> 00:00:25,930
+So I think that it's a good time to implement that and it's very easy.
+
+7
+00:00:25,920 --> 00:00:28,670
+All we have to do is disclose all this stuff up.
+
+8
+00:00:28,830 --> 00:00:34,860
+All we have to do is go into our base each team out and we just simply need to add another block and
+
+9
+00:00:34,860 --> 00:00:36,720
+we're going to put that up in the title.
+
+10
+00:00:36,720 --> 00:00:43,050
+Now I do want and it's up to you how you want to do this but I do want to have Beati real estate in
+
+11
+00:00:43,110 --> 00:00:47,270
+every page title but then have the rest of the title after it.
+
+12
+00:00:47,280 --> 00:00:48,910
+So like a subtitle.
+
+13
+00:00:48,930 --> 00:00:49,230
+All right.
+
+14
+00:00:49,230 --> 00:00:50,600
+And you can do this how you want.
+
+15
+00:00:50,610 --> 00:00:54,950
+Usually you have like a pipe character or a hyphen or something like that.
+
+16
+00:00:55,110 --> 00:00:59,340
+You could put the hyphen in the template like this.
+
+17
+00:00:59,520 --> 00:01:04,770
+But then again if you if you forget or you don't have a custom title on a page it's just going to look
+
+18
+00:01:04,770 --> 00:01:06,900
+like this with nothing after it.
+
+19
+00:01:06,900 --> 00:01:14,310
+Or you can choose to put the hyphen or the pipe character within the template OK and I'll show you what
+
+20
+00:01:14,310 --> 00:01:14,700
+I mean.
+
+21
+00:01:14,700 --> 00:01:16,140
+So I'm just going to leave it.
+
+22
+00:01:16,170 --> 00:01:22,560
+I'm going to put the character inside the template just in case we don't have a title to a page but
+
+23
+00:01:22,560 --> 00:01:25,140
+we just want to add a block here.
+
+24
+00:01:25,140 --> 00:01:35,590
+So we're going to say block and I'm going to call this title and we want to of course and the block.
+
+25
+00:01:35,740 --> 00:01:45,330
+So it's a hand block save that and then let's go let's start off with our home page will go to pages
+
+26
+00:01:45,330 --> 00:01:48,440
+and then index each team out.
+
+27
+00:01:48,870 --> 00:01:53,330
+And for the title here I mean you guys can you can do whatever you want.
+
+28
+00:01:53,340 --> 00:01:57,090
+I'm just going to put the word home or welcome.
+
+29
+00:01:57,270 --> 00:02:04,730
+And where we want to put this is I'm going to put it right after we load the load humanize.
+
+30
+00:02:05,070 --> 00:02:15,850
+So read here so we want to say block title and let's just do welcome.
+
+31
+00:02:15,860 --> 00:02:20,400
+And what I was talking about is we would put pipe like that
+
+32
+00:02:25,100 --> 00:02:29,340
+in then and block.
+
+33
+00:02:29,470 --> 00:02:30,430
+All right.
+
+34
+00:02:31,120 --> 00:02:34,180
+So let's see that see if it works.
+
+35
+00:02:34,180 --> 00:02:39,420
+So go to the home page and reload and now we get Beati real estate with pite character and welcome.
+
+36
+00:02:39,460 --> 00:02:43,160
+So it's up to you where you want to put the character.
+
+37
+00:02:43,690 --> 00:02:50,190
+So let's add some other ones I'm just going to go ahead and copy this because as you can see now if
+
+38
+00:02:50,190 --> 00:02:55,600
+we went to about life we forgot to put a title over we didn't want to put a title it still just is BT
+
+39
+00:02:55,600 --> 00:02:56,430
+real estate.
+
+40
+00:02:56,500 --> 00:03:01,770
+If we did it the other way we would have just a pipe character which looks kind of silly.
+
+41
+00:03:01,780 --> 00:03:04,760
+So I mean I don't know it's up to you on how you want to do it.
+
+42
+00:03:04,780 --> 00:03:11,070
+So for a boat to go up here we're going to go right under load static.
+
+43
+00:03:11,070 --> 00:03:19,180
+I always want to put the title like right above the content and we'll just say about BT hiree or let's
+
+44
+00:03:19,180 --> 00:03:21,500
+say just you about us.
+
+45
+00:03:21,830 --> 00:03:23,720
+OK I'll save that.
+
+46
+00:03:23,740 --> 00:03:28,520
+Let's go to see what other pages we have here.
+
+47
+00:03:28,900 --> 00:03:34,300
+Let's go to listings and we'll go to listings for each team.
+
+48
+00:03:36,520 --> 00:03:45,840
+And let's say Well say Brough's or browse property listings
+
+49
+00:03:55,810 --> 00:04:06,530
+K. let's go to search dot each team I'll go right here and we'll say search results
+
+50
+00:04:10,290 --> 00:04:11,900
+save that.
+
+51
+00:04:12,210 --> 00:04:17,430
+Now let's go to listing each team and this is really important because I actually want to put the title
+
+52
+00:04:17,430 --> 00:04:20,370
+of the listing in the in the page title.
+
+53
+00:04:20,370 --> 00:04:22,100
+So it's actually going to be dynamic.
+
+54
+00:04:22,110 --> 00:04:27,450
+I'm going to grab this right here listing title and put that in here.
+
+55
+00:04:27,450 --> 00:04:33,130
+That way it shows the title so let's save and we'll check that out in a minute.
+
+56
+00:04:33,150 --> 00:04:38,520
+But let's finish here so let's go to register accounts.
+
+57
+00:04:38,530 --> 00:04:39,630
+Slash register.
+
+58
+00:04:39,630 --> 00:04:40,090
+Whoops.
+
+59
+00:04:40,170 --> 00:04:44,470
+Me and I get a copy of that again.
+
+60
+00:04:46,710 --> 00:04:46,930
+Right.
+
+61
+00:04:47,100 --> 00:04:50,160
+So register
+
+62
+00:04:52,290 --> 00:04:57,960
+count go to log in accounts log in
+
+63
+00:05:04,340 --> 00:05:08,010
+log in account log in
+
+64
+00:05:13,050 --> 00:05:14,700
+and then we just have our dashboard
+
+65
+00:05:20,590 --> 00:05:22,340
+and let's just say dashboard
+
+66
+00:05:27,450 --> 00:05:27,810
+hopes
+
+67
+00:05:32,180 --> 00:05:34,350
+say user dashboard.
+
+68
+00:05:35,090 --> 00:05:35,360
+OK.
+
+69
+00:05:35,360 --> 00:05:37,300
+I think that's all of our templates.
+
+70
+00:05:37,310 --> 00:05:39,560
+I think that's all of our age html files.
+
+71
+00:05:39,560 --> 00:05:41,660
+So let's go in and check them out.
+
+72
+00:05:41,660 --> 00:05:43,720
+Now on the front end web site.
+
+73
+00:05:44,270 --> 00:05:46,230
+So this is the about going to reload.
+
+74
+00:05:46,250 --> 00:05:54,350
+And we get about us feature listings we get browse properties register register account account log
+
+75
+00:05:54,350 --> 00:06:05,810
+in we go to see let's go to a single listing and notice that in the title now we can see 33 six circles
+
+76
+00:06:05,810 --> 00:06:07,900
+so we have the actual listing.
+
+77
+00:06:07,910 --> 00:06:13,160
+You could also put like the city and state whatever whatever you want it's absolutely fine whatever
+
+78
+00:06:13,160 --> 00:06:14,680
+you want to put.
+
+79
+00:06:15,500 --> 00:06:18,230
+If we log in and go to the dashboard
+
+80
+00:06:22,360 --> 00:06:23,880
+we get use or dashboard.
+
+81
+00:06:23,880 --> 00:06:26,770
+All right so all of our titles are good.
+
+82
+00:06:27,150 --> 00:06:33,330
+So now we're going to do in the next section is we're going to start to work with contacts OK or inquiries.
+
+83
+00:06:33,330 --> 00:06:36,610
+Basically we want to be able to submit this form right here.
+
+84
+00:06:36,930 --> 00:06:42,000
+OK so this should get submitted to a view method and it should.
+
+85
+00:06:42,000 --> 00:06:44,430
+This stuff should get added to the database.
+
+86
+00:06:44,640 --> 00:06:51,060
+And we're also going to make it so that if you're logged in then your name in your e-mail is automatically
+
+87
+00:06:51,060 --> 00:06:52,640
+put in the form.
+
+88
+00:06:52,800 --> 00:07:00,690
+Also it should get put in the database your user ID should get put in the in the in the row as well.
+
+89
+00:07:00,690 --> 00:07:01,020
+All right.
+
+90
+00:07:01,020 --> 00:07:08,040
+That way we can track logged in users inquiries and we can put that in their dashboards.
+
+91
+00:07:08,230 --> 00:07:10,920
+OK so we're going to get into that in the next section.
+

@@ -1,0 +1,408 @@
+1
+00:00:00,330 --> 00:00:00,840
+All right guys.
+
+2
+00:00:00,840 --> 00:00:04,910
+Now we're going to we're going to install some software.
+
+3
+00:00:04,990 --> 00:00:05,280
+OK.
+
+4
+00:00:05,280 --> 00:00:10,320
+So you want to be logged in as Django admen into your remote droplet.
+
+5
+00:00:10,680 --> 00:00:14,250
+And we want to first of all update our packages.
+
+6
+00:00:14,250 --> 00:00:17,150
+OK so we're going to say sudo apt.
+
+7
+00:00:17,190 --> 00:00:22,160
+You can do app to get if you want but you're now allowed to just do apt and an app to get it.
+
+8
+00:00:22,170 --> 00:00:24,370
+This is our package manager for a buntu.
+
+9
+00:00:24,570 --> 00:00:31,420
+And we just want to update case we want to update and then we want to run upgrade which will actually
+
+10
+00:00:31,420 --> 00:00:39,560
+upgrade the software upgrade the package listings that we can upgrade any software that we have.
+
+11
+00:00:39,560 --> 00:00:41,060
+All right so now it's two
+
+12
+00:00:45,080 --> 00:00:45,710
+grade.
+
+13
+00:00:45,710 --> 00:00:46,840
+Yes.
+
+14
+00:00:50,320 --> 00:00:55,060
+I just want to have the most up to date stuff installed.
+
+15
+00:00:56,830 --> 00:01:00,430
+And the next line here is we're actually installing a bunch of stuff at once.
+
+16
+00:01:00,460 --> 00:01:05,360
+So we're going Stahl Python 3 Peppe Python 3 dev.
+
+17
+00:01:05,520 --> 00:01:10,790
+This dependency here this lib P-Q dev postgrads.
+
+18
+00:01:10,930 --> 00:01:14,130
+And then this post-grads contrib engine X and uncurl
+
+19
+00:01:17,210 --> 00:01:20,590
+unicorn are going to do that a little later.
+
+20
+00:01:20,980 --> 00:01:25,880
+And that's going to be used to serve up and that's installed using Pipp anyway.
+
+21
+00:01:25,930 --> 00:01:29,130
+But that's going to be used to serve up our application.
+
+22
+00:01:33,010 --> 00:01:33,290
+OK.
+
+23
+00:01:33,300 --> 00:01:35,570
+So upgrade always takes longer than update.
+
+24
+00:01:35,670 --> 00:01:38,890
+I'm going to actually just copy this line here.
+
+25
+00:01:40,240 --> 00:01:42,800
+I just want to grab that just for when this is done.
+
+26
+00:01:42,930 --> 00:01:44,970
+Go ahead and run it.
+
+27
+00:01:44,970 --> 00:01:49,710
+All right so if you run into this right here it's just going to ask about the Grodman the GRUB boot
+
+28
+00:01:49,710 --> 00:01:50,160
+menu.
+
+29
+00:01:50,160 --> 00:01:52,530
+So just just choose the default.
+
+30
+00:01:52,530 --> 00:01:56,140
+Ok keep the local version that's currently installed.
+
+31
+00:01:56,460 --> 00:01:58,200
+OK so hit enter again.
+
+32
+00:02:01,190 --> 00:02:03,650
+OK and this should be just about done.
+
+33
+00:02:08,820 --> 00:02:09,950
+All right.
+
+34
+00:02:10,350 --> 00:02:19,840
+So now that that's done I'm going to go ahead and paste in what I copied which is not pasting in scratch.
+
+35
+00:02:19,860 --> 00:02:21,190
+Again there we go.
+
+36
+00:02:21,210 --> 00:02:26,000
+I believe 18.00 for buntu comes with Python 3 the latest version.
+
+37
+00:02:26,280 --> 00:02:29,000
+But we're just gonna install it anyways.
+
+38
+00:02:30,790 --> 00:02:34,430
+And there might be a later version when when you guys are watching this
+
+39
+00:02:41,940 --> 00:02:45,500
+OK and then once that's done we can start to set up our database
+
+40
+00:02:48,870 --> 00:02:52,620
+and we have everything here that we need to add.
+
+41
+00:02:53,000 --> 00:02:56,510
+All right so this is done going to just clear the terminal up.
+
+42
+00:02:56,750 --> 00:02:59,970
+So now we want to do is go into postgrads.
+
+43
+00:03:00,130 --> 00:03:00,440
+OK.
+
+44
+00:03:00,440 --> 00:03:06,140
+Now when you install post-grads you just like with the local installation there is a default user called
+
+45
+00:03:06,140 --> 00:03:07,170
+postgrads.
+
+46
+00:03:07,220 --> 00:03:11,270
+So we want to log in is that so we're going to say pseudo dash you.
+
+47
+00:03:11,270 --> 00:03:15,640
+So we're just defining the user of post-grads.
+
+48
+00:03:15,810 --> 00:03:20,200
+OK and then we're going to do PSU Well right now.
+
+49
+00:03:20,210 --> 00:03:21,660
+You can see that this is changed.
+
+50
+00:03:21,660 --> 00:03:23,410
+We're now inside of post-grads.
+
+51
+00:03:23,570 --> 00:03:30,590
+So we're going to create a database and say create a database and you call this whatever you want.
+
+52
+00:03:30,590 --> 00:03:36,520
+I'm calling it BTR the underscore Prod. semi-colon there.
+
+53
+00:03:36,650 --> 00:03:38,560
+Case that you create a database.
+
+54
+00:03:38,840 --> 00:03:44,600
+Now we want to create a user We don't want to use the default post-grads user I know we did that the
+
+55
+00:03:44,630 --> 00:03:49,640
+way we do it I think we did that in local development but we don't want to do that in production so
+
+56
+00:03:49,640 --> 00:03:53,080
+let's say create user.
+
+57
+00:03:53,500 --> 00:03:58,520
+Now this needs to be fixed over here you can see I use DBI user here.
+
+58
+00:03:58,670 --> 00:04:05,370
+I think I just meant it as a placeholder and then down here I use the user Django DB admin.
+
+59
+00:04:05,600 --> 00:04:10,610
+I think that I'm just going to call the user D-B admin because I think Django D-B admin.
+
+60
+00:04:10,640 --> 00:04:15,120
+And then the user of the server which is Gengel admin I think that's a little confusing.
+
+61
+00:04:15,290 --> 00:04:18,600
+So I'm just going to call it D-B admin like that.
+
+62
+00:04:18,860 --> 00:04:19,270
+OK.
+
+63
+00:04:19,280 --> 00:04:20,870
+And then we're gonna give it a password.
+
+64
+00:04:20,870 --> 00:04:29,420
+So with password and I'm just going to give this I'm just going to give it a password of a b c one two
+
+65
+00:04:29,420 --> 00:04:34,730
+three exclamation Kies let me just make sure that's good.
+
+66
+00:04:34,870 --> 00:04:35,140
+Yeah.
+
+67
+00:04:35,170 --> 00:04:37,320
+And then we just want a semi-colon.
+
+68
+00:04:37,350 --> 00:04:38,020
+All right.
+
+69
+00:04:38,550 --> 00:04:44,850
+So now we just want to alter some roll we want to just set up like the encoding and stuff like that
+
+70
+00:04:44,850 --> 00:04:46,020
+the time zone.
+
+71
+00:04:46,020 --> 00:04:52,260
+So we're just going to copy this although I'm going to change the DB admin because that's what I use
+
+72
+00:04:52,260 --> 00:04:54,930
+so it's pay set in and I'll change this.
+
+73
+00:04:54,960 --> 00:05:00,180
+I'll change the markdown file for you guys so you won't have this you won't have to change this unless
+
+74
+00:05:00,180 --> 00:05:01,350
+you want to use a different name.
+
+75
+00:05:01,350 --> 00:05:02,880
+That's absolutely fine.
+
+76
+00:05:03,240 --> 00:05:07,950
+D-B admin OK let's grab this one
+
+77
+00:05:16,370 --> 00:05:18,880
+so you aren't D-B admen
+
+78
+00:05:22,580 --> 00:05:26,410
+again this is all in the Digital Ocean documentation
+
+79
+00:05:33,160 --> 00:05:35,460
+TV.
+
+80
+00:05:36,090 --> 00:05:43,980
+OK snow and all that stuff is that we want to give the D-B admin want to give them privileges to the
+
+81
+00:05:43,980 --> 00:05:46,410
+beat free prod database.
+
+82
+00:05:46,680 --> 00:05:52,830
+OK so going to copy this except I'm just going to change the user to DB admin
+
+83
+00:05:55,780 --> 00:06:01,980
+so granting all privileges on the database Tiare production or Prod. to DB admin.
+
+84
+00:06:02,320 --> 00:06:03,250
+And there we go.
+
+85
+00:06:03,250 --> 00:06:07,640
+So now we can get out of postgrads by just doing a backslash.
+
+86
+00:06:07,870 --> 00:06:08,790
+So we want to quit.
+
+87
+00:06:08,890 --> 00:06:09,720
+And that's it.
+
+88
+00:06:09,910 --> 00:06:11,430
+So now we have our database.
+
+89
+00:06:11,470 --> 00:06:13,140
+It's as easy as that.
+
+90
+00:06:13,150 --> 00:06:20,440
+So now we're ready to actually start our Django stuff and just like we did on the local machine and
+
+91
+00:06:20,440 --> 00:06:26,460
+we want to create a virtual environment on the on the remote server.
+
+92
+00:06:26,680 --> 00:06:30,160
+Ok I'm going to set the structure up a little different.
+
+93
+00:06:30,400 --> 00:06:37,860
+What I want to do is I want to actually this yeah we need to install that.
+
+94
+00:06:37,860 --> 00:06:43,800
+All right so we're going to have a folder in our home directory called pi apps because a lot of the
+
+95
+00:06:43,800 --> 00:06:49,340
+times you'll have one server and you'll have multiple applications you may have a p p application.
+
+96
+00:06:49,650 --> 00:06:52,600
+And you know you can route through engine X or whatever.
+
+97
+00:06:52,680 --> 00:06:59,070
+So I want to have a folder called pi apps and then have our project folder in there and the virtual
+
+98
+00:06:59,070 --> 00:07:04,530
+environment is going to be in the PI apps folder or not in our actual project folder like it was in
+
+99
+00:07:04,530 --> 00:07:05,880
+our local environment.
+
+100
+00:07:06,060 --> 00:07:11,010
+OK and this stuff is optional I mean you can structure things how you want but that's just just how
+
+101
+00:07:11,010 --> 00:07:12,240
+I prefer to do it.
+
+102
+00:07:12,240 --> 00:07:14,780
+All right so we'll get into this in the next video.
+

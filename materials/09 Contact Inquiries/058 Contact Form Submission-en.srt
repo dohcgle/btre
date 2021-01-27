@@ -1,0 +1,368 @@
+1
+00:00:00,150 --> 00:00:05,970
+All right guys so now that we have prepared our form are in Korea contact form now we need to handle
+
+2
+00:00:05,970 --> 00:00:08,660
+the submission or start to handle the submission.
+
+3
+00:00:08,700 --> 00:00:16,800
+So if we look at our contacts folder here contacts app you are Elle's of one path and that's contact.
+
+4
+00:00:17,040 --> 00:00:19,440
+And then that's linked to this method here.
+
+5
+00:00:19,470 --> 00:00:23,370
+So we just want to first of all make sure that it's a POST request.
+
+6
+00:00:23,400 --> 00:00:24,870
+So we're going to do if
+
+7
+00:00:27,280 --> 00:00:36,600
+request Daut method is equal to post.
+
+8
+00:00:36,740 --> 00:00:46,870
+But our colon here then for now all I want to do is let's see what we do let's just do a print and we'll
+
+9
+00:00:46,880 --> 00:00:55,640
+just say hello and we'll just return just so we know that the form is actually submitting.
+
+10
+00:00:55,640 --> 00:01:01,440
+So my server here once I submit the form we should see how.
+
+11
+00:01:02,340 --> 00:01:07,050
+So I'm going to just go back there and reload and make an inquiry.
+
+12
+00:01:07,700 --> 00:01:13,200
+Kathy's information is in there because we're logged in as her it's just send.
+
+13
+00:01:13,370 --> 00:01:13,600
+All right.
+
+14
+00:01:13,610 --> 00:01:16,310
+So the view contact's view did not return.
+
+15
+00:01:16,310 --> 00:01:22,660
+That's fine because we didn't all we did is return or we didn't return the HDTV HDP response.
+
+16
+00:01:22,670 --> 00:01:26,230
+I just want to check the console and there it is.
+
+17
+00:01:26,240 --> 00:01:26,770
+Hello.
+
+18
+00:01:26,840 --> 00:01:33,290
+So we know that this is submitting and it is in fact a post request.
+
+19
+00:01:33,290 --> 00:01:34,210
+All right so.
+
+20
+00:01:34,330 --> 00:01:38,270
+So back to the terminal here and let's continue on.
+
+21
+00:01:38,270 --> 00:01:42,230
+So if it is a POST request then what do we want to do.
+
+22
+00:01:42,230 --> 00:01:46,130
+We want to capture the fields right just like we've been doing.
+
+23
+00:01:46,130 --> 00:01:53,240
+So let's get the listing ID and the listing ID was that hidden field that we put But we fetch it the
+
+24
+00:01:53,240 --> 00:01:53,940
+same way.
+
+25
+00:01:53,940 --> 00:02:01,100
+Doesn't matter if it's a hidden field or textfield whatever it is we use requests dot post and then
+
+26
+00:02:01,100 --> 00:02:06,140
+whatever we named it which was listing ID.
+
+27
+00:02:07,700 --> 00:02:10,570
+All right we're going to do the same thing for the other fields.
+
+28
+00:02:10,760 --> 00:02:17,980
+So let's do see two three four five six seven eight fields here.
+
+29
+00:02:18,020 --> 00:02:23,240
+So the next one is just going to be the listing basically the listing title.
+
+30
+00:02:23,390 --> 00:02:29,300
+Then we have the name the contact names is going to control D and change both of these to name.
+
+31
+00:02:29,300 --> 00:02:31,800
+Next we have the e-mail.
+
+32
+00:02:32,120 --> 00:02:38,330
+So I'm going to control de-select the next one e-mail and then we need phone
+
+33
+00:02:40,910 --> 00:02:44,960
+message.
+
+34
+00:02:46,530 --> 00:02:49,130
+OK message use your ID
+
+35
+00:02:52,920 --> 00:02:54,790
+and then we want the realtor email
+
+36
+00:02:59,210 --> 00:03:00,330
+OK.
+
+37
+00:03:01,170 --> 00:03:07,310
+So we do have some issues here but this should have nothing to do with that error but we'll fix it anyway
+
+38
+00:03:07,320 --> 00:03:09,910
+so messages we didn't bring that in.
+
+39
+00:03:10,230 --> 00:03:12,750
+So up at the top here I'm going to do from
+
+40
+00:03:15,600 --> 00:03:19,370
+Django Daunt contrib.
+
+41
+00:03:20,110 --> 00:03:26,060
+They want to import messages.
+
+42
+00:03:26,070 --> 00:03:33,530
+Redirect comes in from shortcuts so we'll just add a redirect and save.
+
+43
+00:03:33,660 --> 00:03:34,470
+All right.
+
+44
+00:03:34,680 --> 00:03:38,610
+So what I'm going to do is I just want to see if that actually went through.
+
+45
+00:03:38,820 --> 00:03:41,130
+So I'm going to log in as Brad
+
+46
+00:03:44,800 --> 00:03:46,570
+and we'll go to contacts.
+
+47
+00:03:46,580 --> 00:03:46,830
+OK.
+
+48
+00:03:46,830 --> 00:03:49,190
+So that did not go through.
+
+49
+00:03:50,310 --> 00:03:54,260
+So let's try this again.
+
+50
+00:03:54,350 --> 00:04:03,010
+I mean I still think we're going to get the same error but we'll try it just send that in you're still
+
+51
+00:04:03,010 --> 00:04:07,850
+getting that error.
+
+52
+00:04:08,220 --> 00:04:10,250
+So it's on listing.
+
+53
+00:04:10,500 --> 00:04:14,480
+So we're getting listings listing equals post request listing.
+
+54
+00:04:14,490 --> 00:04:25,430
+Let's go to the template which is listing dot aged him out and go down to our form and see listing is
+
+55
+00:04:25,430 --> 00:04:26,910
+right here.
+
+56
+00:04:26,910 --> 00:04:33,620
+And you know what I think it's because we have a disabled so let's actually remove the disabled
+
+57
+00:04:37,080 --> 00:04:48,350
+and I'm going to go ahead and I'm actually going to log out and log in as Kathy.
+
+58
+00:04:48,970 --> 00:04:50,520
+OK so success.
+
+59
+00:04:50,520 --> 00:05:00,890
+So let's go to a listing make an inquiry.
+
+60
+00:05:01,010 --> 00:05:04,840
+I'll say I'm interested.
+
+61
+00:05:07,820 --> 00:05:13,670
+This Home Page Not Found.
+
+62
+00:05:13,680 --> 00:05:15,650
+All right.
+
+63
+00:05:16,680 --> 00:05:16,950
+OK.
+
+64
+00:05:16,950 --> 00:05:19,070
+So I know I know the issue here.
+
+65
+00:05:19,100 --> 00:05:21,410
+This should be listings slash.
+
+66
+00:05:21,660 --> 00:05:26,040
+So that's no problem and it looks like everything should have gone through with just the redirect that
+
+67
+00:05:26,040 --> 00:05:27,070
+messed up.
+
+68
+00:05:27,090 --> 00:05:35,810
+So if I go back and we reload we have to log in as Brad because he's a super user or admin whatever.
+
+69
+00:05:36,640 --> 00:05:43,850
+And we should see there she is Cathy Smith So we have the listing the email on the contact date.
+
+70
+00:05:43,890 --> 00:05:46,830
+If we click on that you'll see the rest of the stuff here.
+
+71
+00:05:47,010 --> 00:05:54,750
+So the listing I.D. the phone number her message Date user ID and so on.
+
+72
+00:05:54,750 --> 00:05:55,770
+Good.
+
+73
+00:05:55,780 --> 00:06:00,220
+So we just want to go back and change in views dot pie.
+
+74
+00:06:00,230 --> 00:06:03,450
+We want to change this to listings slash listing ID.
+
+75
+00:06:03,450 --> 00:06:06,330
+That way it will actually redirect to the correct place.
+
+76
+00:06:06,330 --> 00:06:13,910
+So let's actually log out of the front end and go back and log out and let's make an inquiry.
+
+77
+00:06:15,630 --> 00:06:20,010
+So I'll just say like Tom Smith
+
+78
+00:06:28,800 --> 00:06:30,580
+you know leave the message blank.
+
+79
+00:06:30,770 --> 00:06:37,040
+OK so success your request has been submitted and this is it just redirects us back to the correct listing
+
+80
+00:06:37,040 --> 00:06:38,330
+the one that we were on.
+
+81
+00:06:38,510 --> 00:06:43,400
+And if we go back and go to our contacts which I have to log in is Brad
+
+82
+00:06:46,330 --> 00:06:47,890
+there is Tom Smith.
+
+83
+00:06:47,930 --> 00:06:51,300
+I didn't realize he used the same last name.
+
+84
+00:06:51,320 --> 00:06:51,640
+All right.
+
+85
+00:06:51,640 --> 00:06:57,560
+So we're now able to submit inquiries whether you're logged in or not.
+
+86
+00:06:57,560 --> 00:07:07,360
+So in the next video I want to I want to make it so that if the user is logged in and they try to make
+
+87
+00:07:09,100 --> 00:07:14,860
+inquiry on proper the property that they already have it's going to tell them they've already made that
+
+88
+00:07:14,890 --> 00:07:15,740
+inquiry.
+
+89
+00:07:15,910 --> 00:07:16,150
+All right.
+
+90
+00:07:16,190 --> 00:07:20,620
+So Kathy logs in and does another inquiry on this home.
+
+91
+00:07:20,650 --> 00:07:23,200
+She's going to get a message saying there's already an inquiry.
+
+92
+00:07:23,320 --> 00:07:24,950
+All right so we'll do that next.
+

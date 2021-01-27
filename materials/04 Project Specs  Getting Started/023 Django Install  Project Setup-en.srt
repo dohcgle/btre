@@ -1,0 +1,480 @@
+1
+00:00:00,330 --> 00:00:06,660
+All right guys so in the last video we created a virtual environment so we have a folder called mind
+
+2
+00:00:06,660 --> 00:00:08,150
+B-tree project.
+
+3
+00:00:08,250 --> 00:00:15,180
+And then my virtual environment is called wiii envy and to activate that on a Mac we do source and then
+
+4
+00:00:15,180 --> 00:00:21,380
+we do go into our Wii and Wii folder and then bin and then activates.
+
+5
+00:00:21,450 --> 00:00:21,950
+OK.
+
+6
+00:00:21,950 --> 00:00:27,210
+And on Windows it's going to be the envy source slash activate dot bat.
+
+7
+00:00:27,240 --> 00:00:29,620
+And you don't put the source in front of it.
+
+8
+00:00:29,950 --> 00:00:30,560
+OK.
+
+9
+00:00:30,810 --> 00:00:36,990
+So now that we're inside the environment we know that because of this right here we want to install
+
+10
+00:00:36,990 --> 00:00:37,760
+Django.
+
+11
+00:00:37,830 --> 00:00:38,110
+OK.
+
+12
+00:00:38,130 --> 00:00:42,900
+So if we do a pip freeze right now you can see there's nothing there.
+
+13
+00:00:42,960 --> 00:00:53,220
+So let's do a pip install Django OK and this is only going to install it inside of our environment.
+
+14
+00:00:53,230 --> 00:00:55,620
+That's the beauty of this is it doesn't install it globally.
+
+15
+00:00:55,630 --> 00:00:57,190
+It's just in our environment.
+
+16
+00:00:57,190 --> 00:01:05,020
+So now if I do a pip freeze you'll see we have Django and it's dependency of Pi Z.
+
+17
+00:01:05,020 --> 00:01:05,410
+All right.
+
+18
+00:01:05,410 --> 00:01:16,660
+Now to to create a Django project we want to run Hey want to use a special Selye program called Django
+
+19
+00:01:16,660 --> 00:01:17,510
+Admin..
+
+20
+00:01:17,530 --> 00:01:24,700
+So if we say Django Dasch admin help you'll see that we have a bunch of different commands Harry of
+
+21
+00:01:24,700 --> 00:01:32,130
+stuff to deal with like migrations in the database ask you all stuff start app now.
+
+22
+00:01:32,560 --> 00:01:39,370
+I'm going to explain this a little more but Django has it has a project entity which is like your main
+
+23
+00:01:39,370 --> 00:01:41,060
+project and then apps.
+
+24
+00:01:41,080 --> 00:01:46,320
+OK so you have one project which is which is essentially your your main application.
+
+25
+00:01:46,320 --> 00:01:49,980
+In our case it's our real estate application but it's called a project.
+
+26
+00:01:50,080 --> 00:01:56,970
+And then inside that you have apps like we're going to have listings app for our property listings.
+
+27
+00:01:56,980 --> 00:02:03,080
+We're going to have a realtor's app for our realtors OK so stuff like that.
+
+28
+00:02:03,100 --> 00:02:05,580
+I'm going to explain more of that as we move along.
+
+29
+00:02:05,830 --> 00:02:09,840
+Now the command that we're interested in here is start project.
+
+30
+00:02:09,860 --> 00:02:12,260
+Okay so that's going to create a project for us.
+
+31
+00:02:12,260 --> 00:02:21,810
+So let me clear this out and let's run Django dash admen and we want to run start project and I'm going
+
+32
+00:02:21,810 --> 00:02:24,000
+to call I'm just going to call it free.
+
+33
+00:02:24,160 --> 00:02:27,970
+And then just put a dot for the current directory and let's run that.
+
+34
+00:02:27,970 --> 00:02:30,780
+And then up here you'll see what it's created.
+
+35
+00:02:30,880 --> 00:02:36,220
+It created the BTR folder with some files and I'm going to go over these files in the next video.
+
+36
+00:02:36,370 --> 00:02:38,860
+But it also created a managed pie.
+
+37
+00:02:39,010 --> 00:02:42,760
+Now this managed up pie we're never going to touch this code here.
+
+38
+00:02:42,770 --> 00:02:48,260
+This this is basically the tool we're going to use now instead of Django admen.
+
+39
+00:02:48,330 --> 00:02:48,850
+OK.
+
+40
+00:02:48,870 --> 00:02:49,550
+It has.
+
+41
+00:02:49,570 --> 00:02:53,310
+Actually if we do Python and you always need to run it with Python.
+
+42
+00:02:53,440 --> 00:02:56,530
+So Python managed PI help.
+
+43
+00:02:56,620 --> 00:03:02,740
+You'll see a lot of the same commands that Django admin has only it's more localized to this project
+
+44
+00:03:02,740 --> 00:03:10,030
+so we're always going to use managed up-I when doing like migrations run server will run our Python
+
+45
+00:03:10,030 --> 00:03:11,160
+server.
+
+46
+00:03:11,780 --> 00:03:16,520
+Create creates super user will create a user for our admin area.
+
+47
+00:03:16,630 --> 00:03:20,520
+So we're going to be using managed up-I quite a bit.
+
+48
+00:03:20,620 --> 00:03:29,450
+OK so now I want to address something that that mostly has to do with if you're using VS code so you
+
+49
+00:03:29,450 --> 00:03:34,250
+can see this little pop up down here of Linter Pioline it is not installed.
+
+50
+00:03:34,480 --> 00:03:41,310
+So you may have some issues if you use the Linter because it doesn't always recognize your virtual environment.
+
+51
+00:03:41,320 --> 00:03:47,920
+So you might get like inport errors said because it thinks that Django isn't installed because it's
+
+52
+00:03:47,920 --> 00:03:55,090
+looking at your global environment to fix this what usually works is you want to open up your command
+
+53
+00:03:55,090 --> 00:04:03,910
+palette with shit shift command P or shift control P and you want us to go to our search for Python
+
+54
+00:04:05,260 --> 00:04:09,140
+and you want the select interpreter OK.
+
+55
+00:04:09,160 --> 00:04:14,530
+And in that interpreter you should have your VTR in virtual environment and that's what you want to
+
+56
+00:04:14,530 --> 00:04:16,790
+use so I'm going to choose that.
+
+57
+00:04:17,230 --> 00:04:23,950
+And you should also be in your virtual environment here or in your command line whatever you're using.
+
+58
+00:04:23,950 --> 00:04:24,350
+All right.
+
+59
+00:04:24,370 --> 00:04:28,620
+And then once you do that you can go ahead and click install here if you want.
+
+60
+00:04:28,620 --> 00:04:36,810
+You can also disable it but I'm going to click install and now the the Linter should only be installed
+
+61
+00:04:36,810 --> 00:04:38,680
+in my virtual environment.
+
+62
+00:04:38,850 --> 00:04:46,830
+And also notice up here we have a special vs code config for the settings and the Python path is now
+
+63
+00:04:46,830 --> 00:04:50,870
+pointed to our virtual environment Python path.
+
+64
+00:04:50,910 --> 00:04:51,380
+OK.
+
+65
+00:04:51,450 --> 00:04:52,600
+Or location.
+
+66
+00:04:52,680 --> 00:04:58,320
+So now our lending should work correctly even if we're in our virtual environment.
+
+67
+00:04:58,320 --> 00:05:00,110
+All right so we're going to clear that up.
+
+68
+00:05:00,150 --> 00:05:06,120
+And now if I open up a python file I'm just going to open this up and now you shouldn't get that pop
+
+69
+00:05:06,120 --> 00:05:06,830
+up again.
+
+70
+00:05:06,870 --> 00:05:12,840
+If you do that means that you haven't selected the correct interpreter via your virtual environment
+
+71
+00:05:12,840 --> 00:05:13,880
+interpreter.
+
+72
+00:05:13,990 --> 00:05:17,840
+All right which should create this setting's file that I just showed you.
+
+73
+00:05:18,000 --> 00:05:23,550
+I know I can get a little complicated if you're having trouble you can you can post in the Q&amp;A and either
+
+74
+00:05:23,550 --> 00:05:26,360
+myself or someone else else can try to help you.
+
+75
+00:05:26,640 --> 00:05:32,070
+But I would suggest doing a quick Google search and you'll probably find the answer it's there's there's
+
+76
+00:05:32,070 --> 00:05:33,880
+a lot of information about this.
+
+77
+00:05:33,900 --> 00:05:39,060
+Now the last thing I want to do here is just initialize it get repositories so I would highly recommend
+
+78
+00:05:39,060 --> 00:05:40,970
+that you use get version control.
+
+79
+00:05:40,980 --> 00:05:46,860
+I'm not going to be doing my commits stuff on screen and you guys can do you know commit whenever you
+
+80
+00:05:46,860 --> 00:05:49,070
+want but I would suggest using it.
+
+81
+00:05:49,070 --> 00:05:55,740
+So if you don't have get installed you can either you can go to get dash SVM dot com I believe or dot
+
+82
+00:05:55,740 --> 00:05:56,570
+org.
+
+83
+00:05:56,700 --> 00:05:59,230
+Just search for get and then.
+
+84
+00:05:59,400 --> 00:06:03,850
+Or you can use like homebrew or if you're on Linux you can use your package manager whatever.
+
+85
+00:06:04,050 --> 00:06:06,310
+And then just do a get in net.
+
+86
+00:06:07,450 --> 00:06:16,120
+Cases that initialiser get repository and then let's create a new file in the root here called Daut
+
+87
+00:06:16,210 --> 00:06:17,780
+get ignore.
+
+88
+00:06:18,280 --> 00:06:18,700
+OK.
+
+89
+00:06:18,700 --> 00:06:24,130
+And what this does I know a lot of you guys know this but what this does is it allows you to add stuff
+
+90
+00:06:24,130 --> 00:06:30,300
+that you don't want to be pushed to or get repository would see what does this say has too many active
+
+91
+00:06:30,310 --> 00:06:31,590
+changes.
+
+92
+00:06:31,620 --> 00:06:34,290
+I don't want to see that but yeah.
+
+93
+00:06:34,300 --> 00:06:38,350
+So whatever you put here won't be pushed to the repository.
+
+94
+00:06:38,350 --> 00:06:43,360
+Now when you're dealing with a new framework it can be kind of difficult to know what you're supposed
+
+95
+00:06:43,360 --> 00:06:44,920
+to push and what you're not.
+
+96
+00:06:44,920 --> 00:06:52,070
+So what I would recommend doing is using an awesome Web site called Get ignore dot I O.
+
+97
+00:06:52,270 --> 00:06:59,620
+And basically you can just pass in the name of a framework or anything at all and it will give you like
+
+98
+00:06:59,620 --> 00:07:01,390
+a default good ignore file.
+
+99
+00:07:01,390 --> 00:07:08,270
+So let's say Django even has a little pop up and you can search multiple ones as well but let's just
+
+100
+00:07:08,510 --> 00:07:14,010
+for Django and it gives us kind of a default good ignore file that we can use.
+
+101
+00:07:14,020 --> 00:07:15,310
+I'm just going to grab this.
+
+102
+00:07:15,310 --> 00:07:19,550
+We're going to copy this and go over and paste that in.
+
+103
+00:07:19,630 --> 00:07:24,770
+And these are just comments we can get rid of these OK.
+
+104
+00:07:24,790 --> 00:07:26,720
+Now one thing I'm going to add here.
+
+105
+00:07:26,780 --> 00:07:30,700
+When you get rid of this as well I mean you can keep the credits if you want but I'm going to get rid
+
+106
+00:07:30,700 --> 00:07:32,550
+of all the comments.
+
+107
+00:07:32,830 --> 00:07:40,330
+But one thing I'm going to add here is the virtual environment because I have that in in this this file
+
+108
+00:07:40,660 --> 00:07:43,810
+or in this folder so I don't want that being pushed.
+
+109
+00:07:43,810 --> 00:07:47,980
+So I'm going to put a van or whatever you called that folder.
+
+110
+00:07:48,100 --> 00:07:49,600
+You should also put in there.
+
+111
+00:07:49,870 --> 00:07:50,250
+OK.
+
+112
+00:07:50,260 --> 00:07:57,760
+So let's go ahead and save that and I'm just going to do my initial commit here but unlocking it like
+
+113
+00:07:57,760 --> 00:08:06,130
+I said I'm not going to be doing all my commits on camera so I'm just going to say Get add all and get
+
+114
+00:08:07,180 --> 00:08:17,170
+commit and he's going to say and this show will just say initial comment in case that's now pushed to
+
+115
+00:08:17,170 --> 00:08:19,070
+my local repository.
+
+116
+00:08:19,440 --> 00:08:19,830
+All right.
+
+117
+00:08:19,840 --> 00:08:25,170
+And we're going to be using get at the end to actually deploy to push to Digital Ocean or to get hub
+
+118
+00:08:25,180 --> 00:08:29,680
+and then pull to digital oceans so you definitely want to get it installed.
+
+119
+00:08:29,680 --> 00:08:34,810
+All right so that's it in the next video we're going to go through some of these files here and talk
+
+120
+00:08:34,810 --> 00:08:37,740
+about what they are what they do and I will see you then.
+

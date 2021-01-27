@@ -1,0 +1,340 @@
+1
+00:00:00,520 --> 00:00:04,790
+You guys before we get started on the course and setting up I just want to talk a little bit about what
+
+2
+00:00:04,790 --> 00:00:06,530
+Django is.
+
+3
+00:00:06,530 --> 00:00:12,950
+I also have a list of links and resources that I'm going to attach to to this lecture including Django
+
+4
+00:00:12,950 --> 00:00:18,380
+cheat sheet and some deployment instructions and you know links to the official documentation all that
+
+5
+00:00:18,380 --> 00:00:19,420
+stuff.
+
+6
+00:00:19,460 --> 00:00:23,940
+So Django is a high level Python framework as you can see it says right here.
+
+7
+00:00:24,320 --> 00:00:32,300
+So Python is a very popular general purpose language it's use for just about anything really including
+
+8
+00:00:32,300 --> 00:00:39,500
+web development building utilities automation machine learning data analysis it's use first in so many
+
+9
+00:00:39,500 --> 00:00:42,260
+different areas and it's really blowing up now.
+
+10
+00:00:42,760 --> 00:00:48,680
+And Python has has a few web frameworks but there's two really popular ones really good ones and that's
+
+11
+00:00:48,680 --> 00:00:50,400
+Django and flask.
+
+12
+00:00:50,640 --> 00:00:53,570
+OK and they're both very good but they're both very different.
+
+13
+00:00:53,570 --> 00:01:00,470
+Flask is very low level so I won't explain the difference between high level and low level with a low
+
+14
+00:01:00,470 --> 00:01:02,560
+level framework like flask.
+
+15
+00:01:02,600 --> 00:01:05,050
+You don't really have a specific way of doing things.
+
+16
+00:01:05,050 --> 00:01:07,850
+You can set up your application structure however you want.
+
+17
+00:01:07,940 --> 00:01:12,710
+And in fact you could probably put everything in one file if you wanted to.
+
+18
+00:01:13,190 --> 00:01:16,310
+You have very few baked tools and features.
+
+19
+00:01:16,310 --> 00:01:23,690
+It's basically just a micro framework so it provides some basic structure and some some little bells
+
+20
+00:01:23,690 --> 00:01:28,620
+and whistles to help you help you along rather than building it from scratch.
+
+21
+00:01:28,880 --> 00:01:32,350
+OK and that can be a good thing because it gives you a lot of freedom.
+
+22
+00:01:32,360 --> 00:01:35,080
+However it also gives you a lot of room for error.
+
+23
+00:01:35,090 --> 00:01:41,810
+So with Django where it's very high level you have a really specific way to structure your files and
+
+24
+00:01:41,810 --> 00:01:45,170
+to write your code and there's very little room to mess up.
+
+25
+00:01:45,170 --> 00:01:47,950
+So I think it's it's really good for beginners.
+
+26
+00:01:47,960 --> 00:01:53,780
+I think it's easy to learn and not only that it offers really fast development because you have command
+
+27
+00:01:53,780 --> 00:01:58,990
+line tools for creating your projects creating apps within your project which I'll get into.
+
+28
+00:01:59,090 --> 00:02:00,850
+I'll get to in a minute.
+
+29
+00:02:00,980 --> 00:02:02,130
+Migrating data.
+
+30
+00:02:02,140 --> 00:02:06,050
+So so creating your database tables and things like that.
+
+31
+00:02:06,050 --> 00:02:08,190
+So Django was very fast.
+
+32
+00:02:08,420 --> 00:02:14,810
+When it comes to creating creating web sites and applications it's also very secure it has a lot of
+
+33
+00:02:14,810 --> 00:02:16,600
+built in security features.
+
+34
+00:02:16,670 --> 00:02:23,000
+It has authentication it has an entire admin area available to you which you can customize.
+
+35
+00:02:23,030 --> 00:02:30,020
+So there's a lot to it and I'm a very practical developer so I like tools that get the job done quickly.
+
+36
+00:02:30,040 --> 00:02:36,720
+I get it done right but also quickly and this comes from my years of running my own business and freelancing.
+
+37
+00:02:36,860 --> 00:02:41,270
+And Django is one of those tools that allow you to build something in a month that would take you maybe
+
+38
+00:02:41,270 --> 00:02:45,810
+three months using another framework or even you know six months to a year.
+
+39
+00:02:45,810 --> 00:02:47,400
+Building it from scratch.
+
+40
+00:02:47,450 --> 00:02:49,630
+So that's why I am a huge fan of this framework.
+
+41
+00:02:49,630 --> 00:02:54,740
+It's also very scalable so you can build really big applications with it.
+
+42
+00:02:54,950 --> 00:02:58,990
+Now as far as databases you can use pretty much any database you want.
+
+43
+00:02:58,990 --> 00:03:04,180
+We'll be using post-grads which is an extremely powerful relational database.
+
+44
+00:03:04,190 --> 00:03:10,370
+You could also use my skew Well Eskew light is the default but I wouldn't recommend using that in production
+
+45
+00:03:10,380 --> 00:03:16,430
+it's more for testing or maybe really small apps but you could also use something like Mongo D-B So
+
+46
+00:03:16,670 --> 00:03:21,650
+there's really no limit to you know the database the type of database that you can use.
+
+47
+00:03:21,680 --> 00:03:27,260
+Now the last thing I want to talk about is the concept of apps and I'm not going to show you any fancy
+
+48
+00:03:27,260 --> 00:03:32,660
+diagrams or anything like that I'm going to show you hands on but I just want to give you a quick overview
+
+49
+00:03:32,660 --> 00:03:39,620
+so Gengel has the idea of a project which is your Web site as a whole your whole web site or your whole
+
+50
+00:03:39,620 --> 00:03:41,800
+application is your project.
+
+51
+00:03:41,810 --> 00:03:45,100
+And then inside that project you have what are called apps.
+
+52
+00:03:45,140 --> 00:03:51,170
+So if you have let's say a blog on your Web site your blog would be an individual app that has its own
+
+53
+00:03:51,170 --> 00:03:55,510
+model its own view its own you or else file things like that.
+
+54
+00:03:55,640 --> 00:04:00,620
+If you have a store where you sell things that store would be another app and that would have its own
+
+55
+00:04:00,620 --> 00:04:01,340
+folder.
+
+56
+00:04:01,340 --> 00:04:07,250
+So each piece of functionality on your website you create what's called an app.
+
+57
+00:04:07,410 --> 00:04:12,950
+Ok even first static pages like what we're going to do we're going to have a page's app to handle static
+
+58
+00:04:12,950 --> 00:04:14,480
+pages.
+
+59
+00:04:14,480 --> 00:04:18,640
+So that's what I mean when I say that Django has a very specific way of doing things.
+
+60
+00:04:18,740 --> 00:04:24,710
+And once you learn those ways you'll be able to build your own projects very easily and not spend so
+
+61
+00:04:24,710 --> 00:04:30,290
+much time trying to figure things out and debugging because there's you know there's little There's
+
+62
+00:04:30,290 --> 00:04:32,940
+very little wiggle room to mess up.
+
+63
+00:04:32,960 --> 00:04:37,110
+Now before we get into the next section I just want to show you a couple of resources and I'm going
+
+64
+00:04:37,100 --> 00:04:43,490
+to include a text file with this with this lecture that has links to this stuff along with some other
+
+65
+00:04:43,490 --> 00:04:44,100
+things.
+
+66
+00:04:44,210 --> 00:04:50,390
+But this is a cheat sheet that I created and it basically has all the different commands to for instance
+
+67
+00:04:50,390 --> 00:04:56,420
+install Django how to create your project how to create apps within your project run your server all
+
+68
+00:04:56,420 --> 00:04:57,290
+that stuff.
+
+69
+00:04:57,290 --> 00:05:03,040
+It also shows you how to create a virtual environment it you definitely want to create an individual
+
+70
+00:05:03,040 --> 00:05:07,840
+virtual environment for all of your different Django applications.
+
+71
+00:05:07,840 --> 00:05:09,260
+So it shows you how to do that.
+
+72
+00:05:09,280 --> 00:05:14,770
+Then we have this just here which is on deployment so we'll use this in the last section and it shows
+
+73
+00:05:14,770 --> 00:05:21,730
+you how to create S-sh keys and add them to digital ocean how to set up a simple firewall do some security
+
+74
+00:05:21,730 --> 00:05:28,840
+stuff install everything set up post-grads create a local settings files so you don't share your database
+
+75
+00:05:28,870 --> 00:05:34,660
+information and all that stuff with the world and then set up a unicorn and engine X. All right and
+
+76
+00:05:34,660 --> 00:05:37,900
+of course you can deploy any way you want if you want to use docker.
+
+77
+00:05:37,900 --> 00:05:40,500
+You can do that if you want to put everything in containers.
+
+78
+00:05:40,720 --> 00:05:44,430
+Obviously I'm I'm not going to do that in this course because that's a whole new can of worms.
+
+79
+00:05:44,500 --> 00:05:46,070
+That's a whole nother technology.
+
+80
+00:05:46,150 --> 00:05:51,010
+But if you if you find that you want to do things differently along the way that's absolutely fine.
+
+81
+00:05:51,010 --> 00:05:53,570
+You don't have to follow everything to a tee.
+
+82
+00:05:53,590 --> 00:05:55,030
+It's completely up to you.
+
+83
+00:05:55,210 --> 00:06:00,580
+All right so in the next section we're going to start from absolute scratch and get Python installed
+
+84
+00:06:00,640 --> 00:06:01,460
+and I'm going to do it.
+
+85
+00:06:01,540 --> 00:06:04,160
+I'll show you how to do it on Mac and in Windows.
+

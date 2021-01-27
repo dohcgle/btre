@@ -1,0 +1,504 @@
+1
+00:00:00,260 --> 00:00:05,690
+All right guys so up to this point we have our Gengel application running on and Digital Ocean droplet.
+
+2
+00:00:05,710 --> 00:00:11,430
+Luckily it's not running right now because I stopped the jingoes server but that's how we have it now
+
+3
+00:00:11,430 --> 00:00:14,760
+is not is definitely not the way that you want to keep it.
+
+4
+00:00:14,760 --> 00:00:17,210
+It's not it's not production ready just yet.
+
+5
+00:00:17,220 --> 00:00:19,360
+We need to add a couple of things here.
+
+6
+00:00:19,500 --> 00:00:26,820
+So we're going to use something called unicorn or green unicorn which will it's a python HGP server
+
+7
+00:00:27,270 --> 00:00:33,280
+if you want to read more into it you can go to Google Korn dot dot org.
+
+8
+00:00:33,640 --> 00:00:34,300
+And.
+
+9
+00:00:34,350 --> 00:00:38,520
+So it's a python w SGI HDP server for Unix.
+
+10
+00:00:38,520 --> 00:00:39,840
+So we're going to run this.
+
+11
+00:00:39,840 --> 00:00:45,060
+We're going to let this run our app on eight thousand and then we're also going to put engine X in front
+
+12
+00:00:45,060 --> 00:00:45,700
+of it later.
+
+13
+00:00:45,710 --> 00:00:51,240
+OK engine X is a very popular web server and this will allow us to run it on port 80 so we don't have
+
+14
+00:00:51,240 --> 00:00:53,610
+to go to port eight thousand and so on.
+
+15
+00:00:53,940 --> 00:01:00,060
+All right so the idea here is to install it then we can actually run it like this.
+
+16
+00:01:00,060 --> 00:01:01,520
+But that's still not what we're going to.
+
+17
+00:01:01,530 --> 00:01:05,480
+That's not going to be the end result but we can test it and run it like this.
+
+18
+00:01:06,000 --> 00:01:11,910
+And then after that we need to actually added some config files on the server and add this stuff to
+
+19
+00:01:11,910 --> 00:01:12,540
+it.
+
+20
+00:01:12,570 --> 00:01:12,960
+OK.
+
+21
+00:01:12,960 --> 00:01:18,930
+And some of this I'll have to change because as you can see I still like Django admin as the user wait
+
+22
+00:01:18,930 --> 00:01:20,930
+Gengel admin is the user.
+
+23
+00:01:21,240 --> 00:01:23,610
+What is it that I have to change here.
+
+24
+00:01:23,640 --> 00:01:26,550
+Actually you know what I don't think I do have to change anything.
+
+25
+00:01:26,550 --> 00:01:29,580
+So yeah that should be good if I do then I'll change it.
+
+26
+00:01:29,580 --> 00:01:32,340
+And you guys will have the fresh version.
+
+27
+00:01:32,340 --> 00:01:33,900
+So let's get started.
+
+28
+00:01:33,900 --> 00:01:43,650
+I'm going to install unicorn with the Pipp package manager so let's go back here to our server and I'm
+
+29
+00:01:43,650 --> 00:01:53,050
+logged in as Django admin and I'm in my virtual environment so I'm going to say Pipp install Goonan
+
+30
+00:01:53,060 --> 00:01:53,720
+Korn
+
+31
+00:01:57,130 --> 00:01:57,760
+OK.
+
+32
+00:01:57,780 --> 00:02:04,970
+That was quick and then I have right here we want to add it to our requirements task because that file
+
+33
+00:02:04,970 --> 00:02:10,520
+holds all the dependencies everything that this application needs to run is in there so we should we
+
+34
+00:02:10,520 --> 00:02:12,780
+should put this in there so it's WIPs.
+
+35
+00:02:12,950 --> 00:02:18,570
+Let's go back to our terminal and let's say Pipp freeze.
+
+36
+00:02:18,980 --> 00:02:20,430
+And we want this.
+
+37
+00:02:20,540 --> 00:02:28,530
+We want to add this to requirements Dot T x t OK.
+
+38
+00:02:28,540 --> 00:02:33,610
+So once we do that let's take this line here and this should actually run our server but we may not
+
+39
+00:02:33,610 --> 00:02:38,390
+see any static files images stuff like that.
+
+40
+00:02:38,410 --> 00:02:41,350
+So let's try to run it and see what we get.
+
+41
+00:02:41,560 --> 00:02:48,130
+And notice that this BT Arri this is whatever the name of your your inner folder is so we have BTR the
+
+42
+00:02:48,130 --> 00:02:52,950
+project is our main project and then BT IREY is the main the main file.
+
+43
+00:02:52,950 --> 00:03:02,520
+This is where the WS G-I dot PI file is OK so we're going to run that and it looks like it's working.
+
+44
+00:03:02,520 --> 00:03:06,490
+So let's try and go to our IP.
+
+45
+00:03:06,970 --> 00:03:12,270
+So it's going to copy our IP address as you will obviously be different than mine.
+
+46
+00:03:12,280 --> 00:03:16,960
+I still want to go to port 8000 and there we go OK.
+
+47
+00:03:16,960 --> 00:03:24,090
+So with all these images are showing but you can see that we're missing some some assets here.
+
+48
+00:03:24,310 --> 00:03:25,870
+So we have to fix that.
+
+49
+00:03:26,290 --> 00:03:34,230
+So if we go back to our document here we want to stop the server and then we want to deactivate the
+
+50
+00:03:34,230 --> 00:03:35,480
+virtual environment.
+
+51
+00:03:35,520 --> 00:03:43,970
+OK so let's go back let's go ahead and stop this and to deactivate we simply say de-activate case.
+
+52
+00:03:43,980 --> 00:03:50,860
+Now notice that the van is now gone from the front of this so we know we're not in our environment anymore.
+
+53
+00:03:51,270 --> 00:03:57,000
+So we need to open up this file and this is going to corncobs socket file.
+
+54
+00:03:57,000 --> 00:03:58,730
+So I'm just going to copy this.
+
+55
+00:03:58,740 --> 00:04:03,480
+I'm going to make this smaller and we're going to go ahead and paste this in.
+
+56
+00:04:03,540 --> 00:04:05,380
+Whoops it didn't copy correctly.
+
+57
+00:04:09,590 --> 00:04:10,110
+All right.
+
+58
+00:04:10,310 --> 00:04:14,830
+So this is actually going to create this goon corn dog socket file.
+
+59
+00:04:15,170 --> 00:04:20,220
+And we want to grab this right here.
+
+60
+00:04:20,250 --> 00:04:27,410
+I want to grab these lines and these all come from that digital lotion article.
+
+61
+00:04:27,650 --> 00:04:32,450
+We want to save this so I'm going to do a control x yes and then enter.
+
+62
+00:04:32,710 --> 00:04:34,300
+So that should be saved.
+
+63
+00:04:34,300 --> 00:04:45,350
+Then we want to open this file this caught guna cornets service so we'll grab that and paste that in.
+
+64
+00:04:45,360 --> 00:04:49,120
+We're going to copy this.
+
+65
+00:04:49,170 --> 00:04:49,600
+All right.
+
+66
+00:04:49,620 --> 00:04:55,860
+Now if you didn't use if you didn't use these paths this path right here Home Django admin if this isn't
+
+67
+00:04:55,860 --> 00:05:01,200
+your user name actually put your correct username if you didn't you know make sure that this path goes
+
+68
+00:05:01,200 --> 00:05:02,100
+to your project.
+
+69
+00:05:02,100 --> 00:05:04,980
+Mine is and PI aps and then Bakhtiari projects.
+
+70
+00:05:05,100 --> 00:05:06,090
+Same thing here.
+
+71
+00:05:06,210 --> 00:05:08,300
+This should actually go to your van.
+
+72
+00:05:08,460 --> 00:05:13,950
+So wherever your Vende folder is and then it goes into been going on it will actually create that that
+
+73
+00:05:13,950 --> 00:05:15,130
+folder.
+
+74
+00:05:15,480 --> 00:05:17,710
+And then I think that's that's it.
+
+75
+00:05:17,730 --> 00:05:22,120
+You want to use B.T. area whatever your folder is.
+
+76
+00:05:22,260 --> 00:05:28,040
+Just show you real quick so whatever this folder is OK.
+
+77
+00:05:28,050 --> 00:05:30,990
+If you've been following along then it's going to be Tiare.
+
+78
+00:05:30,980 --> 00:05:31,370
+All right.
+
+79
+00:05:31,380 --> 00:05:35,050
+And notice that's where the W SGI file is.
+
+80
+00:05:35,050 --> 00:05:37,880
+Remember I told you that that has to do with hosting.
+
+81
+00:05:38,010 --> 00:05:42,780
+So you know C or your application is available on the Internet.
+
+82
+00:05:42,810 --> 00:05:43,080
+All right.
+
+83
+00:05:43,080 --> 00:05:43,920
+So this should be good.
+
+84
+00:05:43,920 --> 00:05:49,770
+Let's go ahead and control X and you know I'll be honest with you I don't know what a lot of this stuff
+
+85
+00:05:49,800 --> 00:05:53,840
+actually does but I know that we have to do it.
+
+86
+00:05:53,970 --> 00:05:57,530
+So now we just want to start and enable the unicorn socket.
+
+87
+00:05:57,540 --> 00:06:01,380
+So I'm going to copy this run that command.
+
+88
+00:06:01,740 --> 00:06:05,590
+Copy this.
+
+89
+00:06:05,640 --> 00:06:08,140
+So just keep this file as a resource.
+
+90
+00:06:08,160 --> 00:06:09,800
+So this created the symlink.
+
+91
+00:06:09,800 --> 00:06:11,150
+All right.
+
+92
+00:06:11,190 --> 00:06:13,430
+Then we can check the status if we want
+
+93
+00:06:16,370 --> 00:06:18,850
+all right and you'll notice that it's active it's listening.
+
+94
+00:06:18,850 --> 00:06:22,280
+OK so the unicorn socket is now listening.
+
+95
+00:06:22,280 --> 00:06:28,270
+Check the existence of the Unicorn starts sock.
+
+96
+00:06:28,760 --> 00:06:31,220
+OK good so everything looks looks good.
+
+97
+00:06:31,220 --> 00:06:33,030
+Up to this point.
+
+98
+00:06:33,190 --> 00:06:36,870
+So I mean if you get any errors here.
+
+99
+00:06:37,100 --> 00:06:41,360
+Just make sure that you created this exact these exact files.
+
+100
+00:06:41,450 --> 00:06:45,600
+Make sure that your configuration looks the exact same.
+
+101
+00:06:45,710 --> 00:06:52,150
+I would really like to find the Digital Ocean article.
+
+102
+00:06:52,260 --> 00:06:58,450
+There's just so many of them like there's there's probably like 15 different Django engine acts unicorn
+
+103
+00:06:58,720 --> 00:07:01,300
+configuration articles.
+
+104
+00:07:01,450 --> 00:07:13,290
+See let's say a buntu 18 18.00 for Django and genetics.
+
+105
+00:07:13,780 --> 00:07:17,700
+Digital Ocean.
+
+106
+00:07:17,950 --> 00:07:19,840
+So is this series here.
+
+107
+00:07:20,140 --> 00:07:22,010
+Yes yes this is.
+
+108
+00:07:22,060 --> 00:07:25,750
+This is exactly the article that all of this stuff comes from.
+
+109
+00:07:25,750 --> 00:07:31,420
+You can see that re-installed all this stuff logged into post-grads
+
+110
+00:07:35,840 --> 00:07:37,730
+see where is it.
+
+111
+00:07:40,310 --> 00:07:44,780
+But this is for a new project you can see this is for creating a new Django project
+
+112
+00:07:48,410 --> 00:07:50,310
+just trying to look for the configuration
+
+113
+00:07:52,920 --> 00:07:54,960
+right here so this is what we just did.
+
+114
+00:07:54,960 --> 00:07:56,820
+We created this unicorn socket.
+
+115
+00:07:56,820 --> 00:07:58,890
+This is the code that we put in.
+
+116
+00:07:59,160 --> 00:08:00,600
+We created this service
+
+117
+00:08:03,200 --> 00:08:04,570
+we didn't actually oh yeah we did.
+
+118
+00:08:04,570 --> 00:08:06,540
+This is just part of this file.
+
+119
+00:08:06,860 --> 00:08:10,960
+So this is what the final thing should look like and that's what we did.
+
+120
+00:08:10,970 --> 00:08:11,390
+OK.
+
+121
+00:08:11,390 --> 00:08:16,790
+And then checking for the unicorn socket We did that everything looked good.
+
+122
+00:08:16,790 --> 00:08:18,230
+All right.
+
+123
+00:08:18,230 --> 00:08:25,060
+So now we want to work on engine X so down here you can see configure engine X to proxy pass to unicorn.
+
+124
+00:08:25,290 --> 00:08:33,860
+OK so basically engine X sits up front on port 80 and then it passes it off to Gounod corn which runs
+
+125
+00:08:33,860 --> 00:08:36,820
+on eight thousand I believe.
+
+126
+00:08:36,830 --> 00:08:40,840
+All right so that's we'll do in the next video is start to configure and genetics.
+

@@ -1,0 +1,508 @@
+1
+00:00:00,450 --> 00:00:05,800
+All right guys so this is going to be the first video in the Python fundamentals section where we we
+
+2
+00:00:05,820 --> 00:00:07,850
+just look at at Python code.
+
+3
+00:00:07,850 --> 00:00:09,290
+Nothing to do with Django yet.
+
+4
+00:00:09,300 --> 00:00:14,220
+Just just basic syntax fundamental stuff like that.
+
+5
+00:00:14,250 --> 00:00:22,170
+So in this video I want to look at just the basics I want to look at variable's data types casting things
+
+6
+00:00:22,170 --> 00:00:22,780
+like that.
+
+7
+00:00:22,850 --> 00:00:28,470
+OK and if you already know Python then you probably know most of the stuff that we're going to do here
+
+8
+00:00:28,470 --> 00:00:33,890
+if not also if you want to skip this section entirely and move on then that's that's absolutely fine.
+
+9
+00:00:33,900 --> 00:00:39,480
+But if you haven't used Python before you're very very you know you just got into it.
+
+10
+00:00:39,570 --> 00:00:42,660
+I would suggest going through this section.
+
+11
+00:00:42,660 --> 00:00:48,830
+So starting off with comments in python we use a number sign for a comment.
+
+12
+00:00:48,900 --> 00:00:53,520
+I know that a lot of you are probably javascript developers those of you that have been following me
+
+13
+00:00:53,520 --> 00:00:55,800
+that you know follow my YouTube channel and stuff.
+
+14
+00:00:55,800 --> 00:01:02,970
+We do a lot of javascript where we use you know double slash for comments but in Python we're going
+
+15
+00:01:02,970 --> 00:01:09,630
+to be using the number sign now for multi-line comments there is something called a docstring which
+
+16
+00:01:09,630 --> 00:01:10,920
+has multiple purposes.
+
+17
+00:01:10,920 --> 00:01:15,510
+These are used often in functions to kind of describe what the function does.
+
+18
+00:01:15,570 --> 00:01:21,480
+But as you can see if you just use them outside a function they're there just ignored just like a comment
+
+19
+00:01:21,540 --> 00:01:22,850
+and you can use these.
+
+20
+00:01:22,860 --> 00:01:26,750
+It can either be single quotes or double quotes and there has to be three of them.
+
+21
+00:01:27,060 --> 00:01:32,650
+OK so just as this is a multi-line comment or docstring can be single or double quotes.
+
+22
+00:01:32,670 --> 00:01:39,480
+All right so as far as variable rules it's pretty much the same as as many many other languages are
+
+23
+00:01:39,480 --> 00:01:40,990
+case sensitive so.
+
+24
+00:01:41,010 --> 00:01:46,170
+So name all lowercase and name all uppercase these are going to be different very variables different
+
+25
+00:01:46,170 --> 00:01:47,040
+values.
+
+26
+00:01:47,040 --> 00:01:49,670
+They must start with a letter or an underscore.
+
+27
+00:01:49,830 --> 00:01:55,050
+They can have numbers in them but they can't start with numbers so these are very common rules for most
+
+28
+00:01:55,050 --> 00:01:56,310
+languages.
+
+29
+00:01:56,310 --> 00:02:00,420
+So let's go ahead and create a variable I'm just going to create when called X and I'm going to give
+
+30
+00:02:00,420 --> 00:02:02,090
+it the value of 1.
+
+31
+00:02:02,370 --> 00:02:05,700
+So in python we don't use semi-colons.
+
+32
+00:02:05,700 --> 00:02:06,150
+OK.
+
+33
+00:02:06,150 --> 00:02:10,650
+Like I said I'm going to be to I'm going to be referencing javascript quite a bit because I know that
+
+34
+00:02:10,650 --> 00:02:15,920
+a lot of the people that watch my courses in videos are javascript developers.
+
+35
+00:02:16,050 --> 00:02:17,320
+So going to reference it a lot.
+
+36
+00:02:17,340 --> 00:02:20,040
+And there's there's no semi-colons.
+
+37
+00:02:20,040 --> 00:02:25,620
+There's also not curly brackets and stuff like that but I'll get into that when we do when we do functions
+
+38
+00:02:25,620 --> 00:02:27,390
+and conditionals and stuff.
+
+39
+00:02:27,780 --> 00:02:29,390
+So this is how we can declare a variable.
+
+40
+00:02:29,390 --> 00:02:31,010
+Very very simple.
+
+41
+00:02:31,050 --> 00:02:36,470
+There's no VAR or anything like that we just you know just whatever we want to call the variable.
+
+42
+00:02:36,540 --> 00:02:38,960
+So I'll do that and then I'll put in another variable.
+
+43
+00:02:39,030 --> 00:02:42,030
+I'll do it say 2.5.
+
+44
+00:02:42,030 --> 00:02:46,050
+Let's create another one called name and I'm going to go over these data types in a second.
+
+45
+00:02:46,050 --> 00:02:48,050
+So this one I'll just say Brad.
+
+46
+00:02:48,210 --> 00:02:53,930
+And let's say is underscore cool and we'll set to true.
+
+47
+00:02:53,940 --> 00:02:54,270
+All right.
+
+48
+00:02:54,270 --> 00:02:57,830
+So I've created variables of different types here.
+
+49
+00:02:58,020 --> 00:03:02,070
+And Python has it has quite a few types.
+
+50
+00:03:02,070 --> 00:03:04,140
+The main ones though are going to be int.
+
+51
+00:03:04,350 --> 00:03:10,920
+OK so this is an int in integer for a whole number can be negative or positive a float which is a floating
+
+52
+00:03:10,920 --> 00:03:18,720
+point number or kind of like a decimal a string which can be really anything any string of characters
+
+53
+00:03:18,720 --> 00:03:24,700
+and you can use double or single quotes and then a boolean which is a true or false and booleans.
+
+54
+00:03:24,810 --> 00:03:29,190
+And in Python have to be uppercase have to start with an upper case.
+
+55
+00:03:29,190 --> 00:03:30,870
+OK so you don't want to do that.
+
+56
+00:03:30,870 --> 00:03:32,140
+You want to do that.
+
+57
+00:03:32,670 --> 00:03:36,130
+All right so we're just going to put some comments here.
+
+58
+00:03:36,210 --> 00:03:49,310
+I don't want to say ant and let's say this is a float and I want you guys to have this as a reference
+
+59
+00:03:49,310 --> 00:03:53,330
+so that you can go back to it if you ever need to.
+
+60
+00:03:53,360 --> 00:03:54,560
+So this is a ball.
+
+61
+00:03:54,640 --> 00:03:56,920
+It's actually called a ball not a boolean.
+
+62
+00:03:56,930 --> 00:04:00,110
+That's the the technical type.
+
+63
+00:04:00,470 --> 00:04:02,900
+All right so we can assign variables like this.
+
+64
+00:04:02,900 --> 00:04:05,720
+We can also do multiple assignments.
+
+65
+00:04:08,530 --> 00:04:16,090
+OK so if I want to do it say x y name and is cool.
+
+66
+00:04:16,160 --> 00:04:21,850
+And by the way you can do it this way with underscore or you can do camel case if you want like if you
+
+67
+00:04:21,850 --> 00:04:22,910
+want to do that.
+
+68
+00:04:22,960 --> 00:04:28,670
+I tend to do more underscore for just regular variable names.
+
+69
+00:04:28,810 --> 00:04:32,890
+I don't know why that's just what I want I kind of gravitated towards it but it's up to you how you
+
+70
+00:04:32,890 --> 00:04:35,710
+want to format your variables.
+
+71
+00:04:35,710 --> 00:04:44,410
+And then we can set all of these by using just parentheses and let's say one say two point five let's
+
+72
+00:04:44,410 --> 00:04:49,810
+say Brad and true.
+
+73
+00:04:49,940 --> 00:04:54,960
+OK so it's just kind of a shorthand to do exactly what we did up here.
+
+74
+00:04:55,100 --> 00:04:57,920
+So I'm going to just comment this self for a second.
+
+75
+00:04:57,940 --> 00:05:00,870
+Or not for a second but we're going to comment that.
+
+76
+00:05:01,100 --> 00:05:06,590
+And then I'm going to show you how we can actually output something so in javascript we usually do like
+
+77
+00:05:06,590 --> 00:05:15,420
+a console log in Python we're going to do print OK in Piatt Python too you could do print like this.
+
+78
+00:05:15,650 --> 00:05:21,790
+So if I try to run this with Python 3 we're going to get an error if I actually ran it with Python 2
+
+79
+00:05:23,470 --> 00:05:29,120
+we get one because in Python 3 we need to use parentheses.
+
+80
+00:05:29,130 --> 00:05:33,420
+OK so we want to stick to Python 3 syntax.
+
+81
+00:05:33,500 --> 00:05:35,780
+So it's a print acts like that.
+
+82
+00:05:35,960 --> 00:05:36,950
+OK we'll save that.
+
+83
+00:05:36,950 --> 00:05:43,340
+We'll go back down here and run it and we get one OK and we can print more than one thing if we want
+
+84
+00:05:43,340 --> 00:05:45,210
+to do all of them.
+
+85
+00:05:45,260 --> 00:05:48,600
+Name is cool.
+
+86
+00:05:49,220 --> 00:05:53,460
+And we run that you can see that it's going to print out all of our values here.
+
+87
+00:05:54,550 --> 00:05:55,190
+All right.
+
+88
+00:05:55,570 --> 00:06:11,260
+So I mean we can do like like basic math basic math if we want to do I could say a equals x plus y and
+
+89
+00:06:11,260 --> 00:06:18,180
+then we print a and from this we get 3.5.
+
+90
+00:06:18,410 --> 00:06:27,490
+OK if we want to check the type of comments in here so check type I'm just commenting it so you guys
+
+91
+00:06:27,490 --> 00:06:30,610
+have to go back to so we can do print.
+
+92
+00:06:30,670 --> 00:06:34,540
+And then we just wrap whatever we want to check in type.
+
+93
+00:06:34,750 --> 00:06:37,890
+So let's check will say x.
+
+94
+00:06:37,900 --> 00:06:41,520
+All right we'll save that clear up and run it.
+
+95
+00:06:41,620 --> 00:06:44,590
+This is just from this print up here but this is what we got.
+
+96
+00:06:44,590 --> 00:06:53,710
+So it just gives us class and because it's an integer if we do Y and we run that we get float if we
+
+97
+00:06:53,710 --> 00:07:02,120
+do name we get string and if we do is cool we get bored.
+
+98
+00:07:02,470 --> 00:07:11,570
+Ok so if we want to cast something like let's say we want to take this x value which is an end by default
+
+99
+00:07:11,620 --> 00:07:13,810
+and we want to define it as a string.
+
+100
+00:07:13,810 --> 00:07:14,610
+We can do that.
+
+101
+00:07:14,610 --> 00:07:18,660
+So if we say let's do casting.
+
+102
+00:07:19,270 --> 00:07:30,680
+So say x is equal to and then I'm going to just use s t r so if I wrap x in S T R It should make it
+
+103
+00:07:30,680 --> 00:07:31,460
+a string.
+
+104
+00:07:31,640 --> 00:07:38,690
+So now what I'll do is actually move this down here so we can check the type.
+
+105
+00:07:38,870 --> 00:07:42,250
+And I want to check the type of x K before it was an end.
+
+106
+00:07:42,260 --> 00:07:44,310
+But now I cast it to a string.
+
+107
+00:07:44,450 --> 00:07:47,260
+So now I can see we get class String.
+
+108
+00:07:47,870 --> 00:07:53,280
+OK if I want it to let's do y equals.
+
+109
+00:07:53,330 --> 00:07:57,440
+So why was a float I could change it to an int.
+
+110
+00:07:58,530 --> 00:08:12,280
+OK so if I ever do print type Y we get int and if I actually print the value of y ups you mean to move
+
+111
+00:08:12,280 --> 00:08:13,180
+that.
+
+112
+00:08:13,360 --> 00:08:17,210
+So if I print the value of y we get to K and N.
+
+113
+00:08:17,230 --> 00:08:24,040
+Initially it was 2.5 but it just basically rounded the two because it's in and it's a whole number k
+
+114
+00:08:24,130 --> 00:08:26,730
+if we wanted to change into a float.
+
+115
+00:08:26,740 --> 00:08:36,820
+Let's say we'll do what we did while say z equals and then we'll cast Y to a float K Y was initially
+
+116
+00:08:36,820 --> 00:08:38,600
+an integer.
+
+117
+00:08:39,190 --> 00:08:44,100
+So if we print the type of Z and we print out Z.
+
+118
+00:08:44,300 --> 00:08:45,830
+So you get.
+
+119
+00:08:46,010 --> 00:08:51,260
+So we get class flow because we change it to a float and then it adds point zero onto it.
+
+120
+00:08:51,300 --> 00:08:54,890
+OK because now it's a floating point number.
+
+121
+00:08:54,890 --> 00:08:55,220
+All right.
+
+122
+00:08:55,220 --> 00:08:59,700
+So hopefully that gives you an idea of how to create variables.
+
+123
+00:08:59,750 --> 00:09:04,940
+Some of the data types how to check the types how to cast to different types and stuff like that.
+
+124
+00:09:05,240 --> 00:09:12,470
+OK so that's it for this video guys in the next video I want to start to look at strings and how to
+
+125
+00:09:12,500 --> 00:09:13,430
+format them.
+
+126
+00:09:13,430 --> 00:09:16,190
+I want to look at some string methods and stuff like that.
+
+127
+00:09:16,190 --> 00:09:17,670
+All right so I'll see you in the next video.
+

@@ -1,0 +1,428 @@
+1
+00:00:00,240 --> 00:00:05,310
+All right you guys know that we have our we have a models created we did our migrations our database
+
+2
+00:00:05,310 --> 00:00:08,730
+tables are created for the listings and for the realtors.
+
+3
+00:00:08,730 --> 00:00:14,220
+Now we're going to start to work with the admin area which in my opinion is one of the greatest features
+
+4
+00:00:14,220 --> 00:00:19,350
+of Django especially if you're a freelancer or someone that works by itself or just maybe maybe with
+
+5
+00:00:19,350 --> 00:00:26,250
+just a couple other people you don't have this big giant team where they can create a custom admin area.
+
+6
+00:00:26,250 --> 00:00:28,350
+It just gives you that right off the bat.
+
+7
+00:00:28,360 --> 00:00:31,600
+OK and you can customize it as you see fit.
+
+8
+00:00:31,620 --> 00:00:37,560
+So if you make sure you have your server running and if you just go to local host 8000 thousand slash
+
+9
+00:00:37,620 --> 00:00:39,870
+admin it'll bring you right there.
+
+10
+00:00:39,870 --> 00:00:41,770
+Hey it's been here all along.
+
+11
+00:00:41,790 --> 00:00:50,220
+Now we don't currently have a way to log in so what we need to do is head over to our terminal and I
+
+12
+00:00:50,300 --> 00:00:59,290
+am using my via's code terminal and we need to create a super user if we do Python manage Daut PI health
+
+13
+00:01:00,300 --> 00:01:06,030
+and take a look at let's see up at the top here I believe under.
+
+14
+00:01:06,040 --> 00:01:09,610
+Off you see we have a create super user command.
+
+15
+00:01:09,630 --> 00:01:11,690
+OK so that's what we want to use.
+
+16
+00:01:11,720 --> 00:01:21,240
+So let's go ahead and run that it will say Python managed or pi create super user.
+
+17
+00:01:22,400 --> 00:01:25,690
+So for a user name I'm going to use one.
+
+18
+00:01:25,880 --> 00:01:27,390
+When am I going to use this.
+
+19
+00:01:27,410 --> 00:01:31,520
+I'll just use Bradd but you could use whatever you want.
+
+20
+00:01:31,700 --> 00:01:34,200
+So email address.
+
+21
+00:01:34,270 --> 00:01:42,160
+I'm going to say Brad at gmail dot com which isn't a real email address but I'm going to use it.
+
+22
+00:01:42,300 --> 00:01:43,680
+And then your password.
+
+23
+00:01:43,880 --> 00:01:56,320
+So for my password I'm just going to use 1 2 3 4 5 6 1 2 3 4 5 6 OK so it gives me just a message saying
+
+24
+00:01:56,320 --> 00:01:59,210
+that my password sucks should it.
+
+25
+00:01:59,270 --> 00:02:01,820
+Should we bypass the validation anyway.
+
+26
+00:02:01,990 --> 00:02:04,960
+And I'm just going to say yes.
+
+27
+00:02:04,960 --> 00:02:08,360
+All right so now we have a super user so it's clear this out.
+
+28
+00:02:08,380 --> 00:02:13,300
+And let's go back to the Adwan area and I'm going to put in Brad.
+
+29
+00:02:13,450 --> 00:02:20,450
+And of course use whatever you put whatever you used and put in my sucky password and log in.
+
+30
+00:02:20,740 --> 00:02:27,820
+And there we go so now we are actually in the the administrator area now from here without doing anything
+
+31
+00:02:27,820 --> 00:02:34,120
+at all we can manage our users in groups we can assign groups and Django case we can add groups with
+
+32
+00:02:34,120 --> 00:02:36,010
+different permissions.
+
+33
+00:02:36,010 --> 00:02:44,290
+We can also create and manage users So here's our Bradd user and notice that there is a staff status.
+
+34
+00:02:44,290 --> 00:02:51,010
+So this is basically this just means that this user is an admin and they can actually log into this
+
+35
+00:02:51,010 --> 00:02:57,120
+area because a lot of times you'll have users that can log in to the front end of your web site.
+
+36
+00:02:57,220 --> 00:03:00,310
+But you obviously don't want them to have access to this area.
+
+37
+00:03:00,310 --> 00:03:02,160
+This is for staff only.
+
+38
+00:03:02,170 --> 00:03:06,610
+OK so that's that's where is it right here.
+
+39
+00:03:06,610 --> 00:03:08,730
+So Staff Status.
+
+40
+00:03:08,980 --> 00:03:13,710
+So you check if I uncheck this this user will not be able to log in here.
+
+41
+00:03:14,120 --> 00:03:15,120
+OK.
+
+42
+00:03:15,490 --> 00:03:17,320
+So that's that.
+
+43
+00:03:17,320 --> 00:03:22,850
+Now obviously we want to be able to to to add listings.
+
+44
+00:03:22,900 --> 00:03:25,920
+We want to be able to add realtors and stuff like that.
+
+45
+00:03:26,170 --> 00:03:34,360
+So in order for that to happen we need to go to our code and let's go to listings.
+
+46
+00:03:34,380 --> 00:03:38,670
+OK first we'll go to the listings folder and we want to go to admen pi.
+
+47
+00:03:39,030 --> 00:03:45,380
+OK so this is basically where we can customize admin stuff for the for the listings app.
+
+48
+00:03:45,630 --> 00:03:54,500
+And I want to register register the listing for the admin areas so we need to do that here.
+
+49
+00:03:54,540 --> 00:03:56,370
+Is register your models.
+
+50
+00:03:56,370 --> 00:04:09,870
+So I'm going to say first of all bring in my model so from dog models I want to inport listing gay and
+
+51
+00:04:09,870 --> 00:04:12,900
+amusing listing because in my models that's what I call it.
+
+52
+00:04:12,900 --> 00:04:16,720
+So whatever you have here is what you want to have here.
+
+53
+00:04:17,990 --> 00:04:28,520
+And then let's see to register it we can say admin Daut site dot register and then we want to pass in
+
+54
+00:04:28,670 --> 00:04:30,860
+the name of the model which is listing.
+
+55
+00:04:31,040 --> 00:04:35,540
+And we also want to pass in than actually let's just do that for now.
+
+56
+00:04:36,110 --> 00:04:38,470
+I think that that will actually work.
+
+57
+00:04:38,540 --> 00:04:39,500
+Let's save it.
+
+58
+00:04:39,500 --> 00:04:44,460
+Let's go back to our admen area and reload and there we go we get listings.
+
+59
+00:04:44,750 --> 00:04:45,150
+OK.
+
+60
+00:04:45,170 --> 00:04:51,350
+So if I click on listings we don't have any at the moment but they would be listed here and we can add
+
+61
+00:04:51,350 --> 00:04:56,000
+them notice that we have all of the fields that we added.
+
+62
+00:04:56,000 --> 00:05:02,830
+Even realtor so we can choose a realtor title address city state zip.
+
+63
+00:05:02,830 --> 00:05:04,340
+These are all text.
+
+64
+00:05:04,750 --> 00:05:07,090
+What was it were they called Char fields.
+
+65
+00:05:07,090 --> 00:05:08,730
+This is a text field.
+
+66
+00:05:08,770 --> 00:05:10,480
+The price is is an ENT.
+
+67
+00:05:10,510 --> 00:05:19,980
+So we can also use these arrows just in h t Moul number field and then bedrooms bathrooms can be decimal.
+
+68
+00:05:20,070 --> 00:05:25,300
+Garage isn't into square feet in lot size is also a decimal.
+
+69
+00:05:25,300 --> 00:05:29,630
+For some reason the decimal places they give you a longer input.
+
+70
+00:05:30,080 --> 00:05:35,720
+Well I guess that would make sense because you may have a lot of decimal points that we have photo main.
+
+71
+00:05:35,920 --> 00:05:40,770
+Notice that these are dark and these are not that's because the required fields are dark.
+
+72
+00:05:40,900 --> 00:05:42,900
+And remember we made these optional.
+
+73
+00:05:42,970 --> 00:05:45,640
+So that's why they're not dark or bold like that.
+
+74
+00:05:45,700 --> 00:05:52,370
+And then is published is a checkbox and by default it's going to be checked because we set the default
+
+75
+00:05:52,370 --> 00:05:58,780
+to true in the listing date is going to be the current date and time but you can easily change it with
+
+76
+00:05:58,780 --> 00:06:00,030
+the date picker.
+
+77
+00:06:00,160 --> 00:06:02,190
+OK and then the time picker.
+
+78
+00:06:02,470 --> 00:06:09,910
+So this is just amazing functionality to have right out of the box like for us to create this interface
+
+79
+00:06:10,330 --> 00:06:15,560
+would have would have taken just oh I don't know how long but a long time.
+
+80
+00:06:15,790 --> 00:06:22,240
+So that's why Django is just an incredible framework especially for freelancers.
+
+81
+00:06:22,810 --> 00:06:32,070
+So I think what I want to do now before we start adding data is also add the realtors in the in the
+
+82
+00:06:32,080 --> 00:06:33,070
+admin area.
+
+83
+00:06:33,190 --> 00:06:38,830
+So to do that we're going to do the same thing we're going to go back to the US Code and let's just
+
+84
+00:06:38,830 --> 00:06:47,410
+copy these two lines here and go to realtors admin dot tie in pieces and Except we're going to change
+
+85
+00:06:47,410 --> 00:06:55,090
+this to a realtor and we want to register the model of Realtor.
+
+86
+00:06:55,420 --> 00:06:58,580
+So I save that we go back and we reload.
+
+87
+00:06:58,690 --> 00:07:04,940
+Now we can see realtors if I say add realtor we get the name the photo description phone.
+
+88
+00:07:04,940 --> 00:07:06,960
+Email is MVP.
+
+89
+00:07:07,000 --> 00:07:09,160
+So that's for the seller of the month.
+
+90
+00:07:09,160 --> 00:07:13,870
+And it's not checked by default because we set false to be the default value.
+
+91
+00:07:14,020 --> 00:07:17,970
+And then the higher date which of course we can change if we want.
+
+92
+00:07:17,980 --> 00:07:25,030
+All right so now we have realtors and listings as part of our admin area and another thing you can do
+
+93
+00:07:25,030 --> 00:07:29,620
+is over here you can view the site you can change your password so whatever user you logged in as you
+
+94
+00:07:29,620 --> 00:07:35,770
+can change password you can log out and we're going to customize this pretty nicely like we're going
+
+95
+00:07:35,770 --> 00:07:40,770
+to obviously Gengel administration we don't want that you're not going to want to give this to a client
+
+96
+00:07:40,780 --> 00:07:41,750
+with that.
+
+97
+00:07:41,950 --> 00:07:47,500
+We're going to actually put their logo here and we're going to change the colors to their branding colors
+
+98
+00:07:47,500 --> 00:07:53,710
+so it matches the front end and then we have a lot of customization to do for how the data is displayed.
+
+99
+00:07:54,040 --> 00:07:57,500
+Right now you can't really see it because we haven't added anything.
+
+100
+00:07:57,580 --> 00:08:01,100
+But once we add a listing you'll see it's going to look a little funny.
+
+101
+00:08:01,120 --> 00:08:07,090
+We're going to want to really specify what we want to show like in the table and so on.
+
+102
+00:08:07,090 --> 00:08:07,410
+All right.
+
+103
+00:08:07,420 --> 00:08:08,560
+So we're going to do all that.
+
+104
+00:08:08,590 --> 00:08:14,030
+But before we get into customisation I just want to add some data.
+
+105
+00:08:14,230 --> 00:08:19,180
+OK so in the next video we're going to go ahead and add at our realtor's upload the images all that
+
+106
+00:08:19,180 --> 00:08:21,670
+stuff and also add our listings.
+
+107
+00:08:21,670 --> 00:08:24,610
+All right and then we can work on customizing this admin area.
+

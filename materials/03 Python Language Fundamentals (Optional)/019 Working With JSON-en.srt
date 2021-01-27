@@ -1,0 +1,168 @@
+1
+00:00:00,480 --> 00:00:07,050
+All right Susan's video we're going to look at how to parse Jason in Python how to create Jason from
+
+2
+00:00:07,050 --> 00:00:09,300
+a dictionary stuff like that.
+
+3
+00:00:09,300 --> 00:00:14,220
+Now notice I called this pi underscore Jason up instead of just Jason PI.
+
+4
+00:00:14,310 --> 00:00:17,490
+The reason for that is because there's actually a module called Jason.
+
+5
+00:00:17,490 --> 00:00:20,950
+So we get an error if we try to call it Jason pi.
+
+6
+00:00:21,180 --> 00:00:25,380
+So that's the first thing we need to do is in port Jason.
+
+7
+00:00:25,650 --> 00:00:28,930
+All right and then I'm just going to create some sample Jason.
+
+8
+00:00:29,010 --> 00:00:34,980
+Usually this would come from some kind of AAPI you probably make a request and then get some Jason back
+
+9
+00:00:34,980 --> 00:00:36,690
+and then you can do what you want with it.
+
+10
+00:00:36,690 --> 00:00:38,480
+But I'm just going to kind of hard code.
+
+11
+00:00:38,480 --> 00:00:45,890
+It's also a user Jason and it would be formatted as you know double quotes for the key and the values
+
+12
+00:00:45,890 --> 00:00:48,630
+so I was the first name
+
+13
+00:00:51,140 --> 00:00:55,190
+John and let's do the last name
+
+14
+00:00:58,830 --> 00:01:02,860
+Joe and age.
+
+15
+00:01:04,840 --> 00:01:05,970
+And 30.
+
+16
+00:01:05,980 --> 00:01:06,310
+All right.
+
+17
+00:01:06,340 --> 00:01:09,010
+So that's that's valid Jason.
+
+18
+00:01:09,070 --> 00:01:11,890
+And what we would do is parse it to a dictionary.
+
+19
+00:01:11,920 --> 00:01:20,050
+OK so let's say parse to dictionary so will create a variable called user.
+
+20
+00:01:20,110 --> 00:01:23,580
+And what we would do is call Jason Daut loads.
+
+21
+00:01:23,740 --> 00:01:25,630
+OK Jason datt loads.
+
+22
+00:01:25,630 --> 00:01:31,360
+And again going back to javascript's hopes it's similar to doing.
+
+23
+00:01:31,360 --> 00:01:36,940
+Jason dot parse ok like that.
+
+24
+00:01:36,940 --> 00:01:48,160
+So we're going to pass in here the user Jason and then let's go ahead and print user see what we get.
+
+25
+00:01:48,160 --> 00:01:55,770
+So we're going to say Python 3 when I call this pi underscored Jason Daut pi.
+
+26
+00:01:56,140 --> 00:01:59,340
+And there we go so we get a python dictionary.
+
+27
+00:01:59,530 --> 00:02:09,940
+If we wanted to pull a certain value we can say print user outs to use her first name so we could do
+
+28
+00:02:09,940 --> 00:02:12,780
+that and we get John OK.
+
+29
+00:02:12,790 --> 00:02:17,290
+Now if we had a dictionary and we wanted to parse it to Jason we could do that as well so let's say
+
+30
+00:02:17,320 --> 00:02:20,830
+car equals and let's say make
+
+31
+00:02:24,670 --> 00:02:28,710
+say Ford model
+
+32
+00:02:32,730 --> 00:02:36,300
+Mustang year
+
+33
+00:02:38,490 --> 00:02:39,920
+1970.
+
+34
+00:02:40,230 --> 00:02:40,490
+All right.
+
+35
+00:02:40,500 --> 00:02:47,730
+So we have a dictionary here and if we wanted to parse this to Jason let's say a car Jason and said
+
+36
+00:02:47,730 --> 00:02:54,730
+this to Jason Daut dumps in passing car guy.
+
+37
+00:02:54,750 --> 00:03:02,590
+So if we go ahead and print car Jason it's from the file and there we goes.
+
+38
+00:03:02,600 --> 00:03:05,440
+You can see that this is now in Jason format.
+
+39
+00:03:05,490 --> 00:03:12,770
+So basically two important methods loads which is going to parse parse it to a dictionary from Jason
+
+40
+00:03:12,780 --> 00:03:17,420
+and then dumps which is going to take it from a dictionary and parse it into Jason.
+
+41
+00:03:17,720 --> 00:03:19,050
+OK so that's it guys.
+
+42
+00:03:19,080 --> 00:03:20,490
+I will see you in the next one.
+

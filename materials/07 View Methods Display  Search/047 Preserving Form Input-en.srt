@@ -1,0 +1,316 @@
+1
+00:00:00,260 --> 00:00:07,590
+All right guys so in this video what I want to do is make it so that when we search something such as
+
+2
+00:00:07,590 --> 00:00:13,560
+bedrooms or price or whatever that it stays in the form once it shows us the results.
+
+3
+00:00:13,650 --> 00:00:18,450
+So to do that we're going to edit our search each time I'll file but we also want to go to our listings
+
+4
+00:00:18,940 --> 00:00:20,310
+used up PI.
+
+5
+00:00:20,580 --> 00:00:25,830
+And I just want to pass in something with our contacts so I'm going to add to this.
+
+6
+00:00:26,070 --> 00:00:32,550
+I'm going to add he's using me I'm going to add values as our key and then I'm just going to pass in
+
+7
+00:00:32,550 --> 00:00:39,420
+the whole get requests we're going to say request Daut get get like that.
+
+8
+00:00:39,420 --> 00:00:39,870
+All right.
+
+9
+00:00:39,870 --> 00:00:45,600
+And then whatever we search for if we put like pool in keywords then request dot get keywords should
+
+10
+00:00:45,600 --> 00:00:51,180
+be available to us as values dot keywords.
+
+11
+00:00:51,210 --> 00:00:51,820
+OK.
+
+12
+00:00:51,960 --> 00:01:00,300
+So let's go back to search a CML and let's go to our keywords right here and we're going to add in a
+
+13
+00:01:00,300 --> 00:01:12,820
+value attribute OK so it's a value and we'll say values which we just passed in through our context.
+
+14
+00:01:12,860 --> 00:01:15,720
+Key words.
+
+15
+00:01:16,020 --> 00:01:16,840
+Let's save that.
+
+16
+00:01:16,850 --> 00:01:17,790
+Let's try that out.
+
+17
+00:01:17,810 --> 00:01:26,740
+So if I go and we go to our home page and he's going to reload and search for pool and submit OK so
+
+18
+00:01:26,740 --> 00:01:29,390
+we get our results and now pool is still there.
+
+19
+00:01:29,420 --> 00:01:32,210
+If I search again for boards still there good.
+
+20
+00:01:32,490 --> 00:01:33,850
+It's exactly what we want.
+
+21
+00:01:33,960 --> 00:01:36,250
+So when do the same thing for City.
+
+22
+00:01:36,770 --> 00:01:45,600
+So we're going to add and value equals we want to have our quotes here.
+
+23
+00:01:45,890 --> 00:01:51,220
+So this is going to be values dot city.
+
+24
+00:01:51,260 --> 00:01:56,780
+Now the text fields the input fields like that those are easy because we can simply put a value for
+
+25
+00:01:56,780 --> 00:01:57,570
+the select list.
+
+26
+00:01:57,560 --> 00:01:59,270
+It's a little different.
+
+27
+00:01:59,330 --> 00:02:02,620
+What we want to do is have a conditional in here.
+
+28
+00:02:03,020 --> 00:02:11,680
+So we want to put an if statement and what we want to search is we want to say if key.
+
+29
+00:02:12,060 --> 00:02:22,390
+OK so if the key is equal to values dot state you know what we want to put this in here because the
+
+30
+00:02:22,390 --> 00:02:29,980
+way that we makes an option selected is we add selected like that but we need to loop through and decide
+
+31
+00:02:29,980 --> 00:02:31,780
+which one is going to be selected.
+
+32
+00:02:31,780 --> 00:02:38,350
+So this if statement actually needs to go within there so we're going to just cut it from here and go
+
+33
+00:02:38,350 --> 00:02:41,350
+right here after the double quote.
+
+34
+00:02:41,500 --> 00:02:48,960
+Put a space put my statement in and I think we can get away with doing this on separate lines so let's
+
+35
+00:02:48,970 --> 00:02:51,660
+do that just to make it look a little neater.
+
+36
+00:02:51,700 --> 00:02:58,300
+So remember right after the single quote here and we're going to put our F and then our END-IF
+
+37
+00:03:02,400 --> 00:03:10,950
+K so if the key K right if the key is equal to the key is actually the value of the option.
+
+38
+00:03:11,050 --> 00:03:16,630
+But if that's equal to values not stay then we just want to show selected.
+
+39
+00:03:16,630 --> 00:03:17,010
+Right.
+
+40
+00:03:17,020 --> 00:03:19,570
+So we're just going to put in here the words selected.
+
+41
+00:03:19,570 --> 00:03:22,070
+We want to add that as an attribute.
+
+42
+00:03:23,110 --> 00:03:26,380
+So that should work let's try it out.
+
+43
+00:03:27,520 --> 00:03:33,250
+So I'm going to go to the home page and I'm going to search for California and submit.
+
+44
+00:03:33,340 --> 00:03:35,730
+And now California is still there.
+
+45
+00:03:36,190 --> 00:03:42,980
+OK if I submit again even if I put let's say pool let's say city.
+
+46
+00:03:43,380 --> 00:03:48,110
+I don't know what's a city in California San Diego.
+
+47
+00:03:48,220 --> 00:03:48,960
+I spell that right.
+
+48
+00:03:49,000 --> 00:03:49,860
+I don't know.
+
+49
+00:03:49,870 --> 00:03:50,570
+Submit.
+
+50
+00:03:50,710 --> 00:03:53,790
+And they all stay good.
+
+51
+00:03:53,820 --> 00:03:57,470
+So let's go back and let's do the same thing for the other subjects.
+
+52
+00:03:57,720 --> 00:04:06,860
+So I'll actually copy let's see option key and then we did our if statement here.
+
+53
+00:04:07,010 --> 00:04:13,820
+So we're going to grab this just this just to the END-IF like that and then we'll go down to the next
+
+54
+00:04:14,180 --> 00:04:14,870
+option.
+
+55
+00:04:14,900 --> 00:04:22,560
+We want to go right after the quote After the key going to go in a separate line here and paste that
+
+56
+00:04:22,560 --> 00:04:26,600
+in TAB this over just to look a little better.
+
+57
+00:04:27,390 --> 00:04:27,960
+OK.
+
+58
+00:04:27,970 --> 00:04:32,520
+But we don't want to do values dot state because this is the bedroom field so we're going to save values
+
+59
+00:04:32,520 --> 00:04:35,740
+dot bedrooms.
+
+60
+00:04:36,200 --> 00:04:40,220
+OK whatever the name is because that's what's getting sent to the server.
+
+61
+00:04:40,620 --> 00:04:41,440
+So will do that.
+
+62
+00:04:41,460 --> 00:04:46,990
+And then down here we want the price so again right after the quote record here.
+
+63
+00:04:47,100 --> 00:04:55,740
+Place that in and we want to save values dot and this is price.
+
+64
+00:04:55,870 --> 00:04:56,170
+All right.
+
+65
+00:04:56,170 --> 00:04:57,710
+So that should do it.
+
+66
+00:04:57,720 --> 00:05:03,420
+So let's go back and I'm going to go to the home page and let's just do everything.
+
+67
+00:05:03,420 --> 00:05:05,680
+So poor city will say
+
+68
+00:05:08,610 --> 00:05:18,540
+Boston Massachusetts bedrooms for price 600 and submit and they're all still there.
+
+69
+00:05:18,940 --> 00:05:21,260
+OK and then we could change our search up.
+
+70
+00:05:21,330 --> 00:05:24,970
+So let's change it to something that will actually show up.
+
+71
+00:05:25,110 --> 00:05:37,140
+So say 600 and let's do nor would get rid of poor I think Norwood had four bedrooms.
+
+72
+00:05:37,230 --> 00:05:38,040
+There we go.
+
+73
+00:05:38,340 --> 00:05:40,700
+All right so our search searchers now working guys.
+
+74
+00:05:40,710 --> 00:05:45,630
+So I think they think the next thing that I want to work on is the authentication.
+
+75
+00:05:45,620 --> 00:05:52,080
+We want to be able to register from the front end log in them or work on our inquiries.
+
+76
+00:05:52,080 --> 00:05:53,550
+We also want to have messaging.
+
+77
+00:05:53,550 --> 00:05:58,410
+So for instance when we log in we want something that says you have been logged in stuff like that.
+
+78
+00:05:58,590 --> 00:06:04,890
+So Gengel actually has a messaging app that comes with it by default so we'll be using that.
+
+79
+00:06:04,890 --> 00:06:07,150
+All right so I will see you in the next video.
+

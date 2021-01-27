@@ -1,0 +1,960 @@
+1
+00:00:00,120 --> 00:00:05,310
+Right guys we're going to start to look at adding pagination to our application for our ad for our property
+
+2
+00:00:05,310 --> 00:00:06,110
+listings.
+
+3
+00:00:06,360 --> 00:00:12,570
+Before we we do that I just want to address the little squiggly lines that pilot is now giving us for
+
+4
+00:00:12,930 --> 00:00:19,710
+not putting doc strings here basically comments defining what the method does and things can get quite
+
+5
+00:00:19,770 --> 00:00:21,690
+annoying sometimes.
+
+6
+00:00:21,690 --> 00:00:25,830
+So what I wanted to do is I'm just going to basically tell he'll tell the winter to shut up about stuff
+
+7
+00:00:25,830 --> 00:00:26,630
+like this.
+
+8
+00:00:26,730 --> 00:00:31,470
+So I'm going to go to my settings file you can do control or command comma or just go down to the gear
+
+9
+00:00:31,470 --> 00:00:32,790
+and then settings.
+
+10
+00:00:32,790 --> 00:00:37,710
+And I already have the python glinting dot PI args over here.
+
+11
+00:00:37,710 --> 00:00:40,050
+What I'm going to do is just add to this.
+
+12
+00:00:40,140 --> 00:00:47,780
+I'm going to put make sure we put a comma there and then I'm going to say dash dash errors.
+
+13
+00:00:48,270 --> 00:00:50,690
+Dash only.
+
+14
+00:00:50,730 --> 00:00:52,310
+OK we'll save that.
+
+15
+00:00:52,410 --> 00:00:53,430
+And let's go back.
+
+16
+00:00:53,430 --> 00:00:55,270
+And now those squiggly lines are gone.
+
+17
+00:00:55,320 --> 00:01:04,020
+So let's get into pagination Now this documentation here at Gengel project dot com This explains pagination
+
+18
+00:01:04,020 --> 00:01:10,380
+you want to go down to using paginate or in view and the first thing we need to do is edit some stuff
+
+19
+00:01:10,410 --> 00:01:11,830
+in our method.
+
+20
+00:01:11,880 --> 00:01:15,900
+Our index method we want to add a paginate are.
+
+21
+00:01:16,080 --> 00:01:20,240
+So basically we see paginate or equals paginate and we pass in.
+
+22
+00:01:20,310 --> 00:01:22,740
+In our case it's going to be our listings.
+
+23
+00:01:22,740 --> 00:01:29,520
+We say how many per page we want and then we go out here and we get the page from the get requests because
+
+24
+00:01:29,520 --> 00:01:35,340
+if you're on let's say Page two you're going to have a u r l parameter that says Page equals 2 and so
+
+25
+00:01:35,340 --> 00:01:35,630
+on.
+
+26
+00:01:35,640 --> 00:01:40,560
+You need to get that and the need to pass that into paginate or doget page.
+
+27
+00:01:40,570 --> 00:01:42,770
+So let's let's handle that first.
+
+28
+00:01:42,810 --> 00:01:45,610
+So we'll go to our index method here.
+
+29
+00:01:45,930 --> 00:01:46,300
+All right.
+
+30
+00:01:46,320 --> 00:01:51,150
+And then we already have listings equals objects at all.
+
+31
+00:01:51,210 --> 00:01:58,380
+So right underneath that I'm going to add in a paginate her and we're going to set that equal to paginate
+
+32
+00:01:58,380 --> 00:02:00,690
+or just like it said in the documentation.
+
+33
+00:02:00,960 --> 00:02:06,900
+And we're going to pass in the listings which comes from the database the variable above and then the
+
+34
+00:02:06,900 --> 00:02:09,370
+number of listings we want per page.
+
+35
+00:02:09,540 --> 00:02:15,060
+Okay and I'm going to do I want 6 per page but just to test things out I'm going to do three.
+
+36
+00:02:15,090 --> 00:02:19,980
+OK because we only have 6 total and we can't test it if we do 6 per page.
+
+37
+00:02:19,980 --> 00:02:21,750
+So when want say 3 per page.
+
+38
+00:02:22,050 --> 00:02:31,890
+Ok then we need to create a variable called page and set that to request dot get dot get and then pass
+
+39
+00:02:31,910 --> 00:02:32,510
+in here.
+
+40
+00:02:32,530 --> 00:02:39,930
+Page because that's the parameter we're looking for then we want a variable called Page underscore listings
+
+41
+00:02:40,710 --> 00:02:44,410
+and set this equal to that paginate or value.
+
+42
+00:02:44,670 --> 00:02:50,580
+And we want to say dog get underscore page and palps that should be an underscore.
+
+43
+00:02:50,940 --> 00:02:54,480
+And then we want to pass in page k.
+
+44
+00:02:54,780 --> 00:03:00,750
+Now instead of passing the listings directly into our context instead of passing this we actually want
+
+45
+00:03:00,750 --> 00:03:03,980
+to pass past in our page listings instead.
+
+46
+00:03:03,990 --> 00:03:10,290
+So let's do that let's just go right here and say paged underscored listings.
+
+47
+00:03:10,290 --> 00:03:11,860
+All right so that's the first part.
+
+48
+00:03:11,900 --> 00:03:13,050
+Okay that takes care of this.
+
+49
+00:03:13,050 --> 00:03:19,710
+Now I am getting an error saying that paginate doesn't exist or undefined variable paginate or that's
+
+50
+00:03:19,710 --> 00:03:28,500
+because we actually have to bring this in so up at the top here we're going to say from Django Daut
+
+51
+00:03:28,890 --> 00:03:36,230
+core Daut paginate or we want to import.
+
+52
+00:03:36,270 --> 00:03:44,700
+Actually going to import a couple of things here we're going to import empty page page not an integer
+
+53
+00:03:44,730 --> 00:03:46,460
+and paginate.
+
+54
+00:03:46,980 --> 00:03:47,450
+OK.
+
+55
+00:03:47,460 --> 00:03:52,890
+And now that paginate should be once I save that red line should be gone.
+
+56
+00:03:52,950 --> 00:03:53,280
+All right.
+
+57
+00:03:53,280 --> 00:03:58,740
+So like I said that's the first part that takes care of fetching from the database what we need.
+
+58
+00:03:58,740 --> 00:04:02,190
+Now we have to deal with actually displaying it the right way.
+
+59
+00:04:02,190 --> 00:04:06,420
+So if we go back to the documentation it shows us how to do that.
+
+60
+00:04:06,420 --> 00:04:12,030
+Except they're using contacts we're using listings but basically we can check to see if there's a previous
+
+61
+00:04:12,030 --> 00:04:16,230
+page we can put that previous page number or put a link to it.
+
+62
+00:04:16,230 --> 00:04:23,670
+So you see we would go to the URL and then the parameter of page equals and then the previous page number
+
+63
+00:04:23,940 --> 00:04:26,290
+down here we can see if it does next.
+
+64
+00:04:26,340 --> 00:04:29,880
+And then we can make a link going to the next page number.
+
+65
+00:04:29,880 --> 00:04:34,060
+Now you could simply copy this and paste it in but it's going to look like crap.
+
+66
+00:04:34,140 --> 00:04:37,140
+What we want to do is make it look like this.
+
+67
+00:04:37,190 --> 00:04:39,660
+OK like bootstraps pagination.
+
+68
+00:04:39,780 --> 00:04:47,430
+And if we look at the markup we have a UL of pagination class of pagination and then every list element
+
+69
+00:04:47,670 --> 00:04:50,390
+has a class of page item.
+
+70
+00:04:50,460 --> 00:04:55,350
+OK so that's really important to remember and then every link has as a class of page link.
+
+71
+00:04:55,620 --> 00:05:02,270
+And if there's no previous Then we want to have a disabled class ok.
+
+72
+00:05:02,280 --> 00:05:08,480
+Whichever one is active we have an active class so we're going to kind of combine this and this together
+
+73
+00:05:08,480 --> 00:05:11,350
+so that we can have a nice looking pagination.
+
+74
+00:05:11,630 --> 00:05:18,350
+But just to show you why reload this page we only get three three listings.
+
+75
+00:05:18,350 --> 00:05:19,820
+Now this here doesn't work.
+
+76
+00:05:19,820 --> 00:05:21,890
+This is just this is just markup.
+
+77
+00:05:21,890 --> 00:05:27,240
+We have we haven't added anything dynamic to this so let's head on over to our template listings daughter
+
+78
+00:05:27,290 --> 00:05:32,840
+aged him how and what you what you saw there is just this there's nothing there's nothing dynamic it's
+
+79
+00:05:32,840 --> 00:05:34,230
+just age you know.
+
+80
+00:05:34,520 --> 00:05:42,140
+All right so what are you going to do is I'm going to go see.
+
+81
+00:05:42,500 --> 00:05:49,520
+Let's first of all do a check to see if there are other pages for instance if there's six listings total.
+
+82
+00:05:49,610 --> 00:05:55,070
+And we put six per page than we don't want anything to show we don't want any pagination to show so
+
+83
+00:05:55,070 --> 00:05:58,710
+we want to wrap the whole thing in an IF statement.
+
+84
+00:05:59,360 --> 00:06:09,230
+So at our tags here and we'll say if listings and there's there's something called has underscore other
+
+85
+00:06:09,860 --> 00:06:11,780
+underscore pages.
+
+86
+00:06:11,990 --> 00:06:20,580
+OK so we will see if there's other pages and we want to end this down below the UL so down here we just
+
+87
+00:06:20,580 --> 00:06:21,190
+want to do.
+
+88
+00:06:21,210 --> 00:06:25,740
+And if like that.
+
+89
+00:06:25,890 --> 00:06:28,550
+And I'm just going to tab the UL over.
+
+90
+00:06:28,690 --> 00:06:30,400
+OK so that takes care of that part.
+
+91
+00:06:30,410 --> 00:06:33,950
+Now we want to check to see if there's any previous pages.
+
+92
+00:06:34,010 --> 00:06:40,240
+So let's go see and try to think if I should just delete all this.
+
+93
+00:06:40,250 --> 00:06:46,570
+And yeah you know let's let's get rid of all the allies it will just rewrite them.
+
+94
+00:06:46,680 --> 00:06:54,150
+So I just want to check for previous pages so we're going to do and pagination is always at least in
+
+95
+00:06:54,150 --> 00:06:55,110
+my experiments.
+
+96
+00:06:55,120 --> 00:07:01,650
+Experiments experience it's been a pain in the ass in Django actually makes it pretty easy.
+
+97
+00:07:01,770 --> 00:07:07,000
+It's one of the easier frameworks to deal with pagination and in my opinion.
+
+98
+00:07:07,320 --> 00:07:16,120
+So let's say if listings DOT has underscore previous.
+
+99
+00:07:16,770 --> 00:07:19,350
+When I keep putting a plus for an underscore.
+
+100
+00:07:19,740 --> 00:07:23,070
+So if it has previous And then let's do an NF
+
+101
+00:07:27,800 --> 00:07:28,490
+OK.
+
+102
+00:07:28,850 --> 00:07:34,740
+So if it has previous And we want to put an ally in I want to give it a class of page dash item they
+
+103
+00:07:34,740 --> 00:07:41,850
+should all have this class all the allies and then inside we want to tag with the class of page Dasch
+
+104
+00:07:42,360 --> 00:07:43,390
+link.
+
+105
+00:07:43,920 --> 00:07:48,150
+And as far as the Tref goes we just want to do.
+
+106
+00:07:48,630 --> 00:07:56,280
+It's going to be the current page and then we want to add a parameter of page equals and put in our
+
+107
+00:07:56,280 --> 00:08:11,450
+double curly brace syntax and say listings Daut previous pervious previous underscore page number on
+
+108
+00:08:11,630 --> 00:08:13,530
+a page underscore a number.
+
+109
+00:08:14,010 --> 00:08:17,280
+And inside here we get put like the word previous.
+
+110
+00:08:17,280 --> 00:08:23,010
+I'm actually going to put some some left facing arrows so we can do that with the entity of Ampere's
+
+111
+00:08:23,010 --> 00:08:24,990
+stamp L. A.
+
+112
+00:08:25,020 --> 00:08:29,250
+Q You go and put a semi-colon.
+
+113
+00:08:29,520 --> 00:08:32,640
+OK so give us the arrows.
+
+114
+00:08:32,700 --> 00:08:36,480
+Now we actually want to have an else so read here.
+
+115
+00:08:38,880 --> 00:08:49,030
+We're going to say else K else then let's say because remember this is if there is a previous item then
+
+116
+00:08:49,030 --> 00:08:51,530
+we want to link to to go back to the previous.
+
+117
+00:08:51,550 --> 00:09:02,620
+If there's not then what I want to do is have a disabled link so let's say my class of page item.
+
+118
+00:09:02,950 --> 00:09:07,820
+And also going to give it a class of disabled OK.
+
+119
+00:09:07,850 --> 00:09:12,530
+And then within here let's just put in a tag
+
+120
+00:09:15,020 --> 00:09:18,220
+and we're going to give us a class of page link.
+
+121
+00:09:18,290 --> 00:09:20,760
+So they should all have a class of page link.
+
+122
+00:09:21,230 --> 00:09:27,290
+And I'm actually just going to do a class I'm not even going to do in a trough because remember there
+
+123
+00:09:27,290 --> 00:09:29,140
+is no previous pages.
+
+124
+00:09:29,240 --> 00:09:34,820
+So I just want to have it like a disabled arrow link so I'll just put in another L A.
+
+125
+00:09:34,820 --> 00:09:41,250
+Q You know entity and that should do it for that.
+
+126
+00:09:42,260 --> 00:09:46,660
+So if I save this and we take a look and see if it shows anything it's free load.
+
+127
+00:09:46,910 --> 00:09:47,470
+OK.
+
+128
+00:09:47,660 --> 00:09:49,610
+So this is disabled.
+
+129
+00:09:49,610 --> 00:09:51,740
+Notice there's no pointer I can't.
+
+130
+00:09:51,740 --> 00:09:55,610
+It doesn't do anything because there's no previous on the first page.
+
+131
+00:09:55,700 --> 00:09:56,830
+So that's that.
+
+132
+00:09:56,840 --> 00:10:01,890
+Now let's move on to all of our links.
+
+133
+00:10:01,920 --> 00:10:05,830
+OK all of our pages are links to those pages.
+
+134
+00:10:05,840 --> 00:10:12,700
+So after this END-IF Well we're going to want to do is loop through our page range.
+
+135
+00:10:12,770 --> 00:10:20,060
+So we do this by saying 4 and this is all in the documentation that I just showed you were just doing
+
+136
+00:10:20,060 --> 00:10:24,950
+it in a way that styles it in with bootstrap for.
+
+137
+00:10:25,310 --> 00:10:28,010
+So let's say for I an
+
+138
+00:10:30,700 --> 00:10:38,130
+listings dot paginate or dot page underscore range.
+
+139
+00:10:38,380 --> 00:10:44,200
+OK so whatever that page Drange is and let's put our end for down here.
+
+140
+00:10:46,260 --> 00:10:46,630
+All right.
+
+141
+00:10:46,640 --> 00:10:50,060
+And then we want to do in site here and if
+
+142
+00:10:54,340 --> 00:11:00,720
+so we want to do and if listings Daut number
+
+143
+00:11:04,410 --> 00:11:11,780
+save listings that number is equal to that index and then we'll do and END-IF
+
+144
+00:11:15,470 --> 00:11:15,940
+OK.
+
+145
+00:11:15,960 --> 00:11:19,740
+So if that's true then let's put in line here.
+
+146
+00:11:19,740 --> 00:11:26,760
+This is going to be the active link so we're going to do ally we're going to have a class of page Dasch
+
+147
+00:11:27,390 --> 00:11:29,970
+item and also a class of active
+
+148
+00:11:33,360 --> 00:11:40,270
+K and then inside there we're going to have a link with the class of page Desch link.
+
+149
+00:11:41,060 --> 00:11:51,520
+And as far as the see we're not going to have in a track it's just going to be an A with a class because
+
+150
+00:11:51,520 --> 00:11:53,260
+this is the active page.
+
+151
+00:11:53,620 --> 00:11:58,840
+But in here we want to put whatever the index is so we're just going to go like that.
+
+152
+00:12:01,370 --> 00:12:01,880
+Right.
+
+153
+00:12:01,920 --> 00:12:04,040
+And we want an else.
+
+154
+00:12:04,050 --> 00:12:09,520
+So this list if listings number equals I want an else to this all right.
+
+155
+00:12:09,530 --> 00:12:16,820
+Here let's put in else OK and then we're going to put an ally.
+
+156
+00:12:16,820 --> 00:12:21,030
+Class of page item no active.
+
+157
+00:12:21,240 --> 00:12:25,230
+We only want the active if this is true if it's on the current page.
+
+158
+00:12:25,440 --> 00:12:33,210
+Otherwise we just want page item we want a class of page Dasch link.
+
+159
+00:12:33,390 --> 00:12:39,180
+And as far as the A-Trak it's going to be it's going to have a page queery and it's going to go to whatever
+
+160
+00:12:39,240 --> 00:12:42,030
+the value of it is like that.
+
+161
+00:12:42,180 --> 00:12:49,970
+And then inside here we're going to have eyes as well.
+
+162
+00:12:50,010 --> 00:12:50,360
+All right.
+
+163
+00:12:50,400 --> 00:12:53,290
+So let's save that and see what we get.
+
+164
+00:12:53,580 --> 00:13:00,820
+Ok so I'm going to reload and now we get one into one as you can see one is the active I go to two.
+
+165
+00:13:01,170 --> 00:13:03,060
+Let's see let's make sure these are different.
+
+166
+00:13:03,180 --> 00:13:06,030
+So you can see 18 Jefferson lane which is the latest.
+
+167
+00:13:06,040 --> 00:13:09,690
+Or is it actually we didn't even do it by by day did we.
+
+168
+00:13:09,690 --> 00:13:12,780
+We'll fix that in a minute but yeah now we can go to the second page.
+
+169
+00:13:12,780 --> 00:13:14,330
+Notice the parameter.
+
+170
+00:13:14,400 --> 00:13:18,080
+So it's question mark page equals two.
+
+171
+00:13:18,150 --> 00:13:18,960
+All right.
+
+172
+00:13:18,960 --> 00:13:21,000
+And we can go previous.
+
+173
+00:13:21,030 --> 00:13:25,860
+So now that there is a previous We can actually hit that and it brings us back to once this is working
+
+174
+00:13:25,860 --> 00:13:26,840
+perfectly.
+
+175
+00:13:26,850 --> 00:13:31,890
+The only thing we need now is the next day if there is a next or not.
+
+176
+00:13:31,890 --> 00:13:36,330
+Because right now we're on one so there should be a next button here to go to.
+
+177
+00:13:36,570 --> 00:13:38,880
+So let's let's finish up and do that.
+
+178
+00:13:41,200 --> 00:13:47,440
+So you have a lot of a lot of ifs here let me just make sure that we're in the right place.
+
+179
+00:13:48,220 --> 00:13:49,180
+And if
+
+180
+00:13:52,240 --> 00:13:59,560
+it's the so we want to be outside of the end for you know we want to go right after the end foreign
+
+181
+00:13:59,590 --> 00:14:02,020
+just like we did with the above.
+
+182
+00:14:02,020 --> 00:14:03,370
+We did.
+
+183
+00:14:03,690 --> 00:14:10,270
+If we say we said if listings dot has previous.
+
+184
+00:14:10,310 --> 00:14:11,660
+So we want to do the same with next.
+
+185
+00:14:11,660 --> 00:14:17,730
+So actually what I'm going to do is copy that and the else one do the same thing with the next.
+
+186
+00:14:17,750 --> 00:14:24,050
+So right up to the end for I'm going to pay set in and I'm going to change this to if it has next.
+
+187
+00:14:24,920 --> 00:14:32,300
+OK if it has next then we want to display a list item with page item we want in a tag with the class
+
+188
+00:14:32,300 --> 00:14:38,930
+of page link and instead of doing listings to our previous page number we want to do next page number
+
+189
+00:14:41,010 --> 00:14:45,740
+OK and that should do it for that except I want it I want the arrows to face the other way so we just
+
+190
+00:14:45,740 --> 00:14:48,420
+want to change the L to an R.
+
+191
+00:14:49,010 --> 00:14:55,910
+OK and then at the same time if it's disable our Or if the if has next is false meaning there are no
+
+192
+00:14:55,910 --> 00:14:57,510
+there is no next page.
+
+193
+00:14:57,590 --> 00:15:03,200
+Then we want a disabled link but we want it to be a right arrow so we want to just change that to an
+
+194
+00:15:03,220 --> 00:15:05,700
+R and that should do it save.
+
+195
+00:15:05,810 --> 00:15:08,950
+Let's go back and reload.
+
+196
+00:15:09,290 --> 00:15:14,530
+OK so now we're on page 1 so if I click the next arrow brings us to page 2.
+
+197
+00:15:14,810 --> 00:15:19,300
+And now it's disabled because there is no more there are no more pages to go to.
+
+198
+00:15:19,460 --> 00:15:25,820
+I can go back and now I can't go back because wrong page 1 and we can of course switch and if with the
+
+199
+00:15:25,820 --> 00:15:28,200
+more we have the more listings we have.
+
+200
+00:15:28,340 --> 00:15:29,820
+This should grow with it.
+
+201
+00:15:29,820 --> 00:15:36,220
+And just to prove that let's go ahead and let's change the initial number of listings to 2.
+
+202
+00:15:36,440 --> 00:15:40,030
+And that should give us an extra page so I'll change that to.
+
+203
+00:15:40,040 --> 00:15:44,170
+We'll go back and reload and now we have three down here.
+
+204
+00:15:44,260 --> 00:15:44,640
+Okay.
+
+205
+00:15:44,660 --> 00:15:48,460
+So we can page through all of them all three.
+
+206
+00:15:48,470 --> 00:15:50,750
+All right so we know that that's working that's good.
+
+207
+00:15:50,750 --> 00:15:57,080
+Now I'm just going to change this to 6 because that's what I actually want and if I save now the pagination
+
+208
+00:15:57,080 --> 00:15:59,480
+should go away very low.
+
+209
+00:15:59,490 --> 00:16:02,510
+There's no pagination because there's all there's six total.
+
+210
+00:16:02,630 --> 00:16:08,660
+If I add another one if I add a seventh listing then we're going to see the pads down here.
+
+211
+00:16:08,700 --> 00:16:09,180
+All right.
+
+212
+00:16:09,200 --> 00:16:15,430
+Now like I said I wanted to make sure that we ordered these by date.
+
+213
+00:16:15,740 --> 00:16:24,170
+So what we can do is go back to our view and go to our index method right here.
+
+214
+00:16:24,370 --> 00:16:34,610
+And instead of just doing it all we can do Daut order underscore by and we can pass in a value.
+
+215
+00:16:34,640 --> 00:16:40,390
+Okay we want to pass enlistee but I want it to be descending So we're going to do minus to put a hyphen
+
+216
+00:16:40,390 --> 00:16:44,370
+here list underscore date.
+
+217
+00:16:44,740 --> 00:16:48,220
+OK so let's save that.
+
+218
+00:16:48,280 --> 00:16:50,260
+Check it out for reload.
+
+219
+00:16:50,260 --> 00:16:53,750
+Now the earliest should be first.
+
+220
+00:16:53,770 --> 00:16:54,090
+Okay.
+
+221
+00:16:54,100 --> 00:16:58,960
+Now we really can't tell because they're all three days three hours because we added them all the same
+
+222
+00:16:58,960 --> 00:16:59,620
+time.
+
+223
+00:16:59,860 --> 00:17:04,170
+But I know that lexing Lexington was the last one that I added.
+
+224
+00:17:04,180 --> 00:17:07,990
+So that's what I want the most recent should be the first one here.
+
+225
+00:17:08,440 --> 00:17:08,920
+Okay.
+
+226
+00:17:08,920 --> 00:17:14,440
+Now one other thing that I want to do is make sure that if they're not published in the back end in
+
+227
+00:17:14,440 --> 00:17:22,030
+the admin area that they don't show if I go ahead and I whereas it a circle that's the yeah that's the
+
+228
+00:17:22,030 --> 00:17:28,170
+Lexington one so I'm going to unpublished this and save and if I go to the front end and I reload.
+
+229
+00:17:28,240 --> 00:17:29,580
+It's still there.
+
+230
+00:17:29,620 --> 00:17:35,620
+So we need to add another condition and to do that we can just easily change that on and we do that
+
+231
+00:17:35,620 --> 00:17:40,230
+with filter if we want to filter something out and then we can put the field that we want.
+
+232
+00:17:40,240 --> 00:17:48,010
+I'm going to say if is published case this is just whatever the name of the model field is and we want
+
+233
+00:17:48,010 --> 00:17:50,280
+to say is equal to true.
+
+234
+00:17:50,830 --> 00:17:56,920
+So now it shouldn't show anything where the public should only show if is published is true anything
+
+235
+00:17:56,920 --> 00:17:58,450
+that's false should not show.
+
+236
+00:17:58,450 --> 00:18:03,710
+So let's go back and reload and now you can see the Lexington House does not show.
+
+237
+00:18:04,090 --> 00:18:10,760
+OK if I go back and publish it and save and reload now it shows.
+
+238
+00:18:10,780 --> 00:18:13,510
+So that's exactly what I wanted to do.
+
+239
+00:18:13,510 --> 00:18:14,130
+All right guys.
+
+240
+00:18:14,150 --> 00:18:17,580
+That's going to be it for this video and I will see you in the next one.
+

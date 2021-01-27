@@ -1,0 +1,760 @@
+1
+00:00:00,240 --> 00:00:03,960
+All right guys so now that we're going to start our deployment we're you're going to want to do is go
+
+2
+00:00:03,960 --> 00:00:07,670
+to this just file here and I'll put the link in the course if you don't.
+
+3
+00:00:07,710 --> 00:00:14,610
+If you can't find it just go ahead and google Brad Travers see just Brad Travis get have just in your
+
+4
+00:00:14,610 --> 00:00:16,800
+find this jingle deploy file.
+
+5
+00:00:16,890 --> 00:00:21,510
+All right in this link here is going to give you $10 free so if you don't want to pay anything at all
+
+6
+00:00:21,870 --> 00:00:24,210
+to do this just go ahead and use this link.
+
+7
+00:00:24,210 --> 00:00:27,020
+It'll take you to Digital Ocean and you just want to sign up.
+
+8
+00:00:27,020 --> 00:00:32,640
+OK just sign up like you would any other site validate your e-mail and then just go ahead and log in
+
+9
+00:00:33,090 --> 00:00:35,190
+and you'll see an interface like this.
+
+10
+00:00:35,190 --> 00:00:35,800
+OK.
+
+11
+00:00:36,000 --> 00:00:39,260
+So what we need to do now is create what's called the droplet.
+
+12
+00:00:39,360 --> 00:00:45,930
+OK so we go up here we can say create droplet and a droplet is basically just a VPN a virtual private
+
+13
+00:00:45,930 --> 00:00:46,790
+server.
+
+14
+00:00:46,810 --> 00:00:54,060
+It's it's basically just an instance of a buntu or whatever Linux distribution that you choose.
+
+15
+00:00:54,060 --> 00:01:00,330
+So right here you want to choose your distribution we're going to use a buntu 18.00 for now if you're
+
+16
+00:01:00,510 --> 00:01:05,040
+watching this later on there's a newer version 19 20 whatever.
+
+17
+00:01:05,040 --> 00:01:11,670
+I would suggest using 18.00 for just so that you don't run into any issues and it's absolutely fine
+
+18
+00:01:11,670 --> 00:01:12,870
+to use an older version.
+
+19
+00:01:12,870 --> 00:01:18,720
+It'd be fine for me to use 16 right now so choose that and then I just want to show you that under one
+
+20
+00:01:18,720 --> 00:01:23,030
+click apps there is an option for Django but it's Django one right now.
+
+21
+00:01:23,250 --> 00:01:27,480
+By the time you're watching this it may be Django too but I still wouldn't suggest using this.
+
+22
+00:01:27,480 --> 00:01:29,770
+We're going to do we're going to do everything from scratch.
+
+23
+00:01:29,930 --> 00:01:30,610
+OK.
+
+24
+00:01:30,750 --> 00:01:35,190
+So let's go down here let's choose the first option here which is the $5 per month.
+
+25
+00:01:35,190 --> 00:01:37,950
+So if you use that link I give you you'll get two months of this.
+
+26
+00:01:37,950 --> 00:01:41,800
+With this package that will go down.
+
+27
+00:01:41,790 --> 00:01:42,840
+Who's going to leave all this.
+
+28
+00:01:42,840 --> 00:01:45,710
+New York is fine for me for the data center.
+
+29
+00:01:45,840 --> 00:01:51,360
+Now here you can choose to add an S-sh key and then I'm not going to go this isn't going to be S-sh
+
+30
+00:01:51,360 --> 00:01:52,940
+keys 101.
+
+31
+00:01:52,980 --> 00:01:54,110
+I am going to show you how to do it.
+
+32
+00:01:54,120 --> 00:01:55,540
+But I do have a core.
+
+33
+00:01:55,800 --> 00:02:01,680
+A crash course on YouTube under the Traverse City media YouTube channel if you want to learn more about
+
+34
+00:02:01,710 --> 00:02:02,650
+S-sh.
+
+35
+00:02:02,940 --> 00:02:07,890
+But basically you have the option to have a key so that you don't have to enter a password from your
+
+36
+00:02:07,920 --> 00:02:11,170
+from your computer or it'll just automatically go into the server.
+
+37
+00:02:11,280 --> 00:02:18,210
+Or if you skip this and just create your droplet you'll get what will happen is you get an email with
+
+38
+00:02:18,250 --> 00:02:21,740
+your with a temporary password and you'll log in that way.
+
+39
+00:02:21,780 --> 00:02:27,470
+But we're actually going to create an S-sh key which is highly recommended it makes it more secure and
+
+40
+00:02:27,480 --> 00:02:30,840
+just easier in general so easier to log in.
+
+41
+00:02:30,840 --> 00:02:39,410
+So what we want to do is open up your terminal now with Mac Linux Windows 10 you have an S-sh command.
+
+42
+00:02:39,450 --> 00:02:45,510
+OK so you can do S-sh and you can you can run the you can log in using that command you can create keys
+
+43
+00:02:45,510 --> 00:02:46,590
+and so on.
+
+44
+00:02:46,740 --> 00:02:53,540
+If you're on Windows 8 or less like Windows 7 or something like that which I'm sure isn't too much to
+
+45
+00:02:53,550 --> 00:03:00,240
+many of you but if you are you're going to have to use something called Poddy and poddy gen which allows
+
+46
+00:03:00,240 --> 00:03:03,320
+you to S-sh into servers.
+
+47
+00:03:03,310 --> 00:03:10,140
+I think you might be able to use get Bash in earlier versions of Windows and have access to the S-sh
+
+48
+00:03:10,140 --> 00:03:15,540
+command but I'm not positive on that it's been so long since I've used something you know less than
+
+49
+00:03:15,540 --> 00:03:16,720
+Windows 10.
+
+50
+00:03:17,190 --> 00:03:22,560
+So we're going to go ahead and get started here now I'm in my virtual environment inside my project.
+
+51
+00:03:22,560 --> 00:03:27,650
+I actually want to do all this from my home directory so I'm going to open up a new tab in my terminal.
+
+52
+00:03:27,990 --> 00:03:30,800
+OK so now I'm just in my home directory.
+
+53
+00:03:31,200 --> 00:03:32,140
+OK.
+
+54
+00:03:32,430 --> 00:03:33,260
+No I'm not.
+
+55
+00:03:33,290 --> 00:03:34,470
+I'm still in my project.
+
+56
+00:03:34,470 --> 00:03:38,320
+I want a CD that will bring me into my home directory.
+
+57
+00:03:38,550 --> 00:03:39,540
+OK.
+
+58
+00:03:39,540 --> 00:03:44,190
+So don't we just explain how this works when you create an S-sh key.
+
+59
+00:03:44,190 --> 00:03:49,370
+It's going to go into a folder in your home directory called Daut S-sh.
+
+60
+00:03:49,380 --> 00:03:52,760
+Now you didn't see that when I didn't ask because it's hidden by default.
+
+61
+00:03:52,770 --> 00:03:57,140
+Anything with a dot in front of it usually means that it's a hidden file.
+
+62
+00:03:57,150 --> 00:04:02,420
+So if I do it and last and then dash a which shows all file all files and folders.
+
+63
+00:04:02,610 --> 00:04:04,520
+You'll see it right here.
+
+64
+00:04:04,530 --> 00:04:05,790
+S-sh.
+
+65
+00:04:06,240 --> 00:04:06,520
+All right.
+
+66
+00:04:06,520 --> 00:04:11,750
+And even if you don't have it for some reason when you create your key it will create it automatically.
+
+67
+00:04:11,760 --> 00:04:19,980
+So let's just see what's in my dot S-sh is going to say current directory and then dot S-sh and you
+
+68
+00:04:19,980 --> 00:04:24,420
+can see I have I.D. RSA and Id say pub.
+
+69
+00:04:24,600 --> 00:04:27,000
+I also have some good hobbies.
+
+70
+00:04:27,120 --> 00:04:31,470
+Now when we generate our key it's going to automatically want to name it.
+
+71
+00:04:31,470 --> 00:04:36,050
+This ID underscore RSA and that's fine and you can do that.
+
+72
+00:04:36,330 --> 00:04:43,440
+I'm actually going to call mine ID RSA underscored diod for Digital Ocean because I already have these
+
+73
+00:04:43,440 --> 00:04:48,960
+here for something else and I could use these if I wanted to but I want separate keys for Digital Ocean.
+
+74
+00:04:49,410 --> 00:04:58,080
+So to generate a key if we look at our deployments file right here we want to run S-sh Ki-Jana.
+
+75
+00:04:58,260 --> 00:04:58,710
+Okay.
+
+76
+00:04:58,710 --> 00:05:01,070
+And then it says hit your all the way through.
+
+77
+00:05:01,140 --> 00:05:07,350
+It's going to want to create these files like I said but you can rename them as I'm going to if you
+
+78
+00:05:07,350 --> 00:05:08,140
+want.
+
+79
+00:05:08,220 --> 00:05:11,100
+And then you want to copy the public key file.
+
+80
+00:05:11,340 --> 00:05:12,090
+So let's do that.
+
+81
+00:05:12,090 --> 00:05:17,160
+So it's an S-sh dash co-gen.
+
+82
+00:05:17,220 --> 00:05:20,130
+All right so enter file where you want to save it.
+
+83
+00:05:20,130 --> 00:05:25,640
+So like I said it's going to put it here by default in your home directory S-sh folder.
+
+84
+00:05:25,830 --> 00:05:30,060
+I'm actually going to change this to the same location so users
+
+85
+00:05:33,080 --> 00:05:36,910
+Brad Traviss slash dot S-sh slash.
+
+86
+00:05:37,100 --> 00:05:38,110
+Except I'm going to call it.
+
+87
+00:05:38,100 --> 00:05:46,060
+Id underscore as a underscore d o k so for Digital Ocean I'm going to hit enter and what it'll do with
+
+88
+00:05:46,100 --> 00:05:52,220
+it will create that in the dot pub case of the public and private key Do I want a passphrase.
+
+89
+00:05:52,220 --> 00:05:53,740
+No I'm just going to hit enter.
+
+90
+00:05:54,110 --> 00:05:55,790
+And now that should have created it.
+
+91
+00:05:55,800 --> 00:06:02,630
+So now if we do an ls in our S-sh folder you'll see I have the DEO and then the Deodhar PABX.
+
+92
+00:06:02,830 --> 00:06:03,600
+OK.
+
+93
+00:06:03,620 --> 00:06:09,770
+Now the public key is what goes on the server the private should always always stay secret stay private
+
+94
+00:06:09,800 --> 00:06:11,820
+and stay on your local machine.
+
+95
+00:06:11,830 --> 00:06:12,420
+OK.
+
+96
+00:06:12,620 --> 00:06:17,760
+So what we want to do is we want to get that private that public key and put it in Digital Ocean.
+
+97
+00:06:17,900 --> 00:06:23,810
+So if you look right here we have a command called Cat and this will basically display whatever is in
+
+98
+00:06:23,810 --> 00:06:24,500
+this file.
+
+99
+00:06:24,500 --> 00:06:29,990
+The public key it will display it in the terminal and then we can simply copy it and we can add it to
+
+100
+00:06:29,990 --> 00:06:31,110
+digital ocean.
+
+101
+00:06:31,220 --> 00:06:39,470
+OK so we're going to clear this up and I'm going to do cat current folder Daut S-sh and then I want
+
+102
+00:06:39,530 --> 00:06:53,890
+the ID underscore PABX underscore D.O. dot dot I'm sorry Id say underscore D.O. dot pop.
+
+103
+00:06:54,020 --> 00:06:55,050
+OK.
+
+104
+00:06:55,110 --> 00:07:01,510
+So only put the D.O. if that's what you used if you use the standard IDR say and do that.
+
+105
+00:07:02,210 --> 00:07:03,200
+So this is our key.
+
+106
+00:07:03,200 --> 00:07:09,440
+So what we want to grab it from where it starts at S-sh and then it ends where it says locals are going
+
+107
+00:07:09,440 --> 00:07:16,640
+to copy that whole thing go back to digital ocean say new S-sh key pass that you see we get a little
+
+108
+00:07:16,640 --> 00:07:21,800
+green checkmark letting us know what's the proper format and just going to call this iMac because this
+
+109
+00:07:21,800 --> 00:07:25,990
+is from my Mac machine that I'm on now and I'm going to add that key.
+
+110
+00:07:26,270 --> 00:07:26,850
+OK.
+
+111
+00:07:27,110 --> 00:07:27,710
+So that's it.
+
+112
+00:07:27,710 --> 00:07:31,210
+Now for your hostname you can name this whatever you want.
+
+113
+00:07:31,400 --> 00:07:38,040
+I'll just call it a buntu say a bunch to one and create
+
+114
+00:07:40,860 --> 00:07:41,170
+OK.
+
+115
+00:07:41,180 --> 00:07:43,660
+So now it's going to go through and create our server.
+
+116
+00:07:43,670 --> 00:07:52,100
+It should be pretty quick once it does that we'll have a remote IP address to access it.
+
+117
+00:07:54,070 --> 00:07:58,720
+I mean this is not going to be anything on it by default but we're going to we're going to put our Django
+
+118
+00:07:58,720 --> 00:07:59,520
+app on it.
+
+119
+00:08:00,700 --> 00:08:03,390
+I mean as you can see it goes pretty damn fast.
+
+120
+00:08:03,490 --> 00:08:07,220
+So it's now set up and this is our IP address.
+
+121
+00:08:07,480 --> 00:08:09,870
+OK now if I copy this and I go to it
+
+122
+00:08:17,400 --> 00:08:23,720
+should just say it should just be like like there's nothing here like there's no web site here yet so
+
+123
+00:08:23,720 --> 00:08:27,330
+it can't be reached because we have no web server on it.
+
+124
+00:08:27,330 --> 00:08:27,660
+No.
+
+125
+00:08:27,690 --> 00:08:30,990
+No server software no engine X or Apache.
+
+126
+00:08:30,990 --> 00:08:32,320
+There's nothing on this.
+
+127
+00:08:32,370 --> 00:08:34,080
+So we're just going to get this page.
+
+128
+00:08:34,140 --> 00:08:34,980
+OK.
+
+129
+00:08:35,370 --> 00:08:42,810
+So the next step is I just want to show you if we go to if we click on our droplet you'll see a bunch
+
+130
+00:08:42,810 --> 00:08:44,400
+of options over here.
+
+131
+00:08:44,400 --> 00:08:50,460
+You can see or you can monitor your CPQ your disk input output all that stuff but it's not going to
+
+132
+00:08:50,460 --> 00:08:53,370
+show up just yet because we just created the server.
+
+133
+00:08:53,490 --> 00:08:56,130
+But you will see this later on.
+
+134
+00:08:56,130 --> 00:09:03,660
+Also access you can launch a console from the browser if you want power or if you want to power it off
+
+135
+00:09:05,050 --> 00:09:10,830
+in three volumes you can resize if you want to scale your application and you need more memory or Sipa
+
+136
+00:09:10,860 --> 00:09:20,670
+you can easily upgrade it which is great networking gives you your IP address and Gateway and all that
+
+137
+00:09:20,670 --> 00:09:22,310
+stuff your backups.
+
+138
+00:09:22,350 --> 00:09:29,790
+So you can make backups you can take snapshots you can destroy it so you have full control of this droplet
+
+139
+00:09:29,790 --> 00:09:31,880
+or of this V-P Yes.
+
+140
+00:09:31,890 --> 00:09:32,310
+All right.
+
+141
+00:09:32,350 --> 00:09:35,330
+Well let's go back to the deployment here.
+
+142
+00:09:35,430 --> 00:09:38,730
+This markdown file and we want to just try to log in now.
+
+143
+00:09:38,850 --> 00:09:45,690
+OK so we want the IP address which is right here we can just click copy and we're going to go back to
+
+144
+00:09:45,690 --> 00:09:52,940
+our terminal and let's do S-sh and then we want the user name which is going to be route.
+
+145
+00:09:53,130 --> 00:09:56,240
+OK that's the only user on it for now for now.
+
+146
+00:09:56,340 --> 00:09:59,750
+And then we want to do at and then paste in the IP.
+
+147
+00:10:00,180 --> 00:10:00,570
+OK.
+
+148
+00:10:00,570 --> 00:10:05,880
+So the first time you try to log in you're going to get this message you just want to say yes and then
+
+149
+00:10:05,880 --> 00:10:07,230
+enter.
+
+150
+00:10:07,560 --> 00:10:09,910
+And we got permission denied.
+
+151
+00:10:09,990 --> 00:10:10,450
+OK.
+
+152
+00:10:10,470 --> 00:10:20,640
+So if you get this this right here you might get this if you renamed your key to underscore D.O. like
+
+153
+00:10:20,640 --> 00:10:21,410
+I did.
+
+154
+00:10:21,660 --> 00:10:32,610
+If so then just try to do this S-sh dash add and then you want to do current folder dot S-sh slash and
+
+155
+00:10:32,610 --> 00:10:38,200
+then the name of your key which in my case was ID underscore iris a underscore d'Eau.
+
+156
+00:10:38,360 --> 00:10:38,650
+OK.
+
+157
+00:10:38,670 --> 00:10:41,490
+No dot pub just just like this.
+
+158
+00:10:41,490 --> 00:10:41,870
+OK.
+
+159
+00:10:41,880 --> 00:10:43,690
+Now it's his identity added.
+
+160
+00:10:43,830 --> 00:10:49,210
+So now I'm going to try to log in again.
+
+161
+00:10:49,400 --> 00:10:50,090
+And there we go.
+
+162
+00:10:50,090 --> 00:10:51,020
+So now we're in.
+
+163
+00:10:51,180 --> 00:10:53,960
+OK so if if you got that public key denied.
+
+164
+00:10:53,960 --> 00:10:59,190
+Go ahead and try to run that S-sh ad and hopefully that works for you.
+
+165
+00:10:59,630 --> 00:11:03,620
+If not you may have to go back and recreate the key maybe you didn't copy it right.
+
+166
+00:11:03,620 --> 00:11:04,580
+Or something like that.
+
+167
+00:11:04,580 --> 00:11:09,230
+Maybe there was this because it has to be exact when you put it in that little box and digital ocean
+
+168
+00:11:09,440 --> 00:11:11,810
+there can't be any spaces or anything like that.
+
+169
+00:11:11,810 --> 00:11:13,320
+No no line breaks.
+
+170
+00:11:13,320 --> 00:11:15,430
+You get to make sure it's perfect.
+
+171
+00:11:15,440 --> 00:11:18,710
+So now the reason that I know I'm in is a few things.
+
+172
+00:11:18,710 --> 00:11:23,840
+It's giving us kind of a welcome page here and it's telling it's giving us some information like the
+
+173
+00:11:23,840 --> 00:11:30,920
+system load the processes that are robbing the memory usage the IP address and down here it notice it
+
+174
+00:11:30,920 --> 00:11:36,370
+doesn't say you know Brad traversed or whatever my my computer name is.
+
+175
+00:11:36,410 --> 00:11:38,870
+It says route at buntu one.
+
+176
+00:11:38,960 --> 00:11:45,170
+And remember buntu one is what we called our server and you see we have the little hash symbol the number
+
+177
+00:11:45,170 --> 00:11:46,210
+sign here.
+
+178
+00:11:46,310 --> 00:11:51,650
+And actually if you look at the documentation that I created in are just whenever there's a money sign
+
+179
+00:11:51,890 --> 00:11:57,800
+that means that we're running these commands on our local machine anything where you see the number
+
+180
+00:11:57,800 --> 00:12:00,100
+sign that means we're on the remote server.
+
+181
+00:12:00,200 --> 00:12:05,600
+Ok so I wanted to kind of make that clear so you don't run commands you know commands that you should
+
+182
+00:12:05,600 --> 00:12:10,130
+be running on your server on your local machine and vice versa.
+
+183
+00:12:10,130 --> 00:12:13,580
+All right so at least now we know we can access our server.
+
+184
+00:12:13,670 --> 00:12:17,520
+So the next step is to do some security provisioning.
+
+185
+00:12:17,570 --> 00:12:20,740
+You don't want to be using your root user like we are right now.
+
+186
+00:12:20,750 --> 00:12:27,270
+So in the next video we're going to create a new user and we're also going to disable log in for the
+
+187
+00:12:27,580 --> 00:12:28,640
+root user.
+
+188
+00:12:28,640 --> 00:12:35,030
+OK it's really important security steps to take and then we're also going to enable our firewall just
+
+189
+00:12:35,030 --> 00:12:38,600
+a very simple firewall and we'll take it from there.
+
+190
+00:12:38,600 --> 00:12:40,000
+All right so we'll see you in the next video.
+

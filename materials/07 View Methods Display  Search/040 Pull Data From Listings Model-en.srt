@@ -1,0 +1,532 @@
+1
+00:00:00,210 --> 00:00:03,090
+All right guys so now we come to the fun part.
+
+2
+00:00:03,100 --> 00:00:07,620
+Ok at least in my opinion this is the funniest part of the project and that's fetching data from the
+
+3
+00:00:07,620 --> 00:00:11,220
+database and displaying it in the front facing Web site.
+
+4
+00:00:11,220 --> 00:00:15,690
+So all of these listings we added in the admin area these are all in the database.
+
+5
+00:00:15,690 --> 00:00:26,790
+In fact if we go to PGE admin and we go travel down here to our database and to schemas public and tables
+
+6
+00:00:26,880 --> 00:00:32,970
+and we look in our listings table if we go ahead and just choose view edit data and then all rows you
+
+7
+00:00:32,970 --> 00:00:36,610
+can see all of our our fields in our database.
+
+8
+00:00:37,010 --> 00:00:37,740
+OK.
+
+9
+00:00:37,830 --> 00:00:43,980
+So we want this stuff to display here because right now this is just h t m l it's nothing it's just
+
+10
+00:00:44,070 --> 00:00:45,020
+markup.
+
+11
+00:00:45,420 --> 00:00:51,570
+So in order to do that we want to open up our fiest code and you want to open this file.
+
+12
+00:00:51,570 --> 00:00:56,670
+This is the views of Pi that's inside your listings app or your listings folder.
+
+13
+00:00:56,670 --> 00:01:03,200
+And we our already have index listings search indexes what we're looking at it's displaying the listings.
+
+14
+00:01:03,210 --> 00:01:11,490
+HVM Well OK and if you forget why this is displaying it's because in our URLs dot PI We have just slash
+
+15
+00:01:11,490 --> 00:01:12,310
+listings.
+
+16
+00:01:12,330 --> 00:01:18,740
+OK this is this represents slash listings and it's calling the index method inside the view file.
+
+17
+00:01:18,750 --> 00:01:26,250
+Ok I know it's been spent a little while so you might have forgot that but yeah that's why this is displaying
+
+18
+00:01:26,640 --> 00:01:33,840
+so the idea here is we fetch our listings using our model and then we inserted into our template and
+
+19
+00:01:33,840 --> 00:01:39,060
+then we can just simply loop through and output the listings that are in the database and in order to
+
+20
+00:01:39,060 --> 00:01:46,500
+do that we need to bring in our listing model so we're going to say from DOT models we want to import
+
+21
+00:01:46,670 --> 00:01:47,420
+listings.
+
+22
+00:01:47,580 --> 00:01:53,360
+OK and we can bring in any model we want into any file we want and we can use it.
+
+23
+00:01:53,400 --> 00:02:00,090
+So down here actually before before I fetch the listings I just want to show you guys if you've used
+
+24
+00:02:00,090 --> 00:02:08,400
+any kind of you know view rendering are you know any kind of MVC related framework in any language you've
+
+25
+00:02:08,400 --> 00:02:14,060
+probably seen this before but you can pass in values into a template and we do that with a dictionary
+
+26
+00:02:14,070 --> 00:02:20,110
+so let's say I wanted to do like name Brad.
+
+27
+00:02:20,470 --> 00:02:26,560
+OK so I'll save that and then I want I want to go to this file here listings dot age HTML and let's
+
+28
+00:02:26,560 --> 00:02:30,550
+say right here in this H-1 I want to output that value.
+
+29
+00:02:30,550 --> 00:02:36,220
+I would do double curly braces and say name.
+
+30
+00:02:36,220 --> 00:02:44,330
+So now if I go back and reload you can see that it all puts Brads So that's all we can pass values in.
+
+31
+00:02:44,350 --> 00:02:49,690
+So obviously I don't want to pass a name in or anything I want to pass in the listings but I just wanted
+
+32
+00:02:49,690 --> 00:02:51,510
+to show you how that works.
+
+33
+00:02:51,520 --> 00:02:57,070
+Now usually what I do when you see a lot is instead of actually putting the dictionary as the second
+
+34
+00:02:57,070 --> 00:03:01,500
+parameter will create a variable with the dictionary and then pass that in.
+
+35
+00:03:01,540 --> 00:03:14,160
+So for instance we'll go and we'll say all things context and set that to that dictionary and then pass
+
+36
+00:03:14,160 --> 00:03:17,680
+in context.
+
+37
+00:03:17,680 --> 00:03:20,440
+All right so you see this this format a lot.
+
+38
+00:03:20,470 --> 00:03:26,130
+Now we don't want a passing name we want to pass in our listings so let's fetch them from the database.
+
+39
+00:03:26,170 --> 00:03:28,890
+So the way that we do that is creating a variable.
+
+40
+00:03:28,930 --> 00:03:30,230
+I'm going to call it listings.
+
+41
+00:03:30,340 --> 00:03:37,610
+I need to set it to the model name which is listing and then dot objects dot all.
+
+42
+00:03:37,900 --> 00:03:38,730
+OK.
+
+43
+00:03:38,860 --> 00:03:44,650
+Now when I save this you'll see we get a couple of variables.
+
+44
+00:03:44,650 --> 00:03:45,830
+I mean a couple error is this.
+
+45
+00:03:45,840 --> 00:03:48,390
+This is just a warning we haven't used the listings.
+
+46
+00:03:48,400 --> 00:03:51,300
+We're going to use that right now actually so I can get rid of that.
+
+47
+00:03:51,560 --> 00:03:57,560
+I say listings and for the key will say listings and save.
+
+48
+00:03:57,640 --> 00:04:04,660
+Now we still get this right here it says listing has no object member and this isn't an actual error.
+
+49
+00:04:04,720 --> 00:04:12,550
+What's happening here is this code is not is not picking up that it's not picking up the Django special
+
+50
+00:04:12,550 --> 00:04:19,210
+functions in the pylons that we have and saw the Linter doesn't recognize it but there is something
+
+51
+00:04:19,210 --> 00:04:22,560
+called Pilot dash Django that we can install.
+
+52
+00:04:22,720 --> 00:04:28,030
+So if you're in if you're not see if you're not in vs code or you're not getting this error don't worry
+
+53
+00:04:28,030 --> 00:04:29,120
+about doing this.
+
+54
+00:04:29,200 --> 00:04:35,860
+But if you are just make sure you are in your virtual environment let's do a pip install and let's say
+
+55
+00:04:35,890 --> 00:04:38,300
+pi lint.
+
+56
+00:04:38,640 --> 00:04:42,220
+The Pioline dash Django.
+
+57
+00:04:45,100 --> 00:04:45,980
+OK.
+
+58
+00:04:46,240 --> 00:04:49,680
+Now just doing that isn't going to get rid of the error.
+
+59
+00:04:49,840 --> 00:04:52,540
+In fact I forget exactly what to put in here.
+
+60
+00:04:52,540 --> 00:04:59,270
+Let me just search this real quick so say Django has no objects member.
+
+61
+00:04:59,440 --> 00:05:01,870
+And the first stack overflow.
+
+62
+00:05:01,930 --> 00:05:04,020
+Basically they're having the same problem.
+
+63
+00:05:04,270 --> 00:05:06,190
+And you can see we just did this.
+
+64
+00:05:06,190 --> 00:05:08,550
+Now we want to add this in our area code.
+
+65
+00:05:08,620 --> 00:05:12,810
+So this python glinting and args and then pass that in.
+
+66
+00:05:13,060 --> 00:05:19,960
+So let's clear up grab that and let's put that in our setting so you can do go down to the gear here
+
+67
+00:05:20,500 --> 00:05:27,130
+and go to settings or you can do control or command comma and then I'm just going to pieces over here.
+
+68
+00:05:27,320 --> 00:05:34,580
+See go like right here and paste this.
+
+69
+00:05:34,900 --> 00:05:35,260
+Whoops.
+
+70
+00:05:35,280 --> 00:05:42,670
+We actually don't want these so we'll just do that.
+
+71
+00:05:43,100 --> 00:05:43,390
+OK.
+
+72
+00:05:43,410 --> 00:05:47,810
+So let me save that and let's go back to our views dog pie.
+
+73
+00:05:47,820 --> 00:05:50,110
+And now that that red line is gone.
+
+74
+00:05:50,280 --> 00:05:50,670
+OK.
+
+75
+00:05:50,730 --> 00:05:55,210
+They wouldn't have given us an error or anything it's just it's just lending it's just in the editor.
+
+76
+00:05:55,260 --> 00:05:55,580
+OK.
+
+77
+00:05:55,590 --> 00:05:57,770
+But that's how you can fix this.
+
+78
+00:05:57,900 --> 00:06:00,150
+So this will fetch all of the listings.
+
+79
+00:06:00,150 --> 00:06:04,430
+We don't have to do any rah like Eskew Well queries or anything like that.
+
+80
+00:06:04,470 --> 00:06:11,220
+And then we're just passing it into the dictionary here and then we pass that in the context into the
+
+81
+00:06:11,220 --> 00:06:11,730
+template.
+
+82
+00:06:11,730 --> 00:06:19,830
+So now let's go to listings and I want to go down to where we have this section for our listings and
+
+83
+00:06:19,830 --> 00:06:21,430
+we want to loop through these.
+
+84
+00:06:21,470 --> 00:06:21,960
+OK.
+
+85
+00:06:21,960 --> 00:06:27,390
+Inside our template we want to loop through and output this from here.
+
+86
+00:06:27,570 --> 00:06:29,160
+Basically the first listing.
+
+87
+00:06:29,190 --> 00:06:34,450
+We're not going to have six of these in here we just want one loop with this.
+
+88
+00:06:34,500 --> 00:06:39,770
+Basically the section of each team will with some dynamic variables here.
+
+89
+00:06:39,800 --> 00:06:41,110
+OK.
+
+90
+00:06:41,160 --> 00:06:45,120
+So let me see we're going to
+
+91
+00:06:47,670 --> 00:06:49,630
+try to figure out where to put this so we want.
+
+92
+00:06:49,650 --> 00:06:53,610
+Yeah we'll go right above where it says listing 1 so right in the row here.
+
+93
+00:06:53,880 --> 00:07:01,830
+And let's do our tags and let's say if listings I just want to first of all check to see if there are
+
+94
+00:07:01,830 --> 00:07:07,640
+any listings and I'm going to just do it here now and then I'll put all of the markup up here after.
+
+95
+00:07:07,770 --> 00:07:18,570
+So let's say if and then let's do one else OK else and then let's do and if.
+
+96
+00:07:19,370 --> 00:07:19,790
+OK.
+
+97
+00:07:19,950 --> 00:07:27,270
+So if the listings and Jeff let's take care of the else if and what this means is if there's no listings
+
+98
+00:07:27,270 --> 00:07:28,220
+in the database.
+
+99
+00:07:28,230 --> 00:07:35,730
+So if that's true then I'm going to put a div with the class of call M.D 12 which would take just the
+
+100
+00:07:35,730 --> 00:07:46,230
+whole row and then I'm just going to put a paragraph here that says no listings available.
+
+101
+00:07:47,020 --> 00:07:47,390
+OK.
+
+102
+00:07:47,400 --> 00:07:52,140
+Now if there are listings then that's when we want to loop through them and to do that.
+
+103
+00:07:52,140 --> 00:07:57,370
+We use a for loop and we can do that with the Jinja template syntax.
+
+104
+00:07:57,540 --> 00:08:07,100
+So it's put in our tags and let's say for listing in listings and then we want to end our four loops
+
+105
+00:08:07,110 --> 00:08:11,960
+so we do that with and for.
+
+106
+00:08:12,410 --> 00:08:12,720
+OK.
+
+107
+00:08:12,750 --> 00:08:19,890
+So what I'm going to do now is grab everything from listing 1 so this div down to where it ends here
+
+108
+00:08:20,220 --> 00:08:25,650
+and I'm going to copy that and I'm going to paste that in here in the loop.
+
+109
+00:08:25,890 --> 00:08:26,240
+OK.
+
+110
+00:08:26,250 --> 00:08:33,080
+And then we can get rid of all of the other listings so listing one all of this stuff up to listing
+
+111
+00:08:33,090 --> 00:08:37,440
+6 which ends right there.
+
+112
+00:08:38,790 --> 00:08:41,520
+I believe let me make sure that that that ends there.
+
+113
+00:08:41,580 --> 00:08:44,160
+So I'll actually delete up to listing five.
+
+114
+00:08:44,160 --> 00:08:46,630
+I just want to make sure that this ends at that div..
+
+115
+00:08:46,630 --> 00:08:47,220
+Yeah it does.
+
+116
+00:08:47,220 --> 00:08:47,570
+OK.
+
+117
+00:08:47,580 --> 00:08:49,880
+So I want to just delete that as well.
+
+118
+00:08:50,190 --> 00:08:53,650
+So this just made this file a hell of a lot shorter.
+
+119
+00:08:54,450 --> 00:08:54,750
+OK.
+
+120
+00:08:54,750 --> 00:09:02,760
+So now if the if the listings were fetched from the database and were passed into here and were looping
+
+121
+00:09:02,760 --> 00:09:08,670
+through them correctly it should show six listings but all have the same markup because we haven't added
+
+122
+00:09:08,670 --> 00:09:13,170
+any anything dynamic in here yet so let's at least try that will save.
+
+123
+00:09:13,170 --> 00:09:18,270
+And let's go back to our browser and go to that listings page and reload and there we go.
+
+124
+00:09:18,270 --> 00:09:24,660
+So you can see that it's still it's showing six listings but there are all this drive would circle because
+
+125
+00:09:24,660 --> 00:09:26,070
+it's just static markup.
+
+126
+00:09:26,070 --> 00:09:30,780
+We haven't added any any dynamic values in here.
+
+127
+00:09:30,810 --> 00:09:31,650
+OK.
+
+128
+00:09:32,490 --> 00:09:39,000
+So in the next video what I want to do is replace all of this stuff like the hard coded price and the
+
+129
+00:09:39,000 --> 00:09:40,250
+title address.
+
+130
+00:09:40,260 --> 00:09:46,110
+All this stuff we're going to replace this with dynamic values so that it actually shows the correct
+
+131
+00:09:46,110 --> 00:09:47,790
+data because right now it's not.
+
+132
+00:09:47,940 --> 00:09:48,240
+All right.
+
+133
+00:09:48,240 --> 00:09:50,130
+So we'll do that in the next one.
+

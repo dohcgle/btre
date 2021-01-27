@@ -1,0 +1,324 @@
+1
+00:00:00,130 --> 00:00:05,250
+Hurry guys so our application is finished at least for now up to this point.
+
+2
+00:00:05,280 --> 00:00:08,010
+You know we add more features later on in the course.
+
+3
+00:00:08,470 --> 00:00:16,320
+But now we want to deploy our Django app which is no easy task deploying any kind of Django app or even
+
+4
+00:00:16,320 --> 00:00:21,510
+like a flask application anything to do with Python is usually a little more difficult and let's say
+
+5
+00:00:21,510 --> 00:00:27,780
+something like ph P where you have a lot of pre-made scripts that are included with shared hosts and
+
+6
+00:00:27,780 --> 00:00:28,940
+stuff like that.
+
+7
+00:00:28,950 --> 00:00:31,980
+So Django is a bit more difficult.
+
+8
+00:00:32,340 --> 00:00:36,540
+So what we're going to be doing we're going to be using something called Digital Ocean which I'm sure
+
+9
+00:00:36,540 --> 00:00:42,810
+many of you have heard of they offer virtual private servers they call them droplets but they're basically
+
+10
+00:00:42,810 --> 00:00:50,370
+just instances of Linux distributions so we'll be using a buntu and we're going to pretty much have
+
+11
+00:00:50,370 --> 00:00:57,420
+to recreate most of the stuff that we've done on our local machine meaning set up Django.
+
+12
+00:00:58,080 --> 00:01:04,350
+We're going to set up post-grads on our remote machine but of course we're not going to recreate all
+
+13
+00:01:04,350 --> 00:01:05,270
+the files and stuff.
+
+14
+00:01:05,280 --> 00:01:10,010
+We're going to use it to transfer all of our files to the server.
+
+15
+00:01:10,020 --> 00:01:16,350
+All right so before we get into Digital Ocean we want to push our project to either get Hobb or you
+
+16
+00:01:16,350 --> 00:01:19,500
+can use bitbucket or get lab whatever you want to use.
+
+17
+00:01:19,500 --> 00:01:24,300
+I would definitely suggest get Haab especially if you're you know you're not really familiar with this
+
+18
+00:01:24,300 --> 00:01:26,760
+kind of stuff and you want to follow along.
+
+19
+00:01:26,790 --> 00:01:34,280
+So I'm logged in to get hub now and I'm going to create a new repository and I'm going to call it BTR
+
+20
+00:01:34,290 --> 00:01:45,470
+the underscore project and then let's just say Django real estate Web site.
+
+21
+00:01:45,470 --> 00:01:51,220
+Now I'm actually going to make this private so because I don't want anyone to see this for now I do
+
+22
+00:01:51,220 --> 00:01:56,390
+have about 7000 followers or so on get how and I don't want them seeing this just yet.
+
+23
+00:01:56,410 --> 00:02:01,930
+But I will make this public afterwards if you want to use a private repository you have to pay a fee.
+
+24
+00:02:01,930 --> 00:02:04,500
+I think it's like 8 bucks a month or something like that.
+
+25
+00:02:04,870 --> 00:02:09,650
+So you probably just choose public and then I'm going to do create repository.
+
+26
+00:02:10,000 --> 00:02:16,990
+OK so now we're going to do is push our project to our repository so I'm going to go grab my terminal
+
+27
+00:02:16,990 --> 00:02:24,880
+here and you can see inside my BTR project I do an ls will see all of our stuff here.
+
+28
+00:02:24,880 --> 00:02:34,110
+One thing I do want to do is just take a look at our Get ignore so I'm going to do cat Daut get ignore
+
+29
+00:02:35,890 --> 00:02:39,120
+and just see what's in there just to make sure that this is correct.
+
+30
+00:02:40,060 --> 00:02:44,920
+So have Slash media slash static V and V.
+
+31
+00:02:45,130 --> 00:02:45,420
+OK.
+
+32
+00:02:45,430 --> 00:02:49,720
+So just make sure that you're get ignore looks like this.
+
+33
+00:02:49,760 --> 00:02:55,830
+All right so let's let's I have now just to let you guys know I've been making commits all along.
+
+34
+00:02:55,840 --> 00:03:02,470
+I don't know if you have if you have not then you need to at least make one commit now so that you can
+
+35
+00:03:02,470 --> 00:03:09,220
+push it if you haven't even initialized the repository just go ahead and say get in it and run that.
+
+36
+00:03:09,220 --> 00:03:09,520
+All right.
+
+37
+00:03:09,520 --> 00:03:16,850
+Then you want to do get ad Daut So that will add everything to the staging area.
+
+38
+00:03:16,910 --> 00:03:24,980
+Once you do that you want to do get commit dash em and then whatever comment you could say like initial
+
+39
+00:03:24,980 --> 00:03:26,800
+commit or something like that.
+
+40
+00:03:26,980 --> 00:03:31,940
+OK once you have that you have it all loaded in your local repository and you want to now add get help
+
+41
+00:03:31,940 --> 00:03:34,010
+as a remote repository.
+
+42
+00:03:34,490 --> 00:03:37,570
+OK so I'm going to go ahead and grab this now.
+
+43
+00:03:37,580 --> 00:03:44,010
+I have my S-sh keys set up with a good hub going to go through that here.
+
+44
+00:03:44,030 --> 00:03:47,880
+I am going to show you how to set up S-sh keys for Digital Ocean.
+
+45
+00:03:47,990 --> 00:03:54,560
+But if you don't have your S-sh set up with get Hobb just go ahead and change this to HTP apps and then
+
+46
+00:03:54,560 --> 00:03:58,520
+grab this link and you just have to put your get have a username and password but I'm going to choose
+
+47
+00:03:58,520 --> 00:04:02,440
+S-sh because I should be all set for that.
+
+48
+00:04:02,810 --> 00:04:10,040
+So I'm going to copy that and go back to my terminal and let's add that as a remote pausa story and
+
+49
+00:04:10,040 --> 00:04:15,480
+then we just want to push to the master branch so we want this next command.
+
+50
+00:04:16,740 --> 00:04:20,490
+And we'll run that and hopefully I didn't forget anything.
+
+51
+00:04:21,770 --> 00:04:24,960
+And it should go ahead and push our project.
+
+52
+00:04:24,980 --> 00:04:31,420
+All right and if I go back here and reload There we go and I'll add a read me here later on it's going
+
+53
+00:04:31,420 --> 00:04:32,890
+to leave it for now.
+
+54
+00:04:33,430 --> 00:04:41,290
+So our whole project is now on get Haab Oh you know what I should have put the VS code in in the get
+
+55
+00:04:41,290 --> 00:04:43,070
+ignored but that's fine.
+
+56
+00:04:43,180 --> 00:04:44,860
+I'm just going to leave it for now.
+
+57
+00:04:44,860 --> 00:04:50,250
+So now that we have everything pushed to get hub we're going to go to this link right here.
+
+58
+00:04:50,380 --> 00:04:56,450
+I'll probably create a document in the course so that you don't have to type all this and you can follow.
+
+59
+00:04:56,620 --> 00:04:58,500
+And this is a just.
+
+60
+00:04:58,540 --> 00:05:01,840
+Ok get objects which is like kind of like a just a text file.
+
+61
+00:05:01,840 --> 00:05:07,810
+This is actually a markdown file so it's formatted nicely and this is going to take us from start to
+
+62
+00:05:07,810 --> 00:05:14,460
+finish for deployment so everything from creating a digital ocean droplet to creating S-sh keys to access
+
+63
+00:05:14,460 --> 00:05:20,050
+it to security provisions like disabling the user setting up a firewall.
+
+64
+00:05:20,050 --> 00:05:25,140
+We're going to use post-grads of course you've just set that up our virtual environment.
+
+65
+00:05:25,660 --> 00:05:26,700
+We're going to upload using.
+
+66
+00:05:26,760 --> 00:05:32,560
+Get going to have a local settings file for sensitive data and then unicorn.
+
+67
+00:05:32,560 --> 00:05:38,920
+We're going to use to serve our project on port 8000 thousand and then we're going to use engine X to
+
+68
+00:05:38,920 --> 00:05:44,860
+serve it on port 80 case we use engine X as basically as our proxy and then set up our domain.
+
+69
+00:05:44,860 --> 00:05:47,400
+Now this document may be different.
+
+70
+00:05:47,640 --> 00:05:51,880
+What you're seeing may be different from what you're seeing right here because I'm probably going to
+
+71
+00:05:51,880 --> 00:05:56,760
+have to update it in a couple of places but just follow along with the course do what I do.
+
+72
+00:05:56,980 --> 00:05:58,910
+And you know we'll get through it.
+
+73
+00:05:58,930 --> 00:06:03,040
+Deployment can be a real pain in the ass sometimes but we'll do it.
+
+74
+00:06:03,040 --> 00:06:04,020
+We'll get through it.
+
+75
+00:06:04,180 --> 00:06:10,240
+And as far as digital ocean there's a link here if you click this link and sign up using this link you'll
+
+76
+00:06:10,240 --> 00:06:16,780
+get $10 free and we'll be using the five dollar plans you get two months free hosting and then if you
+
+77
+00:06:16,780 --> 00:06:22,360
+want you can you can add more funds and continue with it or just you know not pay anything.
+
+78
+00:06:22,360 --> 00:06:23,640
+So yeah.
+
+79
+00:06:23,640 --> 00:06:28,450
+So let's get started here in the next video we're going to go through create our droplet.
+
+80
+00:06:28,720 --> 00:06:32,920
+I don't know if we'll do the S-sh keys in that video or the next one but we'll go ahead and we'll get
+
+81
+00:06:32,920 --> 00:06:35,120
+set up to start deployment.
+

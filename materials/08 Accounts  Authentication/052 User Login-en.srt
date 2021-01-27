@@ -1,0 +1,252 @@
+1
+00:00:00,310 --> 00:00:05,680
+All right in the last video we took care of the registrations so we were able to go to register fill
+
+2
+00:00:05,690 --> 00:00:08,660
+out the form we have some validation going on.
+
+3
+00:00:08,940 --> 00:00:14,310
+And once we pass it it registers the user as you can see we registered a user called Kathy.
+
+4
+00:00:14,310 --> 00:00:17,500
+Now we want to be able to log in with that account.
+
+5
+00:00:17,670 --> 00:00:24,720
+So let's go to vs code and inside our views up PI that's in the accounts folder we're going to go down
+
+6
+00:00:24,720 --> 00:00:26,140
+to the log and method.
+
+7
+00:00:26,280 --> 00:00:29,050
+OK so that's the method that we want to use here.
+
+8
+00:00:29,310 --> 00:00:34,250
+So we are already checking to make sure that it's a post request meaning the form is submitted.
+
+9
+00:00:34,290 --> 00:00:38,130
+We're going to get rid of this return here and replace it.
+
+10
+00:00:38,130 --> 00:00:43,470
+And we want to get the variables just like we did above except there's only two that we want and that's
+
+11
+00:00:43,470 --> 00:00:50,940
+the user name and password that comes in from the form so let's say request dot post and we want the
+
+12
+00:00:50,940 --> 00:00:52,600
+user name.
+
+13
+00:00:53,490 --> 00:00:55,470
+OK we also want the password
+
+14
+00:01:01,890 --> 00:01:02,580
+OK.
+
+15
+00:01:02,730 --> 00:01:08,190
+So we have those two now to be able to log in or authenticate.
+
+16
+00:01:08,190 --> 00:01:14,040
+We want to create a variable called user I'm going to set it to off which I already brought in in the
+
+17
+00:01:14,040 --> 00:01:17,790
+last video could be coming from Django Contra.
+
+18
+00:01:18,030 --> 00:01:22,050
+And then there's an authenticate method case we want to see authenticate.
+
+19
+00:01:22,050 --> 00:01:28,230
+We want to do username equals the username variable it's above which is whatever is submitted in the
+
+20
+00:01:28,230 --> 00:01:34,380
+form and then password which is equal to the password that's submitted in the form.
+
+21
+00:01:34,410 --> 00:01:40,590
+OK then we want to I just do want to be in here.
+
+22
+00:01:40,860 --> 00:01:46,580
+We want to check to see if user is not None.
+
+23
+00:01:47,040 --> 00:01:47,430
+OK.
+
+24
+00:01:47,430 --> 00:01:49,550
+So if user is not None.
+
+25
+00:01:49,590 --> 00:01:58,610
+That means that we want to off does that means that the users found OK so that means it's found in the
+
+26
+00:01:58,610 --> 00:02:02,300
+database by this username and password.
+
+27
+00:02:02,300 --> 00:02:04,460
+So these are matched in the database.
+
+28
+00:02:04,460 --> 00:02:05,510
+Then we want to log in.
+
+29
+00:02:05,510 --> 00:02:15,260
+So we say Auth. dot log in and this takes in the requests and it also takes in the user OK.
+
+30
+00:02:15,280 --> 00:02:17,860
+So that's that's pretty much it to log in.
+
+31
+00:02:17,860 --> 00:02:26,050
+So we're going to do a message a success message so let's say message dot success and we'll say request
+
+32
+00:02:28,410 --> 00:02:36,980
+request and we'll say you are now logged in and then we'll redirect.
+
+33
+00:02:37,140 --> 00:02:42,540
+So it's do a return redirect.
+
+34
+00:02:42,570 --> 00:02:47,070
+Now we're going to redirect to the dashboard and I know that we haven't I don't think we created that
+
+35
+00:02:47,280 --> 00:02:49,270
+template yet or we'd like or we didn't.
+
+36
+00:02:49,280 --> 00:02:52,830
+It's just like an H1 but that's ultimately what we're going to want to do.
+
+37
+00:02:52,830 --> 00:02:57,040
+So I'm just going to put that will probably work on that next.
+
+38
+00:02:57,240 --> 00:02:58,980
+But we want to do an else here.
+
+39
+00:02:59,070 --> 00:03:02,100
+So if the user is not found then what do we want.
+
+40
+00:03:02,100 --> 00:03:03,960
+Do we want to output an error.
+
+41
+00:03:03,960 --> 00:03:13,150
+So will say messages this actually should be messages not just message so messages dot our past in our
+
+42
+00:03:13,150 --> 00:03:19,790
+request and then the error that we want to give is invalid credentials.
+
+43
+00:03:20,640 --> 00:03:21,170
+OK.
+
+44
+00:03:21,180 --> 00:03:22,430
+And then we're going to redirect.
+
+45
+00:03:22,420 --> 00:03:29,790
+So we want to return redirect and let's redirect to log in.
+
+46
+00:03:29,790 --> 00:03:33,690
+All right so we'll save that and sorry load
+
+47
+00:03:36,910 --> 00:03:42,320
+just refresh and then I'll just put in whatever say Invalid credentials.
+
+48
+00:03:42,320 --> 00:03:42,830
+Good.
+
+49
+00:03:42,980 --> 00:03:45,910
+So let's try to log in as Cathy.
+
+50
+00:03:46,370 --> 00:03:53,770
+So if I say Cathy put in or correct password and log in we get redirected to the dashboard.
+
+51
+00:03:54,260 --> 00:03:58,430
+And this is the front and this is the front end dashboard This has nothing to do with the admin.
+
+52
+00:03:58,430 --> 00:04:04,460
+Now if I go back to my admin and I reload we're going to be logged out because remember these are these
+
+53
+00:04:04,610 --> 00:04:07,050
+users are all on the same table.
+
+54
+00:04:07,190 --> 00:04:14,270
+So if you're logged in as Kathy then we're logged in as Cathy there's no being logged in as Brad in
+
+55
+00:04:14,270 --> 00:04:16,610
+the in the admin area.
+
+56
+00:04:16,610 --> 00:04:21,000
+And Cathy doesn't have access to the admin area so we're gonna be booted out.
+
+57
+00:04:21,170 --> 00:04:25,590
+So just know that that's how our our workflow is going to kind of go from now on.
+
+58
+00:04:26,120 --> 00:04:28,140
+But yeah so we're logged in now.
+
+59
+00:04:28,310 --> 00:04:31,190
+So we need a way to log out.
+
+60
+00:04:31,250 --> 00:04:34,590
+We also need to create the dashboard.
+
+61
+00:04:34,800 --> 00:04:37,630
+OK we don't even have a nav bar to add a out.
+
+62
+00:04:37,670 --> 00:04:43,760
+So I think in the next video what we'll do is is add the markup for the dashboard and then we can work
+
+63
+00:04:43,760 --> 00:04:46,410
+on the go right so we'll see in the next video.
+

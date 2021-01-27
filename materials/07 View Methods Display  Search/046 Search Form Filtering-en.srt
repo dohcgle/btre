@@ -1,0 +1,924 @@
+1
+00:00:00,540 --> 00:00:06,150
+All right guys so now we're going to get functionality to this to search forms both of them.
+
+2
+00:00:06,510 --> 00:00:12,780
+Basically what we need to do is when we make a search like let's say we put like pool or something or
+
+3
+00:00:12,780 --> 00:00:14,200
+we choose bedrooms.
+
+4
+00:00:14,370 --> 00:00:20,740
+Any field we fill in when we submit we're going to want to first check to see if that field exists.
+
+5
+00:00:20,880 --> 00:00:28,170
+And then we're going to want to pull it out of the request or pull it out of the request I guess we
+
+6
+00:00:28,170 --> 00:00:34,320
+could say and put it into a variable and then we're going to want to base our query set based on that
+
+7
+00:00:34,320 --> 00:00:36,780
+variable we're going to want to filter by that.
+
+8
+00:00:36,780 --> 00:00:43,830
+So if they say state Alabama then we're going to want to put a filter for state of Alabama.
+
+9
+00:00:44,070 --> 00:00:44,640
+OK.
+
+10
+00:00:44,820 --> 00:00:52,710
+So we want to do this one by one and we're going to do this in the listings used up high in the search.
+
+11
+00:00:52,710 --> 00:00:53,340
+OK.
+
+12
+00:00:53,550 --> 00:01:00,720
+So right up at the top here I'm going to start what we're going to call a query set list and we can
+
+13
+00:01:00,720 --> 00:01:02,060
+build on to this.
+
+14
+00:01:02,100 --> 00:01:10,950
+So we're going to see a query set on this score list and I'm initially going to set this to the listing
+
+15
+00:01:11,340 --> 00:01:12,360
+model.
+
+16
+00:01:12,710 --> 00:01:13,190
+OK.
+
+17
+00:01:13,220 --> 00:01:25,280
+We're going to say Dot objects dot order underscore by and let's order by this date.
+
+18
+00:01:26,460 --> 00:01:32,970
+OK so this this query alone is basically just just like the listings page writes the same thing it's
+
+19
+00:01:32,970 --> 00:01:36,290
+just going to get all of the listings.
+
+20
+00:01:36,840 --> 00:01:42,890
+So what we need to do is just add filters for the search.
+
+21
+00:01:43,280 --> 00:01:48,960
+But I think I think what I'm going to do first is just pass it in like this so we can get the template
+
+22
+00:01:48,960 --> 00:01:50,320
+all set up.
+
+23
+00:01:50,340 --> 00:01:54,950
+I think that's that's a better idea so that we can actually see our results so let's go ahead and pass
+
+24
+00:01:54,950 --> 00:02:03,200
+in the contacts and we'll say listing our listings and hopes we want to set that to our queries set
+
+25
+00:02:03,210 --> 00:02:04,390
+list.
+
+26
+00:02:04,850 --> 00:02:05,450
+OK.
+
+27
+00:02:05,640 --> 00:02:11,880
+So now before we do all the search stuff here let's actually just render the what we're getting from
+
+28
+00:02:11,880 --> 00:02:18,600
+this in the template and we can do that by just copying just literally copying what we have in listings.
+
+29
+00:02:18,600 --> 00:02:25,650
+Each team will show up at the top here are not the top but right here where we check for listings we
+
+30
+00:02:25,650 --> 00:02:27,190
+do all that stuff.
+
+31
+00:02:27,570 --> 00:02:31,310
+We actually want the same thing in the search results.
+
+32
+00:02:31,440 --> 00:02:40,410
+OK so let's copy from here if listings down to the END-IF.
+
+33
+00:02:40,530 --> 00:02:44,350
+All right and then we're going to go to our search Daut Tamal.
+
+34
+00:02:44,760 --> 00:02:52,200
+And we want to put this right under the ROE So we want to get rid of listing 1 2 and 1 through 6 actually
+
+35
+00:02:52,200 --> 00:02:52,560
+right.
+
+36
+00:02:52,590 --> 00:02:54,010
+Six of them.
+
+37
+00:02:54,120 --> 00:02:58,170
+So when it go that's 5.
+
+38
+00:02:58,170 --> 00:02:58,470
+All right.
+
+39
+00:02:58,480 --> 00:03:04,940
+So that's down to 5 and I just want to make sure I'm right about where we're listing 6 ends so I'm going
+
+40
+00:03:04,940 --> 00:03:09,210
+to just highlight that div and it ends right here so I want to get rid of that as well.
+
+41
+00:03:09,240 --> 00:03:11,390
+Listing 6 Okay.
+
+42
+00:03:11,420 --> 00:03:14,470
+And then in this row is where we want to pace what I just copied
+
+43
+00:03:19,010 --> 00:03:24,600
+okay and everything should be the same really because it's coming in his listings.
+
+44
+00:03:24,610 --> 00:03:25,450
+Okay.
+
+45
+00:03:25,930 --> 00:03:29,370
+It will be filtered but for now it should just show all of the listings.
+
+46
+00:03:29,380 --> 00:03:35,710
+Let's say that let's go back to searched on each team L and see if that works so if we reload we get
+
+47
+00:03:35,710 --> 00:03:37,520
+all of our listings.
+
+48
+00:03:37,520 --> 00:03:40,780
+All right and we might as well add the pagination as well.
+
+49
+00:03:41,140 --> 00:03:49,620
+Actually no what I don't think I'm actually not going to keep the pagination here on the search Yes
+
+50
+00:03:49,720 --> 00:04:00,120
+let's get rid of this this mark up here where it is and that row is here that may or may not be in your
+
+51
+00:04:00,330 --> 00:04:05,180
+version of the theme because we're not going to use it.
+
+52
+00:04:05,250 --> 00:04:10,860
+All right so now that we're actually showing listings let's go let's add some filters so let's go back
+
+53
+00:04:10,860 --> 00:04:18,650
+to the used up PI and see how we want to do this.
+
+54
+00:04:19,840 --> 00:04:23,240
+Let's just start with searching for keywords.
+
+55
+00:04:23,250 --> 00:04:26,110
+Okay because we have a keywords field.
+
+56
+00:04:26,460 --> 00:04:32,730
+So when we go right down here and I'm going to just comment all the fields so I'll say keywords and
+
+57
+00:04:32,730 --> 00:04:36,120
+first thing we want to do is check if it exists so we can say if
+
+58
+00:04:38,510 --> 00:04:45,800
+keywords in request Daut get.
+
+59
+00:04:46,010 --> 00:04:46,340
+Okay.
+
+60
+00:04:46,360 --> 00:04:52,510
+When you make a request with this form it's a get request and you can actually test to see if it exists.
+
+61
+00:04:52,510 --> 00:04:52,950
+OK.
+
+62
+00:04:52,960 --> 00:04:56,770
+Now if it does let's to let's indent over.
+
+63
+00:04:56,890 --> 00:05:04,600
+If it does then we want to do keywords create a variable called keywords and we can get the actual form
+
+64
+00:05:04,600 --> 00:05:09,520
+value by saying request dog get.
+
+65
+00:05:09,790 --> 00:05:15,520
+And then inside brackets keywords OK.
+
+66
+00:05:15,680 --> 00:05:23,830
+So after we do that I'm actually going to do another if I am going to say if keywords.
+
+67
+00:05:24,450 --> 00:05:28,750
+And the reason I'm doing that is because I want to make sure it's not an empty string.
+
+68
+00:05:29,400 --> 00:05:36,240
+So if keywords then we want to take our query list or query set list and we want to set a filter on
+
+69
+00:05:36,240 --> 00:05:36,380
+it.
+
+70
+00:05:36,390 --> 00:05:45,020
+So we're going to do a query query set list Daut filter and remember the filter method.
+
+71
+00:05:45,300 --> 00:05:50,860
+And we actually want to search the description for any words that are typed into this keyword box.
+
+72
+00:05:51,150 --> 00:05:54,410
+So the way we do that is say description.
+
+73
+00:05:54,690 --> 00:06:00,240
+And if we're doing a search like that that's not an exact match like with our states we're going to
+
+74
+00:06:00,240 --> 00:06:07,890
+we're going to say we want to look where Alabama equals Alabama in that in that actual database field
+
+75
+00:06:07,890 --> 00:06:14,990
+in this case we want to search a whole paragraph for let's say the word pool or something like that.
+
+76
+00:06:15,000 --> 00:06:21,890
+So when we do that we use this double underscore after the field we're searching and we do I contains
+
+77
+00:06:22,750 --> 00:06:30,080
+OK because we're seeing if that paragraph contains this word and it's going to be keywords like that.
+
+78
+00:06:30,470 --> 00:06:31,330
+OK.
+
+79
+00:06:32,840 --> 00:06:33,640
+All rights.
+
+80
+00:06:33,650 --> 00:06:36,500
+So I think that should do it.
+
+81
+00:06:36,500 --> 00:06:40,550
+I mean we could probably just test it now so save.
+
+82
+00:06:40,870 --> 00:06:43,940
+And no we don't have great descriptions.
+
+83
+00:06:43,940 --> 00:06:45,950
+I think we just have dummy data.
+
+84
+00:06:45,950 --> 00:06:49,740
+Let's say let's reload ups we have an
+
+85
+00:06:52,840 --> 00:06:54,830
+sure what happened here.
+
+86
+00:06:54,830 --> 00:06:57,580
+All right looks like our service stops did something wrong.
+
+87
+00:06:57,580 --> 00:06:58,600
+Let's take a look.
+
+88
+00:06:58,600 --> 00:07:02,630
+I'm going to go into my server terminal OK.
+
+89
+00:07:02,690 --> 00:07:13,020
+So if keywords and requests get oh I forgot the code on it's an if statement so we need our coal and
+
+90
+00:07:13,680 --> 00:07:15,560
+parts and our servers running again.
+
+91
+00:07:15,640 --> 00:07:22,470
+Good so I'm going to go back and let's reload.
+
+92
+00:07:22,470 --> 00:07:22,780
+All right.
+
+93
+00:07:22,800 --> 00:07:27,990
+So if we look at like one of the descriptions it's I mean it's all this dummy text search for this word
+
+94
+00:07:27,990 --> 00:07:28,680
+here.
+
+95
+00:07:28,890 --> 00:07:29,970
+Pro-and.
+
+96
+00:07:30,450 --> 00:07:40,120
+So if we go back here and we say Parowan and search I think I think they all have the same description
+
+97
+00:07:40,140 --> 00:07:41,690
+so that that may not help.
+
+98
+00:07:41,680 --> 00:07:47,310
+Let's go let's go in the admin area and let's actually just add something to a description we can search
+
+99
+00:07:47,310 --> 00:07:47,580
+for.
+
+100
+00:07:47,580 --> 00:07:56,810
+So I'll go to listings go to thirty Esack circle and then the end here we'll just say has pool.
+
+101
+00:07:57,400 --> 00:07:59,850
+OK I'll save this.
+
+102
+00:07:59,980 --> 00:08:05,700
+So ideally you want to save it and then let's go back to the home page here and let's search for pool
+
+103
+00:08:06,630 --> 00:08:08,280
+and submit and there it is.
+
+104
+00:08:08,280 --> 00:08:15,650
+So we just have our Essex circle property because that's the only one where the description has poor.
+
+105
+00:08:16,020 --> 00:08:17,960
+All right so that's working.
+
+106
+00:08:18,370 --> 00:08:20,910
+And we should be able to do it from here as well.
+
+107
+00:08:21,090 --> 00:08:23,330
+This should go to the same place which it doesn't.
+
+108
+00:08:23,340 --> 00:08:27,240
+It still goes to search HD Maol So that's something we need to change.
+
+109
+00:08:27,630 --> 00:08:36,980
+So in our search each team will go up to the form and change this to
+
+110
+00:08:40,200 --> 00:08:43,440
+you are search
+
+111
+00:08:51,510 --> 00:08:52,560
+pools.
+
+112
+00:08:52,630 --> 00:08:53,280
+OK.
+
+113
+00:08:53,420 --> 00:09:01,350
+Now if we submit this with no search fields here we should get everything OK all the listings.
+
+114
+00:09:01,370 --> 00:09:01,750
+All right.
+
+115
+00:09:01,760 --> 00:09:11,420
+Now for the other fields here like let's let's do City next city is also a textfield but with city we
+
+116
+00:09:11,420 --> 00:09:18,710
+want to match the exact We want to match the exact thing if we put Chicago we want to match that exact
+
+117
+00:09:18,710 --> 00:09:20,630
+text string in the database.
+
+118
+00:09:20,630 --> 00:09:33,120
+So inside of used up PI here let's go under where we did the keywords and let's do City.
+
+119
+00:09:33,190 --> 00:09:34,870
+I'm actually going to copy this
+
+120
+00:09:38,110 --> 00:09:46,310
+and we're going to say if City in request get there we're going to create a variable called City
+
+121
+00:09:48,970 --> 00:09:51,160
+change that we're going to see if City
+
+122
+00:09:53,830 --> 00:09:59,410
+then let's do query list equals queery list not filter and we want the name of the field which is going
+
+123
+00:09:59,410 --> 00:10:09,040
+to be city but instead of contains We want to match it exact rights we're going to do I exact equals
+
+124
+00:10:09,200 --> 00:10:11,040
+and then the city very variable.
+
+125
+00:10:11,040 --> 00:10:17,760
+So let's go back and let's reload and let's see we have let's do Bedford
+
+126
+00:10:21,470 --> 00:10:27,070
+so Bedford's submit there go see we had Lexington actually.
+
+127
+00:10:27,220 --> 00:10:29,480
+We have them in the drop downs here.
+
+128
+00:10:29,540 --> 00:10:33,300
+Lexington good Norwood.
+
+129
+00:10:33,500 --> 00:10:40,060
+All right so cities working let's search with a lower case so what's to Lexington with a lower case
+
+130
+00:10:40,120 --> 00:10:44,500
+L OK and that works as well.
+
+131
+00:10:44,500 --> 00:10:49,840
+And the reason that that works is because I used I exact which is case insensitive.
+
+132
+00:10:49,840 --> 00:10:56,440
+OK if you want it to be case sensitive then you would just use exact.
+
+133
+00:10:56,670 --> 00:10:58,110
+All right so let's move on here.
+
+134
+00:10:58,110 --> 00:11:00,290
+Next thing we want is the state.
+
+135
+00:11:00,600 --> 00:11:07,250
+So let's copy this.
+
+136
+00:11:07,470 --> 00:11:13,950
+And if you ever want to add a field you basically just have to do this just add to the query set.
+
+137
+00:11:13,950 --> 00:11:22,200
+So I'm going to do a control d again again and again and again and just change them all to stay.
+
+138
+00:11:23,770 --> 00:11:25,490
+OK you can try that out.
+
+139
+00:11:27,230 --> 00:11:30,020
+Load OK.
+
+140
+00:11:30,030 --> 00:11:33,210
+So if we reload it still in the Get request.
+
+141
+00:11:33,210 --> 00:11:39,540
+So what I'll do is just go to the home page and let's just choose choose something we don't have like
+
+142
+00:11:39,540 --> 00:11:40,510
+Alabama.
+
+143
+00:11:40,650 --> 00:11:42,400
+So we get no listings.
+
+144
+00:11:42,630 --> 00:11:48,140
+OK now let's choose mass and we only have our mass listings.
+
+145
+00:11:48,160 --> 00:11:50,060
+None of the New Hamp none of the New Hampshire ones.
+
+146
+00:11:50,070 --> 00:11:51,240
+Good.
+
+147
+00:11:51,270 --> 00:11:58,470
+So that's working let's try the city and state together so if we do like Norwood Alabama and submit
+
+148
+00:11:58,500 --> 00:12:00,370
+that doesn't work if we do.
+
+149
+00:12:00,570 --> 00:12:05,920
+Nor would Massachusetts and submit that works.
+
+150
+00:12:06,490 --> 00:12:07,360
+OK.
+
+151
+00:12:07,410 --> 00:12:13,670
+And I'm going to show you guys in a bit probably in the next video how to keep your like if we put Norwood
+
+152
+00:12:13,670 --> 00:12:14,780
+in here and we search.
+
+153
+00:12:14,780 --> 00:12:16,790
+I want Norwood to stay in there.
+
+154
+00:12:17,090 --> 00:12:17,390
+OK.
+
+155
+00:12:17,390 --> 00:12:19,080
+So show me how to do that.
+
+156
+00:12:19,190 --> 00:12:22,900
+But let's finish actually being being able to search these fields.
+
+157
+00:12:22,910 --> 00:12:25,160
+So next we want to do bedroom's.
+
+158
+00:12:25,520 --> 00:12:26,780
+So when we grab that
+
+159
+00:12:35,350 --> 00:12:40,560
+you know we're going to change all these two bedrooms.
+
+160
+00:12:40,830 --> 00:12:44,880
+And again we're going to do exact.
+
+161
+00:12:45,170 --> 00:12:49,560
+Actually no I'm sorry we're not going to do exact since.
+
+162
+00:12:49,910 --> 00:12:55,160
+I mean there's there's different ways you could do this if you wanted to search for exact You could
+
+163
+00:12:55,820 --> 00:13:04,120
+but the way that I want this to work is if someone chooses four bedrooms I want them to get everything
+
+164
+00:13:04,210 --> 00:13:05,880
+up to four bedrooms.
+
+165
+00:13:06,190 --> 00:13:07,130
+OK.
+
+166
+00:13:07,450 --> 00:13:10,150
+So they shouldn't see anything 5:06 or anything like that.
+
+167
+00:13:10,150 --> 00:13:14,290
+I want them to just see what they what they're basically searching what they could afford which is a
+
+168
+00:13:14,290 --> 00:13:15,370
+four bedroom.
+
+169
+00:13:15,370 --> 00:13:21,400
+So anything up to that and you could make this more advanced if you wanted to you can change different
+
+170
+00:13:21,400 --> 00:13:27,790
+parameters and stuff but I'm just going to do up to four bedrooms so to do that we don't want I exact
+
+171
+00:13:28,270 --> 00:13:32,170
+you could do exactly like I said if you wanted to match the bedrooms Exactly.
+
+172
+00:13:32,320 --> 00:13:35,420
+But what I'm going to use here is LTE.
+
+173
+00:13:35,650 --> 00:13:39,420
+OK so this is it will basically be less than OK.
+
+174
+00:13:39,430 --> 00:13:41,830
+Less than or equal to LTE.
+
+175
+00:13:42,370 --> 00:13:43,950
+So let's try that.
+
+176
+00:13:43,990 --> 00:13:54,240
+We'll save let's go back and I forget exactly what bedrooms we have here sort of 5 3 3 3 4 3.
+
+177
+00:13:54,240 --> 00:14:01,310
+So we don't even have any two bedrooms so let's choose a let's choose three bedrooms and then this five
+
+178
+00:14:01,310 --> 00:14:02,140
+shouldn't show up.
+
+179
+00:14:02,140 --> 00:14:03,790
+This shouldn't show up.
+
+180
+00:14:03,800 --> 00:14:04,460
+OK.
+
+181
+00:14:04,610 --> 00:14:07,270
+So let's go back here and let's choose bedrooms
+
+182
+00:14:09,820 --> 00:14:14,690
+so choose three and submit and there we go.
+
+183
+00:14:14,690 --> 00:14:17,060
+So we only get the three.
+
+184
+00:14:17,510 --> 00:14:25,370
+If I choose four we should get four four and all of the theories but we don't see the five because that's
+
+185
+00:14:25,370 --> 00:14:27,720
+that's beyond our search.
+
+186
+00:14:27,720 --> 00:14:31,940
+OK we're not looking for anything more than four bedrooms.
+
+187
+00:14:31,940 --> 00:14:34,610
+All right so we're going to do the same kind of thing with the.
+
+188
+00:14:34,610 --> 00:14:36,880
+Actually we don't have a bathroom search that's right.
+
+189
+00:14:37,250 --> 00:14:39,300
+All right so we're going to do the same thing with the price though.
+
+190
+00:14:39,300 --> 00:14:46,100
+I'm going to say up to a certain amount because that's usually how people search and what actually I
+
+191
+00:14:46,100 --> 00:14:52,070
+just bought a house is what actually prompted me to build this application because I was using apps
+
+192
+00:14:52,070 --> 00:14:54,750
+like this to look for a house.
+
+193
+00:14:54,830 --> 00:14:57,510
+So it's changed this to price.
+
+194
+00:14:57,530 --> 00:15:07,700
+And then of these two price we're going to leave LTE and then that should be it that's dead should do
+
+195
+00:15:07,700 --> 00:15:23,260
+it for the search for go back home and let's say we want to price to do up to 400000 submit.
+
+196
+00:15:23,360 --> 00:15:29,080
+OK so that didn't work because this is showing that it should be showing 400000
+
+197
+00:15:31,370 --> 00:15:35,630
+OK that did work.
+
+198
+00:15:35,640 --> 00:15:37,320
+Three hundred thousand.
+
+199
+00:15:37,320 --> 00:15:37,560
+All right.
+
+200
+00:15:37,560 --> 00:15:41,520
+Let's go back to the home I think we might have something might have something to do with how this form
+
+201
+00:15:41,520 --> 00:15:45,900
+is set up let's choose 300 and submit.
+
+202
+00:15:46,050 --> 00:15:46,360
+OK.
+
+203
+00:15:46,370 --> 00:15:47,510
+So that's not working.
+
+204
+00:15:47,510 --> 00:15:51,700
+So what I'm going to do is head back to the index page.
+
+205
+00:15:51,770 --> 00:15:55,620
+So templates pages indexed age HTML.
+
+206
+00:15:56,330 --> 00:16:00,350
+Let's take a look at the price
+
+207
+00:16:03,990 --> 00:16:04,430
+OK.
+
+208
+00:16:04,460 --> 00:16:09,620
+And the issue here is that the select for price doesn't have a name.
+
+209
+00:16:09,920 --> 00:16:13,140
+So it's not knowing to look for the price.
+
+210
+00:16:13,160 --> 00:16:19,000
+So if hopefully I remember you guys probably won't have to add this.
+
+211
+00:16:19,280 --> 00:16:22,120
+I'm going to add it so you guys don't have to.
+
+212
+00:16:22,130 --> 00:16:27,240
+But just in case I forget for some reason just go ahead and put a name equals price.
+
+213
+00:16:27,710 --> 00:16:27,990
+OK.
+
+214
+00:16:28,010 --> 00:16:31,480
+But I think I'm going to fix that after this video.
+
+215
+00:16:31,490 --> 00:16:36,990
+So now if we go home and we go to 400000 and submit.
+
+216
+00:16:37,010 --> 00:16:37,530
+There we go.
+
+217
+00:16:37,530 --> 00:16:42,320
+So now it works because that name attribute that's what the server sees.
+
+218
+00:16:42,350 --> 00:16:50,450
+OK when you're when you're in your search here you're on your search in your views file and you're looking
+
+219
+00:16:50,450 --> 00:16:52,490
+at requests I get dog bedrooms.
+
+220
+00:16:52,520 --> 00:16:58,360
+What this is looking at is the field the form field that has the name of bedrooms.
+
+221
+00:16:58,370 --> 00:17:01,460
+OK this is looking for the field with the name of price.
+
+222
+00:17:01,460 --> 00:17:05,850
+If you don't have that name attribute it's not going to know what you're talking about.
+
+223
+00:17:06,010 --> 00:17:06,310
+OK.
+
+224
+00:17:06,320 --> 00:17:13,310
+So that's when you're dealing with server side that one in the front end the name attribute is the most
+
+225
+00:17:13,310 --> 00:17:16,370
+important when it comes to submitting a form.
+
+226
+00:17:16,370 --> 00:17:16,760
+All right.
+
+227
+00:17:16,760 --> 00:17:22,590
+And of course the action of the form tag because that that tells it where to submit to.
+
+228
+00:17:22,610 --> 00:17:27,890
+So in the next video I want to show you guys how we can actually make it so that when we search for
+
+229
+00:17:27,890 --> 00:17:35,120
+like a city it will stay at that point if we pick a state and we submit it doesn't go back to State
+
+230
+00:17:35,120 --> 00:17:35,960
+like this.
+
+231
+00:17:35,960 --> 00:17:37,980
+OK so we'll do that in the next video.
+

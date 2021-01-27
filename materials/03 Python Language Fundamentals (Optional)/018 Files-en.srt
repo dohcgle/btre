@@ -1,0 +1,352 @@
+1
+00:00:00,510 --> 00:00:08,490
+All right so as with most languages Python has methods for managing files creating them reading them
+
+2
+00:00:09,180 --> 00:00:14,430
+writing to them all types of stuff so I just want to take a look at some methods that we can use to
+
+3
+00:00:14,460 --> 00:00:15,980
+manipulate files.
+
+4
+00:00:15,990 --> 00:00:20,550
+So first thing I want to do is open a file and it doesn't even have to exist.
+
+5
+00:00:20,550 --> 00:00:22,050
+This will actually create it.
+
+6
+00:00:22,050 --> 00:00:24,030
+OK so we're going to create a variable.
+
+7
+00:00:24,030 --> 00:00:30,990
+Call it my file and let's set this to open case there's a method called Open where we pass in the name
+
+8
+00:00:30,990 --> 00:00:31,840
+of a file.
+
+9
+00:00:31,860 --> 00:00:35,170
+I'm going to call it my file and it's going to be a text file.
+
+10
+00:00:35,220 --> 00:00:36,450
+I want to be able to write to it.
+
+11
+00:00:36,450 --> 00:00:43,600
+So we're going to pass in W and we can get some info on the file.
+
+12
+00:00:43,620 --> 00:00:44,200
+Actually you know what.
+
+13
+00:00:44,220 --> 00:00:52,900
+Let's just run this let's save this good out here and say Python 3 files dot PI and just by running
+
+14
+00:00:52,900 --> 00:00:58,360
+Now I notice that now I have my file Daut text case that actually created it.
+
+15
+00:00:58,380 --> 00:01:03,680
+So we if we want to get some info on it we can do that and say get some info.
+
+16
+00:01:03,960 --> 00:01:15,170
+Well go ahead and print out the file name so we can do that by saying my file Daut name OK if we want
+
+17
+00:01:15,170 --> 00:01:23,120
+to get see if it's closed say is closed.
+
+18
+00:01:23,500 --> 00:01:35,780
+There's a method called closed and then the opening mode you have dot mode.
+
+19
+00:01:36,910 --> 00:01:41,970
+All right let's just see what this gives us if we run it.
+
+20
+00:01:42,000 --> 00:01:45,630
+OK so we get name my file that text is close.
+
+21
+00:01:45,630 --> 00:01:48,880
+False opening mode w.
+
+22
+00:01:48,990 --> 00:01:59,190
+OK so basically when we open it it's it's it's ready for us to to to write into it or to add to it append
+
+23
+00:01:59,190 --> 00:02:00,780
+to it whatever.
+
+24
+00:02:00,780 --> 00:02:04,520
+Once we're done doing that we should we're supposed to close it.
+
+25
+00:02:04,530 --> 00:02:06,280
+So let me give you an example.
+
+26
+00:02:07,050 --> 00:02:11,200
+Let's say right to file.
+
+27
+00:02:11,460 --> 00:02:16,420
+So we'll take my file and I'll say dot right.
+
+28
+00:02:16,950 --> 00:02:18,690
+And then we'll pass in what we want to write.
+
+29
+00:02:18,690 --> 00:02:25,740
+I'll say I love Python and then we want to close it.
+
+30
+00:02:25,740 --> 00:02:27,840
+So we want to say my file
+
+31
+00:02:30,340 --> 00:02:33,100
+Daut close.
+
+32
+00:02:33,250 --> 00:02:37,290
+OK so let's save that and then let's clear this out and run it.
+
+33
+00:02:37,930 --> 00:02:41,690
+And let's go to my file Daut text and there we go.
+
+34
+00:02:41,680 --> 00:02:45,270
+We actually wrote to the file using Python.
+
+35
+00:02:45,280 --> 00:02:49,010
+Let's say we want to do this to another right.
+
+36
+00:02:49,020 --> 00:02:50,020
+Right here.
+
+37
+00:02:50,110 --> 00:02:51,230
+And we'll add on to it.
+
+38
+00:02:51,280 --> 00:02:59,340
+We'll say I love Python space and Javascript.
+
+39
+00:02:59,630 --> 00:03:01,250
+OK so let's run that.
+
+40
+00:03:01,410 --> 00:03:03,570
+So take a look at my file that text and we get.
+
+41
+00:03:03,580 --> 00:03:10,310
+I love Python and Javascript so you can continuously write to the file.
+
+42
+00:03:10,420 --> 00:03:12,620
+So let's see.
+
+43
+00:03:12,670 --> 00:03:15,990
+After it's closed Do we want to add to it.
+
+44
+00:03:16,120 --> 00:03:21,750
+So let's say append two file case because now are pending to it.
+
+45
+00:03:21,770 --> 00:03:27,840
+So we're going to say my file equals open
+
+46
+00:03:32,410 --> 00:03:39,670
+it's my file Don t x t and we're going to put in a in here.
+
+47
+00:03:39,690 --> 00:03:40,810
+OK.
+
+48
+00:03:41,190 --> 00:03:43,230
+Because you want to append to it so.
+
+49
+00:03:43,410 --> 00:03:45,950
+Because if we don't do that it's just going to overwrite it.
+
+50
+00:03:45,990 --> 00:03:50,190
+If we do what we did up here it's just going to overwrite what's already there and I want to keep this
+
+51
+00:03:50,190 --> 00:03:52,940
+in here and I just want to append to the end of it.
+
+52
+00:03:52,980 --> 00:03:55,890
+So that's why we're using the a a flag there.
+
+53
+00:03:55,890 --> 00:04:02,590
+So let's say my file Daut right.
+
+54
+00:04:03,120 --> 00:04:08,040
+Even though we're doing dot right we opened it as a pen so it's not going to overwrite what's already
+
+55
+00:04:08,040 --> 00:04:08,800
+there.
+
+56
+00:04:08,880 --> 00:04:16,810
+So I'm going to put a space I'm going to say I also like ph.
+
+57
+00:04:17,470 --> 00:04:17,990
+OK.
+
+58
+00:04:18,030 --> 00:04:19,730
+And then after that we want to close it.
+
+59
+00:04:19,770 --> 00:04:23,090
+So I'll say my file thought close.
+
+60
+00:04:23,430 --> 00:04:23,790
+All right.
+
+61
+00:04:23,790 --> 00:04:25,380
+So let's run this.
+
+62
+00:04:26,130 --> 00:04:32,470
+And let's take a look and you can see that it didn't just overwrite it if I put a W here.
+
+63
+00:04:32,580 --> 00:04:35,300
+Actually I can just show you that I put a W here.
+
+64
+00:04:35,670 --> 00:04:37,550
+And we go ahead and run it.
+
+65
+00:04:37,600 --> 00:04:43,110
+We we only get I also like each piece so if you want to append to a file and not overwrite it you want
+
+66
+00:04:43,110 --> 00:04:44,920
+to make sure you put in there.
+
+67
+00:04:44,940 --> 00:04:48,890
+So if we run that then it's back to how it was.
+
+68
+00:04:49,440 --> 00:04:51,450
+OK so if we want to read from a file
+
+69
+00:04:56,060 --> 00:05:07,320
+we can say my file equals open and we want my file X T.
+
+70
+00:05:07,590 --> 00:05:13,870
+Except this time we want to do r plus K because this time we're reading from it's own going to say tacksmen
+
+71
+00:05:13,870 --> 00:05:23,450
+to create a variable called text and that said it to my file Daut read and let's pass in 10.
+
+72
+00:05:23,550 --> 00:05:24,190
+OK.
+
+73
+00:05:24,330 --> 00:05:28,100
+Now when I print no text.
+
+74
+00:05:28,100 --> 00:05:29,100
+Let's save this.
+
+75
+00:05:29,100 --> 00:05:36,190
+Clear this up and run it and you'll see what it does is it takes the first 10 characters of the file.
+
+76
+00:05:37,560 --> 00:05:42,670
+So that's what this is that's what this limit is if I put 100.
+
+77
+00:05:42,780 --> 00:05:44,120
+It's going to give us.
+
+78
+00:05:44,280 --> 00:05:48,000
+Well I mean there's not even 100 in here but it would give us the first hundred.
+
+79
+00:05:48,000 --> 00:05:51,770
+All right so we're not going to really be doing much of this throughout the course.
+
+80
+00:05:51,770 --> 00:05:54,410
+I just wanted to show you that you know you can do this stuff.
+
+81
+00:05:54,420 --> 00:05:55,930
+You can create files.
+
+82
+00:05:56,340 --> 00:05:59,880
+Our particular jingle project doesn't really require us to do this.
+
+83
+00:05:59,880 --> 00:06:02,280
+But again I just wanted to throw it in.
+
+84
+00:06:02,280 --> 00:06:08,520
+All right so in the next video I just want to take a quick look at working with Jason even though this
+
+85
+00:06:08,520 --> 00:06:12,960
+isn't really something we're going to do in the project either but it's always good to know how to work
+
+86
+00:06:12,960 --> 00:06:19,050
+with Jason because you know often you're working with third party API and stuff and Jason is the most
+
+87
+00:06:19,050 --> 00:06:22,850
+popular format so you want to know how to deal with that in Python.
+
+88
+00:06:22,950 --> 00:06:24,540
+All right so see in the next video.
+

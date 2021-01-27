@@ -1,0 +1,712 @@
+1
+00:00:00,570 --> 00:00:06,450
+All right to the last video we completed the log in the authentication we were able to log in successfully
+
+2
+00:00:06,780 --> 00:00:11,780
+we were redirected to the dashboard but the dashboard is nothing more than an H-1 in the template.
+
+3
+00:00:11,790 --> 00:00:12,500
+So we need to.
+
+4
+00:00:12,600 --> 00:00:14,070
+We need to fix that.
+
+5
+00:00:14,130 --> 00:00:17,160
+So let's go back to.
+
+6
+00:00:17,250 --> 00:00:23,430
+I'm going to go to my Sublime Text because that's where I actually have my bootstrap theme and I'm going
+
+7
+00:00:23,430 --> 00:00:26,070
+to go to dashboard aged Yamal.
+
+8
+00:00:26,220 --> 00:00:28,340
+We want to go below all the nav bar stuff.
+
+9
+00:00:28,350 --> 00:00:35,220
+So right here to the section and we're going to go all the way down to right above the footer.
+
+10
+00:00:35,330 --> 00:00:37,950
+OK dashboards not that big of a page.
+
+11
+00:00:38,520 --> 00:00:44,470
+And then let's go back to vs code and go to templates accounts dashboard aged hemol.
+
+12
+00:00:44,860 --> 00:00:46,920
+OK we're going to want to paste to sin.
+
+13
+00:00:46,920 --> 00:00:50,860
+But of course we need to extend our base template.
+
+14
+00:00:51,380 --> 00:00:52,590
+So let's do
+
+15
+00:00:55,220 --> 00:01:02,840
+extends base died aged him now and we need to wrap this all in a Coke and a code block
+
+16
+00:01:07,760 --> 00:01:11,050
+so block content.
+
+17
+00:01:11,060 --> 00:01:17,330
+I should say a content block code block use me we need to end that down here.
+
+18
+00:01:21,810 --> 00:01:23,860
+OK so let's save that.
+
+19
+00:01:24,660 --> 00:01:28,050
+And if we now look at the dashboard we reload.
+
+20
+00:01:28,110 --> 00:01:30,120
+Now this is all just static data.
+
+21
+00:01:30,120 --> 00:01:35,850
+Obviously we've done nothing to do with contacts yet or inquiries we haven't even created the application
+
+22
+00:01:35,850 --> 00:01:36,450
+yet.
+
+23
+00:01:36,450 --> 00:01:38,750
+So this is all static.
+
+24
+00:01:39,120 --> 00:01:44,400
+But we do have the nav bar showing OK and that's what I want to focus on because I mean we're logged
+
+25
+00:01:44,400 --> 00:01:48,770
+in and we don't want register and log in to show we want this to be different.
+
+26
+00:01:49,230 --> 00:01:53,250
+So let's go back to the dashboard and I just want to change one thing here before we get into that.
+
+27
+00:01:53,250 --> 00:01:57,950
+And that's the breadcrumb we don't want this to go to index aged him now.
+
+28
+00:01:58,530 --> 00:02:05,830
+We want to put in our tags and we want you Arel and we want to go index.
+
+29
+00:02:06,570 --> 00:02:14,430
+OK so now what I want to do is head on over to our NAV bar partials so templates Parshall's underscore
+
+30
+00:02:14,430 --> 00:02:16,690
+now Barcott HD IMAO.
+
+31
+00:02:17,640 --> 00:02:27,920
+And I want to go right inside of the UL right here with the nav bar nav and Eldo right above this ally
+
+32
+00:02:27,950 --> 00:02:40,880
+and I'm going to put a conditional I'm going to say if user Daut is underscore authenticated OK so basically
+
+33
+00:02:40,880 --> 00:02:45,560
+if the user is logged in and then we're going to do in else.
+
+34
+00:02:46,830 --> 00:02:47,310
+OK.
+
+35
+00:02:47,330 --> 00:02:53,810
+And I want everything that's here which is the the register in the log in Ally tags to be within the
+
+36
+00:02:53,860 --> 00:02:54,690
+rules.
+
+37
+00:02:54,920 --> 00:02:57,810
+OK so I'm just going to go down to the last.
+
+38
+00:02:57,930 --> 00:03:04,640
+This ending ally and just tab that over and then right underneath it I'm going to tab back and I'm going
+
+39
+00:03:04,640 --> 00:03:06,180
+to put the end if here.
+
+40
+00:03:08,900 --> 00:03:13,320
+And just to test this so let's just say whatever.
+
+41
+00:03:13,370 --> 00:03:13,850
+Hello.
+
+42
+00:03:13,850 --> 00:03:15,400
+Just to see if this works.
+
+43
+00:03:15,420 --> 00:03:19,270
+I want to save and let's go back and reload
+
+44
+00:03:21,850 --> 00:03:26,650
+and you can see how low and the reason you can't really see it until I highlighted it is just because
+
+45
+00:03:26,650 --> 00:03:34,460
+it's not a link and just it's just the way the CSSA is but we know that that conditional is working.
+
+46
+00:03:34,810 --> 00:03:39,590
+All right so now we want to do is construct a log log out to link.
+
+47
+00:03:39,730 --> 00:03:42,790
+We actually want to log outlaying and dashboard link.
+
+48
+00:03:43,030 --> 00:03:45,340
+But the trick here is the logo.
+
+49
+00:03:45,370 --> 00:03:52,810
+It can't just be like an 8 in a tag with an 8 traffic can't be a link it can't be just a standard get
+
+50
+00:03:52,810 --> 00:03:54,930
+request it has to be a post.
+
+51
+00:03:54,940 --> 00:04:00,560
+So what we'll do is we'll create a form that will be that will look like a link.
+
+52
+00:04:00,880 --> 00:04:05,800
+OK hopefully that makes sense because the form is what we use to make a post request.
+
+53
+00:04:05,890 --> 00:04:12,700
+We could use javascript and make a you know use the fetch API or Ajax or something like that but I'm
+
+54
+00:04:12,700 --> 00:04:15,880
+just going to construct a simple form to log out.
+
+55
+00:04:16,090 --> 00:04:22,110
+But let's first put the dashboard to link so let's see how we want to do this let's grab
+
+56
+00:04:24,740 --> 00:04:27,890
+Let's actually grab one of these allies right here.
+
+57
+00:04:27,920 --> 00:04:30,050
+So this whole register ally.
+
+58
+00:04:30,500 --> 00:04:34,130
+And I'm going to paste that in here.
+
+59
+00:04:36,550 --> 00:04:37,760
+And let's see if
+
+60
+00:04:40,700 --> 00:04:44,180
+dashboard in request path we're going to have this stuff.
+
+61
+00:04:44,330 --> 00:04:47,260
+And then down here let's change this to dashboard
+
+62
+00:04:51,080 --> 00:04:53,610
+and the URL is going to go to dashboard
+
+63
+00:04:57,400 --> 00:04:57,850
+OK.
+
+64
+00:04:57,860 --> 00:05:02,120
+Let me just let's see we don't want an icon here right.
+
+65
+00:05:02,120 --> 00:05:11,000
+So we'll just get rid of this tag and I'm just going to save this and just see if this shows up correctly
+
+66
+00:05:11,000 --> 00:05:15,080
+and works so there we go dashboard good if click on that.
+
+67
+00:05:15,080 --> 00:05:17,520
+All right so now we have a way to get to our dashboard.
+
+68
+00:05:17,720 --> 00:05:23,600
+Now in addition to just dashboard I want to say like how welcome and then whatever the username.
+
+69
+00:05:23,660 --> 00:05:29,310
+So remember we have access to this user object within the within the template.
+
+70
+00:05:29,780 --> 00:05:31,900
+OK so within all templates.
+
+71
+00:05:32,030 --> 00:05:36,690
+So I'm actually going to say welcome.
+
+72
+00:05:37,010 --> 00:05:46,280
+I'll say welcome notes to our double curly braces and will say user and we can access any field of the
+
+73
+00:05:46,280 --> 00:05:54,510
+user and I'm going to access user name and then I'm just going to put dashboard in parentheses like
+
+74
+00:05:54,590 --> 00:05:54,930
+that.
+
+75
+00:05:54,930 --> 00:06:03,310
+So now if I say can we go back and reload says Welcome Caffey and dashboard just to let you know that
+
+76
+00:06:03,310 --> 00:06:09,200
+if you click on it it will take you to the dashboard and I spelt dashboard wrong.
+
+77
+00:06:09,220 --> 00:06:13,450
+If you don't want to have the dashboard there and just say welcome or you don't even want the welcome
+
+78
+00:06:13,450 --> 00:06:19,130
+that's fine whatever you want to do is that's your preference but let me just fix this.
+
+79
+00:06:19,690 --> 00:06:25,190
+I always I type like too fast when I write dashboard I always put the a before the show.
+
+80
+00:06:26,200 --> 00:06:29,630
+So hello we have that let's take care of the logo.
+
+81
+00:06:29,650 --> 00:06:32,770
+So right underneath.
+
+82
+00:06:33,080 --> 00:06:36,310
+Let's see I'm trying to figure out where where this is going to go.
+
+83
+00:06:36,740 --> 00:06:40,760
+We have our Atallah have ending ally.
+
+84
+00:06:40,840 --> 00:06:42,970
+So let's put another
+
+85
+00:06:45,990 --> 00:06:47,830
+yeah let's put it another ally
+
+86
+00:06:51,300 --> 00:06:55,060
+and let's give it class.
+
+87
+00:06:55,110 --> 00:07:02,160
+We don't need the active so we don't need to do the if statement so to say now have item and let's do
+
+88
+00:07:02,190 --> 00:07:03,590
+Marjan right.
+
+89
+00:07:03,660 --> 00:07:06,720
+Three OK so we're going to do that.
+
+90
+00:07:06,730 --> 00:07:13,570
+And then let's put in a tag with the class of NAV dash Lanc and you'll see what I'm doing in a minute
+
+91
+00:07:13,570 --> 00:07:14,700
+here.
+
+92
+00:07:14,710 --> 00:07:22,650
+I'm actually going to put in here javascript and then some curly braces and what this will allows us
+
+93
+00:07:22,650 --> 00:07:25,060
+to do is actually write some javascript in here.
+
+94
+00:07:25,320 --> 00:07:36,750
+So I'm going to say document get element by id and the ID is going to be logo.
+
+95
+00:07:37,110 --> 00:07:41,930
+And then I just want to call Daut submit.
+
+96
+00:07:42,620 --> 00:07:44,820
+OK that's all I want there.
+
+97
+00:07:45,040 --> 00:07:48,260
+Now let's wait a minute.
+
+98
+00:07:48,430 --> 00:07:48,900
+Yeah.
+
+99
+00:07:49,200 --> 00:07:54,430
+So we have the the Tref we have the class of NAV link.
+
+100
+00:07:54,450 --> 00:08:00,570
+So inside here inside the tag I'm going to put an icon like a log out icons so we're going to do F.A.
+
+101
+00:08:00,570 --> 00:08:10,400
+ass and let's do a dash sign dash out dash Alt.
+
+102
+00:08:10,700 --> 00:08:19,620
+That will give us a little logo link and then I'm going to say logo right next to it like that.
+
+103
+00:08:19,620 --> 00:08:20,710
+All right.
+
+104
+00:08:20,940 --> 00:08:25,710
+Now when we click this it's going to run this little piece of javascript.
+
+105
+00:08:25,800 --> 00:08:29,730
+It's going to look for the idea of log out and it's going to submit the form.
+
+106
+00:08:29,730 --> 00:08:31,730
+So we want to create that form.
+
+107
+00:08:31,770 --> 00:08:35,260
+So we're going to put that right on right underneath this a tag.
+
+108
+00:08:35,340 --> 00:08:41,820
+So we'll see a form with an ID of Logo at OK.
+
+109
+00:08:41,830 --> 00:08:50,220
+Now the action is going to go to the URL of Logo.
+
+110
+00:08:50,640 --> 00:08:52,570
+OK remember we have that route.
+
+111
+00:08:53,010 --> 00:09:01,730
+So the action will go to log out we want to make sure that we add a method of post here.
+
+112
+00:09:01,830 --> 00:09:04,320
+We have post request.
+
+113
+00:09:04,330 --> 00:09:06,460
+And let's see inside the form.
+
+114
+00:09:06,640 --> 00:09:14,320
+We're not going to do much we do want to put our CSR token just like we did with the other post form
+
+115
+00:09:14,320 --> 00:09:22,330
+so which one of you see as are half underscore token and then we're just going to put an input with
+
+116
+00:09:22,390 --> 00:09:23,910
+the type of hidden
+
+117
+00:09:29,170 --> 00:09:31,220
+OK just like that.
+
+118
+00:09:31,230 --> 00:09:36,430
+So all this is all this should do is make a post request to log out.
+
+119
+00:09:37,260 --> 00:09:43,470
+So let's save this and then let's go back to the used up high inside accounts and you can see we have
+
+120
+00:09:43,470 --> 00:09:49,920
+our logo here and we want to check to see if it's a post request just like we did up here with like
+
+121
+00:09:49,920 --> 00:09:57,770
+the log in in the Register saying to copy that line and let's put that here.
+
+122
+00:09:57,820 --> 00:10:01,020
+So we're going to say if there's a post request we want a logo.
+
+123
+00:10:01,120 --> 00:10:04,860
+So off dot log it's as simple as that.
+
+124
+00:10:04,870 --> 00:10:08,200
+We just want to pass in the request that should Laaga.
+
+125
+00:10:08,200 --> 00:10:12,200
+So we want to send the message a success message.
+
+126
+00:10:13,760 --> 00:10:25,200
+Pass the request and the message will just say you are now logged out and let's redirect to index just
+
+127
+00:10:25,210 --> 00:10:30,250
+want to Tab this over and over and that should do it.
+
+128
+00:10:30,290 --> 00:10:33,760
+If we did it right so let's save it and let's see if things work out.
+
+129
+00:10:33,770 --> 00:10:42,250
+So a reload and easy now we have a logo link if I click that message is not defined so it should be
+
+130
+00:10:42,250 --> 00:10:46,390
+messages but we still should have logged out because it should have ran this.
+
+131
+00:10:46,400 --> 00:10:48,240
+They happened here.
+
+132
+00:10:48,400 --> 00:10:50,880
+So if we go back we should be logged out.
+
+133
+00:10:50,880 --> 00:11:00,240
+When I reload OK so up here now notice it says register and log in again and we got that little message
+
+134
+00:11:00,240 --> 00:11:00,810
+here.
+
+135
+00:11:00,840 --> 00:11:03,460
+It was like stuck to the top.
+
+136
+00:11:03,540 --> 00:11:04,770
+So I think what I'm going to do
+
+137
+00:11:09,240 --> 00:11:13,310
+I mean there might be a better place to put that in the index.
+
+138
+00:11:14,010 --> 00:11:15,810
+That the Parshall's alerts.
+
+139
+00:11:15,820 --> 00:11:23,100
+I mean we could do like we could put some CSSA we could do a line break or something like that.
+
+140
+00:11:26,470 --> 00:11:28,060
+What if we did that.
+
+141
+00:11:32,370 --> 00:11:37,020
+I mean that pushes it down a little but I think that's right.
+
+142
+00:11:38,080 --> 00:11:40,240
+So let's try again let's log in.
+
+143
+00:11:40,690 --> 00:11:42,850
+So I'd say Cathy
+
+144
+00:11:46,240 --> 00:11:50,520
+K. so we're logged in and we went to the dashboard.
+
+145
+00:11:50,520 --> 00:11:57,610
+Now if you want a message to say like you're now logged in which I think if we look at views up high
+
+146
+00:11:57,610 --> 00:11:59,180
+we look at our log in.
+
+147
+00:11:59,730 --> 00:12:00,920
+Yeah you get that message.
+
+148
+00:12:00,930 --> 00:12:04,090
+But the dashboard doesn't have the alerts partially.
+
+149
+00:12:04,110 --> 00:12:05,550
+So we have to put that in there.
+
+150
+00:12:05,550 --> 00:12:11,620
+So it's called a dashboard and let's figure out where we want to put this.
+
+151
+00:12:11,990 --> 00:12:14,000
+Let's put it right right below the breadcrumb
+
+152
+00:12:17,570 --> 00:12:18,920
+so alerts
+
+153
+00:12:24,580 --> 00:12:25,360
+clewed
+
+154
+00:12:27,730 --> 00:12:33,390
+Parshall's alerts on he urged him now.
+
+155
+00:12:33,580 --> 00:12:36,820
+All right so now when we log in it'll show right here welcome.
+
+156
+00:12:36,820 --> 00:12:39,490
+I mean it'll say you're now logged in.
+
+157
+00:12:39,490 --> 00:12:39,760
+OK.
+
+158
+00:12:39,760 --> 00:12:42,030
+And we can navigate around that log out.
+
+159
+00:12:42,100 --> 00:12:48,760
+And now success you're logged out and register and log in links are back in OK and the success matches
+
+160
+00:12:48,790 --> 00:12:53,740
+disappears after three seconds because of that piece of javascript that we put in.
+
+161
+00:12:53,740 --> 00:12:54,030
+All right.
+
+162
+00:12:54,040 --> 00:12:56,070
+So that's going to be it for this video guys.
+
+163
+00:12:56,080 --> 00:13:04,420
+Before we jump into contacts or inquiries in the next video I just want to do something that is very
+
+164
+00:13:04,420 --> 00:13:11,050
+simple but I think is necessary and that is to add to be able to change the titles up here for each
+
+165
+00:13:11,050 --> 00:13:18,100
+page because right now all the different pages OK whether it's a page or a listing they they all have
+
+166
+00:13:18,100 --> 00:13:19,670
+just beat real estate.
+
+167
+00:13:19,690 --> 00:13:22,380
+So I want to give you the option to change this.
+
+168
+00:13:22,510 --> 00:13:25,310
+And I think it's really important for listing pages.
+
+169
+00:13:25,390 --> 00:13:31,450
+I want to actually have the title of the listing in up here because if this comes up in a Google search
+
+170
+00:13:31,460 --> 00:13:37,300
+result then we want that in the title we don't want just BT real estate for everything.
+
+171
+00:13:37,310 --> 00:13:37,650
+All right.
+
+172
+00:13:37,660 --> 00:13:44,530
+So in the next video I'll show you how we can do that and then we'll move on to adding our contact model
+
+173
+00:13:44,530 --> 00:13:52,600
+or our contacts app with the model and database database table and we'll work on making inquiries or
+
+174
+00:13:52,600 --> 00:13:53,560
+making contacts.
+
+175
+00:13:53,560 --> 00:13:55,430
+When I say contacts and inquiries.
+
+176
+00:13:55,540 --> 00:13:59,370
+I mean the same thing I'm saying and I'm using them synonymously.
+
+177
+00:13:59,380 --> 00:14:00,640
+All right so that's it.
+
+178
+00:14:00,640 --> 00:14:01,980
+I will see you in the next video.
+

@@ -1,0 +1,548 @@
+1
+00:00:00,160 --> 00:00:06,340
+All right guys so in the last video we went ahead and took our basically took our model our listings
+
+2
+00:00:06,360 --> 00:00:11,640
+model and took out all the objects from the database and pass them into the template.
+
+3
+00:00:11,640 --> 00:00:14,060
+We also looped through those listings.
+
+4
+00:00:14,070 --> 00:00:16,650
+But right now we're just outputting static.
+
+5
+00:00:16,650 --> 00:00:21,600
+Each team all for each one we're basically outputting the same exact thing for every listing that's
+
+6
+00:00:21,600 --> 00:00:22,930
+in the database.
+
+7
+00:00:22,950 --> 00:00:23,270
+OK.
+
+8
+00:00:23,280 --> 00:00:25,290
+You'll see we have six here which is correct.
+
+9
+00:00:25,300 --> 00:00:27,020
+There's six in the database.
+
+10
+00:00:27,180 --> 00:00:33,030
+As you can see we added six but there's no dynamic data here so that's what we need to do now is fix
+
+11
+00:00:33,030 --> 00:00:33,330
+that.
+
+12
+00:00:33,330 --> 00:00:40,320
+So let's go to listings dot each team L and go inside our FOR loop here and just replace all the static
+
+13
+00:00:40,320 --> 00:00:47,110
+data with dynamic variables and we can do that by let's take this tile for example.
+
+14
+00:00:47,280 --> 00:00:49,680
+We can do that by using double curly braces.
+
+15
+00:00:49,680 --> 00:00:52,530
+OK so that's the template syntax for this.
+
+16
+00:00:52,530 --> 00:00:58,830
+Now when we loop through we said for listing in listings remember listings is what we passed into the
+
+17
+00:00:58,830 --> 00:00:59,690
+template.
+
+18
+00:00:59,820 --> 00:01:06,580
+And we're saying for every instance or every iteration I should say we're going to call it listing.
+
+19
+00:01:06,720 --> 00:01:11,760
+OK so we can say listing and then we can access whatever property we want.
+
+20
+00:01:11,760 --> 00:01:13,440
+So here we want the title.
+
+21
+00:01:13,500 --> 00:01:15,260
+So listing title.
+
+22
+00:01:15,270 --> 00:01:20,430
+So if I save this and I go back and reload and we look at the titles you'll see that now they're all
+
+23
+00:01:20,430 --> 00:01:21,180
+different.
+
+24
+00:01:21,420 --> 00:01:26,850
+OK so now they're actually reflecting the correct titles that you can see here that are in the database.
+
+25
+00:01:26,880 --> 00:01:30,280
+So we want to do that with every field that's here.
+
+26
+00:01:30,330 --> 00:01:36,720
+So another one we want to do is the image now Gengel makes it really easy by using that member that
+
+27
+00:01:36,750 --> 00:01:39,290
+image field that we used.
+
+28
+00:01:39,300 --> 00:01:46,080
+It makes it very easy because we can simply just do our syntax here and we can say listing and then
+
+29
+00:01:46,080 --> 00:01:53,180
+the name of the the image field which in this case is main What was it main photo.
+
+30
+00:01:53,320 --> 00:01:56,480
+Was it main photo or photo main.
+
+31
+00:01:56,880 --> 00:01:57,960
+It was photo main.
+
+32
+00:01:57,960 --> 00:02:01,520
+So let's do listing Daut photo underscore main.
+
+33
+00:02:01,680 --> 00:02:04,170
+And then we just want to do dot you are l.
+
+34
+00:02:04,590 --> 00:02:08,070
+So if I save that we go back and reload.
+
+35
+00:02:08,130 --> 00:02:12,730
+Now we get all of our images so these are the correct images that were uploaded.
+
+36
+00:02:12,760 --> 00:02:15,000
+So now let's do the price.
+
+37
+00:02:15,000 --> 00:02:22,080
+Let's leave the dollar sign and let's do listing price.
+
+38
+00:02:22,540 --> 00:02:22,930
+OK.
+
+39
+00:02:22,940 --> 00:02:30,530
+So we'll go back and check now it worked it's getting the correct number but we want calm is here OK
+
+40
+00:02:30,560 --> 00:02:33,090
+this doesn't this doesn't look very professional.
+
+41
+00:02:33,140 --> 00:02:40,610
+So you have a couple of options for this one simple option is to use something called humanised it's
+
+42
+00:02:40,610 --> 00:02:46,280
+actually an app that is not included by default in the settings but we can include it and then we can
+
+43
+00:02:46,280 --> 00:02:54,200
+use it and it has a method called into Khama that we can just simply tack on to listing dot price.
+
+44
+00:02:54,200 --> 00:02:57,910
+So what we're going to do is go into our settings.
+
+45
+00:02:57,930 --> 00:03:04,280
+So it's going to be Tiare settings up-I and there's a lot of files here kicking the can get kind of
+
+46
+00:03:04,280 --> 00:03:06,360
+confusing.
+
+47
+00:03:06,500 --> 00:03:11,390
+That's one thing I don't really like about the Django structure it always seems to just be just a ton
+
+48
+00:03:11,390 --> 00:03:17,390
+of files and if it's a big application but what we want to do is go up to our installed apps.
+
+49
+00:03:17,660 --> 00:03:24,920
+OK so right here installed apps and I'm going to go on to the end here and I'm going to do Django dot
+
+50
+00:03:25,820 --> 00:03:31,400
+con Trib dot humanize.
+
+51
+00:03:31,930 --> 00:03:32,720
+OK.
+
+52
+00:03:32,760 --> 00:03:35,320
+So that will just allow us to use human eyes.
+
+53
+00:03:35,320 --> 00:03:39,680
+Now we're going to save it and go back to our listings and we actually have to load it.
+
+54
+00:03:39,720 --> 00:03:44,290
+So up here we're going to put in our syntax like that.
+
+55
+00:03:44,370 --> 00:03:49,840
+We're going to say load humanize OK.
+
+56
+00:03:49,840 --> 00:03:57,110
+Now we have access to a whole host of different functions that we can pipe on to two different values.
+
+57
+00:03:57,170 --> 00:04:06,190
+So let's find our price right here and we want to just add a pipe character and then inte comma.
+
+58
+00:04:06,470 --> 00:04:10,760
+OK let's save that and let's see if it works or reload.
+
+59
+00:04:10,760 --> 00:04:11,360
+And there we go.
+
+60
+00:04:11,360 --> 00:04:15,560
+It automatically puts the comma where it needs to go.
+
+61
+00:04:15,590 --> 00:04:15,920
+All right.
+
+62
+00:04:15,920 --> 00:04:20,810
+And if we actually just want to show you something real quick if you search for Django.
+
+63
+00:04:20,810 --> 00:04:24,880
+Human is.
+
+64
+00:04:25,090 --> 00:04:27,610
+So this will actually show you his intercom.
+
+65
+00:04:27,610 --> 00:04:33,740
+This is what we just used and it shows you what it does converts an integer or float adds commas.
+
+66
+00:04:33,790 --> 00:04:37,990
+We have the AP number so return the number spelled out.
+
+67
+00:04:37,990 --> 00:04:42,240
+There's a whole bunch of cool functions that you can use with this humanised.
+
+68
+00:04:42,490 --> 00:04:44,600
+So just keep that in mind.
+
+69
+00:04:44,620 --> 00:04:48,250
+All right so let's go ahead and finish the rest of our fields.
+
+70
+00:04:48,250 --> 00:04:52,000
+So what else do we have here that needs to be added.
+
+71
+00:04:52,060 --> 00:04:54,440
+Right here we have the full address.
+
+72
+00:04:54,440 --> 00:05:01,630
+Now remember these are separate fields city state zip codes so here we're going to do
+
+73
+00:05:04,290 --> 00:05:07,020
+listing dot city.
+
+74
+00:05:07,590 --> 00:05:16,410
+And you can actually copy this and then this is going to be the state and then this is going to be the
+
+75
+00:05:16,410 --> 00:05:16,890
+zip
+
+76
+00:05:21,060 --> 00:05:24,790
+coyotes go around here square feet.
+
+77
+00:05:24,890 --> 00:05:38,330
+So this was I believe Eskew F.T. garage pieces and I will say listing dog garage in what else we get
+
+78
+00:05:38,340 --> 00:05:40,810
+bedrooms and bathrooms.
+
+79
+00:05:41,070 --> 00:05:41,940
+So listing
+
+80
+00:05:44,280 --> 00:05:49,010
+bedrooms listing Daut bathrooms
+
+81
+00:05:52,500 --> 00:05:53,250
+OK.
+
+82
+00:05:53,850 --> 00:05:58,350
+Let's see we have the realtor.
+
+83
+00:05:58,670 --> 00:06:07,250
+So since this is actually really cool since we have a relationship with between the realtor and the
+
+84
+00:06:07,250 --> 00:06:14,750
+listing we can just simply say realtor and whatever we put in the model for the realtor and we just
+
+85
+00:06:14,750 --> 00:06:22,460
+check real quick just to show you if we go to realtors and models dot pi.
+
+86
+00:06:22,490 --> 00:06:28,400
+This right here self-taught name is where we claimed what we want to display here if we just do dot
+
+87
+00:06:28,400 --> 00:06:30,590
+realtor which is really cool.
+
+88
+00:06:30,590 --> 00:06:32,890
+So that should display the name.
+
+89
+00:06:32,930 --> 00:06:42,200
+Now this this two days ago to be able to do this we can actually use part of humanised which is time
+
+90
+00:06:42,200 --> 00:06:50,150
+since so I'm going to just get rid of that and we're going to say SpaceX is going to be list date.
+
+91
+00:06:50,180 --> 00:06:53,330
+That's what it is in the database lists underscored date.
+
+92
+00:06:53,420 --> 00:06:59,540
+And then we can put a pipe in and we can see a time since and that will actually do exactly what we
+
+93
+00:06:59,540 --> 00:07:01,600
+need.
+
+94
+00:07:01,600 --> 00:07:01,940
+All right.
+
+95
+00:07:01,950 --> 00:07:05,030
+So let's save that and let's check it out.
+
+96
+00:07:07,780 --> 00:07:08,120
+OK.
+
+97
+00:07:08,130 --> 00:07:15,300
+So everything should be different for each listing of the address square feet garage.
+
+98
+00:07:15,390 --> 00:07:16,920
+All that stuff.
+
+99
+00:07:16,920 --> 00:07:19,970
+And notice the time since it actually gives you the hours.
+
+100
+00:07:19,970 --> 00:07:23,040
+So one day four hours which is pretty cool.
+
+101
+00:07:23,040 --> 00:07:27,930
+Gives you the realtor's name so everything seems to be intact.
+
+102
+00:07:27,930 --> 00:07:28,490
+All right.
+
+103
+00:07:28,520 --> 00:07:32,770
+Now let's see this right here.
+
+104
+00:07:32,790 --> 00:07:36,670
+Just goes to listing age Tamal that's obviously not what we want.
+
+105
+00:07:39,610 --> 00:07:46,590
+I'm trying to figure out if this would work yet because we we don't have our route for single listings
+
+106
+00:07:46,590 --> 00:07:46,820
+right.
+
+107
+00:07:46,820 --> 00:07:48,160
+We didn't do that yet.
+
+108
+00:07:48,160 --> 00:07:49,410
+Let me just double check.
+
+109
+00:07:49,440 --> 00:07:50,590
+So you are Elle's.
+
+110
+00:07:50,630 --> 00:07:53,210
+Oh we did so this route.
+
+111
+00:07:53,200 --> 00:07:59,230
+Here are the CRL is listing our listings slash and then whatever the ID.
+
+112
+00:07:59,230 --> 00:08:02,000
+So that's what we want this button to go to wups.
+
+113
+00:08:02,020 --> 00:08:08,650
+We want to go back to this and instead of just listing each team which doesn't make sense we want to
+
+114
+00:08:08,650 --> 00:08:18,900
+put in our tags and we want to do you are l and we want to say listing and needs to have an ID parameter
+
+115
+00:08:18,910 --> 00:08:22,310
+so right here we can say listing Daut ID.
+
+116
+00:08:22,690 --> 00:08:29,530
+And that should take us to the correct listings so let's save this and see if it works for you reload.
+
+117
+00:08:29,530 --> 00:08:35,690
+Now if I if I hover over this and you look down in the left in the corner you'll see listings slash
+
+118
+00:08:35,680 --> 00:08:36,440
+2.
+
+119
+00:08:36,520 --> 00:08:39,630
+This one's listing slash 4 slash 5.
+
+120
+00:08:39,640 --> 00:08:42,820
+So it just gives you the idea if I click on it we get this error.
+
+121
+00:08:42,820 --> 00:08:49,510
+So what it's saying here is the listing that they got an unexpected keyword argument of listing ID so
+
+122
+00:08:49,510 --> 00:08:52,370
+I can show you exactly why we're getting this error.
+
+123
+00:08:52,410 --> 00:08:58,690
+It's because you are Elle's we passed enlisting ID.
+
+124
+00:08:58,960 --> 00:09:04,370
+This is for the listing method OK which is in views dot pi which is right here.
+
+125
+00:09:04,390 --> 00:09:08,260
+Now when you pass in a parameter like that you also need to pass it in here.
+
+126
+00:09:08,260 --> 00:09:13,810
+So we need to actually pass in listing underscore ID.
+
+127
+00:09:14,110 --> 00:09:21,070
+So if I save that and we go back and reload that fixes that error and it loads the listing aged him
+
+128
+00:09:21,100 --> 00:09:24,560
+all template which we're going to get into in a little bit.
+
+129
+00:09:24,580 --> 00:09:29,790
+But I think what I want to do next is Hindle the pagination.
+
+130
+00:09:30,070 --> 00:09:35,740
+OK so I don't want just a never ending list of properties of listings.
+
+131
+00:09:35,740 --> 00:09:37,990
+I want to be able to page through them.
+
+132
+00:09:37,990 --> 00:09:38,350
+All right.
+
+133
+00:09:38,350 --> 00:09:44,110
+So in the next video I'm going to show you how we can implement that and also how we can style it to
+
+134
+00:09:44,140 --> 00:09:49,990
+look like bootstrap pagination like this so we don't just have like an ugly looking next in previous
+
+135
+00:09:49,990 --> 00:09:50,740
+or whatever.
+
+136
+00:09:50,740 --> 00:09:55,670
+We can actually have it look nice it might not look exactly like this but it will look similar.
+
+137
+00:09:55,930 --> 00:09:57,690
+All right so I'll see you in the next video.
+

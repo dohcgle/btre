@@ -1,0 +1,476 @@
+1
+00:00:00,180 --> 00:00:00,770
+All right guys.
+
+2
+00:00:00,780 --> 00:00:04,260
+Now we're going to start to create our virtual environment now.
+
+3
+00:00:04,680 --> 00:00:12,450
+We have to actually install the Wii or the Vende package using our apt package manager.
+
+4
+00:00:12,450 --> 00:00:23,660
+OK so we want to run this command sudo apt install Python 3 dash and V
+
+5
+00:00:30,230 --> 00:00:30,730
+OK.
+
+6
+00:00:30,740 --> 00:00:36,560
+And then like I said we're going to create a directory called pi apps in the home folder.
+
+7
+00:00:36,620 --> 00:00:39,950
+Let's clear this out and just C.D make sure we're in the home.
+
+8
+00:00:40,010 --> 00:00:44,510
+If you see this little squiggly line that represents the home folder and right now there's nothing in
+
+9
+00:00:44,510 --> 00:00:46,900
+it nothing that's not hidden.
+
+10
+00:00:46,910 --> 00:00:55,180
+So let's go ahead and make directory PI apps and then CD into pi apps.
+
+11
+00:00:57,420 --> 00:00:58,210
+OK.
+
+12
+00:00:58,300 --> 00:01:02,050
+And from here we want to create our virtual environment.
+
+13
+00:01:02,050 --> 00:01:08,490
+So we're going to say Python 3 and this works just like we did in the local environment.
+
+14
+00:01:09,280 --> 00:01:14,980
+If you're using Windows and you we're using the we're going to created the same way but to activate
+
+15
+00:01:14,980 --> 00:01:21,480
+it you're going to use the this right here been activate not your scripts activate back.
+
+16
+00:01:21,670 --> 00:01:30,910
+So Python 3 Dasch am and we want to say V and V and then the directory We want to call it is going to
+
+17
+00:01:30,910 --> 00:01:33,350
+be V and V as well.
+
+18
+00:01:36,580 --> 00:01:36,990
+OK.
+
+19
+00:01:37,010 --> 00:01:44,150
+Now if I do an ls You see we have our V and V if we look inside of that we have our bin file and that
+
+20
+00:01:44,150 --> 00:01:45,850
+has our activate script.
+
+21
+00:01:46,100 --> 00:01:50,810
+OK so let's activate our environment by doing source.
+
+22
+00:01:51,020 --> 00:01:51,830
+We're going to do.
+
+23
+00:01:51,870 --> 00:01:58,510
+V and V slash Ben slash activate.
+
+24
+00:01:58,610 --> 00:02:01,430
+And now we're inside of our virtual environment.
+
+25
+00:02:01,590 --> 00:02:05,950
+OK and you can tell because we have this this V and V right here.
+
+26
+00:02:06,020 --> 00:02:15,620
+So now we want to get ready to actually clone our get repository which has our application.
+
+27
+00:02:15,800 --> 00:02:23,550
+Now we need the dependencies for our application now I'm going to go back into my local project.
+
+28
+00:02:23,600 --> 00:02:28,700
+OK so right now I'm in my local project very important to know that I'm not on the server in this in
+
+29
+00:02:28,700 --> 00:02:29,660
+this tab.
+
+30
+00:02:29,660 --> 00:02:41,360
+So I'm still in my virtual environment now if I do a pip freeze this shows shows me all of my dependencies
+
+31
+00:02:41,360 --> 00:02:42,380
+for this project.
+
+32
+00:02:42,380 --> 00:02:49,290
+Now a lot of this stuff is like lifting stuff from vs code auto pep 8.
+
+33
+00:02:49,370 --> 00:02:52,170
+This isn't stuff that we actually need on the server.
+
+34
+00:02:52,460 --> 00:03:00,740
+So you have a couple of options you could install each thing on your server separately like Pipp install
+
+35
+00:03:01,760 --> 00:03:06,650
+like of course Django Pipp install pillow which is needed for images.
+
+36
+00:03:06,650 --> 00:03:12,590
+These two are needed for postgrads and then I believe the only other thing we need is
+
+37
+00:03:15,320 --> 00:03:19,610
+I think this right here this is P Y Z.
+
+38
+00:03:20,000 --> 00:03:24,590
+We don't need pilot Django we don't need any of that but I just want to show you a command that we can
+
+39
+00:03:24,590 --> 00:03:31,490
+use to get all these dependencies into a text file and then we can actually push that to our server
+
+40
+00:03:31,580 --> 00:03:33,870
+and just install from that.
+
+41
+00:03:33,890 --> 00:03:36,590
+So to do that we want to do Pepp
+
+42
+00:03:38,890 --> 00:03:44,210
+install Dasch are I'm sorry.
+
+43
+00:03:44,220 --> 00:03:46,050
+So we want we want to do that on the server.
+
+44
+00:03:46,070 --> 00:03:52,830
+We're going to do Pipp freeze which basically takes all of our dependencies and then we want to put
+
+45
+00:03:52,830 --> 00:04:00,040
+it into a file called requirements dot XTi.
+
+46
+00:04:00,100 --> 00:04:00,700
+All right.
+
+47
+00:04:00,710 --> 00:04:08,140
+Now if I do an ls you'll see we have that file if I take a look at it I'll say cat requirements dot
+
+48
+00:04:08,360 --> 00:04:12,120
+x t and it has all of our dependencies.
+
+49
+00:04:12,350 --> 00:04:15,700
+So I actually want to edit this.
+
+50
+00:04:15,710 --> 00:04:18,850
+I want to delete the stuff that we don't want on our server.
+
+51
+00:04:19,040 --> 00:04:22,550
+Ok so I mean we could do a nano here.
+
+52
+00:04:22,550 --> 00:04:25,010
+Let's actually just go into VS code.
+
+53
+00:04:25,280 --> 00:04:27,520
+So it's going to be Tiare project.
+
+54
+00:04:27,530 --> 00:04:31,260
+And now we have the requirements dot text.
+
+55
+00:04:31,300 --> 00:04:41,630
+Ok so I just want to figure out what we need and we don't need so we don't need asteroid we don't need
+
+56
+00:04:41,630 --> 00:04:45,410
+that or that of course we need Django.
+
+57
+00:04:45,580 --> 00:04:54,100
+We don't need this or that we need pillow we want these two these two have to do with post-grads don't
+
+58
+00:04:54,100 --> 00:04:55,270
+need this.
+
+59
+00:04:55,300 --> 00:05:00,770
+Are these any of this pilot stuff we do want that we don't need six or wrapped.
+
+60
+00:05:00,940 --> 00:05:06,160
+So basically we just need these as requirements so I'm going to go ahead and save this file.
+
+61
+00:05:06,190 --> 00:05:08,960
+Now we want to push this to our Get repository.
+
+62
+00:05:09,070 --> 00:05:17,090
+So what I'll do is go down here and I'll say Get add all.
+
+63
+00:05:17,110 --> 00:05:19,660
+And then let's say get commit
+
+64
+00:05:23,540 --> 00:05:25,760
+you say added
+
+65
+00:05:29,510 --> 00:05:32,220
+requirements file.
+
+66
+00:05:33,160 --> 00:05:33,880
+OK.
+
+67
+00:05:34,070 --> 00:05:38,460
+And then we want to push someone to say get push.
+
+68
+00:05:38,480 --> 00:05:38,840
+All right.
+
+69
+00:05:38,860 --> 00:05:43,120
+So now if we go back to our Get repository and reload
+
+70
+00:05:48,680 --> 00:05:50,800
+there's are requirements dot text.
+
+71
+00:05:51,060 --> 00:05:58,100
+Ok so now what we need to do is on the on the server we need to actually clone this whole application
+
+72
+00:05:58,100 --> 00:05:59,810
+this whole repository.
+
+73
+00:05:59,840 --> 00:06:05,980
+So let's go back to our terminal window just closed via code up or minimize it go back to our terminal
+
+74
+00:06:05,990 --> 00:06:12,980
+and I'm going to go back to the tab where we're actually running our server as Gengel admin inside of
+
+75
+00:06:12,980 --> 00:06:15,000
+our virtual environment.
+
+76
+00:06:15,680 --> 00:06:21,230
+So from here we want to do a clone and then actually let's go back to our document here.
+
+77
+00:06:21,690 --> 00:06:24,040
+And the way that we do that is like this.
+
+78
+00:06:24,410 --> 00:06:24,730
+OK.
+
+79
+00:06:24,740 --> 00:06:34,340
+So get clone now using HDDVD here because I don't feel like setting up S-sh keys on my server forget
+
+80
+00:06:34,340 --> 00:06:37,600
+hub so it's up to you if you want to go through that you can.
+
+81
+00:06:37,640 --> 00:06:41,630
+But I'm just going to use HGP as that way I can just log in.
+
+82
+00:06:42,110 --> 00:06:45,500
+So let's see if we're going to go ahead and paste this in.
+
+83
+00:06:45,500 --> 00:06:50,390
+And you just want to change if you called it bt or a project like I did you just want to keep it like
+
+84
+00:06:50,390 --> 00:06:53,570
+that but you want to put your user name in here.
+
+85
+00:06:57,300 --> 00:06:58,440
+So clone that.
+
+86
+00:06:58,440 --> 00:07:00,120
+So it's going to ask for the user name
+
+87
+00:07:03,970 --> 00:07:11,060
+K password.
+
+88
+00:07:11,070 --> 00:07:18,730
+All right so now let's do an LSN PI apps and you can see we have our beat project.
+
+89
+00:07:18,750 --> 00:07:21,330
+So we have our entire project on our server.
+
+90
+00:07:21,340 --> 00:07:31,290
+We LS BT are the underscore projects and we take a look at our entire application is here so using get
+
+91
+00:07:31,290 --> 00:07:38,880
+to deploy to or to bring your files onto a server is just fantastic it's extremely fast and it's much
+
+92
+00:07:38,880 --> 00:07:43,540
+better than using something like like FGP or something like that.
+
+93
+00:07:43,540 --> 00:07:50,700
+All right now we need to actually install our requirements our dependencies so if I do a pip freeze
+
+94
+00:07:51,520 --> 00:07:56,840
+on our server now we're in the virtual environment and I do a pip freeze.
+
+95
+00:07:57,150 --> 00:08:01,140
+All we have is this package resources we don't have Gengel we don't have any of that stuff.
+
+96
+00:08:01,140 --> 00:08:05,890
+And like I said we could do Pipp install for all for Django for all of our dependencies.
+
+97
+00:08:06,060 --> 00:08:11,510
+But since we have that that requirements file we can use that.
+
+98
+00:08:11,670 --> 00:08:20,430
+So I just want a CD into our project now so BTR the underscore project and this is where I do and last
+
+99
+00:08:20,430 --> 00:08:23,460
+you'll see we have our requirements dot textfile.
+
+100
+00:08:23,460 --> 00:08:35,190
+So I'm going to clear this up and I'm going to run Pipp install dash our requirements Daut t t
+
+101
+00:08:38,350 --> 00:08:43,940
+came for my javascript developers this is like doing in NPM install and having it look at your packages.
+
+102
+00:08:43,970 --> 00:08:48,070
+JS and vile is virtually the same thing.
+
+103
+00:08:48,120 --> 00:08:50,700
+So now if we do a Pipp freeze
+
+104
+00:08:55,330 --> 00:08:57,230
+we have all that stuff installed.
+
+105
+00:08:57,430 --> 00:09:03,760
+All right so the next thing we need to do is we need to create a local setting's file on our server
+
+106
+00:09:03,760 --> 00:09:09,220
+because right now we have a setting up PI that has all of our development stuff in it as far as the
+
+107
+00:09:09,220 --> 00:09:11,730
+database name all that stuff.
+
+108
+00:09:11,950 --> 00:09:13,600
+And you don't want that to be public.
+
+109
+00:09:13,600 --> 00:09:19,270
+You don't want your production database credentials to be public especially if this this here is going
+
+110
+00:09:19,270 --> 00:09:29,300
+to be a public repository like they could easily go into Tiare and settings and they can see your secret
+
+111
+00:09:29,300 --> 00:09:33,300
+key which is something that you definitely don't want to be exposed.
+
+112
+00:09:33,380 --> 00:09:37,490
+They could see some other stuff your database which is the most important.
+
+113
+00:09:37,490 --> 00:09:42,930
+And then we also need to change a couple of things for production like set debug to false allowed hosts.
+
+114
+00:09:42,950 --> 00:09:46,150
+We need to add our allowed host so to do this.
+
+115
+00:09:46,190 --> 00:09:53,380
+What we do is we add we have a special settings file on the server and we just basically include it
+
+116
+00:09:53,380 --> 00:09:55,260
+at the bottom of this file.
+
+117
+00:09:55,310 --> 00:10:01,790
+So we say if if we're in deployment then add this additional settings these additional settings which
+
+118
+00:10:01,790 --> 00:10:06,050
+will overwrite databases and secret key and all that stuff.
+
+119
+00:10:06,050 --> 00:10:08,280
+So that's what we're going to do in the next video.
+

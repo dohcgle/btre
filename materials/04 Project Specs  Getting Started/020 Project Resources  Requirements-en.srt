@@ -1,0 +1,520 @@
+1
+00:00:00,300 --> 00:00:04,950
+All right guys so we're going to kind of look at this project as if it were an actual application we're
+
+2
+00:00:04,950 --> 00:00:06,160
+building for a client.
+
+3
+00:00:06,180 --> 00:00:12,690
+OK so for our client is Beati real estate and they want an application where they can you know have
+
+4
+00:00:12,690 --> 00:00:19,200
+a basic web site but also have the ability to have an admin area where they can add their listings they
+
+5
+00:00:19,200 --> 00:00:23,150
+can add their realtors they can connect realtors to listings and all that stuff.
+
+6
+00:00:23,310 --> 00:00:30,630
+So we have a folder here and you have this in your project files called Beati our resources and we're
+
+7
+00:00:30,630 --> 00:00:33,180
+going to take a look at what that folder includes.
+
+8
+00:00:33,340 --> 00:00:33,680
+OK.
+
+9
+00:00:33,690 --> 00:00:40,920
+So it has a couple of things that has an app requirements doc that basically gives us all the specifications
+
+10
+00:00:40,920 --> 00:00:42,970
+and requirements for this project.
+
+11
+00:00:42,990 --> 00:00:45,900
+We have an images folder with all the images.
+
+12
+00:00:45,900 --> 00:00:47,980
+We'll take a look at their logo.
+
+13
+00:00:48,060 --> 00:00:49,390
+And then we have their theme.
+
+14
+00:00:49,410 --> 00:00:53,940
+OK so in the next video we're going to actually dive in and take a look at the whole theme.
+
+15
+00:00:53,930 --> 00:00:57,560
+So it's basically the the Web site with no functionality.
+
+16
+00:00:57,570 --> 00:00:58,340
+OK.
+
+17
+00:00:58,470 --> 00:01:02,470
+So let's start off with looking at the logo.
+
+18
+00:01:02,580 --> 00:01:04,510
+Ok so very simple logo.
+
+19
+00:01:04,590 --> 00:01:10,030
+We're going to be using the white version on the Web site and then we also have a dark version.
+
+20
+00:01:10,080 --> 00:01:12,230
+Actually let me put this in a different view.
+
+21
+00:01:12,240 --> 00:01:16,960
+Let's do let's go like that.
+
+22
+00:01:17,220 --> 00:01:21,660
+All right so we actually have a couple of files to have a CD which is a photoshop file.
+
+23
+00:01:21,660 --> 00:01:24,990
+Don't worry if you don't have photoshop it's it's just a resource.
+
+24
+00:01:24,990 --> 00:01:27,500
+We're not editing their logo or anything.
+
+25
+00:01:27,510 --> 00:01:31,590
+This is the logo PNB G which is the white version and then we have the dark version.
+
+26
+00:01:31,860 --> 00:01:38,200
+OK so in addition to logo we have images and there's a couple for subfolder is one site.
+
+27
+00:01:38,220 --> 00:01:44,970
+And if we look in here we have the showcase image which is like the main the main image on the home
+
+28
+00:01:44,970 --> 00:01:45,630
+page.
+
+29
+00:01:45,750 --> 00:01:51,290
+Then we have a building Jay Pegge which you can use as a background image which mode which is used as
+
+30
+00:01:51,290 --> 00:01:57,510
+a background image in the theme and then the about image which goes on the About page.
+
+31
+00:01:57,750 --> 00:01:58,300
+All right.
+
+32
+00:01:58,320 --> 00:02:00,790
+And then we have realtors.
+
+33
+00:02:01,020 --> 00:02:02,490
+So here we have their team.
+
+34
+00:02:02,490 --> 00:02:04,170
+Basically it's a three person team.
+
+35
+00:02:04,170 --> 00:02:05,530
+Jenny Kyle and Mark.
+
+36
+00:02:05,700 --> 00:02:07,580
+So we have images of them.
+
+37
+00:02:07,620 --> 00:02:10,930
+Those will go on the About page we have.
+
+38
+00:02:11,060 --> 00:02:12,080
+And we already looked at that.
+
+39
+00:02:12,090 --> 00:02:13,280
+We have homes.
+
+40
+00:02:13,320 --> 00:02:16,330
+So these are the actual listing images.
+
+41
+00:02:16,380 --> 00:02:22,350
+So they have six homes that we need to add and then we have the home inside one through six.
+
+42
+00:02:22,350 --> 00:02:28,020
+These are just inside photos and we're just going to use these as the inside for all the homes as opposed
+
+43
+00:02:28,020 --> 00:02:30,950
+to me having six different images for every home.
+
+44
+00:02:31,240 --> 00:02:33,350
+OK so those are the images.
+
+45
+00:02:33,360 --> 00:02:36,930
+Now let's take a look at the app requirements document.
+
+46
+00:02:36,930 --> 00:02:42,120
+And this is just a doc file so you'll be able to view it in Windows or Mac or Linux.
+
+47
+00:02:42,120 --> 00:02:49,410
+So basically this would be like either what the client sends us or what I would suggest is if you're
+
+48
+00:02:49,410 --> 00:02:54,520
+dealing directly with clients is to sit down with them and get the exact requirements specifications.
+
+49
+00:02:54,570 --> 00:03:00,240
+So you know what you're doing and you guys are on the same page and they don't try to you know say well
+
+50
+00:03:00,320 --> 00:03:03,100
+are you supposed to do this or supposed to do this.
+
+51
+00:03:03,250 --> 00:03:08,280
+And they didn't pay for that so you need to come to a mutual understanding of what actually goes into
+
+52
+00:03:08,280 --> 00:03:09,120
+the projects.
+
+53
+00:03:09,120 --> 00:03:09,860
+OK.
+
+54
+00:03:10,200 --> 00:03:12,240
+So we have some front pages here.
+
+55
+00:03:12,240 --> 00:03:14,460
+These are the pages we need to create.
+
+56
+00:03:14,640 --> 00:03:19,950
+Again we have the theme already made for us and we'll just pretend that was created by a designer or
+
+57
+00:03:19,950 --> 00:03:20,790
+whatever.
+
+58
+00:03:21,210 --> 00:03:29,350
+But we have a home page about page listings single listing search register log in and dashboard.
+
+59
+00:03:29,520 --> 00:03:38,610
+OK as far as the design specs which are already taken care of with the theme we have the BTR logo that
+
+60
+00:03:38,640 --> 00:03:41,110
+is to be used on the front end and admin.
+
+61
+00:03:41,160 --> 00:03:41,460
+OK.
+
+62
+00:03:41,460 --> 00:03:47,850
+When I say front end I just mean the front facing web site and then the admin area then branding colors
+
+63
+00:03:47,850 --> 00:03:50,300
+so they have certain blue and green.
+
+64
+00:03:50,310 --> 00:03:52,080
+These are the hexadecimal values.
+
+65
+00:03:52,260 --> 00:03:59,670
+It's mobile friendly responsive and social media icons and contact info should be clearly displayed
+
+66
+00:03:59,700 --> 00:04:06,360
+and it doesn't have to be fancy but must be clean so that the design specs as far as the functionality.
+
+67
+00:04:06,720 --> 00:04:12,180
+This is the stuff that we have to actually make happen because right now we're just going to have an
+
+68
+00:04:12,180 --> 00:04:15,610
+empty theme that doesn't do anything it's just the UI.
+
+69
+00:04:15,630 --> 00:04:22,530
+All right so they want to be able to manage listings realtors contact inquiries and Web site users through
+
+70
+00:04:22,530 --> 00:04:23,790
+their admin area.
+
+71
+00:04:23,830 --> 00:04:29,370
+So they should be able to create read update and delete all of these things here and then roll base
+
+72
+00:04:29,370 --> 00:04:29,850
+users.
+
+73
+00:04:29,850 --> 00:04:35,410
+So this means that some of the users should be able to be staff and some not.
+
+74
+00:04:35,550 --> 00:04:42,180
+So most would not but there should be some staff users that can access the admin area display listings
+
+75
+00:04:42,180 --> 00:04:43,550
+and app with pagination.
+
+76
+00:04:43,560 --> 00:04:48,700
+OK so they do want pagination as opposed to just having a never ending page of listings.
+
+77
+00:04:48,870 --> 00:04:56,820
+Ability to set listings to unpublished so we'll have to figure out a way to have like a checkbox where
+
+78
+00:04:56,820 --> 00:05:03,210
+they can either publish or unpublished a listing that show on the front end search listings by keywords
+
+79
+00:05:03,220 --> 00:05:07,910
+city state bedrooms and price so those are the fields that need to be searchable.
+
+80
+00:05:07,930 --> 00:05:13,570
+Some will be input boxes some will be select lists and the search should be on the home page as well
+
+81
+00:05:13,570 --> 00:05:15,000
+as on the search page.
+
+82
+00:05:15,100 --> 00:05:22,780
+OK list realtors on a boat page with seller of the month control via adman's So they want to be able
+
+83
+00:05:22,780 --> 00:05:30,910
+to add and manage realtors in the admin section right while they want these realtors to also be displayed
+
+84
+00:05:31,210 --> 00:05:32,550
+on the above page.
+
+85
+00:05:32,590 --> 00:05:32,900
+OK.
+
+86
+00:05:32,920 --> 00:05:34,000
+So we have to do that.
+
+87
+00:05:34,120 --> 00:05:36,310
+And then they want an option of seller of the month.
+
+88
+00:05:36,310 --> 00:05:44,130
+So what we'll do is create a checkbox inside the admin area for Selar of the month and if that seller
+
+89
+00:05:44,130 --> 00:05:48,890
+or that retailer has checked off the no show on the About page as seller of the month.
+
+90
+00:05:49,240 --> 00:05:53,290
+OK we also have listing page should have fields listed below.
+
+91
+00:05:53,290 --> 00:06:00,160
+Meaning these down here we'll take a look at those in the second listing page should have 5 5 images
+
+92
+00:06:00,160 --> 00:06:01,670
+with lightbox.
+
+93
+00:06:01,870 --> 00:06:03,320
+I believe it's actually 6.
+
+94
+00:06:03,340 --> 00:06:05,190
+But we'll we'll get to that.
+
+95
+00:06:05,410 --> 00:06:10,390
+So a light box just means you know they want thumbnails and we should be able to click on it and then
+
+96
+00:06:10,390 --> 00:06:16,360
+have a box open up that shows the larger image and then this next one light box should scroll through
+
+97
+00:06:16,360 --> 00:06:17,210
+images.
+
+98
+00:06:17,380 --> 00:06:22,600
+So they want to be able to like have an arrow that we can click and just scroll through all the images
+
+99
+00:06:22,600 --> 00:06:23,970
+for that listing.
+
+100
+00:06:24,280 --> 00:06:28,550
+OK listing page should have a form to submit an inquiry for that listing.
+
+101
+00:06:28,750 --> 00:06:35,170
+So they want every every single listing page should have a form where they can put their name and email
+
+102
+00:06:35,170 --> 00:06:37,690
+and contact info and stuff like that.
+
+103
+00:06:38,170 --> 00:06:38,730
+All right.
+
+104
+00:06:38,920 --> 00:06:41,320
+And that form should go to the database.
+
+105
+00:06:41,320 --> 00:06:44,010
+It should also notify the realtors with an e-mail.
+
+106
+00:06:44,020 --> 00:06:52,870
+OK so we need to set up some kind of e-mail system so front and register log in to track inquiries meaning
+
+107
+00:06:52,870 --> 00:06:58,150
+that users should be able to register on the from the front end web site not as a staff member not as
+
+108
+00:06:58,150 --> 00:07:04,330
+an admin user but a regular user and they can log in and if they make any inquiries about a property
+
+109
+00:07:04,600 --> 00:07:05,970
+then they should be able.
+
+110
+00:07:05,970 --> 00:07:10,320
+That will be displayed in their dashboard on the front end.
+
+111
+00:07:10,600 --> 00:07:10,960
+OK.
+
+112
+00:07:10,960 --> 00:07:17,140
+And then both unregistered and registered users can submit a form meaning an inquiry if the if they're
+
+113
+00:07:17,140 --> 00:07:21,630
+registered in law then they should only be able to submit one per listing.
+
+114
+00:07:21,720 --> 00:07:21,990
+OK.
+
+115
+00:07:22,030 --> 00:07:28,240
+Meaning if they're logged in and they submit to let's say you know 55 main street and they try to submit
+
+116
+00:07:28,240 --> 00:07:30,060
+another one for 55 Main Street.
+
+117
+00:07:30,070 --> 00:07:35,690
+It should say you know you've already submitted an inquiry for this property.
+
+118
+00:07:35,770 --> 00:07:41,440
+So these are the basic fields they want on the listing page title address.
+
+119
+00:07:41,530 --> 00:07:43,650
+Most likely the title will be the address.
+
+120
+00:07:43,660 --> 00:07:47,660
+But we want the ability to choose something else if they want price.
+
+121
+00:07:47,680 --> 00:07:50,950
+Bedrooms bathrooms square feet lot size.
+
+122
+00:07:51,130 --> 00:07:52,320
+How many garages.
+
+123
+00:07:52,330 --> 00:07:58,930
+The listing date the Realtor of that property meaning their name and their image and then a main image
+
+124
+00:07:58,930 --> 00:08:02,030
+in five other smaller images with a white box.
+
+125
+00:08:02,200 --> 00:08:04,270
+OK impossible future functionality.
+
+126
+00:08:04,270 --> 00:08:07,130
+Google Maps on listing page and Beier testimonial.
+
+127
+00:08:07,140 --> 00:08:12,040
+So this is stuff that's not going to be in the course currently but I might add later on.
+
+128
+00:08:12,040 --> 00:08:15,670
+All right so these are all the specifications for the application.
+
+129
+00:08:15,910 --> 00:08:20,410
+So in the next video we're going to take a look at the theme and that will give us an even better idea
+
+130
+00:08:20,410 --> 00:08:25,220
+of what we're doing here and what it's going to take to to make this happen.
+

@@ -1,0 +1,348 @@
+1
+00:00:00,240 --> 00:00:06,630
+All right guys so now we're moving on to the contacts part of the inquiry's part of this.
+
+2
+00:00:06,630 --> 00:00:13,800
+This Gengel project so we need to create an app called contacts so when we go down to my terminal here
+
+3
+00:00:13,800 --> 00:00:18,090
+make sure you're in your virtual environment and we're going to run Python
+
+4
+00:00:20,820 --> 00:00:30,080
+managed up high and we want to do start up and we're going to call this contacts.
+
+5
+00:00:31,410 --> 00:00:36,660
+So now over here you can see that we have a new folder called contacts all the standard stuff inside
+
+6
+00:00:36,660 --> 00:00:37,120
+of it.
+
+7
+00:00:37,350 --> 00:00:41,730
+And I think the first thing that we should do here is create our model OK because this is going to have
+
+8
+00:00:41,730 --> 00:00:50,130
+its own model so let's open this up and let's create a class called contact that's our model name and
+
+9
+00:00:50,130 --> 00:00:57,630
+we need to pass in models Daut model and Colin and then we want to put our fields so we're going to
+
+10
+00:00:57,630 --> 00:01:06,670
+have listing and listing is going to be a character field so we're going to say char field and let's
+
+11
+00:01:06,670 --> 00:01:09,880
+give it a max length.
+
+12
+00:01:11,370 --> 00:01:13,900
+And let's do max length 200.
+
+13
+00:01:14,180 --> 00:01:19,280
+OK I'm not going to do our relationship here between the contact and listing because we don't really
+
+14
+00:01:19,280 --> 00:01:20,080
+need to.
+
+15
+00:01:20,180 --> 00:01:25,910
+All I really want is just the title of the listing and also the listing ID.
+
+16
+00:01:25,910 --> 00:01:33,010
+So we're going to do listing ID and that's going to be an integer field so models dot integer field
+
+17
+00:01:34,360 --> 00:01:35,970
+K that we want to name.
+
+18
+00:01:35,980 --> 00:01:40,300
+So this will be the contact name UPS models dot.
+
+19
+00:01:40,310 --> 00:01:42,190
+This will also be char field.
+
+20
+00:01:42,210 --> 00:01:51,370
+And let's do max say max length and let's do 200.
+
+21
+00:01:51,380 --> 00:01:51,830
+All right.
+
+22
+00:01:51,830 --> 00:01:53,730
+And then I'm going to copy this down.
+
+23
+00:01:53,840 --> 00:01:56,330
+Let's do two more down.
+
+24
+00:01:56,330 --> 00:01:59,660
+And this one both of these are going to be max length of one hundred.
+
+25
+00:01:59,660 --> 00:02:02,760
+This is actually going to be the email on the phone.
+
+26
+00:02:03,050 --> 00:02:04,280
+So say e-mail
+
+27
+00:02:06,890 --> 00:02:11,150
+and phone OK so the next thing is going to be the message
+
+28
+00:02:14,200 --> 00:02:22,150
+and message is going to be a text field K and message is going to be optional so we're going to do blank
+
+29
+00:02:22,180 --> 00:02:25,420
+equals true meaning that it can be blank.
+
+30
+00:02:25,420 --> 00:02:26,800
+So it's optional.
+
+31
+00:02:26,800 --> 00:02:34,420
+And then let's do contact underscore date and we're going to set that to date.
+
+32
+00:02:34,750 --> 00:02:35,170
+Sorry.
+
+33
+00:02:35,180 --> 00:02:45,440
+Models dot let's do date time field and I want to put a default in here and I want to set the default
+
+34
+00:02:45,440 --> 00:02:46,220
+to date
+
+35
+00:02:49,950 --> 00:02:52,960
+time do it now.
+
+36
+00:02:53,180 --> 00:03:02,590
+And in order to use the time we have to bring that in so we're going to say from date time imports date
+
+37
+00:03:02,610 --> 00:03:03,480
+time.
+
+38
+00:03:03,840 --> 00:03:07,620
+So default now and then I'm also going to add blank true to this.
+
+39
+00:03:07,620 --> 00:03:12,240
+So it's a blank and set that equal to true.
+
+40
+00:03:12,630 --> 00:03:16,920
+And then we want also want the user ID.
+
+41
+00:03:16,920 --> 00:03:23,820
+Now this user ID is going to be connected to whatever registered users logged in when they make an inquiry.
+
+42
+00:03:23,820 --> 00:03:31,770
+So let's say models dot will do integer field and I'm actually going to set this to blank equals true
+
+43
+00:03:31,800 --> 00:03:35,630
+because when someone makes an inquiry they may not be logged in.
+
+44
+00:03:35,730 --> 00:03:41,610
+OK so we don't want inquiry forms to only be available to people that are logged in.
+
+45
+00:03:41,610 --> 00:03:47,760
+However if they are logged in we want to track that user ID so that we can show their inquiries on their
+
+46
+00:03:47,760 --> 00:03:49,650
+dashboard.
+
+47
+00:03:49,650 --> 00:03:54,770
+Now the last thing we're going to do here is define and we're going to say double underscore to your
+
+48
+00:03:55,140 --> 00:03:57,490
+double underscore.
+
+49
+00:03:57,730 --> 00:04:00,090
+And then we want to pass in the self.
+
+50
+00:04:00,490 --> 00:04:06,170
+And this is the basically the main field we want to refer to for contacts and that's going to be named
+
+51
+00:04:06,180 --> 00:04:09,800
+so we're going to do self-taught name and that's it.
+
+52
+00:04:09,820 --> 00:04:11,650
+That's our model.
+
+53
+00:04:12,190 --> 00:04:19,780
+Now we're going to have we we want to put a table in the database for our contacts so we need to create
+
+54
+00:04:19,780 --> 00:04:21,400
+a migration.
+
+55
+00:04:21,400 --> 00:04:21,700
+All right.
+
+56
+00:04:21,700 --> 00:04:26,980
+So let's go down here to our terminal and we're going to say Python
+
+57
+00:04:29,830 --> 00:04:36,310
+managed our pie make migrations contacts
+
+58
+00:04:39,300 --> 00:04:41,170
+app contacts cannot be found.
+
+59
+00:04:41,170 --> 00:04:41,470
+All right.
+
+60
+00:04:41,470 --> 00:04:48,340
+So I think I've said this a couple times throughout the course I always forget to put my new apps in
+
+61
+00:04:48,340 --> 00:04:55,900
+the installed apps list in the settings so let's go to our settings page or settings PI and go up to
+
+62
+00:04:56,530 --> 00:04:59,170
+installed apps.
+
+63
+00:04:59,210 --> 00:05:04,370
+I wish that they would just somehow make it so that these got added automatically because I just can't
+
+64
+00:05:04,370 --> 00:05:05,900
+seem to remember to put them in.
+
+65
+00:05:05,900 --> 00:05:14,710
+So this is going to be contacts config and we want to change this to contacts.
+
+66
+00:05:14,720 --> 00:05:15,090
+All right.
+
+67
+00:05:15,110 --> 00:05:18,830
+So let's save that and let's try this again.
+
+68
+00:05:18,830 --> 00:05:24,130
+So we're going to run make make migrations with on the contacts app.
+
+69
+00:05:24,590 --> 00:05:30,500
+I sort of look at that model and will create a migration file so you can see it's created in contacts
+
+70
+00:05:30,800 --> 00:05:37,260
+it's created in the migrations folders 001 dot initialled dot pi.
+
+71
+00:05:37,430 --> 00:05:42,050
+Now to run this we need to do Python
+
+72
+00:05:45,350 --> 00:05:51,020
+managed up-I because right now we just have that the migration file it has actually ran so it hasn't
+
+73
+00:05:51,020 --> 00:05:52,920
+created the database table.
+
+74
+00:05:52,940 --> 00:05:56,370
+So now we just simply say migrate and we get.
+
+75
+00:05:56,390 --> 00:06:03,880
+OK so if we want to double check that we can go to PGE admen and probably going to have to log back
+
+76
+00:06:03,880 --> 00:06:05,440
+in here because it's been a while.
+
+77
+00:06:07,960 --> 00:06:13,450
+And you don't have to use PGE admin if you want to log into your shell your PSU all shall That's fine
+
+78
+00:06:13,480 --> 00:06:14,570
+as well.
+
+79
+00:06:16,950 --> 00:06:29,220
+So if we go to databases and be Tiare DBI schemas public tables and there it is contact's underscore
+
+80
+00:06:29,220 --> 00:06:30,610
+contact.
+
+81
+00:06:31,110 --> 00:06:32,030
+All right good.
+
+82
+00:06:32,130 --> 00:06:33,590
+So we know that that worked.
+
+83
+00:06:33,870 --> 00:06:40,290
+So I think we're all set here and the models are going to close that up and in the next video what I
+
+84
+00:06:40,290 --> 00:06:46,200
+want to do is I want to register our model with our admin area so that we can actually see our contacts
+
+85
+00:06:46,200 --> 00:06:52,530
+in the admin and we're also going to customize the table a little bit.
+
+86
+00:06:52,530 --> 00:06:52,890
+All right.
+
+87
+00:06:52,890 --> 00:06:54,750
+So we'll do that in the next video.
+

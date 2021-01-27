@@ -1,0 +1,456 @@
+1
+00:00:00,260 --> 00:00:05,310
+All right guys what I want to do in this video is prepare our inquiry form or our contact form.
+
+2
+00:00:05,310 --> 00:00:11,840
+So that's going to be in our templates and then in listings in listing aged him well.
+
+3
+00:00:12,280 --> 00:00:15,880
+OK so it's at the bottom this inquiry motile here.
+
+4
+00:00:16,050 --> 00:00:18,590
+And there's quite a bit that we need to do here.
+
+5
+00:00:18,590 --> 00:00:21,530
+First thing I'm going to start with is the form tag.
+
+6
+00:00:21,990 --> 00:00:26,220
+So we need to add an action to this.
+
+7
+00:00:26,220 --> 00:00:30,590
+Now we haven't created any or else yet for contacts but we will.
+
+8
+00:00:30,720 --> 00:00:32,700
+So I'm going to put in here.
+
+9
+00:00:35,030 --> 00:00:39,870
+Let's say you are Arel and will just say contact
+
+10
+00:00:42,380 --> 00:00:43,190
+OK.
+
+11
+00:00:43,360 --> 00:00:49,900
+We also want to make sure that this is a post form so we want to say method equals post and we have
+
+12
+00:00:49,900 --> 00:00:55,000
+a post form in Django we want to make sure that we secure it with our CSR token
+
+13
+00:00:59,790 --> 00:01:02,700
+and then this property here is just static.
+
+14
+00:01:02,700 --> 00:01:09,950
+So I just want to replace this with our listing name member in the listing but each team file where
+
+15
+00:01:09,950 --> 00:01:15,440
+we passed the listing in so we have access to all the fields of a listing.
+
+16
+00:01:15,450 --> 00:01:17,880
+We also have access to the user stuff.
+
+17
+00:01:17,970 --> 00:01:26,880
+So if the if the user is logged in I actually want to send the user id as a hidden input field because
+
+18
+00:01:26,880 --> 00:01:28,250
+we're going to need that.
+
+19
+00:01:28,260 --> 00:01:34,210
+So let's go where should we go to go right under the token right here.
+
+20
+00:01:34,520 --> 00:01:36,070
+And let's put an if statement.
+
+21
+00:01:37,650 --> 00:01:48,540
+So say if user dot is underscore authenticated and I just want to put an else here as well.
+
+22
+00:01:51,320 --> 00:01:52,280
+OK then we need it.
+
+23
+00:01:52,280 --> 00:02:02,960
+And if so if the users authenticate I'm going to put a hidden input and say input hidden the name's
+
+24
+00:02:02,970 --> 00:02:05,460
+going to be user underscore
+
+25
+00:02:08,070 --> 00:02:09,030
+ID.
+
+26
+00:02:09,410 --> 00:02:18,070
+And then the value is going to be user dot ID now.
+
+27
+00:02:18,240 --> 00:02:23,280
+Else if then the user isn't authenticated I'm still going to send this input.
+
+28
+00:02:23,730 --> 00:02:28,280
+OK I'm still going to send it but I'm going to set the value to zero OK.
+
+29
+00:02:28,290 --> 00:02:34,580
+And this is just going to make things easier for us on the other side when we handle the submission.
+
+30
+00:02:34,650 --> 00:02:39,090
+So I also want to send along a couple of other things I want to send the e-mails.
+
+31
+00:02:39,150 --> 00:02:45,660
+The e-mail of the realtor and the listing I.D. And the reason I want to send the email is because I
+
+32
+00:02:45,660 --> 00:02:53,660
+want to send her an e-mail when there's a new submission so we're going to go right under the def.
+
+33
+00:02:53,670 --> 00:02:59,700
+OK this shouldn't be in the conditional and we want to put an input case is going to be hidden again
+
+34
+00:03:00,210 --> 00:03:05,450
+and name for this is going to be real to her underscore.
+
+35
+00:03:05,480 --> 00:03:16,940
+Email in the value k so the value is going to be listing dot.
+
+36
+00:03:16,990 --> 00:03:21,290
+Realtor can remember since the relationship between a real turn of listing.
+
+37
+00:03:21,290 --> 00:03:28,280
+We can get any fields from the realtor model and we want that email so we can do that at the same time
+
+38
+00:03:28,280 --> 00:03:32,960
+and want to get the listing ideas as a hidden input some going to copy this down and I'm going to change
+
+39
+00:03:32,990 --> 00:03:47,410
+this to listing underscore ID and of course we can do listing dot ID for that.
+
+40
+00:03:48,170 --> 00:03:50,900
+OK so now it's Hindle the name in the e-mail.
+
+41
+00:03:50,990 --> 00:03:56,450
+If the users logged in I actually want the value to display as their name and their e-mail.
+
+42
+00:03:56,450 --> 00:03:59,910
+So let's go to I want to be in the input.
+
+43
+00:04:00,090 --> 00:04:01,680
+I'll go right after the class.
+
+44
+00:04:01,700 --> 00:04:07,190
+And right before the required here and let's put an if statement in here.
+
+45
+00:04:09,900 --> 00:04:14,490
+Case and say if user dot is
+
+46
+00:04:17,460 --> 00:04:21,720
+authenticated and I'm going to put the end
+
+47
+00:04:26,620 --> 00:04:33,730
+and if so if these are authenticated then I'm going to put a value attribute and that value attribute
+
+48
+00:04:33,790 --> 00:04:37,110
+is going to be equal to user dot.
+
+49
+00:04:37,180 --> 00:04:38,430
+What is this e-mail.
+
+50
+00:04:38,480 --> 00:04:39,230
+Does the e-mail.
+
+51
+00:04:39,230 --> 00:04:42,370
+No this is the name so user dot name.
+
+52
+00:04:42,370 --> 00:04:47,670
+OK we want to do the same thing for the e-mails I'm going to copy this whole if statement.
+
+53
+00:04:47,860 --> 00:04:57,250
+Go right here for the e-mail pasted in and I'm just going to change this to use your dot.
+
+54
+00:04:57,250 --> 00:05:00,630
+Email.
+
+55
+00:05:00,870 --> 00:05:02,060
+Why is this discolored.
+
+56
+00:05:02,070 --> 00:05:05,540
+That's weird sit like that up here to
+
+57
+00:05:08,140 --> 00:05:11,670
+class form control that yeah that should still work.
+
+58
+00:05:11,710 --> 00:05:13,780
+It's just a VS code thing.
+
+59
+00:05:14,810 --> 00:05:18,570
+So it is at it that's it.
+
+60
+00:05:20,850 --> 00:05:22,700
+So at the bottom input types have.
+
+61
+00:05:22,710 --> 00:05:23,090
+Good.
+
+62
+00:05:23,100 --> 00:05:23,390
+All right.
+
+63
+00:05:23,400 --> 00:05:24,770
+So let's save this.
+
+64
+00:05:24,930 --> 00:05:27,510
+And first thing let's see if we have any errors.
+
+65
+00:05:27,510 --> 00:05:32,080
+So if I reload the page we do reverse contact not found.
+
+66
+00:05:32,080 --> 00:05:37,830
+So basically the reason we're getting this error is because there is no u r l with the name of contacts
+
+67
+00:05:37,840 --> 00:05:42,730
+so what we're going to do is in our contacts app just like we've been doing with just about every other
+
+68
+00:05:42,730 --> 00:05:45,090
+app we want to create a you or.
+
+69
+00:05:45,390 --> 00:05:47,890
+Py file.
+
+70
+00:05:48,230 --> 00:05:54,200
+And in this file We're only actually going only going to have one u r l and that's for the submission.
+
+71
+00:05:54,230 --> 00:06:03,050
+So let's just quickly say from Django Daut you are Elle's we want to import path and let's bring in
+
+72
+00:06:03,050 --> 00:06:11,300
+our views so from all import views and then we want to do our u r l patterns
+
+73
+00:06:14,120 --> 00:06:18,730
+K and we just want one path here and path.
+
+74
+00:06:18,740 --> 00:06:20,880
+I'm going just going to make it.
+
+75
+00:06:22,190 --> 00:06:24,770
+Let's see what are we going to do here let's say contact
+
+76
+00:06:27,420 --> 00:06:33,700
+contact and that's going to go to views Daut contact.
+
+77
+00:06:33,990 --> 00:06:36,420
+And let's say name equals
+
+78
+00:06:38,800 --> 00:06:41,050
+contact.
+
+79
+00:06:41,470 --> 00:06:48,870
+Now just like with any other u r l file we have to basically include it in the main you or else PI and
+
+80
+00:06:48,870 --> 00:06:51,240
+we're getting this error because there's no contact method.
+
+81
+00:06:51,240 --> 00:06:52,800
+Well we'll add that in a second.
+
+82
+00:06:52,920 --> 00:07:00,170
+But let's go to Tiare or els and we're just going to do what we did with the rest of these it's going
+
+83
+00:07:00,170 --> 00:07:01,760
+to copy this down.
+
+84
+00:07:02,360 --> 00:07:07,150
+And this will be contacts.
+
+85
+00:07:07,430 --> 00:07:11,410
+It's going to go to contacts.
+
+86
+00:07:11,640 --> 00:07:13,770
+Elves.
+
+87
+00:07:14,000 --> 00:07:14,420
+All right.
+
+88
+00:07:14,420 --> 00:07:20,150
+So I'll save that and let's create our view method so we'll go to our contacts app and then used up
+
+89
+00:07:20,150 --> 00:07:23,180
+PI and let's say define
+
+90
+00:07:25,430 --> 00:07:36,530
+contact pass in our request and for now let's just return save that and that should get rid of the error
+
+91
+00:07:36,830 --> 00:07:39,800
+in the dot pi if I resave it.
+
+92
+00:07:39,800 --> 00:07:41,500
+There we go.
+
+93
+00:07:41,510 --> 00:07:47,730
+All right so now let's make sure that we have no errors 3 load and good if we make an inquiry.
+
+94
+00:07:47,810 --> 00:07:52,300
+So the correct listing is in here 33 x x circle.
+
+95
+00:07:52,400 --> 00:07:54,210
+Actually though I'm logged in.
+
+96
+00:07:54,290 --> 00:07:59,650
+OK so it has the email but it's not showing the name.
+
+97
+00:07:59,880 --> 00:08:06,070
+Why is it not showing name at all.
+
+98
+00:08:06,070 --> 00:08:11,470
+The reason is it's not showing the name is because the user doesn't have a name it has a first name
+
+99
+00:08:11,470 --> 00:08:12,950
+and a last name.
+
+100
+00:08:12,970 --> 00:08:21,160
+So we want to go down to where we tested right here in the input and we put user name we're actually
+
+101
+00:08:21,160 --> 00:08:25,930
+going to put user dot first name space
+
+102
+00:08:28,410 --> 00:08:34,580
+user dot last name.
+
+103
+00:08:34,780 --> 00:08:36,430
+Let's try that.
+
+104
+00:08:36,430 --> 00:08:40,180
+So now if I reload and we make an inquiry.
+
+105
+00:08:40,420 --> 00:08:41,650
+Hope that didn't work either
+
+106
+00:08:45,230 --> 00:08:50,700
+oh you know it didn't work because Brad the user Brad doesn't have a first and last name.
+
+107
+00:08:50,780 --> 00:08:57,160
+If we go to users and we look at Brad there's no first and last name so that's actually fine.
+
+108
+00:08:57,410 --> 00:09:00,930
+Let's try to log in as Cathy and see what works you with happens.
+
+109
+00:09:07,090 --> 00:09:11,110
+Because for the first name a last name it's not required.
+
+110
+00:09:11,320 --> 00:09:16,420
+So if we go to a listing and make an inquiry there we go.
+
+111
+00:09:16,420 --> 00:09:17,340
+Cathy Smith.
+
+112
+00:09:17,350 --> 00:09:18,930
+Good.
+
+113
+00:09:18,940 --> 00:09:22,220
+So in the next video we're going to start to handle the submission.
+
+114
+00:09:22,330 --> 00:09:23,300
+So I'll see you then.
+

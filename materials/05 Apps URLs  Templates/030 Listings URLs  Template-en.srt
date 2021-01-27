@@ -1,0 +1,728 @@
+1
+00:00:00,270 --> 00:00:06,570
+All right guys so now that we have our index in about page done as far as the display the UI I want
+
+2
+00:00:06,570 --> 00:00:10,520
+to create our listings app and also our realtor's app.
+
+3
+00:00:10,560 --> 00:00:16,890
+Ok so once we do this we should have two new folders listings and realtors and it'll be similar to the
+
+4
+00:00:16,890 --> 00:00:24,120
+pages folder structure with all the admin dot by the apps models test your Elle's in views.
+
+5
+00:00:24,420 --> 00:00:26,610
+Well actually you or else we create ourselves.
+
+6
+00:00:26,850 --> 00:00:31,260
+So let's go ahead and generate these apps so we're going to say Python.
+
+7
+00:00:31,270 --> 00:00:33,230
+Make sure you're in your virtual environment.
+
+8
+00:00:33,270 --> 00:00:37,130
+We're going to say Python managed Daut pi.
+
+9
+00:00:37,350 --> 00:00:43,790
+And we wanted to do start up and we're going to create an app called listings.
+
+10
+00:00:44,320 --> 00:00:44,950
+OK.
+
+11
+00:00:45,240 --> 00:00:53,070
+So now over to the left you can see it created a folder called listings lets do the same with realtors.
+
+12
+00:00:53,500 --> 00:00:54,440
+OK.
+
+13
+00:00:55,080 --> 00:01:02,100
+So Realtors is I mean listings obviously we have the listings page we have the single listing page and
+
+14
+00:01:02,100 --> 00:01:05,820
+all that stuff we have the search page thats going to be part of the listings app.
+
+15
+00:01:05,970 --> 00:01:12,150
+Realtors is more just for the model we're not going to have any templates or views for realtors.
+
+16
+00:01:12,150 --> 00:01:21,660
+It's just to basically to be able to add realtors through the admin area and then basically form a relationship
+
+17
+00:01:21,660 --> 00:01:24,480
+between the realtor and the listing.
+
+18
+00:01:24,840 --> 00:01:28,810
+OK so let's start off by adding our listings templates.
+
+19
+00:01:28,860 --> 00:01:37,160
+So we're going to go into the templates and well let's create a special folder for listing templates
+
+20
+00:01:37,230 --> 00:01:39,540
+and call this listings.
+
+21
+00:01:40,380 --> 00:01:45,300
+And inside here we'll create a folder called listing agent team.
+
+22
+00:01:45,350 --> 00:01:48,450
+OK Cingular that's the single listing page.
+
+23
+00:01:48,450 --> 00:01:55,250
+We also want listings pleuro for you know the the the list of listings.
+
+24
+00:01:55,950 --> 00:02:00,710
+And let's also create one called Search page to mail.
+
+25
+00:02:01,170 --> 00:02:06,950
+OK so those are all the templates that we need now for listings we're going to have to have some some
+
+26
+00:02:06,970 --> 00:02:09,290
+your elves obviously that we need to connect to.
+
+27
+00:02:09,450 --> 00:02:13,010
+So that means we need to create its own you are Elle's dot.
+
+28
+00:02:13,020 --> 00:02:19,310
+So inside the the main listings folder here we're going to create a new file called you or else dot
+
+29
+00:02:19,360 --> 00:02:25,160
+PI and it's going to be similar to what we did with pages you are closed up.
+
+30
+00:02:25,160 --> 00:02:30,180
+So I'm actually going to just copy that and bring that over to the new one here.
+
+31
+00:02:30,210 --> 00:02:37,230
+So we want to import path we want to import from views you are all patterns for just if we leave this
+
+32
+00:02:37,230 --> 00:02:42,530
+empty this pertains to slash listings or at least it will.
+
+33
+00:02:42,570 --> 00:02:49,990
+So we want that to call the index method inside of the listings views foaled views file.
+
+34
+00:02:50,210 --> 00:02:56,020
+OK and we'll name this listings OK.
+
+35
+00:02:56,980 --> 00:03:03,140
+Let's say for the single listings we actually want it to look like this so it will be our or whatever
+
+36
+00:03:03,140 --> 00:03:06,820
+are you are Ellas slash listings slash.
+
+37
+00:03:06,850 --> 00:03:10,150
+And then the ID like let's say listings 23.
+
+38
+00:03:10,150 --> 00:03:18,910
+So we need to include a parameter in our u r l here so it'll be slashy listings and then the ID.
+
+39
+00:03:18,910 --> 00:03:24,160
+So what we need to do is put in some angle brackets and we need to put the type that we want which is
+
+40
+00:03:24,160 --> 00:03:29,770
+going to be an int and then what we want to call it which is going to be listing underscore ID.
+
+41
+00:03:29,890 --> 00:03:35,540
+Okay so that'll be how we can actually access this parameter from within the view method.
+
+42
+00:03:35,560 --> 00:03:41,470
+So we'll have this go to views Daut listing that will be the name of the method and then the name will
+
+43
+00:03:41,470 --> 00:03:48,580
+call listing a singular and then the last you are all we're going to need here is going to be the search.
+
+44
+00:03:48,580 --> 00:03:57,200
+So we'll call this search and it will go to a method called search.
+
+45
+00:03:57,530 --> 00:04:02,620
+And as far as the the well we want it to be listings slash search.
+
+46
+00:04:02,680 --> 00:04:04,610
+So we just want to put in search here.
+
+47
+00:04:04,930 --> 00:04:05,510
+Okay.
+
+48
+00:04:05,650 --> 00:04:11,770
+And the reason we're not putting in like listings slash search here is because we're actually going
+
+49
+00:04:11,770 --> 00:04:17,890
+to link this to the main you are Elle's dot PI and tell it that anything that has listings slash should
+
+50
+00:04:17,890 --> 00:04:23,740
+look at this file so let's save this and we're going to now head over and we're going to get errors
+
+51
+00:04:23,740 --> 00:04:26,340
+here because we haven't created these methods yet.
+
+52
+00:04:26,500 --> 00:04:28,790
+But let's head over to the main beat.
+
+53
+00:04:28,790 --> 00:04:34,190
+Sorry you are up high and we want to do the same thing we did with our pages app.
+
+54
+00:04:34,360 --> 00:04:34,980
+Okay.
+
+55
+00:04:35,200 --> 00:04:40,360
+And one other thing we have to do is at our apt to the settings file which I always always forget to
+
+56
+00:04:40,360 --> 00:04:41,020
+do.
+
+57
+00:04:41,300 --> 00:04:49,960
+So let's go ahead and just create another one here and this time we're going to do listings slash.
+
+58
+00:04:50,170 --> 00:04:57,210
+Okay so anything that is listing slash is going to go to listings.
+
+59
+00:04:57,250 --> 00:04:59,000
+You are Elle's.
+
+60
+00:04:59,380 --> 00:05:00,590
+So save that.
+
+61
+00:05:00,700 --> 00:05:02,440
+And then let's go to our setting's file.
+
+62
+00:05:02,440 --> 00:05:04,010
+Before I forget again.
+
+63
+00:05:04,210 --> 00:05:12,820
+So we'll go to settings up high and go up to where the apps are which are installed apps and let's copy
+
+64
+00:05:12,820 --> 00:05:15,450
+this down twice.
+
+65
+00:05:15,550 --> 00:05:29,710
+We want to bring in listings dot apps dot listings con thig and then we also want to bring in our realtors.
+
+66
+00:05:29,710 --> 00:05:37,710
+So so be realtors con fig it'll be realtors dot apps.
+
+67
+00:05:37,830 --> 00:05:41,800
+OK so I'll save that.
+
+68
+00:05:41,830 --> 00:05:46,090
+So now we need to create our view methods.
+
+69
+00:05:46,090 --> 00:05:53,020
+So are you Olsdorf for listings of index listing in search Scholtz create those who will go into views
+
+70
+00:05:54,520 --> 00:06:05,430
+and see we're going to get rid of that let's to define index so indexes are going to be just the main
+
+71
+00:06:05,430 --> 00:06:06,830
+listings page.
+
+72
+00:06:07,060 --> 00:06:16,240
+Okay this takes in a request and what we're going to do here is render the listings view.
+
+73
+00:06:16,500 --> 00:06:23,790
+So we want to render which has already brought in above passen the request and then the view we want
+
+74
+00:06:23,790 --> 00:06:32,460
+to render is going to be in the listings and it's going to be listings dot aged him out okay.
+
+75
+00:06:32,680 --> 00:06:41,590
+So now what I'll do is just copy this and paste that in let's do one more time so we have index we also
+
+76
+00:06:41,590 --> 00:06:43,720
+have just the listing.
+
+77
+00:06:43,810 --> 00:06:48,800
+And what I'm going by is this right here index listing and search.
+
+78
+00:06:48,970 --> 00:06:52,700
+So those those are the three methods that we want to create right now.
+
+79
+00:06:52,870 --> 00:06:59,650
+So listing in the template that will load is going to be listing aged all then we have search and that's
+
+80
+00:06:59,650 --> 00:07:02,630
+going to load the search aged HUMO.
+
+81
+00:07:02,960 --> 00:07:03,400
+Okay.
+
+82
+00:07:03,460 --> 00:07:09,700
+Now as far as the small pages for now it's just put h ones in there so will say this is listing.
+
+83
+00:07:09,890 --> 00:07:11,080
+I'll save that.
+
+84
+00:07:11,160 --> 00:07:14,550
+The Swan is listings.
+
+85
+00:07:14,560 --> 00:07:15,670
+Save that.
+
+86
+00:07:15,820 --> 00:07:19,820
+And then this one is search.
+
+87
+00:07:20,020 --> 00:07:20,870
+Save that.
+
+88
+00:07:20,920 --> 00:07:21,690
+OK.
+
+89
+00:07:21,750 --> 00:07:25,840
+Now if we try to save this Yarl's pie those errors go away.
+
+90
+00:07:26,200 --> 00:07:29,780
+OK let's just check on our server make sure that's still running.
+
+91
+00:07:30,600 --> 00:07:32,050
+Case that looks OK.
+
+92
+00:07:32,990 --> 00:07:34,860
+See what I have this open
+
+93
+00:07:37,520 --> 00:07:43,640
+I guess I can close one of these Kozo went up.
+
+94
+00:07:43,650 --> 00:07:54,920
+All right so now let's go to our application and let's try to go to slash listings.
+
+95
+00:07:54,990 --> 00:08:00,300
+OK so again error see page not found.
+
+96
+00:08:05,170 --> 00:08:06,650
+Why does it say about
+
+97
+00:08:12,410 --> 00:08:14,750
+see the mess something up here.
+
+98
+00:08:14,770 --> 00:08:23,460
+Let's check the route to you or else dot Pi so path listings slash include listings dot you are URLs
+
+99
+00:08:25,250 --> 00:08:26,600
+that should be right.
+
+100
+00:08:29,080 --> 00:08:40,940
+And then we have our listings app you are Elle's dot Pi which looks like this so views and its name
+
+101
+00:08:41,070 --> 00:08:43,330
+of listing so that looks all right.
+
+102
+00:08:44,330 --> 00:08:45,950
+And then we have our views
+
+103
+00:08:59,210 --> 00:09:00,940
+I you know let's
+
+104
+00:09:04,090 --> 00:09:06,670
+current path listings and match any of these
+
+105
+00:09:11,270 --> 00:09:18,490
+oh I have just listing the should have an S on the end try that.
+
+106
+00:09:18,600 --> 00:09:24,460
+OK so I get a different out of the view listings view index didn't return and HTB response object.
+
+107
+00:09:24,520 --> 00:09:27,490
+And that's because I didn't return the render.
+
+108
+00:09:27,490 --> 00:09:32,650
+So let's go back to views and make sure that we actually return these.
+
+109
+00:09:33,080 --> 00:09:37,180
+And I could edit this stuff out guys but I really don't like to because it's just real stuff.
+
+110
+00:09:37,180 --> 00:09:43,180
+It's stuff that happens in real life and I don't I don't like to talk fields and courses that are just
+
+111
+00:09:43,180 --> 00:09:50,860
+cookie cutter and it's not you know it's not it's not realistic to never forget something or make mistakes
+
+112
+00:09:50,860 --> 00:09:52,510
+or anything like that.
+
+113
+00:09:52,750 --> 00:09:55,540
+And it's important for new new developers to know that.
+
+114
+00:09:55,630 --> 00:09:59,830
+Let's save this and go back and reload and there we go.
+
+115
+00:09:59,860 --> 00:10:02,340
+Now we're loading our listings template now.
+
+116
+00:10:02,350 --> 00:10:05,580
+Remember we didn't extend the base HVM.
+
+117
+00:10:05,620 --> 00:10:09,430
+So that's why we're not seeing any of the bootstrap formatting or anything like that.
+
+118
+00:10:09,640 --> 00:10:11,030
+So let's let's do that.
+
+119
+00:10:11,080 --> 00:10:15,610
+Let's go to listings that age HTML.
+
+120
+00:10:16,180 --> 00:10:28,240
+And from here we want to extend the base HVM also it's got top and put in our tags and we'll say extends
+
+121
+00:10:30,740 --> 00:10:33,460
+based on age DML.
+
+122
+00:10:33,650 --> 00:10:36,640
+And then of course we need our block.
+
+123
+00:10:37,430 --> 00:10:38,900
+So I want to say block
+
+124
+00:10:41,120 --> 00:10:48,270
+content and right under that we want to end the block.
+
+125
+00:10:49,280 --> 00:10:54,180
+OK so now if we save that and go back and reload.
+
+126
+00:10:54,320 --> 00:10:55,930
+Now we have our crome.
+
+127
+00:10:55,940 --> 00:11:01,850
+Basically what do you mean by Crome is like our wrapper bootstrap wrapper.
+
+128
+00:11:02,610 --> 00:11:09,820
+OK so yeah we're just going to work on the listings page for now.
+
+129
+00:11:10,160 --> 00:11:13,160
+I just want to get at least the static stuff here.
+
+130
+00:11:13,310 --> 00:11:21,380
+So what I'll do is go to my sublime text where I have just the theme and go to our listings our age
+
+131
+00:11:21,380 --> 00:11:26,570
+team and we want to grab everything that is under the nav bar.
+
+132
+00:11:26,850 --> 00:11:34,290
+So this section here all the way down to right above the Forder because remember the foot or the now
+
+133
+00:11:34,290 --> 00:11:36,930
+by that stuff is all included in a partial.
+
+134
+00:11:36,930 --> 00:11:44,390
+Inside the the main layout so we want everything down to the footer and then we'll go back to listings
+
+135
+00:11:44,390 --> 00:11:52,050
+on each team so we're just going to pace that stuff in here and let's save it and go back and reload
+
+136
+00:11:52,770 --> 00:11:53,340
+and there we go.
+
+137
+00:11:53,340 --> 00:11:58,110
+Now we're not going to see the images because the images are actually going to come from when we when
+
+138
+00:11:58,110 --> 00:12:03,020
+we go to the admin area and we upload a listing we're going to upload those.
+
+139
+00:12:03,030 --> 00:12:07,170
+We're going to upload some images and that's what we'll show here so I'm not going to mess around and
+
+140
+00:12:07,170 --> 00:12:12,300
+just you know put a static image here just for show it doesn't really matter right now.
+
+141
+00:12:12,750 --> 00:12:21,060
+OK but let's see what I do want to do is I want to add a link for this to go to home right now it's
+
+142
+00:12:21,060 --> 00:12:23,710
+going to go to index each team which obviously we don't want.
+
+143
+00:12:23,850 --> 00:12:26,780
+And then these should go to.
+
+144
+00:12:26,790 --> 00:12:28,610
+Right now they go to listing each time.
+
+145
+00:12:28,640 --> 00:12:35,280
+But we want these to go to the single listing page so it will be listings slash and then whatever the
+
+146
+00:12:35,280 --> 00:12:37,090
+idea is.
+
+147
+00:12:37,110 --> 00:12:38,540
+All right.
+
+148
+00:12:39,270 --> 00:12:42,860
+Well I guess we'll do that after because we don't actually have IDs yet.
+
+149
+00:12:43,050 --> 00:12:46,290
+So let's at least add to the breadcrumb link.
+
+150
+00:12:46,290 --> 00:12:55,320
+So we'll go up to see where is it his breadcrumb.
+
+151
+00:12:55,400 --> 00:12:56,810
+So right here
+
+152
+00:12:59,560 --> 00:13:01,900
+we're going to go play that.
+
+153
+00:13:01,910 --> 00:13:10,990
+We're going to say you are well and we want this to go to the home page which is in the index.
+
+154
+00:13:11,770 --> 00:13:12,660
+OK.
+
+155
+00:13:12,670 --> 00:13:15,310
+Now let me just try that real quick.
+
+156
+00:13:15,640 --> 00:13:15,940
+OK.
+
+157
+00:13:15,940 --> 00:13:17,470
+So that works.
+
+158
+00:13:17,470 --> 00:13:26,800
+Now when we when we create the database we create our listings model we create all of our tables and
+
+159
+00:13:26,800 --> 00:13:27,620
+stuff.
+
+160
+00:13:27,700 --> 00:13:33,880
+What we'll do is reach into the database past the listings into the view I'm sorry into the template
+
+161
+00:13:33,910 --> 00:13:40,420
+from the view or from the used up high and then we'll loop through the listings and output one of these
+
+162
+00:13:40,420 --> 00:13:40,950
+divs.
+
+163
+00:13:40,960 --> 00:13:45,230
+OK because right now we have a listing one listing to we're not going to need all of this markup.
+
+164
+00:13:45,280 --> 00:13:50,650
+We're only going to need to loop through listings and I'll put one of these and have dynamic you know
+
+165
+00:13:50,740 --> 00:13:56,080
+like the price will be dynamic it will be whatever the price for that current listing is and stuff like
+
+166
+00:13:56,080 --> 00:13:56,920
+that.
+
+167
+00:13:56,920 --> 00:14:01,870
+All right so this will be overall this will be a much smaller file and we're done same with with most
+
+168
+00:14:01,870 --> 00:14:03,770
+of the HMO stuff.
+
+169
+00:14:03,790 --> 00:14:04,120
+All right.
+
+170
+00:14:04,150 --> 00:14:11,200
+So let's see now what I want to do is I want this to actually go to the listings page.
+
+171
+00:14:11,200 --> 00:14:15,610
+So let's head over to the nav bar which is a partial.
+
+172
+00:14:15,610 --> 00:14:19,790
+So we want to go to templates Parshall's underscore nav bar.
+
+173
+00:14:20,150 --> 00:14:23,450
+And right now it goes to index.
+
+174
+00:14:23,500 --> 00:14:25,570
+I want to change that to listings.
+
+175
+00:14:25,610 --> 00:14:28,600
+Okay so that's that should now work let's try it out.
+
+176
+00:14:28,960 --> 00:14:32,710
+So if we reload this page and go to feature listings there we go.
+
+177
+00:14:32,800 --> 00:14:37,440
+Now we don't have it highlighted so we want to do the same thing that we did with the other ones.
+
+178
+00:14:37,480 --> 00:14:44,740
+So I'm going to copy this ally with the condition inside of it and I'm going to pace this is in place
+
+179
+00:14:44,740 --> 00:14:54,820
+of this ally like that and we're just going to test for listings can save that go back to reload and
+
+180
+00:14:54,820 --> 00:14:59,390
+now we have highlighted listings link.
+
+181
+00:14:59,390 --> 00:15:00,670
+All right cool.
+
+182
+00:15:01,310 --> 00:15:04,760
+So that's going to be it for this guys and we'll see you in the next one.
+

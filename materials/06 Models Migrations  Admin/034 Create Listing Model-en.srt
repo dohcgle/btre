@@ -1,0 +1,716 @@
+1
+00:00:00,230 --> 00:00:08,240
+Art guys so in the last video we mapped out our schemas for listings realtors and contacts or inquiries.
+
+2
+00:00:08,280 --> 00:00:11,070
+Now we're going to actually create some models.
+
+3
+00:00:11,160 --> 00:00:17,160
+I want to create our listing model and then we'll create our realtor model and then we'll run a migration
+
+4
+00:00:17,190 --> 00:00:21,880
+that will create the tables in our database based on those models.
+
+5
+00:00:22,080 --> 00:00:28,410
+So this is actually a Jingo documentation link where you can see up here and this is from model field
+
+6
+00:00:28,410 --> 00:00:35,340
+reference so when we set up our fields we need to basically give them certain types OK as you can see
+
+7
+00:00:35,340 --> 00:00:39,200
+over here on the right have field types and there's a whole bunch.
+
+8
+00:00:39,210 --> 00:00:45,150
+We're definitely not going to use all of these but just notice we have like a date field char field
+
+9
+00:00:45,150 --> 00:00:50,880
+is for like just that's that's going to be the most common one we use for like the title The address
+
+10
+00:00:50,910 --> 00:00:53,300
+the city the those will be char fields.
+
+11
+00:00:53,530 --> 00:00:54,010
+OK.
+
+12
+00:00:54,010 --> 00:01:01,530
+Date date time field email field file field for files and then you also have Image image fields for
+
+13
+00:01:02,400 --> 00:01:06,690
+files that are specifically images integer fields.
+
+14
+00:01:06,690 --> 00:01:14,440
+We have text fields for longer text you are el fields so if you want to check out the documentation
+
+15
+00:01:14,460 --> 00:01:18,990
+and actually look into this it's there's a lot of information here.
+
+16
+00:01:19,260 --> 00:01:25,020
+OK so let's jump in to vs code and we're going to go into our listings app OK so our listings folder
+
+17
+00:01:25,290 --> 00:01:29,100
+and let's open up models dot PI every time you create an app.
+
+18
+00:01:29,100 --> 00:01:32,110
+It's going to create a model's dot PI file.
+
+19
+00:01:32,490 --> 00:01:37,010
+So I'm going to just get rid of this and the way that we define a model is with a class.
+
+20
+00:01:37,020 --> 00:01:41,820
+So we want to call it class and it should be the singular version of the app.
+
+21
+00:01:41,820 --> 00:01:50,730
+So in this case listing and then we want to pass in here models with one m models Daut and then upper
+
+22
+00:01:50,730 --> 00:01:52,810
+case M model.
+
+23
+00:01:52,830 --> 00:01:58,250
+So basically we're extending the core model which gives us a whole bunch of stuff to work with.
+
+24
+00:01:58,440 --> 00:02:01,620
+OK and then we just want to define that class.
+
+25
+00:02:01,770 --> 00:02:05,030
+And then within that we create all of our properties.
+
+26
+00:02:05,040 --> 00:02:07,690
+So the first one we're going to create is the realtor.
+
+27
+00:02:07,800 --> 00:02:13,710
+And this is going to be the I guess the most difficult one because this is going to be part of another
+
+28
+00:02:13,710 --> 00:02:18,930
+table so it's going to be the foreign key of another table so that we can form a relationship between
+
+29
+00:02:18,930 --> 00:02:20,510
+realtors and listings.
+
+30
+00:02:20,580 --> 00:02:28,680
+So we're going to set this to models Daut foreign key and this is going to take in the name of the other
+
+31
+00:02:28,680 --> 00:02:31,600
+model that we're relating which is going to be realtor.
+
+32
+00:02:31,760 --> 00:02:32,550
+Okay.
+
+33
+00:02:32,580 --> 00:02:38,580
+And then it takes a second parameter of what to do when you delete because if you think about it if
+
+34
+00:02:38,580 --> 00:02:43,890
+you have a realtor attached to a listing and you delete the realtor What do you want to happen to the
+
+35
+00:02:43,890 --> 00:02:46,020
+listing should the listing delete too.
+
+36
+00:02:46,170 --> 00:02:48,650
+In some cases you may want it to.
+
+37
+00:02:48,750 --> 00:02:54,450
+I don't so I'm going to actually set this equal to models Daut do nothing.
+
+38
+00:02:54,570 --> 00:03:00,540
+OK so that will just that that we'll just leave it and leave the listing alone even if I delete the
+
+39
+00:03:00,540 --> 00:03:03,110
+realtor that's associated with it.
+
+40
+00:03:03,120 --> 00:03:08,420
+All right so next thing is going to be the title and this is going to be said to models dot.
+
+41
+00:03:08,460 --> 00:03:11,750
+And remember I showed you all the different fields that are available.
+
+42
+00:03:11,790 --> 00:03:15,690
+We're going to use char fields for this which is just a basic text.
+
+43
+00:03:15,840 --> 00:03:17,780
+Excuse me basic textfield.
+
+44
+00:03:18,150 --> 00:03:23,130
+And this takes in a max length and this can be whatever you want.
+
+45
+00:03:23,130 --> 00:03:27,730
+I'm just going to say 200 days should be longer than 200.
+
+46
+00:03:27,960 --> 00:03:30,170
+And then let's copy this down.
+
+47
+00:03:30,660 --> 00:03:32,780
+Let's actually just copy a bunch down.
+
+48
+00:03:33,120 --> 00:03:33,480
+OK.
+
+49
+00:03:33,480 --> 00:03:37,660
+So after title let's do the address.
+
+50
+00:03:37,920 --> 00:03:42,330
+And most of the most of the time the address and title are going to be the same just because that's
+
+51
+00:03:42,330 --> 00:03:44,960
+the way that I want to format it.
+
+52
+00:03:44,970 --> 00:03:52,250
+But you could have a different title than the address for the I guess I'll leave that at 200 as well.
+
+53
+00:03:52,860 --> 00:03:53,400
+OK.
+
+54
+00:03:53,460 --> 00:04:01,250
+So the next field is going to be the city because the address is just the the is just the street address
+
+55
+00:04:01,250 --> 00:04:03,420
+it doesn't include the city or anything.
+
+56
+00:04:03,420 --> 00:04:11,760
+So we want city we also want state and we want zip code and zip code.
+
+57
+00:04:11,760 --> 00:04:21,710
+I'm actually going to set to just 20 state state to 100 city to 100.
+
+58
+00:04:21,770 --> 00:04:24,530
+And then after zip code we're gonna do description
+
+59
+00:04:27,600 --> 00:04:30,370
+and description is going to be a little longer.
+
+60
+00:04:30,400 --> 00:04:34,080
+So or can be a little longer so we want to do textfield.
+
+61
+00:04:34,240 --> 00:04:37,030
+OK we don't need a max length with textfield.
+
+62
+00:04:37,030 --> 00:04:41,320
+Also I want to pass in blank blank equals.
+
+63
+00:04:41,320 --> 00:04:42,250
+True.
+
+64
+00:04:42,460 --> 00:04:45,250
+And what this means is that this field is optional.
+
+65
+00:04:45,280 --> 00:04:50,380
+OK so it's not if we're in the admin area we're creating a listing and we don't put a description and
+
+66
+00:04:50,380 --> 00:04:55,270
+we won't get an error if we don't put this in here then it's going to look at it as required and it's
+
+67
+00:04:55,270 --> 00:04:56,430
+going to give us an error.
+
+68
+00:04:56,740 --> 00:04:56,980
+OK.
+
+69
+00:04:56,980 --> 00:04:59,290
+I want all this other stuff to be required.
+
+70
+00:04:59,530 --> 00:05:04,060
+So next thing is going to be price and price.
+
+71
+00:05:04,120 --> 00:05:12,760
+As far as the type is going to be in integer field guys who want to do in your field for the price we
+
+72
+00:05:12,760 --> 00:05:19,410
+don't need any the parameters you don't need a max length or anything.
+
+73
+00:05:19,720 --> 00:05:24,760
+Actually you know what I'm going to just get rid of these because then I don't want to just keep like
+
+74
+00:05:24,760 --> 00:05:26,970
+deleting max length.
+
+75
+00:05:26,980 --> 00:05:28,890
+Next thing is going to be bedrooms
+
+76
+00:05:31,750 --> 00:05:36,150
+so bedrooms is also going to be an integer field.
+
+77
+00:05:36,160 --> 00:05:37,480
+So models dot
+
+78
+00:05:40,090 --> 00:05:41,940
+integer field.
+
+79
+00:05:42,570 --> 00:05:45,200
+Let's see if we also one bathroom's.
+
+80
+00:05:45,460 --> 00:05:48,530
+Now this is something that I haven't mentioned yet.
+
+81
+00:05:48,650 --> 00:05:51,880
+Firms actually want this to be a decimal field.
+
+82
+00:05:52,240 --> 00:05:57,190
+And the reason for that is because you can have you know one and a half bathrooms or two and a half
+
+83
+00:05:57,190 --> 00:06:01,650
+bathrooms and I want to be able to do like 1.5 2.5 and so on.
+
+84
+00:06:01,660 --> 00:06:09,280
+So we're actually going to set this two models dot decimal field and then we can pat we can format this
+
+85
+00:06:09,280 --> 00:06:13,610
+a little bit we can pass in Max digits and I want it to be two.
+
+86
+00:06:13,840 --> 00:06:18,850
+OK so the the actual first number should be no longer than 2 digits.
+
+87
+00:06:18,850 --> 00:06:25,930
+I mean I don't think we have any houses with 100 bathrooms and then decimal places.
+
+88
+00:06:25,960 --> 00:06:33,730
+We can also assign and I just want one decimal place so like 1.5 2.5 and so on we don't want 1.5 0 or
+
+89
+00:06:33,730 --> 00:06:34,970
+anything like that.
+
+90
+00:06:35,380 --> 00:06:37,130
+OK so that's the bathrooms.
+
+91
+00:06:37,270 --> 00:06:39,550
+Next is the garage.
+
+92
+00:06:40,180 --> 00:06:49,600
+OK so garage is going to be models Daut integer field as well except we want we want this to have a
+
+93
+00:06:49,600 --> 00:06:51,600
+default value of 0.
+
+94
+00:06:51,670 --> 00:06:55,350
+OK so the way that we can do that is just say default equals zero.
+
+95
+00:06:55,360 --> 00:07:02,020
+So you can see how easy it is to set up our database using a model rather than going into like the post-grads
+
+96
+00:07:02,020 --> 00:07:07,620
+shell or even something like PGE admen and doing all this you know manually.
+
+97
+00:07:07,870 --> 00:07:13,610
+So next thing is square feet we're going to do Eskew F for that and Lynsay models.
+
+98
+00:07:13,690 --> 00:07:20,190
+Square feet is just going to be a regular integer field and we want lot size.
+
+99
+00:07:20,200 --> 00:07:31,400
+So a lot underscore size lot size is going to be a decimal field as well for that for Max digits let's
+
+100
+00:07:31,400 --> 00:07:40,920
+do lots as well do 5 max digits and then decimal places.
+
+101
+00:07:43,190 --> 00:07:48,950
+Is going to be one K because it's just going to be Acre's like we'll do whatever 2.4 acres and stuff
+
+102
+00:07:48,950 --> 00:07:50,240
+like that.
+
+103
+00:07:50,240 --> 00:07:56,720
+All right so now we want to get we wondering do the photos now in the schema that we created in the
+
+104
+00:07:56,720 --> 00:07:58,760
+last video I said it was a string.
+
+105
+00:07:58,820 --> 00:08:02,480
+But that's that's in the actual database with with Django.
+
+106
+00:08:02,480 --> 00:08:07,160
+We have different types of fields like we have an image field so that's what we want to use for the
+
+107
+00:08:07,160 --> 00:08:08,900
+photos or the images.
+
+108
+00:08:09,230 --> 00:08:12,320
+But in the database itself it'll be a string.
+
+109
+00:08:12,320 --> 00:08:24,390
+So let's say photo underscore main and let's see a photo underscore main and then we want to do models
+
+110
+00:08:25,260 --> 00:08:28,000
+Daut image field.
+
+111
+00:08:28,420 --> 00:08:28,910
+OK.
+
+112
+00:08:28,920 --> 00:08:35,180
+Now here is where we wanted to we want to define where the where are these get uploaded to.
+
+113
+00:08:35,190 --> 00:08:40,920
+Now there's something called a media folder in Django and we're going to set that up in anything that
+
+114
+00:08:40,920 --> 00:08:47,100
+we upload as far as images or files in the admin area is going to go into that media folder.
+
+115
+00:08:47,220 --> 00:08:54,300
+But what we want to do here is define the folder that we want inside of that media folder so we want
+
+116
+00:08:54,300 --> 00:09:01,110
+to say upload underscore too and you'll see all this in the documentation if you want to look further
+
+117
+00:09:01,110 --> 00:09:02,710
+into this stuff.
+
+118
+00:09:02,760 --> 00:09:07,990
+We're going to say upload to and let's call the full photos.
+
+119
+00:09:08,040 --> 00:09:14,130
+Now we could leave it like that but I want each photo to go into a folder structure of the date.
+
+120
+00:09:14,130 --> 00:09:19,980
+So basically like the year the month in the day and you'll see what I mean once we actually upload a
+
+121
+00:09:19,980 --> 00:09:26,470
+file but the way that we do this is we use the date format of percent uppercase y for year.
+
+122
+00:09:26,640 --> 00:09:33,570
+Percent lower case M for the month and then percent lower case D for the day and then slash.
+
+123
+00:09:33,570 --> 00:09:39,870
+So that's the this is the location inside the media folder that this this field should go to this image
+
+124
+00:09:39,870 --> 00:09:40,980
+should go to.
+
+125
+00:09:41,280 --> 00:09:41,620
+All right.
+
+126
+00:09:41,630 --> 00:09:44,310
+We want to do the same for the rest of the images.
+
+127
+00:09:44,310 --> 00:09:50,040
+Remember this should be 6 6 other images and those will be the little thumbnails that have that open
+
+128
+00:09:50,040 --> 00:09:51,340
+with the light box.
+
+129
+00:09:51,510 --> 00:10:00,240
+So I'm actually going to say one two three four five six and we're going to just change the name of
+
+130
+00:10:00,240 --> 00:10:00,930
+these two.
+
+131
+00:10:00,930 --> 00:10:11,060
+This will be photo one photo to three for five and six.
+
+132
+00:10:11,090 --> 00:10:11,490
+All right.
+
+133
+00:10:11,510 --> 00:10:18,950
+And then I want the same file structure here but I want all six of these images to be optional.
+
+134
+00:10:19,130 --> 00:10:24,490
+OK the main one is the only one that you actually need you don't have to have six other images.
+
+135
+00:10:24,500 --> 00:10:30,700
+So what we need to do is just add another parameter here of just like we did above.
+
+136
+00:10:30,710 --> 00:10:33,080
+Blank equals true.
+
+137
+00:10:33,360 --> 00:10:33,720
+OK.
+
+138
+00:10:33,740 --> 00:10:40,310
+That will make it optional so I'm just going to copy this and then we'll put that for all of these.
+
+139
+00:10:40,500 --> 00:10:40,950
+OK.
+
+140
+00:10:40,970 --> 00:10:45,290
+That way it's not going to complain if we don't upload all six photos.
+
+141
+00:10:45,940 --> 00:10:53,890
+OK so now the photos are taken care of what's put on is published OK so we want is published and this
+
+142
+00:10:53,890 --> 00:10:55,030
+is going to be a boolean.
+
+143
+00:10:55,030 --> 00:11:01,330
+So we want models Daut Boolean field and then we can set a default.
+
+144
+00:11:01,540 --> 00:11:05,280
+OK we want that default to be true.
+
+145
+00:11:05,410 --> 00:11:07,360
+We also want a list.
+
+146
+00:11:07,780 --> 00:11:16,990
+OK so list day are in the same models Daut and this we're going to use a date time field and then we're
+
+147
+00:11:16,990 --> 00:11:18,530
+going to set a default.
+
+148
+00:11:18,780 --> 00:11:19,980
+OK now the default.
+
+149
+00:11:19,990 --> 00:11:22,770
+I want to be the current date and time.
+
+150
+00:11:22,870 --> 00:11:28,090
+So in order to do this we need to bring in the date time package from Python so we're going to say from
+
+151
+00:11:28,810 --> 00:11:40,470
+date time import date time and then the default will actually take that date time and we'll say it now
+
+152
+00:11:40,740 --> 00:11:44,430
+which is a property that will give us the current date and time.
+
+153
+00:11:44,730 --> 00:11:45,140
+OK.
+
+154
+00:11:45,150 --> 00:11:50,000
+But this I'm also going to set two blank rules.
+
+155
+00:11:50,010 --> 00:11:50,960
+True.
+
+156
+00:11:51,260 --> 00:11:52,050
+All right.
+
+157
+00:11:52,200 --> 00:11:53,400
+And then that should be it.
+
+158
+00:11:53,430 --> 00:11:55,670
+As far as fields.
+
+159
+00:11:56,220 --> 00:12:04,840
+Now with arm with our admin area when we have I mean I haven't even showed you the admin area because
+
+160
+00:12:05,070 --> 00:12:10,500
+we have no models yet to really show you anything but we're going to have a table that's going to display
+
+161
+00:12:10,500 --> 00:12:11,640
+each listing.
+
+162
+00:12:11,910 --> 00:12:16,970
+And we need to pick a field to be kind of the main field to be displayed.
+
+163
+00:12:17,130 --> 00:12:23,520
+And what I would suggest here is the title to be the main field to display.
+
+164
+00:12:23,530 --> 00:12:31,500
+So what we need to do is we need to go down here on the same level no tab here just do a def and then
+
+165
+00:12:31,500 --> 00:12:33,810
+we want to do a double underscore.
+
+166
+00:12:33,930 --> 00:12:44,250
+TR double underscore and then self ok and one indent here and then we just want to return self Daut.
+
+167
+00:12:44,260 --> 00:12:44,860
+Whatever.
+
+168
+00:12:45,040 --> 00:12:49,190
+Whatever the main field we want to display and that's going to be the title.
+
+169
+00:12:49,420 --> 00:12:53,610
+OK so make sure you do that and that's it will save this file.
+
+170
+00:12:53,740 --> 00:12:55,450
+And that's our model.
+
+171
+00:12:55,480 --> 00:13:01,930
+Now we're getting in error right here because this realtor actually needs to be brought in from the
+
+172
+00:13:01,930 --> 00:13:03,770
+realtor model.
+
+173
+00:13:04,120 --> 00:13:08,860
+So up here the top let's say from realtors.
+
+174
+00:13:08,890 --> 00:13:15,850
+OK we can just access any other app we want by just saying the name of it and then we can get its models
+
+175
+00:13:16,300 --> 00:13:21,870
+by saying realtors dot models and then we want to import the name of the model which is realtor.
+
+176
+00:13:21,900 --> 00:13:24,640
+K we haven't created it yet but we will.
+
+177
+00:13:24,640 --> 00:13:31,320
+So let's save that and you can see it's giving us an error because there is no real term yet.
+
+178
+00:13:31,330 --> 00:13:32,740
+We have to create that.
+
+179
+00:13:32,830 --> 00:13:34,810
+And that's what we're going to do in the next video.
+

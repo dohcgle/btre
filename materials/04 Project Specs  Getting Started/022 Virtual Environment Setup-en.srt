@@ -1,0 +1,428 @@
+1
+00:00:00,510 --> 00:00:06,390
+All right guys so before we start to actually install Django and work with stuff we want to create what's
+
+2
+00:00:06,390 --> 00:00:09,210
+called the virtual environment in Python.
+
+3
+00:00:09,210 --> 00:00:15,600
+And you want to do this because you want to keep all your packages and dependencies and all that isolated
+
+4
+00:00:15,960 --> 00:00:19,680
+inside of your project rather than in the global scope.
+
+5
+00:00:19,910 --> 00:00:26,880
+OK and this is a documentation page for Python 3 and this is the creation of virtual environments.
+
+6
+00:00:26,880 --> 00:00:33,890
+And before version 3.6 you actually had to use you to install a package with Pipp called Virtual ENVI
+
+7
+00:00:33,910 --> 00:00:35,760
+there's some other ones as well.
+
+8
+00:00:35,760 --> 00:00:44,250
+But now with Python 3.6 and hop you can just use the actual V and V package it's included with Python
+
+9
+00:00:44,250 --> 00:00:46,010
+2 to create your environment.
+
+10
+00:00:46,020 --> 00:00:48,660
+So you would run Python 3 or something.
+
+11
+00:00:48,660 --> 00:00:56,670
+Or if Python is Python 3 like on Windows for example you would just use Python and then dash MVP envy
+
+12
+00:00:56,910 --> 00:01:01,600
+and then whatever path you want to create that that virtual environment.
+
+13
+00:01:01,690 --> 00:01:05,750
+OK so I'm going to be using my visual studio text editor.
+
+14
+00:01:05,760 --> 00:01:11,000
+But before I get into that I just want to create a project and open it inside vs code.
+
+15
+00:01:11,100 --> 00:01:13,490
+So I'm in my home folder.
+
+16
+00:01:13,590 --> 00:01:20,760
+I do have a whip's folder called dev that's where I want to create my projects and get a CD into dev
+
+17
+00:01:21,120 --> 00:01:24,330
+and of course you guys can create your project wherever you want.
+
+18
+00:01:24,600 --> 00:01:27,790
+But I'm going to go ahead and do a make directory.
+
+19
+00:01:27,880 --> 00:01:33,730
+I'm going to call this project b t r e underscore project.
+
+20
+00:01:34,150 --> 00:01:34,800
+OK.
+
+21
+00:01:34,860 --> 00:01:41,890
+And then we're going to see D into b t r e underscore project.
+
+22
+00:01:42,090 --> 00:01:47,340
+And here's where I'm going to open my text editor so we're going to say code Daut that's going to open
+
+23
+00:01:47,340 --> 00:01:50,060
+up vs code inside that directory.
+
+24
+00:01:50,080 --> 00:01:56,730
+All right and if you're not using VS code just go ahead and open up your textedit are inside this directory.
+
+25
+00:01:56,730 --> 00:02:02,310
+All right so now I'm going to open up my integrated terminal I'm going to use this instead because this
+
+26
+00:02:02,310 --> 00:02:05,460
+is going to be using this throughout the course.
+
+27
+00:02:05,580 --> 00:02:08,420
+So if I were to do.
+
+28
+00:02:08,640 --> 00:02:09,030
+Let's see.
+
+29
+00:02:09,030 --> 00:02:11,240
+So we have we have PIP and we have PIP 3.
+
+30
+00:02:11,250 --> 00:02:15,090
+I'm going to say Pip three frees.
+
+31
+00:02:15,900 --> 00:02:20,080
+And what this shows us is basically the packages in.
+
+32
+00:02:20,090 --> 00:02:27,980
+And you know dependencies that are installed on a global scope on our system and we don't want this
+
+33
+00:02:27,990 --> 00:02:34,170
+we want to have we want to have our own environment for this project.
+
+34
+00:02:34,330 --> 00:02:40,320
+And I don't want like beautiful soup and all this other stuff included in that project environment that
+
+35
+00:02:40,320 --> 00:02:41,700
+virtual environment.
+
+36
+00:02:41,940 --> 00:02:48,240
+So let's go ahead and create a virtual environment now if you're on Windows or Mac or Linux.
+
+37
+00:02:48,330 --> 00:02:52,730
+The creation of the virtual environment should be virtually the same.
+
+38
+00:02:52,860 --> 00:02:57,990
+But to activate it is a little different so I'm going to show that you know the people on Windows how
+
+39
+00:02:57,990 --> 00:03:03,960
+to do it after how to activate it after but to create it it should be the same it should be Python whatever
+
+40
+00:03:03,960 --> 00:03:10,440
+your Python 3 is if you are on Windows and Python is Python 3 Like just do a dash dash version if it's
+
+41
+00:03:10,440 --> 00:03:12,810
+Python 3 then use that.
+
+42
+00:03:12,810 --> 00:03:17,060
+If not then you want to use Python 3.
+
+43
+00:03:18,110 --> 00:03:25,020
+And then we're going to say just like the documentation dash em and then VI envy and then wherever you
+
+44
+00:03:25,020 --> 00:03:28,160
+want to create this this V.N. the folder.
+
+45
+00:03:28,260 --> 00:03:28,540
+OK.
+
+46
+00:03:28,550 --> 00:03:30,060
+And you can call it whatever you want.
+
+47
+00:03:30,060 --> 00:03:34,690
+I like to just call it V and V and I want it in the current project directory.
+
+48
+00:03:34,830 --> 00:03:37,930
+So I'm going to say dot slash wiii envy.
+
+49
+00:03:38,280 --> 00:03:40,970
+And that's that's it that's where I want to put this.
+
+50
+00:03:40,990 --> 00:03:47,010
+I'm going to go ahead and run this OK and then notice up here.
+
+51
+00:03:47,020 --> 00:03:50,360
+It's actually created a folder called wiii envy.
+
+52
+00:03:50,560 --> 00:03:52,870
+Now if you're on Windows it may look a bit different.
+
+53
+00:03:52,870 --> 00:03:58,810
+You're going to have a folder called scripts with an uppercase ass and inside scripts you'll have an
+
+54
+00:03:58,840 --> 00:04:00,740
+activate dot batch file.
+
+55
+00:04:00,750 --> 00:04:04,530
+Ok on a Mac you'll have a bin folder with an activate file.
+
+56
+00:04:04,600 --> 00:04:07,910
+So that's where it kind of differentiates and how you activate.
+
+57
+00:04:08,200 --> 00:04:11,690
+Because right now we just created the environment we're not actually in it.
+
+58
+00:04:11,740 --> 00:04:17,230
+If I do a pip freeze we still see all that stuff.
+
+59
+00:04:17,410 --> 00:04:20,550
+So we're not we're not currently in that directory.
+
+60
+00:04:20,820 --> 00:04:23,150
+So I'm sorry in that environment.
+
+61
+00:04:23,290 --> 00:04:29,260
+So to activate that environment we want to on a Mac OK so this is on a Mac I'll do windows after.
+
+62
+00:04:29,530 --> 00:04:39,250
+We want to do source and then we want to just point to one source and then point to that folder so we're
+
+63
+00:04:39,250 --> 00:04:43,580
+going to say current directory dot slash and then wiii and VI.
+
+64
+00:04:44,020 --> 00:04:44,430
+OK.
+
+65
+00:04:44,440 --> 00:04:48,850
+And then we want to go to slash Ben and then slash activate.
+
+66
+00:04:48,850 --> 00:04:51,040
+OK that'll run the Activate script.
+
+67
+00:04:51,250 --> 00:04:52,360
+OK once I do that.
+
+68
+00:04:52,360 --> 00:04:58,650
+Notice that before my computer name here we have the ENVI inside parentheses.
+
+69
+00:04:58,660 --> 00:04:58,980
+All right.
+
+70
+00:04:58,990 --> 00:05:01,480
+So now we're inside of our virtual environment.
+
+71
+00:05:01,690 --> 00:05:03,580
+Now watch this if I do.
+
+72
+00:05:03,580 --> 00:05:07,990
+Just Python dash dash version remember was version 2 before.
+
+73
+00:05:07,990 --> 00:05:09,370
+Now it's 3.7.
+
+74
+00:05:09,370 --> 00:05:14,840
+So from now on when we're in our virtual environment we don't need to run Python 3.
+
+75
+00:05:14,940 --> 00:05:19,240
+Ok Python is going to is going to be Python 3 from now on.
+
+76
+00:05:19,270 --> 00:05:24,190
+So no more Python 3 no more Pipp 3 as long as we're in our virtual environment.
+
+77
+00:05:24,310 --> 00:05:28,350
+OK because we created this virtual environment with Python 3.
+
+78
+00:05:28,360 --> 00:05:33,500
+All right so now to leave the environment we want to say D activate.
+
+79
+00:05:33,580 --> 00:05:35,290
+OK that's it just deactivate.
+
+80
+00:05:35,290 --> 00:05:36,350
+And now we're out.
+
+81
+00:05:36,370 --> 00:05:42,490
+Now if I do a python dash dash version the global version is 2 for that.
+
+82
+00:05:42,490 --> 00:05:46,570
+So now we would have to do Python 3 for anything Python 3.
+
+83
+00:05:46,570 --> 00:05:50,700
+All right so now let me show you how to activate it in Windows.
+
+84
+00:05:50,770 --> 00:05:59,410
+Now when you created it like like where it's like this if if it didn't work for some reason do the absolute
+
+85
+00:05:59,410 --> 00:06:09,370
+path here instead of dot slash go like if you're on Windows like C you know C slash users slash whatever
+
+86
+00:06:09,370 --> 00:06:12,860
+your user name is wherever you put this V in the folder.
+
+87
+00:06:12,880 --> 00:06:25,040
+OK try that and then to activate it in Windows you want to do Python and then you want to go dot slash
+
+88
+00:06:25,040 --> 00:06:28,940
+V and the slash.
+
+89
+00:06:29,040 --> 00:06:31,140
+Actually no you don't need to even do Python.
+
+90
+00:06:31,140 --> 00:06:38,160
+I don't believe so just the and the slash and then instead of been you want to go into scripts and then
+
+91
+00:06:38,160 --> 00:06:41,650
+you want to do activate dot that.
+
+92
+00:06:41,760 --> 00:06:47,160
+OK so that should run your virtual environment if you're on Windows.
+
+93
+00:06:47,520 --> 00:06:48,200
+OK.
+
+94
+00:06:48,540 --> 00:06:50,360
+I don't believe you need the python.
+
+95
+00:06:50,370 --> 00:06:52,070
+If that doesn't work you can try it.
+
+96
+00:06:52,080 --> 00:06:59,280
+Also if this doesn't work try an absolute paths so start at your what C or whatever drive you're on
+
+97
+00:06:59,310 --> 00:07:02,590
+and then navigate to the V V V folder.
+
+98
+00:07:02,970 --> 00:07:04,130
+All right so try that.
+
+99
+00:07:04,140 --> 00:07:08,400
+If you're on Windows and that should get you into the virtual environment.
+
+100
+00:07:08,430 --> 00:07:13,760
+All right so I'm going to go ahead and activate my virtual environment again with this right here.
+
+101
+00:07:14,010 --> 00:07:14,390
+All right.
+
+102
+00:07:14,400 --> 00:07:22,500
+And if I do a pit freeze nothing goes so I have nothing installed in this particular environment and
+
+103
+00:07:22,500 --> 00:07:23,550
+that's what we want.
+
+104
+00:07:23,610 --> 00:07:29,520
+And then when we install Django it'll get installed in this environment if we deactivate the environment
+
+105
+00:07:29,520 --> 00:07:31,950
+it won't be installed in the global scope.
+
+106
+00:07:31,950 --> 00:07:36,170
+All right so hopefully that all makes sense and hopefully you're in your environment.
+
+107
+00:07:36,180 --> 00:07:41,070
+Hopefully you see this right here and in the next video we're going to install Django.
+

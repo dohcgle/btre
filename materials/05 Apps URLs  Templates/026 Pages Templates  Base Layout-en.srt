@@ -1,0 +1,604 @@
+1
+00:00:00,420 --> 00:00:01,060
+All right guys.
+
+2
+00:00:01,060 --> 00:00:05,120
+In the last video we went ahead and we created our pages app.
+
+3
+00:00:05,130 --> 00:00:12,450
+We created a U R L to the index view or I'm sorry index method inside the views file which is right
+
+4
+00:00:12,450 --> 00:00:18,910
+here and then we're just outputting or returning and HDP response that outputs in H1.
+
+5
+00:00:19,020 --> 00:00:22,380
+OK so that's that's all we're seeing right here.
+
+6
+00:00:22,440 --> 00:00:28,860
+Now what we want to do is I'll put a template so there's a couple steps we need to take the first we
+
+7
+00:00:28,860 --> 00:00:32,960
+need to tell Django where to look for templates what folder to look at.
+
+8
+00:00:32,970 --> 00:00:39,450
+So in setting's dot PI you want to go down to the templates list right here it has a dictionary with
+
+9
+00:00:39,570 --> 00:00:42,390
+the all these values these key value pairs.
+
+10
+00:00:42,510 --> 00:00:47,550
+And we want to go to this der's this directory's and we want to tell it where to look.
+
+11
+00:00:47,550 --> 00:00:53,970
+So where I put my templates is right in the root so not in any of these folders here just right along
+
+12
+00:00:53,970 --> 00:01:03,000
+side them so to let it know that we're going to say OS dot path dot join and we're going to use our
+
+13
+00:01:03,000 --> 00:01:10,470
+base underscore Durr variable which just basically says the base directory or the root directory and
+
+14
+00:01:10,470 --> 00:01:15,490
+then we want to define the folder name and we want to use which is templates.
+
+15
+00:01:15,570 --> 00:01:17,640
+So it's go and save that.
+
+16
+00:01:17,640 --> 00:01:18,030
+All right.
+
+17
+00:01:18,060 --> 00:01:26,880
+And then we want to go into our root here and create a folder called templates.
+
+18
+00:01:27,130 --> 00:01:30,150
+Now it's up to you how you want to structure your templates.
+
+19
+00:01:30,160 --> 00:01:32,530
+I like to categorize them.
+
+20
+00:01:32,530 --> 00:01:37,720
+So for instance our pages app will have a couple of its own templates so we'll create a folder called
+
+21
+00:01:37,720 --> 00:01:41,380
+pages that will have a folder called listings and so on.
+
+22
+00:01:41,380 --> 00:01:48,420
+So we're going to create a folder in templates called pages and then I'm going to create two files in
+
+23
+00:01:48,420 --> 00:01:51,020
+here one is going to be indexed on each team.
+
+24
+00:01:51,270 --> 00:01:55,140
+And then one is going to be about the dot h t.
+
+25
+00:01:55,360 --> 00:02:02,920
+L k for the about page and just going to do an H-1 that says a boat can save for index I'll do an H-1
+
+26
+00:02:02,940 --> 00:02:03,810
+that says
+
+27
+00:02:06,440 --> 00:02:09,560
+home and save.
+
+28
+00:02:09,590 --> 00:02:16,280
+OK so now that we have our templates created we need to first of all go to our pages app and then you
+
+29
+00:02:16,280 --> 00:02:20,930
+are Elazar pi because right now we don't have an About route just for the index.
+
+30
+00:02:21,070 --> 00:02:23,120
+It's going to put a comma here.
+
+31
+00:02:23,120 --> 00:02:24,740
+Bring that down.
+
+32
+00:02:24,980 --> 00:02:27,750
+We'll call this one about.
+
+33
+00:02:28,400 --> 00:02:35,870
+And then the method name that I'm going to use is also going to be about in the route is also about.
+
+34
+00:02:36,260 --> 00:02:42,170
+So save this we're going to get an error here because there is no about method in the views file so
+
+35
+00:02:42,170 --> 00:02:43,640
+we're going to create that now.
+
+36
+00:02:43,880 --> 00:02:52,230
+So in views let's say let's say Def about.
+
+37
+00:02:52,500 --> 00:02:52,860
+OK.
+
+38
+00:02:52,870 --> 00:02:58,540
+Now we don't want to just return an H T P response for either one of these.
+
+39
+00:02:58,570 --> 00:03:00,030
+We want to render a template.
+
+40
+00:03:00,070 --> 00:03:04,880
+We're actually already bringing in render up here so that's what we want to use.
+
+41
+00:03:04,900 --> 00:03:07,860
+So instead of this we're going to say return render.
+
+42
+00:03:08,440 --> 00:03:15,400
+And this takes in two things for now which is going to be the request itself and then the location of
+
+43
+00:03:15,400 --> 00:03:19,890
+the template which is in pages slash index dot HMO.
+
+44
+00:03:21,540 --> 00:03:28,150
+I know we're going to do the same thing for the about so more tab over here and paste that in and just
+
+45
+00:03:28,150 --> 00:03:38,710
+change this to about and save with it oh I forgot my parentheses and request.
+
+46
+00:03:39,440 --> 00:03:40,300
+OK.
+
+47
+00:03:40,340 --> 00:03:42,830
+Now you are up high we're still seeing this error.
+
+48
+00:03:42,830 --> 00:03:46,620
+We just need to resave it and that will go away.
+
+49
+00:03:46,640 --> 00:03:48,570
+OK so now this should work.
+
+50
+00:03:48,620 --> 00:03:50,720
+Let's head make sure your server is running.
+
+51
+00:03:51,020 --> 00:03:52,620
+My server running in this.
+
+52
+00:03:52,630 --> 00:03:54,920
+This tab right here.
+
+53
+00:03:54,980 --> 00:03:58,230
+Also always make sure you're in your virtual environment.
+
+54
+00:03:58,370 --> 00:03:58,690
+OK.
+
+55
+00:03:58,700 --> 00:04:05,310
+Make sure you have this van or whatever you called it and I will mention if you install an extension
+
+56
+00:04:05,310 --> 00:04:07,350
+in vs code and you reload.
+
+57
+00:04:07,350 --> 00:04:09,910
+It's going to knock you out of your virtual environments.
+
+58
+00:04:09,920 --> 00:04:11,030
+You want to go back in.
+
+59
+00:04:11,030 --> 00:04:17,230
+If you're using your integrated terminal So now let's go back to Chrome and reload.
+
+60
+00:04:17,230 --> 00:04:18,480
+And now we see home.
+
+61
+00:04:18,770 --> 00:04:26,220
+OK so it's loading the index each time template in the pages folder in the templates folder if go to
+
+62
+00:04:26,240 --> 00:04:28,470
+about we see about.
+
+63
+00:04:28,800 --> 00:04:31,030
+OK so that's perfect.
+
+64
+00:04:31,030 --> 00:04:31,320
+All right.
+
+65
+00:04:31,330 --> 00:04:41,110
+Now the issue with with this what we're doing now is if we want to of course we do want to have like
+
+66
+00:04:41,110 --> 00:04:47,830
+a head section we want our age to smell had body tags all of our CSSA references javascript references
+
+67
+00:04:48,280 --> 00:04:54,100
+that stuff we don't want to have to repeat on every template like him in the index in the about anything
+
+68
+00:04:54,100 --> 00:04:55,300
+else we create.
+
+69
+00:04:55,300 --> 00:04:58,110
+So we want to extend a base layout.
+
+70
+00:04:58,120 --> 00:05:04,270
+OK so what world what we'll do is in the templates folder not inside pages but just inside templates
+
+71
+00:05:04,270 --> 00:05:10,300
+will create a file called base dot h T.M. and then this is going to be just that our base.
+
+72
+00:05:10,300 --> 00:05:14,030
+Each team that we can extend from other templates.
+
+73
+00:05:14,050 --> 00:05:17,950
+Okay and this is going to have like all our H.T. email had tags and stuff like that.
+
+74
+00:05:17,950 --> 00:05:24,830
+So when you use Emett by doing exclamation tabs just to give us a boilerplate here title will say Beati
+
+75
+00:05:24,850 --> 00:05:30,810
+real estate and I'll show you how to do dynamic titles later in our body.
+
+76
+00:05:30,820 --> 00:05:37,240
+This is where we want to output any template that we extend OK or that so that we use to extend this
+
+77
+00:05:37,240 --> 00:05:38,090
+layout.
+
+78
+00:05:38,190 --> 00:05:44,150
+So to do that we're going to use the Jinja syntax Jinja is the template engine that Gengel uses by default
+
+79
+00:05:44,560 --> 00:05:48,560
+and that is curly braces and percent signs.
+
+80
+00:05:48,570 --> 00:05:54,690
+OK so you can kind of think this is like ph P If you've ever if you've ever written ph P inside your
+
+81
+00:05:54,690 --> 00:05:58,570
+aged female you need to open up your Ph p tags to run that code.
+
+82
+00:05:58,570 --> 00:05:59,770
+This is similar.
+
+83
+00:06:00,040 --> 00:06:04,590
+We need to open up our Jinja tags or template tags whatever you want to call them.
+
+84
+00:06:04,690 --> 00:06:08,660
+And then here we want to save block content.
+
+85
+00:06:09,050 --> 00:06:09,540
+OK.
+
+86
+00:06:09,550 --> 00:06:18,360
+And then we need to end that block by doing another set of tags and say and block.
+
+87
+00:06:18,460 --> 00:06:25,800
+All right so I'll save that in then any template that we want to extend this layout from.
+
+88
+00:06:25,840 --> 00:06:33,220
+We actually have to do a couple of things we have to first go up here use our tags AUPs use our tags
+
+89
+00:06:33,220 --> 00:06:42,970
+and say extends a little save based on age Tamal and then we just need to wrap the content in that block
+
+90
+00:06:43,000 --> 00:06:45,000
+content content.
+
+91
+00:06:45,670 --> 00:06:46,250
+Okay.
+
+92
+00:06:46,270 --> 00:06:53,440
+And then at the end of it we need to do and block.
+
+93
+00:06:53,870 --> 00:06:55,950
+All right so save that now.
+
+94
+00:06:56,300 --> 00:07:02,840
+The way my editor is formatted it kind of pushes this up here which kind of sucks but it's just something
+
+95
+00:07:02,840 --> 00:07:05,330
+that we'll deal with for now.
+
+96
+00:07:05,360 --> 00:07:07,490
+So let's go back to the home page
+
+97
+00:07:10,870 --> 00:07:14,290
+and now you'll see that the title says Beati real estate.
+
+98
+00:07:14,290 --> 00:07:20,080
+And if I were to look at my source code it includes all that you know the doc type each Tamal the head
+
+99
+00:07:20,080 --> 00:07:22,240
+body all that stuff and includes all of it.
+
+100
+00:07:22,420 --> 00:07:25,580
+And it's like it's like inserting the template right here.
+
+101
+00:07:26,730 --> 00:07:27,260
+OK.
+
+102
+00:07:27,440 --> 00:07:32,660
+So now let's do the same for a bow because right now if we go to slash about you'll see that there is
+
+103
+00:07:32,660 --> 00:07:35,630
+no title it's not extending that leo.
+
+104
+00:07:35,960 --> 00:07:44,410
+So I'll just copy this here and go to a bow and we'll go ahead and push that down and paste that in.
+
+105
+00:07:44,660 --> 00:07:46,090
+And we just want to end the block
+
+106
+00:07:50,330 --> 00:07:53,610
+that you will go back and reload.
+
+107
+00:07:53,620 --> 00:08:00,140
+And now we get our title in it that that layout is being extended.
+
+108
+00:08:00,350 --> 00:08:06,880
+Now if you're using this code you do have the option to install the Jinja extension.
+
+109
+00:08:06,890 --> 00:08:15,510
+So if we go to extensions and we search for Jinja it would be this first one here I believe me just
+
+110
+00:08:15,510 --> 00:08:16,500
+check the downloads.
+
+111
+00:08:16,500 --> 00:08:22,440
+Yes so to 44000 this right here if we say install that I'll install it.
+
+112
+00:08:22,440 --> 00:08:24,010
+Now watch down here.
+
+113
+00:08:24,070 --> 00:08:25,590
+We're in our virtual environment.
+
+114
+00:08:25,590 --> 00:08:32,400
+When I reload it knocks us back oh ok it also got rid of my other tab.
+
+115
+00:08:32,400 --> 00:08:34,380
+That was actually running the server.
+
+116
+00:08:34,590 --> 00:08:35,140
+OK.
+
+117
+00:08:35,140 --> 00:08:37,750
+So that's something that just sucks.
+
+118
+00:08:37,750 --> 00:08:40,940
+I wish I didn't do that but it does if I reload.
+
+119
+00:08:40,950 --> 00:08:43,210
+Our server is no longer running.
+
+120
+00:08:43,470 --> 00:08:48,810
+Now notice the Jinja syntax now has this this highlighting here.
+
+121
+00:08:48,810 --> 00:08:52,390
+Unfortunately if I knocked this down I would like it to be like that.
+
+122
+00:08:52,410 --> 00:08:56,040
+But if I save it gets put back up there.
+
+123
+00:08:56,070 --> 00:09:06,970
+So I think what I'm going to try is I'm going to go to my settings and let's set format on save to false.
+
+124
+00:09:07,290 --> 00:09:14,440
+Ok I always have this on true but I just want to save that and see if that helps the situation out.
+
+125
+00:09:14,440 --> 00:09:21,110
+So if I go down here and say OK so now it doesn't do that now since they shut that off.
+
+126
+00:09:21,640 --> 00:09:26,140
+I'm just going to have to be a little more aware of how my code is formatted.
+
+127
+00:09:26,350 --> 00:09:27,170
+OK.
+
+128
+00:09:27,390 --> 00:09:33,910
+But I think that with when we start to do like loops and stuff like that it's going to look really messy
+
+129
+00:09:33,910 --> 00:09:34,900
+if I keep that on.
+
+130
+00:09:34,900 --> 00:09:38,160
+So I think that I'm going to just shut that off.
+
+131
+00:09:38,170 --> 00:09:43,900
+All right so now we actually if you're following along and you just did what I did you have to go back
+
+132
+00:09:43,900 --> 00:09:48,670
+into your virtual environment so we're going to say source then.
+
+133
+00:09:48,700 --> 00:09:56,580
+So slash then slash then slash activate case.
+
+134
+00:09:56,590 --> 00:10:05,130
+Now back in and if you remember if you're in Windows it's going to be then slash scripts slash activate
+
+135
+00:10:05,370 --> 00:10:05,980
+dot.
+
+136
+00:10:06,050 --> 00:10:09,410
+That way you might have to do an absolute path.
+
+137
+00:10:09,820 --> 00:10:18,820
+So now I'm going to run my server with Python managed up-I run server so this is kind of the disadvantage
+
+138
+00:10:18,820 --> 00:10:25,120
+of using the integrated terminal with Django but you know I don't want to keep going back and forth
+
+139
+00:10:25,120 --> 00:10:27,560
+to my regular terminal.
+
+140
+00:10:27,580 --> 00:10:27,850
+All right.
+
+141
+00:10:27,850 --> 00:10:33,640
+So now my server is running so I'm going to open up another tab hit the plus sign here and just go into
+
+142
+00:10:33,640 --> 00:10:36,770
+my virtual environment and this tab as well.
+
+143
+00:10:36,910 --> 00:10:38,300
+And now we're back.
+
+144
+00:10:38,320 --> 00:10:43,390
+All right so if I go back to the browser and reload we should get our site back.
+
+145
+00:10:43,870 --> 00:10:48,820
+All right so in the next video I want to start to implement our bootstrap theme at least for the home
+
+146
+00:10:48,820 --> 00:10:53,410
+and the about page at first it's going to be all static content.
+
+147
+00:10:53,410 --> 00:10:53,760
+OK.
+
+148
+00:10:53,770 --> 00:10:58,750
+But we want to slowly but surely replace that with Dynamic Content.
+
+149
+00:10:58,900 --> 00:11:05,980
+We're going to you know create our database soon install postgrads and set that up and then we'll go
+
+150
+00:11:05,980 --> 00:11:06,590
+from there.
+
+151
+00:11:06,730 --> 00:11:08,070
+All right so I'll see in the next video.
+

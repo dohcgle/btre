@@ -1,0 +1,668 @@
+1
+00:00:00,350 --> 00:00:05,160
+Are you guys in this video we're going to look at some some different things that involve strings OK
+
+2
+00:00:05,190 --> 00:00:10,410
+strings or you know values that are wrapped in either double quotes or single quotes.
+
+3
+00:00:10,430 --> 00:00:11,910
+I'm going to show you how to format them.
+
+4
+00:00:11,910 --> 00:00:14,510
+Also look at some methods and stuff like that.
+
+5
+00:00:14,910 --> 00:00:21,570
+So first thing we'll do is let's create a string variable with a string and it's all say name equals
+
+6
+00:00:21,570 --> 00:00:23,510
+Bradd or whatever you want.
+
+7
+00:00:23,550 --> 00:00:26,530
+And then I want to show you how to concatenate.
+
+8
+00:00:27,350 --> 00:00:28,930
+So I'll say concatenate.
+
+9
+00:00:29,070 --> 00:00:40,410
+So if I want to print and will print a string We'll say hello world and save and then let's run this
+
+10
+00:00:40,410 --> 00:00:45,480
+by saying Python 3 strings dot pi we get hello world.
+
+11
+00:00:45,480 --> 00:00:47,390
+Now what if I want to put this name in here.
+
+12
+00:00:47,390 --> 00:00:49,290
+What if I want to say Hello Brad.
+
+13
+00:00:49,420 --> 00:00:56,490
+K what I would do to concatenate is I'd leave a space here in this string and then I'd use a plus sign
+
+14
+00:00:56,730 --> 00:00:58,170
+just like javascript.
+
+15
+00:00:58,220 --> 00:00:59,480
+Hey same exact thing.
+
+16
+00:00:59,490 --> 00:01:00,840
+And then put name.
+
+17
+00:01:00,900 --> 00:01:02,280
+So if I run that I get.
+
+18
+00:01:02,280 --> 00:01:03,840
+Hello Brad.
+
+19
+00:01:03,840 --> 00:01:12,570
+Now what if we wanted to put like my age in here which was an int case if I say age equals 37 and then
+
+20
+00:01:12,570 --> 00:01:23,230
+I wanted to do concatenate on say hello that's changed to how low I am Brad.
+
+21
+00:01:23,270 --> 00:01:25,310
+And then we'll do space.
+
+22
+00:01:25,500 --> 00:01:31,700
+And I am and then we'll concatenate on age and see what happens when we do that.
+
+23
+00:01:31,710 --> 00:01:33,950
+So going to clear this up and run it again.
+
+24
+00:01:33,960 --> 00:01:37,940
+Error says can only concatenate string not end.
+
+25
+00:01:38,220 --> 00:01:41,670
+So since this is an end it's giving me this error.
+
+26
+00:01:41,700 --> 00:01:46,320
+So what I could do is I could cast this to a string member we did that in the last video I could simply
+
+27
+00:01:46,320 --> 00:01:48,490
+wrap this in as TR.
+
+28
+00:01:48,900 --> 00:01:50,520
+OK so now if I run it we get.
+
+29
+00:01:50,520 --> 00:01:54,210
+Hello I am Braddon I'm 37 So now this is a string.
+
+30
+00:01:54,210 --> 00:01:59,250
+Now if you want to print strings out like this and you want to concatenate there's easier ways to do
+
+31
+00:01:59,250 --> 00:02:01,710
+this with string formatting.
+
+32
+00:02:01,710 --> 00:02:04,070
+So let's take a look at that.
+
+33
+00:02:04,230 --> 00:02:07,350
+And there's there's actually there's a lot of ways to do this.
+
+34
+00:02:07,350 --> 00:02:14,720
+I'm going to show you two ways one of these which is called strings is only available in Python 3.6
+
+35
+00:02:14,840 --> 00:02:15,700
+in the OP.
+
+36
+00:02:15,930 --> 00:02:19,250
+Ok but first of all we're going to look at his arguments.
+
+37
+00:02:19,550 --> 00:02:24,600
+I'll say arguments by position.
+
+38
+00:02:24,780 --> 00:02:36,630
+So if I say print and then and here I'm going to put in just empty empty curly braces like this.
+
+39
+00:02:36,690 --> 00:02:39,650
+OK so these are basically like placeholders.
+
+40
+00:02:39,720 --> 00:02:46,890
+So if I do a Daut format I can then put in here whatever I want to put in those placeholders.
+
+41
+00:02:46,890 --> 00:02:53,870
+Let's say a string of a string of B string of C..
+
+42
+00:02:53,890 --> 00:02:57,850
+Ok I'm actually going to comment on this can cottony up here.
+
+43
+00:02:58,050 --> 00:02:58,830
+And let's run it.
+
+44
+00:02:58,830 --> 00:03:00,840
+We get a b c.
+
+45
+00:03:00,960 --> 00:03:06,000
+Now if we wanted to do this in a specific order what we could do is we could put numbers in here like
+
+46
+00:03:06,000 --> 00:03:10,550
+let's say we want to do one and it starts at zero.
+
+47
+00:03:10,590 --> 00:03:13,750
+OK so it's 2 1 2 and then 0.
+
+48
+00:03:14,220 --> 00:03:17,550
+So you guys can probably guess what this is going to do.
+
+49
+00:03:17,610 --> 00:03:19,970
+If I run this way you get BCA.
+
+50
+00:03:20,130 --> 00:03:26,040
+So it's taken the one position and putting it here the one position is actually B because it's 0 1 2.
+
+51
+00:03:26,210 --> 00:03:30,370
+Ok so 2 is c and then 0 is a.
+
+52
+00:03:30,390 --> 00:03:31,680
+And it puts that here.
+
+53
+00:03:31,950 --> 00:03:35,760
+OK so that's that's using it by position.
+
+54
+00:03:35,820 --> 00:03:37,800
+We can also do arguments by name
+
+55
+00:03:43,170 --> 00:03:45,440
+I might spell some stuff wrong guys.
+
+56
+00:03:45,630 --> 00:03:49,380
+When I type I sometimes i just suck at spelling so I don't mind that.
+
+57
+00:03:49,400 --> 00:03:51,610
+And you know as long as it's in a comment.
+
+58
+00:03:51,780 --> 00:04:00,240
+So let's say print and let's actually do like a sentence like we did up above Bob will say my name is
+
+59
+00:04:00,900 --> 00:04:05,100
+and then what I could do is just use curly braces and put in that same name.
+
+60
+00:04:05,310 --> 00:04:09,310
+And I am and then H.
+
+61
+00:04:09,510 --> 00:04:12,000
+And then I could do a dot format.
+
+62
+00:04:12,320 --> 00:04:23,530
+OK just like we did above with the arguments by position and I could specify name equals Bradd age equals
+
+63
+00:04:24,720 --> 00:04:28,020
+and we want to string of 37.
+
+64
+00:04:28,020 --> 00:04:29,340
+All right so it's common.
+
+65
+00:04:29,400 --> 00:04:31,840
+So let's run this.
+
+66
+00:04:32,180 --> 00:04:32,690
+We get.
+
+67
+00:04:32,700 --> 00:04:34,800
+Hi my name is Brad and I'm 37.
+
+68
+00:04:34,800 --> 00:04:38,260
+And if you want to use these variables up here we can do that too.
+
+69
+00:04:38,310 --> 00:04:39,000
+Like name
+
+70
+00:04:41,890 --> 00:04:44,310
+meaningful age.
+
+71
+00:04:44,560 --> 00:04:46,520
+If we run that we get the same thing.
+
+72
+00:04:46,670 --> 00:04:47,610
+OK.
+
+73
+00:04:48,080 --> 00:04:48,930
+And there's no need to.
+
+74
+00:04:48,940 --> 00:04:51,500
+To wrap it in string like we did up here.
+
+75
+00:04:51,980 --> 00:04:53,480
+So that's arguments by name.
+
+76
+00:04:53,480 --> 00:04:57,440
+Now I want to take a look at something called strings.
+
+77
+00:04:57,950 --> 00:05:00,050
+So say f strings
+
+78
+00:05:02,870 --> 00:05:12,530
+only in three point six plus K I remember that we're using 3.7 right now and you should be using 3.6
+
+79
+00:05:12,530 --> 00:05:15,090
+or 3.7 at least at this time.
+
+80
+00:05:15,230 --> 00:05:17,210
+So let's say we want to do what we did right here.
+
+81
+00:05:17,210 --> 00:05:25,370
+My name is his name and I am and then the age so I can say print and just simply put an F right here
+
+82
+00:05:25,730 --> 00:05:27,460
+and there are quotes like this.
+
+83
+00:05:27,530 --> 00:05:30,770
+And you can use double quotes if you want and then I could say my
+
+84
+00:05:33,780 --> 00:05:38,260
+name is we have a variable up above called name.
+
+85
+00:05:38,850 --> 00:05:43,100
+And I am a judge.
+
+86
+00:05:43,430 --> 00:05:43,850
+OK.
+
+87
+00:05:43,860 --> 00:05:46,500
+So it's on that we get the same thing.
+
+88
+00:05:46,500 --> 00:05:53,130
+So it's looking at these two variables so instead of having to do Daut format and then assigning these
+
+89
+00:05:53,130 --> 00:05:56,970
+like that we could just simply take the variables above and stick them right in here.
+
+90
+00:05:56,970 --> 00:05:59,460
+So this is a much easier way of doing things.
+
+91
+00:05:59,550 --> 00:06:01,400
+And this is very simple is simple.
+
+92
+00:06:01,400 --> 00:06:06,640
+This is very similar to using template strings in javascript and ESX.
+
+93
+00:06:06,660 --> 00:06:11,770
+OK so makes things easier and you can return this as well you enough to just you know print it.
+
+94
+00:06:11,790 --> 00:06:14,350
+So now let's take a look at some string methods.
+
+95
+00:06:14,630 --> 00:06:14,960
+OK.
+
+96
+00:06:14,970 --> 00:06:26,500
+So I'm going to just create a variable called S and I'm going to say hello there world.
+
+97
+00:06:27,150 --> 00:06:32,070
+And we're going to look at some different methods so let's say we want to actually let's start off with
+
+98
+00:06:32,070 --> 00:06:33,450
+making these lowercase
+
+99
+00:06:38,360 --> 00:06:39,620
+OK so let's say
+
+100
+00:06:43,620 --> 00:06:48,520
+capitalise first letter.
+
+101
+00:06:48,840 --> 00:06:57,570
+OK so if we want to capitalize the first letter we can use a method called capitalize Sozzi s dot capitalized
+
+102
+00:06:57,610 --> 00:07:01,630
+You see we get the dropdown because we have the python extension installed.
+
+103
+00:07:01,630 --> 00:07:06,910
+So let's go ahead and run that.
+
+104
+00:07:07,090 --> 00:07:08,290
+Don't worry about the.
+
+105
+00:07:08,400 --> 00:07:11,130
+It's a method so a method is basically a function.
+
+106
+00:07:11,130 --> 00:07:14,170
+So it has to have these these parentheses.
+
+107
+00:07:14,880 --> 00:07:19,380
+And then we go hello there world and then the first one is uppercase.
+
+108
+00:07:19,650 --> 00:07:29,740
+OK if you want to make everything uppercase a copy this.
+
+109
+00:07:29,910 --> 00:07:35,460
+So if you want to make everything uppercase you can use the upper method.
+
+110
+00:07:36,120 --> 00:07:44,220
+If I run that is see here uppercase if you want to do all lowercase you could do that as well.
+
+111
+00:07:44,330 --> 00:07:49,720
+It's make all lower and simply start lower.
+
+112
+00:07:50,060 --> 00:07:53,160
+OK we run that everything's lowercase.
+
+113
+00:07:53,220 --> 00:08:07,900
+If you want to do a swap case let's try that's Swad case will say Prince Ascot swap case and then what
+
+114
+00:08:07,900 --> 00:08:10,730
+I'll do is make one of these uppercase.
+
+115
+00:08:10,820 --> 00:08:14,050
+So do that and see what we get.
+
+116
+00:08:14,570 --> 00:08:17,640
+OK it's going to be the last one and it does just that it swaps it.
+
+117
+00:08:17,650 --> 00:08:23,440
+So since this is an upper case it's going to do a lowercase here and then the rest are uppercase.
+
+118
+00:08:23,740 --> 00:08:28,240
+If you want to get the length of a string and this is not for just strings but this is for like lists
+
+119
+00:08:28,270 --> 00:08:35,110
+and dictionaries and pretty much anything then you can use the lende method or the lende function.
+
+120
+00:08:35,110 --> 00:08:45,800
+So let's say get Lang let's say print and this time we actually wrap it in the one function like that
+
+121
+00:08:47,000 --> 00:08:47,560
+run it.
+
+122
+00:08:47,570 --> 00:08:49,280
+We get 17.
+
+123
+00:08:49,850 --> 00:08:55,260
+OK if we want to replace something in a string we can do that.
+
+124
+00:08:55,450 --> 00:08:57,790
+So yes.
+
+125
+00:09:00,290 --> 00:09:09,320
+So we can use the replace method so if we say print dot or place and let's say we want to replace world
+
+126
+00:09:11,680 --> 00:09:16,580
+with everyone I'm going to clear this and run it.
+
+127
+00:09:16,600 --> 00:09:17,590
+And at the end here.
+
+128
+00:09:17,590 --> 00:09:18,880
+Hello there everyone.
+
+129
+00:09:18,880 --> 00:09:24,960
+So it will search for this and replace it with the second parameter.
+
+130
+00:09:25,090 --> 00:09:30,910
+All right if we want to let's say count something like let's say we want to count how many H's there
+
+131
+00:09:30,910 --> 00:09:37,490
+are in this in the string.
+
+132
+00:09:37,700 --> 00:09:47,390
+Let's say I'm just going to create a variable called sub and set it to H and then let's say print starts
+
+133
+00:09:48,680 --> 00:09:51,940
+count sub.
+
+134
+00:09:52,220 --> 00:09:54,660
+And if we run this we get one.
+
+135
+00:09:54,810 --> 00:09:59,070
+OK if I were to actually make this all lowercase.
+
+136
+00:09:59,090 --> 00:10:04,570
+So we have more than one way to make this a lowercase H and run it.
+
+137
+00:10:04,580 --> 00:10:05,850
+Now we get two.
+
+138
+00:10:05,990 --> 00:10:08,390
+Now I don't want to keep boring you by typing this out.
+
+139
+00:10:08,420 --> 00:10:12,650
+But there are a few more that I want to put in here so I'm going to paste them in and just quickly go
+
+140
+00:10:12,650 --> 00:10:13,540
+over them.
+
+141
+00:10:13,640 --> 00:10:16,160
+So you have starts with and ends with.
+
+142
+00:10:16,160 --> 00:10:21,140
+This will just basically starts with will start at the beginning and as long as it matches you know
+
+143
+00:10:21,140 --> 00:10:26,460
+we could put h here that would that would give you true H.E. would give you true halo gives you true.
+
+144
+00:10:26,510 --> 00:10:32,390
+But if you go out of sequence of what this actually is like if I do hello after something that's going
+
+145
+00:10:32,390 --> 00:10:37,070
+to be false and then ends with just starts at the back so ends with D would be true.
+
+146
+00:10:37,100 --> 00:10:39,690
+L.D. are L.D. that would all be true.
+
+147
+00:10:39,950 --> 00:10:40,940
+OK.
+
+148
+00:10:41,090 --> 00:10:42,530
+Next thing we have is split.
+
+149
+00:10:42,530 --> 00:10:46,480
+So this would just split it into a list which is which is like an array.
+
+150
+00:10:46,730 --> 00:10:47,710
+And I'll get into that.
+
+151
+00:10:47,720 --> 00:10:53,600
+I think in the next lecture we're going to look at the less fine position if you want to find the position
+
+152
+00:10:53,600 --> 00:10:54,880
+of any character.
+
+153
+00:10:54,980 --> 00:10:56,340
+So it starts at zero.
+
+154
+00:10:56,350 --> 00:10:59,270
+So this would be 0 1 2 and so on.
+
+155
+00:10:59,270 --> 00:11:04,620
+You also have is alphanumeric or is Al numb.
+
+156
+00:11:04,670 --> 00:11:05,870
+So if it's alphanumeric.
+
+157
+00:11:05,870 --> 00:11:09,780
+If it's numbers and letters if it has spaces in it this will return false.
+
+158
+00:11:09,990 --> 00:11:11,930
+OK here we have is alphabetic.
+
+159
+00:11:11,930 --> 00:11:17,690
+So with this just letters no numbers we also have is numeric and there's a bunch of them if you just
+
+160
+00:11:17,690 --> 00:11:23,350
+do like s dot and you'll see all the different methods that are available here.
+
+161
+00:11:24,290 --> 00:11:25,610
+OK if you go down.
+
+162
+00:11:26,000 --> 00:11:30,140
+So we have like is digit is space.
+
+163
+00:11:30,170 --> 00:11:31,070
+There's a ton of them.
+
+164
+00:11:31,070 --> 00:11:36,260
+So if you want to look more into string methods you can do that but I don't want to spend too much time
+
+165
+00:11:36,260 --> 00:11:39,440
+on it because it's not the most fun thing in the world.
+
+166
+00:11:39,440 --> 00:11:39,680
+All right.
+
+167
+00:11:39,680 --> 00:11:42,290
+So we'll get into lists in the next video.
+

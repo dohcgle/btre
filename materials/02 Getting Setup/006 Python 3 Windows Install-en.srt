@@ -1,0 +1,96 @@
+1
+00:00:00,600 --> 00:00:04,860
+All right guys in this video we're going to install Python 3 on a Windows machine.
+
+2
+00:00:04,860 --> 00:00:10,860
+So we want to go to Python dot org and go to downloads and whatever the latest version is at this time
+
+3
+00:00:10,860 --> 00:00:12,930
+it's three point seven point zero.
+
+4
+00:00:13,050 --> 00:00:16,330
+Download the X-C file and open that up.
+
+5
+00:00:16,730 --> 00:00:20,050
+OK it's just going to just click run and it's going to be a simple install.
+
+6
+00:00:20,070 --> 00:00:26,610
+Now really important that you check this off right here this is going to add 3.7 to your path so that
+
+7
+00:00:26,610 --> 00:00:31,470
+when you type in Python it's going to be it's going to use 3.7 by default.
+
+8
+00:00:31,470 --> 00:00:34,430
+So make sure you check that off and then click Install now.
+
+9
+00:00:36,330 --> 00:00:46,490
+OK so it's going to go and go through with the installation.
+
+10
+00:00:46,740 --> 00:00:47,060
+All right.
+
+11
+00:00:47,070 --> 00:00:51,120
+So now we see set up is successful so we can go ahead and close this up.
+
+12
+00:00:51,120 --> 00:00:59,160
+And now we're going to do is open up a Windows command prompt and from here let's say Python dash dash
+
+13
+00:00:59,250 --> 00:01:03,470
+version and you can see we have 3.7 point zero.
+
+14
+00:01:03,480 --> 00:01:10,560
+And if I do just Python enter it's going to bring us into the python shell here where we can type any
+
+15
+00:01:10,560 --> 00:01:13,670
+kind of Python commands such as print.
+
+16
+00:01:13,950 --> 00:01:17,350
+So I will say print hello.
+
+17
+00:01:17,520 --> 00:01:22,760
+We can assign variables like name same name equals Brad.
+
+18
+00:01:23,160 --> 00:01:30,660
+And then let's say print name and we get Brad OK and if we want to get out of here we can do control
+
+19
+00:01:30,660 --> 00:01:35,270
+Z or we can do X it like that and that will x it out.
+
+20
+00:01:35,490 --> 00:01:39,300
+All right so that's how you can install Python 3 on Windows.
+
+21
+00:01:39,300 --> 00:01:45,690
+So when the next video we're going to start to set up our text editor which is going to be vs code and
+
+22
+00:01:45,690 --> 00:01:50,160
+we're going to install the python extension along with some other extensions that I'm going to show
+
+23
+00:01:50,160 --> 00:01:50,660
+you.
+
+24
+00:01:50,670 --> 00:01:52,380
+All right so I'll see you in the next video.
+

@@ -1,0 +1,340 @@
+1
+00:00:00,340 --> 00:00:03,090
+All right guys and this video we're in it take a look at Lisse.
+
+2
+00:00:03,090 --> 00:00:09,360
+OK so a list is a collection which is ordered and changeable and it allows duplicate members a list
+
+3
+00:00:09,360 --> 00:00:14,490
+is basically an array if you come from javascript or Pietsch P or many other languages.
+
+4
+00:00:14,550 --> 00:00:19,900
+It's formatted just like an array and has a lot of the same array methods and stuff like that.
+
+5
+00:00:19,920 --> 00:00:28,230
+So I going to create a variable here called numbers and let's do one two three four five OK and then
+
+6
+00:00:28,230 --> 00:00:36,730
+we'll go ahead and print it's actually print the types if I see print type numbers and we take a look.
+
+7
+00:00:36,730 --> 00:00:37,490
+Whoops.
+
+8
+00:00:37,520 --> 00:00:38,260
+Clearly so.
+
+9
+00:00:38,280 --> 00:00:40,010
+And we're going to run Python 3.
+
+10
+00:00:40,110 --> 00:00:41,630
+Let's stop pi.
+
+11
+00:00:42,150 --> 00:00:44,200
+And you see class list.
+
+12
+00:00:44,610 --> 00:00:53,980
+OK if I were to type out numbers itself or print out numbers itself it just prints out the list.
+
+13
+00:00:53,990 --> 00:01:01,250
+So this is one way of doing it and this is the most common way let's say create a list but you can do
+
+14
+00:01:01,250 --> 00:01:05,830
+it another way and that's by using a constructor.
+
+15
+00:01:05,830 --> 00:01:09,260
+So to do that you would do like numbers
+
+16
+00:01:12,320 --> 00:01:19,660
+and then we would do a list like that and then pass in another set of parentheses and put in our numbers.
+
+17
+00:01:20,120 --> 00:01:25,490
+And if I were to comment so and save and run this you'll see the same thing.
+
+18
+00:01:25,510 --> 00:01:26,030
+OK.
+
+19
+00:01:26,270 --> 00:01:30,000
+So just a different way of doing it but this is definitely the most popular way.
+
+20
+00:01:30,050 --> 00:01:32,420
+You don't see this all that much.
+
+21
+00:01:32,750 --> 00:01:40,700
+So I'm actually going to create another array called fruits and going to set it to just a bunch of different
+
+22
+00:01:40,700 --> 00:01:42,590
+fruits so let's say apples
+
+23
+00:01:45,970 --> 00:01:47,020
+oranges
+
+24
+00:01:49,390 --> 00:01:55,050
+grapes and let's two pairs OK.
+
+25
+00:01:55,280 --> 00:02:02,590
+So we have this fruit survey and we can do multiple types as well like if I wanted to put an integer
+
+26
+00:02:02,590 --> 00:02:08,770
+in here I could certainly do that just to show you that that's not going to like throw an error or anything.
+
+27
+00:02:08,930 --> 00:02:09,230
+OK.
+
+28
+00:02:09,320 --> 00:02:10,240
+So I can do that.
+
+29
+00:02:10,240 --> 00:02:14,200
+It's it's not like like go laying or anything like that.
+
+30
+00:02:14,240 --> 00:02:17,160
+So we have this fruit's array.
+
+31
+00:02:17,660 --> 00:02:21,520
+Let's let's print out a certain index or a certain value.
+
+32
+00:02:21,520 --> 00:02:26,500
+So let's say we want oranges just like with just about every other language.
+
+33
+00:02:26,590 --> 00:02:31,920
+Lists are raised there or they're all zero based So this is going to be 0 1 2 3.
+
+34
+00:02:31,940 --> 00:02:42,950
+So all we have to do is print out and say we want oranges so say fruits 1 and run it and we get oranges.
+
+35
+00:02:43,490 --> 00:02:47,830
+It's a get value
+
+36
+00:02:50,930 --> 00:02:56,230
+OK if we want to let's say get the length of this list.
+
+37
+00:02:56,240 --> 00:03:05,950
+We could use the lende method just like we did with strings so we could say print when and then fruits
+
+38
+00:03:05,960 --> 00:03:12,230
+and it's going to give us the amount of values in that list so you can see we get four if we want to
+
+39
+00:03:12,290 --> 00:03:13,710
+append to this list.
+
+40
+00:03:13,730 --> 00:03:17,830
+We want to add something to it.
+
+41
+00:03:17,900 --> 00:03:24,090
+So what we do is say fruits and in javascript we would do push right.
+
+42
+00:03:24,170 --> 00:03:26,630
+In python we do append.
+
+43
+00:03:26,890 --> 00:03:36,650
+So say fruit's append and let's say Mango's and then down here I just want to print fruits and let's
+
+44
+00:03:36,650 --> 00:03:42,270
+run this and you can see that now Mango's has been added.
+
+45
+00:03:42,320 --> 00:03:44,920
+All right if we want to remove something we can do that.
+
+46
+00:03:44,960 --> 00:03:56,240
+So let's say we're move from west so say fruit's dot remove and say we want to move grapes and then
+
+47
+00:03:56,240 --> 00:04:01,260
+I'll print it out and I can see that grapes is now gone.
+
+48
+00:04:01,340 --> 00:04:10,730
+If you want to insert into a specific position I'll say insert into position
+
+49
+00:04:13,850 --> 00:04:26,720
+we could say fruit's dot insert and let's say two and let's say strawberries OK let's see what that
+
+50
+00:04:26,720 --> 00:04:32,170
+gives us if we run it in now Strawberry's is in the two positions 0 1 2.
+
+51
+00:04:33,110 --> 00:04:36,410
+All right if we want to remove from a certain position
+
+52
+00:04:38,870 --> 00:04:45,540
+remove from position we can say fruits and we could use the pop method.
+
+53
+00:04:45,650 --> 00:04:50,330
+OK so let's say we want her removed from the third position and we run it.
+
+54
+00:04:50,330 --> 00:04:53,760
+Now we get apples oranges strawberries mangoes.
+
+55
+00:04:53,790 --> 00:04:54,160
+All right.
+
+56
+00:04:54,170 --> 00:04:56,820
+I forget what was there before what was it.
+
+57
+00:04:57,110 --> 00:04:58,280
+Grapes.
+
+58
+00:04:58,370 --> 00:05:01,660
+I don't know what whatever was in the third position they removed.
+
+59
+00:05:01,730 --> 00:05:03,410
+If we want to reverse the array
+
+60
+00:05:06,110 --> 00:05:09,020
+I said array and yet I'll probably do that over and over.
+
+61
+00:05:09,020 --> 00:05:11,050
+Call the call list an array.
+
+62
+00:05:11,270 --> 00:05:14,550
+So and I'll probably call Diksha a dictionary and object.
+
+63
+00:05:14,600 --> 00:05:20,900
+I mean that's that's the thing you can learn so many different languages because a lot of the concepts
+
+64
+00:05:20,900 --> 00:05:23,000
+are are very very similar.
+
+65
+00:05:23,210 --> 00:05:28,310
+All right arrays in Javascript in lists in Python are virtually the same thing.
+
+66
+00:05:28,370 --> 00:05:31,420
+I mean there's a couple of different methods that are named differently.
+
+67
+00:05:31,610 --> 00:05:37,250
+But you can do the same stuff so it's easy to learn but sometimes the terminology you get mixed up with.
+
+68
+00:05:37,250 --> 00:05:38,510
+At least I do.
+
+69
+00:05:38,600 --> 00:05:49,350
+But let's go ahead and say fruit's dot reverse and go ahead and actually clear out and run it.
+
+70
+00:05:49,370 --> 00:05:53,670
+So now it's Mingos strawberries oranges apples.
+
+71
+00:05:53,870 --> 00:05:55,410
+So it's reversed.
+
+72
+00:05:55,910 --> 00:05:57,680
+Let's see if we want to sort it
+
+73
+00:06:02,210 --> 00:06:07,160
+we could say fruits Daut sort.
+
+74
+00:06:07,350 --> 00:06:11,870
+And now we get apples oranges strawberries.
+
+75
+00:06:11,890 --> 00:06:14,180
+Now it's ordered alphabetically.
+
+76
+00:06:14,250 --> 00:06:18,600
+If you want to reverse the sort you could simply say fruits.
+
+77
+00:06:18,910 --> 00:06:28,510
+Actually I'd say this is a comment or verse sort we could say fruits Daut sort.
+
+78
+00:06:28,530 --> 00:06:31,480
+And then simply pass in reverse.
+
+79
+00:06:31,800 --> 00:06:33,380
+Equals true.
+
+80
+00:06:34,880 --> 00:06:40,920
+And now we get it sorted alphabetically but it's reverse goes the other way.
+
+81
+00:06:40,920 --> 00:06:45,420
+All right guys so there's more methods in this if you want to look at the documentation you can do that.
+
+82
+00:06:45,430 --> 00:06:50,460
+But these are some of the really popular ones that you might find yourself using quite a bit.
+
+83
+00:06:50,490 --> 00:06:55,470
+So the next video I want to actually look at two things I want to look at something called tuples or
+
+84
+00:06:55,470 --> 00:06:58,300
+tuple and also something called a set.
+
+85
+00:06:58,380 --> 00:07:00,540
+OK so we'll get into that next.
+

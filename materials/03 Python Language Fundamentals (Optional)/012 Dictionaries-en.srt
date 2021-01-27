@@ -1,0 +1,460 @@
+1
+00:00:00,350 --> 00:00:00,780
+All right guys.
+
+2
+00:00:00,780 --> 00:00:05,520
+Now we're going to look at dictionaries which are collections that are unwatered changeable an index
+
+3
+00:00:05,520 --> 00:00:12,870
+with no duplicate members and these are very similar to javascript object literals and Ruby hashes and
+
+4
+00:00:13,620 --> 00:00:18,840
+even Jason so if you're going to work with Jason in Python a lot of times you'll you'll decode it into
+
+5
+00:00:18,870 --> 00:00:22,920
+a dictionary and I'll show you an example of that later on.
+
+6
+00:00:22,920 --> 00:00:30,140
+So let's start off by just creating a simple dictionary and we'll call it person.
+
+7
+00:00:30,900 --> 00:00:33,740
+And we use our curly braces here.
+
+8
+00:00:34,030 --> 00:00:34,320
+OK.
+
+9
+00:00:34,320 --> 00:00:36,840
+Now the key is going to have quote surrounded.
+
+10
+00:00:36,840 --> 00:00:43,380
+That's kind of a big difference between dictionaries and an object literals and javascript as we have
+
+11
+00:00:43,380 --> 00:00:45,630
+these quotes around the Keys.
+
+12
+00:00:45,630 --> 00:00:52,320
+So let's say first name and we'll say first name is a string of John.
+
+13
+00:00:52,830 --> 00:01:06,530
+OK then we'll do a last name string of dough and let's say age is an end of let's say 30.
+
+14
+00:01:06,960 --> 00:01:13,360
+OK so if I go ahead and print out this person let's see what happens.
+
+15
+00:01:13,370 --> 00:01:15,430
+I want to say Python 3
+
+16
+00:01:18,370 --> 00:01:22,020
+dictionaries dot pi.
+
+17
+00:01:22,270 --> 00:01:29,000
+Invalid syntax but that's because you put a frickin equal sign.
+
+18
+00:01:29,850 --> 00:01:30,550
+All right.
+
+19
+00:01:30,580 --> 00:01:31,930
+Start again.
+
+20
+00:01:32,530 --> 00:01:33,480
+There you go.
+
+21
+00:01:33,490 --> 00:01:35,490
+So print it out for us.
+
+22
+00:01:35,530 --> 00:01:41,070
+You can also use a constructor just like with the other data structures.
+
+23
+00:01:44,040 --> 00:01:54,840
+So what I'll do is copy this and I'll say person equals and we want to use dict like that except we
+
+24
+00:01:54,840 --> 00:01:56,380
+wouldn't do.
+
+25
+00:01:56,730 --> 00:01:58,670
+It's actually formatted very differently.
+
+26
+00:01:58,720 --> 00:01:59,050
+We do.
+
+27
+00:01:59,050 --> 00:02:04,610
+First name equals in the string.
+
+28
+00:02:05,660 --> 00:02:09,910
+There would have been better off just typing this in.
+
+29
+00:02:10,090 --> 00:02:12,650
+And then last name equals Doh.
+
+30
+00:02:15,890 --> 00:02:16,910
+And age
+
+31
+00:02:19,260 --> 00:02:21,920
+equals 30.
+
+32
+00:02:22,110 --> 00:02:28,290
+And we actually wouldn't want these curly braces we would want Actually yeah that should do it.
+
+33
+00:02:30,050 --> 00:02:31,550
+Take away that one as well.
+
+34
+00:02:34,600 --> 00:02:35,360
+OK.
+
+35
+00:02:35,450 --> 00:02:40,510
+So let's let's actually comment this out make sure we get the same thing right now.
+
+36
+00:02:40,530 --> 00:02:43,780
+And there we go so that's another way of doing it.
+
+37
+00:02:44,270 --> 00:02:46,100
+But I wanted to comment this one out.
+
+38
+00:02:48,790 --> 00:02:49,080
+All right.
+
+39
+00:02:49,090 --> 00:02:51,280
+So if we want to access a single value
+
+40
+00:02:54,070 --> 00:03:04,270
+then we can print person and in javascript to what we would do is say person first name right.
+
+41
+00:03:04,270 --> 00:03:10,400
+We use a dot in this case though we want to use brackets K which you can also do in javascript.
+
+42
+00:03:10,410 --> 00:03:12,690
+Actually I just never do.
+
+43
+00:03:12,970 --> 00:03:18,910
+I use used I always use the dot syntax but in Python We want to use the brackets and then whatever the
+
+44
+00:03:18,910 --> 00:03:19,660
+key is
+
+45
+00:03:22,700 --> 00:03:25,300
+so run that and you can see we get John.
+
+46
+00:03:25,700 --> 00:03:26,400
+OK.
+
+47
+00:03:26,670 --> 00:03:28,020
+Let's see if we want.
+
+48
+00:03:28,020 --> 00:03:31,910
+Actually there's another way we can access them as well and that's by using the get method.
+
+49
+00:03:31,910 --> 00:03:39,790
+So if we want to do print person Daut get and then parentheses and then the key.
+
+50
+00:03:39,810 --> 00:03:43,930
+So let's get a last name.
+
+51
+00:03:44,790 --> 00:03:46,850
+OK if we run that is c that we get.
+
+52
+00:03:46,860 --> 00:03:53,280
+So you can use either way if you want to add something to it like let's say we want to have a phone
+
+53
+00:03:53,280 --> 00:04:03,440
+number say add key value Obviously person phone
+
+54
+00:04:09,800 --> 00:04:12,880
+right now save it let's print out person.
+
+55
+00:04:13,740 --> 00:04:16,400
+And now you can see that phone has been added.
+
+56
+00:04:16,740 --> 00:04:17,620
+OK.
+
+57
+00:04:18,000 --> 00:04:27,630
+So they are changeable if you want to get just the keys say get keys.
+
+58
+00:04:27,630 --> 00:04:33,200
+Then we can print person Daut keys.
+
+59
+00:04:33,870 --> 00:04:44,390
+And I just want to show you if you want to get the values we can print person Daut items.
+
+60
+00:04:44,660 --> 00:04:45,630
+OK.
+
+61
+00:04:46,050 --> 00:04:51,070
+So save that and let's run it and you what I want you to look at is this right here.
+
+62
+00:04:51,120 --> 00:04:56,400
+So dict keys Keds is actually a view object and it gives you all the different keys.
+
+63
+00:04:56,400 --> 00:05:04,310
+First Name Last Name age and phone and then all the items which is going to give you a set of these
+
+64
+00:05:04,380 --> 00:05:07,020
+parentheses with first name John last name.
+
+65
+00:05:07,020 --> 00:05:12,540
+You know I guess these aren't really just not just getting the values it's getting a view object with
+
+66
+00:05:12,540 --> 00:05:14,310
+the items.
+
+67
+00:05:14,340 --> 00:05:17,850
+Now if we wanted to make a copy we could do that.
+
+68
+00:05:17,850 --> 00:05:29,940
+So it's a make copy so I'll say person too and sell it to person dot copy and then I'm going to take
+
+69
+00:05:29,940 --> 00:05:37,540
+person to and I'm going to add a city say city.
+
+70
+00:05:37,650 --> 00:05:38,130
+Oops.
+
+71
+00:05:38,180 --> 00:05:45,620
+No semi-colon see that's the javascript that made him the PDP and whatever other languages use semi-colons
+
+72
+00:05:46,280 --> 00:05:51,230
+and then let's print out person too.
+
+73
+00:05:51,250 --> 00:05:53,070
+All right so clear that and run it.
+
+74
+00:05:53,330 --> 00:05:54,260
+And let's see.
+
+75
+00:05:54,260 --> 00:05:59,240
+Person 2 is going to be this one right here that I added Boston to.
+
+76
+00:05:59,840 --> 00:06:03,740
+And obviously if I wanted to change some of the values I could do that as well.
+
+77
+00:06:03,740 --> 00:06:07,290
+So what about removing an item.
+
+78
+00:06:07,280 --> 00:06:14,210
+Let's let's get rid of the print out of person too and let's say remove item.
+
+79
+00:06:14,390 --> 00:06:16,760
+So to do that we can use del.
+
+80
+00:06:16,970 --> 00:06:20,040
+Let's say we want to remove the age.
+
+81
+00:06:20,210 --> 00:06:23,950
+So say a Dell person
+
+82
+00:06:26,500 --> 00:06:27,610
+age.
+
+83
+00:06:28,210 --> 00:06:29,750
+OK let's go ahead and run it.
+
+84
+00:06:29,770 --> 00:06:33,940
+And now down at the bottom here you'll see that there is no age value.
+
+85
+00:06:34,030 --> 00:06:35,010
+OK.
+
+86
+00:06:35,440 --> 00:06:39,070
+If we will actually there's another way to do this as well and that's using the pop method.
+
+87
+00:06:39,070 --> 00:06:46,080
+So if we want to do person Daut pop Let's see if we want to remove the phone.
+
+88
+00:06:46,660 --> 00:06:51,250
+So go ahead and run that and now the last one here just has first name and last name it doesn't have
+
+89
+00:06:51,250 --> 00:06:52,520
+age or phone.
+
+90
+00:06:52,630 --> 00:07:01,170
+If we want to clear the clear the dictionary completely we can say person Daut clear.
+
+91
+00:07:01,300 --> 00:07:03,910
+I saw run that and down at the bottom here just in.
+
+92
+00:07:03,910 --> 00:07:06,850
+It's just empty curly braces.
+
+93
+00:07:07,030 --> 00:07:19,600
+And again if you want to get the length of the list above but that's fine we'll say print Len person
+
+94
+00:07:21,380 --> 00:07:27,120
+to person to print the length of person to which is five.
+
+95
+00:07:27,860 --> 00:07:28,230
+OK.
+
+96
+00:07:28,240 --> 00:07:32,880
+So a lot of times you'll see a list of dictionaries.
+
+97
+00:07:32,920 --> 00:07:40,570
+So let me give you an example of that was a list of dictionaries so let's say people
+
+98
+00:07:43,210 --> 00:07:44,810
+said that to a list.
+
+99
+00:07:44,830 --> 00:07:58,450
+And inside here we'll have our dictionaries so like name say Martha age 40 and then will put a comma
+
+100
+00:07:58,450 --> 00:08:01,550
+here and then we'll do another one.
+
+101
+00:08:02,260 --> 00:08:06,820
+So name actually what I do here should should have quotes
+
+102
+00:08:15,850 --> 00:08:19,700
+age say 20.
+
+103
+00:08:19,700 --> 00:08:29,780
+All right so if we go out here and let's just print go the full list and down here you'll see we have
+
+104
+00:08:29,780 --> 00:08:33,590
+a list with two two dictionaries.
+
+105
+00:08:33,590 --> 00:08:38,500
+So again javascript people it's like having an array of objects.
+
+106
+00:08:38,810 --> 00:08:45,330
+And then if we want to focus on one of these like let's say we want to get the name for Bob for this.
+
+107
+00:08:45,330 --> 00:08:52,700
+This dictionary here I would say print people and I want the one index which would be the second one
+
+108
+00:08:52,700 --> 00:08:55,260
+because remember it's 0 1.
+
+109
+00:08:55,460 --> 00:09:02,810
+And then if I want to get a specific property I could go see a name so that should print out Bob so
+
+110
+00:09:02,810 --> 00:09:06,250
+if I go ahead and run that we look at the bottom we get Bob.
+
+111
+00:09:06,500 --> 00:09:10,910
+All right so hopefully this gives you a good idea of how dictionaries work.
+
+112
+00:09:10,910 --> 00:09:16,560
+Again very close to some of the other data structures and other languages if you know any other languages.
+
+113
+00:09:16,640 --> 00:09:24,380
+But yeah so in the next video I want to I want to get into functions because we haven't really talked
+
+114
+00:09:24,380 --> 00:09:27,210
+about the indentation syntax and stuff like that.
+
+115
+00:09:27,380 --> 00:09:29,690
+So we're going to get into functions indexed.
+

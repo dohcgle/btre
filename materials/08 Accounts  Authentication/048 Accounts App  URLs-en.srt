@@ -1,0 +1,680 @@
+1
+00:00:00,420 --> 00:00:04,290
+All right guys so now we're going to do is start to get into accounts.
+
+2
+00:00:04,380 --> 00:00:09,840
+We want users on the front end to be able to register to be able to log in and we're going to have a
+
+3
+00:00:10,200 --> 00:00:12,120
+little simple dashboard.
+
+4
+00:00:12,120 --> 00:00:16,660
+We want this functionality not so much just for that so they can see their inquiries.
+
+5
+00:00:16,680 --> 00:00:21,930
+But just to have the functionality in case you want to add something else later where it's you know
+
+6
+00:00:21,930 --> 00:00:24,760
+you have to log in to do something.
+
+7
+00:00:25,230 --> 00:00:32,710
+So most applications that you're going to build are going to have front front web site facing user accounts.
+
+8
+00:00:32,760 --> 00:00:36,330
+OK so I did want to throw that in to this course.
+
+9
+00:00:36,330 --> 00:00:42,330
+I didn't want to just make it you know only the admins had logging privileges because I think that it
+
+10
+00:00:42,330 --> 00:00:45,380
+wouldn't give you a full view of Django.
+
+11
+00:00:45,570 --> 00:00:45,980
+All right.
+
+12
+00:00:45,990 --> 00:00:51,630
+And I know that I I mean I can't cover everything in this project or in this course but I'm trying to
+
+13
+00:00:51,630 --> 00:00:56,230
+cover all the all the core fundamentals things that you're going to be doing a lot.
+
+14
+00:00:56,610 --> 00:00:59,740
+And obviously authentication is one of those things.
+
+15
+00:00:59,760 --> 00:01:04,720
+So I think that the first thing we need to do here is create a separate app.
+
+16
+00:01:04,770 --> 00:01:05,650
+OK.
+
+17
+00:01:06,070 --> 00:01:11,030
+And what I mean by app is like the listings realtor's pages these are all apps within Django.
+
+18
+00:01:11,130 --> 00:01:13,250
+So we're going to create an account app.
+
+19
+00:01:13,500 --> 00:01:16,890
+Ok so let's let's go to our terminal down here.
+
+20
+00:01:16,890 --> 00:01:21,070
+I have my server running in the other one so that's still running there.
+
+21
+00:01:21,400 --> 00:01:26,420
+And what's that actually what's the error right there.
+
+22
+00:01:26,450 --> 00:01:28,360
+Oh that's just for the Jay query loading.
+
+23
+00:01:28,380 --> 00:01:29,040
+If I don't have.
+
+24
+00:01:29,090 --> 00:01:30,060
+That's fine.
+
+25
+00:01:30,500 --> 00:01:35,660
+So we're going to go ahead and create a new app and if you guys remember we do that by doing Python
+
+26
+00:01:36,090 --> 00:01:44,150
+and we haven't done anything in the terminal for a while so manage dot pie and we're going to do start
+
+27
+00:01:44,220 --> 00:01:48,420
+app whenever we want to create a new application start app.
+
+28
+00:01:48,530 --> 00:01:51,080
+And this is going to be called accounts.
+
+29
+00:01:51,320 --> 00:01:52,020
+OK.
+
+30
+00:01:52,130 --> 00:01:53,600
+So let's go and run that.
+
+31
+00:01:53,800 --> 00:01:59,830
+And now over on the side you see we have accounts and we have all the default files here.
+
+32
+00:02:00,080 --> 00:02:06,940
+Now Gengel already has a user system in place so we don't have to create an account or use or model.
+
+33
+00:02:06,980 --> 00:02:08,530
+We don't have to do any of that stuff.
+
+34
+00:02:08,530 --> 00:02:15,340
+We're just going to use the the the the user table that is already in place.
+
+35
+00:02:15,440 --> 00:02:23,600
+So if we go to PGE admin and I guess I'll just leave this open here and you can see that there is a
+
+36
+00:02:23,660 --> 00:02:27,960
+off user table and it's probably not going to let me see.
+
+37
+00:02:27,970 --> 00:02:32,720
+I'm going to have to reload and probably am probably gonna have to rely again because it's been quite
+
+38
+00:02:32,740 --> 00:02:34,870
+awhile now.
+
+39
+00:02:35,210 --> 00:02:36,870
+OK so I'm going to navigate.
+
+40
+00:02:36,890 --> 00:02:42,050
+I do have to log in if you let it go so long without touching it.
+
+41
+00:02:42,050 --> 00:02:44,350
+You'll have to log in again.
+
+42
+00:02:44,370 --> 00:02:57,190
+So we want to go to our database and let's just check out tables and we want to look at Auth. user extend
+
+43
+00:02:57,200 --> 00:03:03,080
+that if we look at the columns you can see all the different columns so user name first name last name
+
+44
+00:03:03,110 --> 00:03:10,080
+email is staff is what is going to allow them to log in to the back end or not.
+
+45
+00:03:10,210 --> 00:03:15,830
+There's no super user or they have the last log in the date joined if the users active.
+
+46
+00:03:15,830 --> 00:03:17,120
+All that stuff.
+
+47
+00:03:17,300 --> 00:03:25,970
+And if we were to look at the data using Where is it to view data all rows we just have our one user
+
+48
+00:03:26,270 --> 00:03:28,110
+who is the admin.
+
+49
+00:03:28,130 --> 00:03:32,260
+OK so it's a super user and staff you can see as true.
+
+50
+00:03:32,480 --> 00:03:37,130
+So obviously when a user creates an account in the front and we don't want them to be staff we don't
+
+51
+00:03:37,130 --> 00:03:41,050
+want them to be able to log into the back end.
+
+52
+00:03:41,060 --> 00:03:48,200
+All right so I think the first step here is to actually have a route or a couple routes for a register
+
+53
+00:03:48,200 --> 00:03:48,850
+and log in.
+
+54
+00:03:48,860 --> 00:03:53,000
+We can at least load those templates case we're going have to create those templates.
+
+55
+00:03:53,150 --> 00:04:01,010
+So let's go to templates and going to close all these are or minimize these and in templates we're going
+
+56
+00:04:01,010 --> 00:04:08,810
+to have a folder called accounts and inside accounts we're going to have a couple of files log in each
+
+57
+00:04:08,810 --> 00:04:09,370
+team.
+
+58
+00:04:09,370 --> 00:04:16,070
+All we're going to do register HMO.
+
+59
+00:04:16,640 --> 00:04:23,600
+And then we're going to have a dashboard that's also part of accounts so it's create dashboard Daut
+
+60
+00:04:23,640 --> 00:04:24,670
+aged him.
+
+61
+00:04:25,040 --> 00:04:25,300
+All right.
+
+62
+00:04:25,300 --> 00:04:27,010
+So at least we have our templates.
+
+63
+00:04:27,010 --> 00:04:29,320
+Let's just put an H1 in here for now.
+
+64
+00:04:29,330 --> 00:04:34,400
+So this is Dash K H-1 this is
+
+65
+00:04:37,500 --> 00:04:42,470
+register and log in.
+
+66
+00:04:42,750 --> 00:04:46,500
+OK so we have our templates now let's go ahead and set up our routes.
+
+67
+00:04:46,570 --> 00:04:52,470
+So remember when we create a new app it doesn't automatically come with the DOT PI file and that's what
+
+68
+00:04:52,470 --> 00:04:52,890
+we need.
+
+69
+00:04:52,890 --> 00:04:55,020
+So we're going to create that in here.
+
+70
+00:04:55,170 --> 00:04:59,250
+So you are Elle's dot pi.
+
+71
+00:04:59,610 --> 00:05:05,040
+And before I do this before I forget we need to go to our settings so it's going to be in the Tiare
+
+72
+00:05:05,190 --> 00:05:07,360
+and then setting up high.
+
+73
+00:05:07,380 --> 00:05:09,220
+And we just want to add our app.
+
+74
+00:05:09,270 --> 00:05:12,970
+So I'm going to go below the realtor's app.
+
+75
+00:05:12,990 --> 00:05:16,540
+I'm just going to copy this down and this is going to be accounts config
+
+76
+00:05:19,640 --> 00:05:22,780
+and this is going to be accounts.
+
+77
+00:05:22,830 --> 00:05:28,150
+And that's something I always forget to do when I create a new app.
+
+78
+00:05:28,170 --> 00:05:34,590
+All right so you are also pie Let's actually copy from one of the other ones so we'll grab the listings.
+
+79
+00:05:34,590 --> 00:05:42,320
+You are up using Yarl's not pie and paste that in here.
+
+80
+00:05:42,450 --> 00:05:46,320
+So we're going to need four different you are Elle's.
+
+81
+00:05:46,320 --> 00:05:53,580
+OK so first one is going to be log in it's going to go to views Daut log and that will be the the method
+
+82
+00:05:53,580 --> 00:05:57,580
+name or the function name and the name will be log in.
+
+83
+00:05:57,630 --> 00:06:00,310
+Next is going to be register.
+
+84
+00:06:01,270 --> 00:06:07,160
+OK that's going to go to register name will be register.
+
+85
+00:06:07,400 --> 00:06:07,830
+All right.
+
+86
+00:06:07,830 --> 00:06:20,510
+And then let's see we also want to log out so log out that will call method Lago go in and then let's
+
+87
+00:06:20,510 --> 00:06:23,910
+copy this down one more this is going to be for the dashboard
+
+88
+00:06:27,160 --> 00:06:28,240
+spell right.
+
+89
+00:06:31,380 --> 00:06:34,230
+OK so Method views on dashboard
+
+90
+00:06:38,150 --> 00:06:42,500
+path dashboard.
+
+91
+00:06:42,620 --> 00:06:48,170
+All right now we're going to get these these errors here because we don't have the methods inside the
+
+92
+00:06:48,170 --> 00:06:49,010
+view.
+
+93
+00:06:49,010 --> 00:06:52,230
+So let's open up in the accounts folder we want the views.
+
+94
+00:06:52,280 --> 00:06:55,730
+Hi guys what's going on like this by default.
+
+95
+00:06:55,730 --> 00:07:01,470
+And we want to add all of our methods or should say views or their view methods.
+
+96
+00:07:01,730 --> 00:07:06,550
+So let's do register when I say define register.
+
+97
+00:07:06,590 --> 00:07:11,340
+And this takes in a request OK.
+
+98
+00:07:11,340 --> 00:07:15,150
+So this for this what I want to do is render a template.
+
+99
+00:07:15,240 --> 00:07:19,620
+So when you do render her return render.
+
+100
+00:07:19,620 --> 00:07:21,750
+And we want to pass in here.
+
+101
+00:07:21,750 --> 00:07:27,810
+First of all the request second is going to be the template which is going to be in the accounts folder
+
+102
+00:07:27,840 --> 00:07:32,270
+and then register for each team.
+
+103
+00:07:32,910 --> 00:07:34,220
+OK so that's that.
+
+104
+00:07:34,260 --> 00:07:41,850
+Let's actually just copy this because we need three more functions here or views.
+
+105
+00:07:43,630 --> 00:07:45,280
+You methods.
+
+106
+00:07:46,210 --> 00:07:47,770
+This one's going to be log in.
+
+107
+00:07:47,870 --> 00:07:53,120
+This will change that to log in will change the template that I want to load to log in.
+
+108
+00:07:53,320 --> 00:07:56,040
+So this is going to be log in each time now.
+
+109
+00:07:56,230 --> 00:08:02,070
+This next one is going to be the log out now log out isn't going to render a template.
+
+110
+00:08:02,200 --> 00:08:06,610
+It's just it's going to you're going to put some functionality here to log the user out.
+
+111
+00:08:06,670 --> 00:08:10,510
+But ultimately at the end what I want it to do is redirect.
+
+112
+00:08:10,540 --> 00:08:12,580
+So I'm going to say return
+
+113
+00:08:15,540 --> 00:08:22,340
+redirect and that's put in here.
+
+114
+00:08:22,830 --> 00:08:26,190
+So we want to redirect to index.
+
+115
+00:08:26,250 --> 00:08:31,020
+All right now to use redirect we have to bring it in and it comes in just like render does from the
+
+116
+00:08:31,020 --> 00:08:32,490
+jingle shortcuts.
+
+117
+00:08:32,520 --> 00:08:34,990
+So we just want to make sure we bring that in.
+
+118
+00:08:35,430 --> 00:08:35,760
+All right.
+
+119
+00:08:35,760 --> 00:08:40,820
+Whoops So last one here is going to be the dashboard method
+
+120
+00:08:43,630 --> 00:08:47,200
+and that's just going to simply render the dashboard.
+
+121
+00:08:48,530 --> 00:08:49,780
+And there we go.
+
+122
+00:08:49,820 --> 00:08:51,110
+Save.
+
+123
+00:08:51,630 --> 00:08:58,010
+OK let's go to PI and we just want to resave this and now we have no errors.
+
+124
+00:08:58,010 --> 00:08:58,710
+Good.
+
+125
+00:08:59,060 --> 00:09:01,880
+So let's try the trial the Rutz.
+
+126
+00:09:02,120 --> 00:09:08,970
+So if we go and reload these are still going to register dot HVM will log in each and.
+
+127
+00:09:08,990 --> 00:09:13,550
+So those aren't going to work yet we're going to fix that but let's go let's manually go to accounts
+
+128
+00:09:14,840 --> 00:09:18,390
+slash register.
+
+129
+00:09:19,220 --> 00:09:22,210
+OK so we're getting page not found Let's try logon
+
+130
+00:09:25,250 --> 00:09:31,640
+and start working either let's say using the oh we didn't bring in we didn't bring it into the main.
+
+131
+00:09:31,650 --> 00:09:32,780
+You are Alza up high.
+
+132
+00:09:32,780 --> 00:09:35,930
+So we need to go to BT houri you are up high.
+
+133
+00:09:35,930 --> 00:09:40,890
+We need to add here just like we did with the listings in the pages.
+
+134
+00:09:40,970 --> 00:09:44,230
+So we're going to see accounts slash.
+
+135
+00:09:44,290 --> 00:09:51,770
+So anything that is accounts slash we're going to include the accounts you are Elle's like that.
+
+136
+00:09:52,140 --> 00:09:52,510
+Okay.
+
+137
+00:09:52,520 --> 00:09:54,560
+So now that should work let's reload.
+
+138
+00:09:54,560 --> 00:09:55,040
+There we go.
+
+139
+00:09:55,040 --> 00:09:59,560
+So now we have accounts log in register.
+
+140
+00:10:00,140 --> 00:10:00,830
+Okay.
+
+141
+00:10:01,160 --> 00:10:07,330
+So now let's actually let's let's make the navigation go to the correct places.
+
+142
+00:10:07,820 --> 00:10:09,570
+So we want these links.
+
+143
+00:10:09,590 --> 00:10:12,030
+So those are in the nav bar partial.
+
+144
+00:10:12,290 --> 00:10:21,410
+So in the templates we want to go into Parshall's and underscore now barged him all down to register.
+
+145
+00:10:21,410 --> 00:10:26,730
+Okay so obviously we don't want this we want you are el
+
+146
+00:10:29,670 --> 00:10:33,060
+register and for log in
+
+147
+00:10:37,460 --> 00:10:44,380
+let's do this or no log in.
+
+148
+00:10:44,540 --> 00:10:47,390
+OK so let's try that out.
+
+149
+00:10:47,430 --> 00:10:52,250
+So it's load and click register that works good log in.
+
+150
+00:10:52,520 --> 00:10:53,500
+That works.
+
+151
+00:10:53,630 --> 00:10:59,770
+Now once we're actually logged in we were going to change is we don't want to see the register and log
+
+152
+00:10:59,770 --> 00:11:02,090
+in it for a log then that doesn't make any sense.
+
+153
+00:11:02,090 --> 00:11:08,360
+So what we're going to do is have conditionals that it's going to display a link to the dashboard will
+
+154
+00:11:08,360 --> 00:11:13,280
+actually have it say welcome and then our username have a link to the dashboard and also have a link
+
+155
+00:11:13,280 --> 00:11:14,230
+to logo.
+
+156
+00:11:14,340 --> 00:11:16,270
+OK but we'll do that later.
+
+157
+00:11:16,580 --> 00:11:23,060
+Before I end the video what I want to do is just go back to the template and just have the functionality
+
+158
+00:11:23,060 --> 00:11:26,660
+where the links are highlighted if were on those pages.
+
+159
+00:11:26,690 --> 00:11:31,720
+Obviously we're not going to see that yet because we don't have the layout but we'll just add the ifs
+
+160
+00:11:31,730 --> 00:11:33,350
+just like we did up here.
+
+161
+00:11:33,410 --> 00:11:41,120
+So I'm just going to copy this like we did for the listing and we want to go to the ally that's wrapping
+
+162
+00:11:41,120 --> 00:11:46,970
+the register link here and just basically just get rid of this class.
+
+163
+00:11:47,540 --> 00:11:53,270
+And right after the high here I'm going to just enter to go on the next line and then here's where we're
+
+164
+00:11:53,270 --> 00:12:00,580
+going to put the conditional cad's which sees over and all we want to do is change this to register
+
+165
+00:12:00,590 --> 00:12:06,230
+so if register in request path then it'll have the active class.
+
+166
+00:12:06,230 --> 00:12:08,450
+All right we'll do the same thing down here for log in.
+
+167
+00:12:08,450 --> 00:12:19,200
+So we'll get rid of this and go here paste that in its policies over and this is going to be if log
+
+168
+00:12:19,200 --> 00:12:25,350
+in OK we can't test it yet because you know on the template we don't have the layout but we'll do that
+
+169
+00:12:25,380 --> 00:12:26,640
+in the next video.
+
+170
+00:12:26,640 --> 00:12:27,750
+All right so I'll see you then.
+

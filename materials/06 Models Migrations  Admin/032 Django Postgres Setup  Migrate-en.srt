@@ -1,0 +1,260 @@
+1
+00:00:00,510 --> 00:00:01,020
+All right guys.
+
+2
+00:00:01,040 --> 00:00:06,650
+Now that we have post-grads installed we're going to start to implement it with our Django app.
+
+3
+00:00:06,900 --> 00:00:07,360
+OK.
+
+4
+00:00:07,380 --> 00:00:13,230
+Now to use post-grads we need to define the parameters in the settings file but we also need to install
+
+5
+00:00:13,980 --> 00:00:20,920
+a couple of packages using Pipp so that it can basically like basically like drivers to connect to post-grads
+
+6
+00:00:20,940 --> 00:00:28,650
+so make sure you're in your V or whatever you call your virtual environment and let's do a pip install
+
+7
+00:00:28,680 --> 00:00:30,450
+and we're going to do it's.
+
+8
+00:00:30,700 --> 00:00:36,870
+P.S. Why CEO PGE to say we want to install that.
+
+9
+00:00:37,140 --> 00:00:42,730
+And then we also want to do that same thing but Dasch binary.
+
+10
+00:00:43,420 --> 00:00:45,350
+OK so we want to install those two back.
+
+11
+00:00:45,380 --> 00:00:47,210
+Is it clear the up.
+
+12
+00:00:47,400 --> 00:00:51,290
+And then we're going to go to settings up high and go down to look.
+
+13
+00:00:51,300 --> 00:00:52,830
+So let me make this smaller.
+
+14
+00:00:52,830 --> 00:00:58,240
+We're going to go down to where it says database our databases.
+
+15
+00:00:58,390 --> 00:01:05,200
+And this is where we want to set up all of our parameters including the driver including the username
+
+16
+00:01:05,200 --> 00:01:05,770
+password.
+
+17
+00:01:05,770 --> 00:01:06,920
+Things like that.
+
+18
+00:01:06,940 --> 00:01:13,930
+So first of all we want to change this Eskdale life 3 to postgrads.
+
+19
+00:01:13,930 --> 00:01:14,530
+Q Well
+
+20
+00:01:17,620 --> 00:01:24,670
+and then for the name we're going to get rid of this and we just want to put what we called our database
+
+21
+00:01:25,000 --> 00:01:30,220
+which was B T R E D V K.
+
+22
+00:01:30,340 --> 00:01:44,310
+And we also want to add the user which in my case uses postgrads and then we want the password OK.
+
+23
+00:01:44,330 --> 00:01:45,410
+So my password.
+
+24
+00:01:45,410 --> 00:01:56,760
+I just use 1 through 6 and then we also want to add the host which is going to be our local host OK.
+
+25
+00:01:56,770 --> 00:01:59,080
+So let's save that.
+
+26
+00:01:59,080 --> 00:02:05,830
+And by the way my my my jingoes server is still running if I go to my other tab here you know see my
+
+27
+00:02:05,830 --> 00:02:07,740
+jingoes service still running.
+
+28
+00:02:08,980 --> 00:02:15,220
+Now as far as this message right here and you guys saw this a long time ago when we first started the
+
+29
+00:02:15,220 --> 00:02:24,340
+server basically we have some on applied migrations and a migration is a file that that tells the database
+
+30
+00:02:24,550 --> 00:02:25,230
+what to do.
+
+31
+00:02:25,220 --> 00:02:33,100
+Basically as far as setting up tables and data columns and data types of each each for each column and
+
+32
+00:02:33,100 --> 00:02:34,270
+stuff like that.
+
+33
+00:02:34,390 --> 00:02:40,200
+And Django has default migrations for things like the admin area for authentication.
+
+34
+00:02:40,240 --> 00:02:45,520
+There's going to be users that have to do with the admin area that that stuff is all set up.
+
+35
+00:02:45,520 --> 00:02:47,400
+Those migration files are set up.
+
+36
+00:02:47,500 --> 00:02:51,180
+They just haven't been run and put into the database.
+
+37
+00:02:51,190 --> 00:02:56,490
+So what we want to do now is basically run those migrations.
+
+38
+00:02:56,500 --> 00:03:01,840
+And once we do that we won't see this error anymore so let's go ahead and just I'm going to just stop
+
+39
+00:03:01,840 --> 00:03:12,210
+the server here I'll stop this and clear it up now to basically to migrate.
+
+40
+00:03:12,370 --> 00:03:17,570
+We're going to create our own migrations for like the listings and the realtors and stuff like that.
+
+41
+00:03:17,660 --> 00:03:23,270
+But to run the current migrations that are already ready like those 15 that were in that message we
+
+42
+00:03:23,270 --> 00:03:29,220
+just want to say Python manage dot PI and then migrate.
+
+43
+00:03:29,250 --> 00:03:33,370
+OK now something isn't right with our database we're going to see an error here.
+
+44
+00:03:33,370 --> 00:03:35,130
+So let's just try it out.
+
+45
+00:03:35,540 --> 00:03:37,810
+OK it looks like everything went OK.
+
+46
+00:03:38,320 --> 00:03:39,230
+OK.
+
+47
+00:03:39,620 --> 00:03:47,870
+So now we can I mean you could jump into your terminal if you want or you can jump into PGE admin and
+
+48
+00:03:47,880 --> 00:03:51,080
+reload.
+
+49
+00:03:51,330 --> 00:03:55,180
+And let's take a look under servers D-B server.
+
+50
+00:03:55,320 --> 00:04:03,330
+When you look under databases BTR VDB schemas public tables and look at that.
+
+51
+00:04:03,390 --> 00:04:05,880
+Look at all these tables that have been created.
+
+52
+00:04:05,940 --> 00:04:08,100
+So we have our off user table.
+
+53
+00:04:08,220 --> 00:04:14,490
+We have user groups even our migrations get tracked in the database they have their own table groups
+
+54
+00:04:14,490 --> 00:04:15,570
+permissions.
+
+55
+00:04:15,570 --> 00:04:18,450
+All of this Django stuff is now in the tables.
+
+56
+00:04:18,450 --> 00:04:19,880
+Ok that's exactly what we want.
+
+57
+00:04:19,880 --> 00:04:28,460
+So so we know that post-grads is now is now interacting with our Gengel application which is perfect.
+
+58
+00:04:28,470 --> 00:04:34,090
+All right so let's hop back into this code and let's start our server back up.
+
+59
+00:04:34,200 --> 00:04:40,360
+So I'm going to do Python managed up-I run server and now notice we don't see those red arrows anymore.
+
+60
+00:04:40,590 --> 00:04:43,290
+OK because those migrations have now been applied.
+
+61
+00:04:43,590 --> 00:04:48,300
+So we're now in a great place because we can now start to create our models.
+
+62
+00:04:48,420 --> 00:04:54,510
+Our database is connected and we can start to create our own migration so that we can create tables
+
+63
+00:04:54,510 --> 00:04:56,970
+for listings and realtors and stuff like that.
+
+64
+00:04:56,970 --> 00:04:57,300
+All right.
+
+65
+00:04:57,300 --> 00:04:59,690
+So we'll get started on that in the next video.
+

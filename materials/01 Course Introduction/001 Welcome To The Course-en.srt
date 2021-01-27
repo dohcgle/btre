@@ -1,0 +1,152 @@
+1
+00:00:02,040 --> 00:00:02,700
+The
+
+2
+00:00:07,100 --> 00:00:12,270
+Hey Guys welcome to Python Django dev to deployment so in this welcome video I just want to give you
+
+3
+00:00:12,270 --> 00:00:16,860
+an idea of how this course is structured so that you know exactly what to expect.
+
+4
+00:00:16,920 --> 00:00:21,060
+And it's it's formatted a bit differently than some of my other courses.
+
+5
+00:00:21,060 --> 00:00:23,210
+This is strictly a project based course.
+
+6
+00:00:23,220 --> 00:00:28,990
+It's not a linear like documentation type video course with slides and all that.
+
+7
+00:00:29,100 --> 00:00:34,230
+We're going to look at this as a practical project that was given to us by a fictional company called
+
+8
+00:00:34,230 --> 00:00:40,140
+Beati real estate and they want us to build them a Web site or a web app where they can add their property
+
+9
+00:00:40,140 --> 00:00:40,960
+listings.
+
+10
+00:00:41,010 --> 00:00:47,100
+They can have people search browse make inquiries and add their realtors and stuff like that.
+
+11
+00:00:47,130 --> 00:00:53,970
+So we're going to go from the point of you know absolute scratch starting with installing Python setting
+
+12
+00:00:53,970 --> 00:00:58,480
+up a virtual environment setting up vs code and then diving into Django.
+
+13
+00:00:58,590 --> 00:01:03,890
+OK we're not going to build the bootstrap theme in this course because I want to focus on just Django
+
+14
+00:01:03,930 --> 00:01:09,660
+but I have it all packaged and ready to implement into the project so it'll be included in your course
+
+15
+00:01:09,660 --> 00:01:10,530
+files.
+
+16
+00:01:10,530 --> 00:01:16,260
+Now at some point I will be doing probably a YouTube series on the travesty media channel where we actually
+
+17
+00:01:16,260 --> 00:01:19,470
+build the theme from scratch using bootstrap and SAS.
+
+18
+00:01:19,560 --> 00:01:23,400
+But like I said I didn't want to put that in this course.
+
+19
+00:01:23,430 --> 00:01:29,910
+I might change my mind later and put it in but for now we're just going to I use the package theme now
+
+20
+00:01:29,910 --> 00:01:30,840
+for requirements.
+
+21
+00:01:30,840 --> 00:01:39,360
+All you really need to know is basic HTL CSSA and some programming principles like you know if statements
+
+22
+00:01:39,360 --> 00:01:45,700
+and functions and stuff like that if you've if you've used any other language like javascript or PSP
+
+23
+00:01:45,720 --> 00:01:47,700
+or anything like that you should be fine.
+
+24
+00:01:47,700 --> 00:01:51,200
+We're actually going to have a section where we go over the Python syntax.
+
+25
+00:01:51,300 --> 00:01:55,580
+We go over like lists and dictionaries and functions.
+
+26
+00:01:55,820 --> 00:01:58,590
+The indentation syntax and all that stuff.
+
+27
+00:01:58,590 --> 00:02:02,970
+So you should be absolutely fine even if you've never used Python before.
+
+28
+00:02:03,030 --> 00:02:09,450
+And Django is a very very high level framework meaning that there's there's really only one way to do
+
+29
+00:02:09,540 --> 00:02:15,750
+pretty much everything it's not like like some frameworks like flask for instance which is a micro framework
+
+30
+00:02:16,050 --> 00:02:21,750
+where you can do things the way you want with Gengel you have some specific rules to follow which makes
+
+31
+00:02:21,750 --> 00:02:23,780
+it a little easier to learn.
+
+32
+00:02:23,790 --> 00:02:27,670
+All right so after you take this course you'll be able to build your own Django apps.
+
+33
+00:02:27,780 --> 00:02:35,310
+You're going to learn about set up templates view methods you URLs and routes forms models migrations
+
+34
+00:02:35,310 --> 00:02:36,090
+and much more.
+
+35
+00:02:36,120 --> 00:02:41,700
+OK we're going to be using post-grads as our database will also deploy to Digital Ocean using unicorn
+
+36
+00:02:41,690 --> 00:02:43,450
+and engine next to proxy.
+
+37
+00:02:43,620 --> 00:02:47,310
+So if you're interested in building this project stick around.
+
+38
+00:02:47,310 --> 00:02:53,070
+In the next video I'm going to go over the whole application and show you what what it entails.
+

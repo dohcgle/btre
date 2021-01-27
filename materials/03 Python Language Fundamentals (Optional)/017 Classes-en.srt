@@ -1,0 +1,540 @@
+1
+00:00:00,440 --> 00:00:05,640
+All right so in this video we're going to look at classes and classes are used to create objects or
+
+2
+00:00:05,640 --> 00:00:08,510
+basically blueprints for creating objects.
+
+3
+00:00:08,610 --> 00:00:13,920
+They have properties associated with them and methods which are basically just functions and almost
+
+4
+00:00:13,950 --> 00:00:18,230
+everything in Python is an object it is an object oriented programming.
+
+5
+00:00:18,330 --> 00:00:23,760
+But you can write code in different ways it doesn't have to necessarily be object in an object oriented
+
+6
+00:00:23,760 --> 00:00:27,280
+fashion like like like Java or something like that.
+
+7
+00:00:27,390 --> 00:00:34,150
+It's more like Pietsch P in javascript where you can choose to write in in certain ways.
+
+8
+00:00:34,410 --> 00:00:39,330
+OK so in this video I just want to give you an example of creating a basic class and also a little bit
+
+9
+00:00:39,330 --> 00:00:40,320
+of inheritance.
+
+10
+00:00:40,320 --> 00:00:44,640
+So basically you can extend a class from another class.
+
+11
+00:00:44,700 --> 00:00:48,510
+So we want to use the class key word here and then just name it.
+
+12
+00:00:48,510 --> 00:00:54,950
+I'm going to call a user just put a comment here Kirkgate class.
+
+13
+00:00:55,020 --> 00:00:56,690
+So we'll say class user.
+
+14
+00:00:56,880 --> 00:01:06,030
+And we inside of a class you're usually going to have a constructor or initializer say constructor.
+
+15
+00:01:06,420 --> 00:01:13,470
+And the way that we do this is we define a function or a method called double underscore and net double
+
+16
+00:01:13,470 --> 00:01:14,710
+underscore.
+
+17
+00:01:15,230 --> 00:01:16,970
+OK we go like that.
+
+18
+00:01:16,980 --> 00:01:23,070
+And then this is going to take in self now in many languages when you deal with classes you use the
+
+19
+00:01:23,070 --> 00:01:29,040
+this keyword which pertains to the class instance itself.
+
+20
+00:01:29,370 --> 00:01:32,710
+In python we use self instead of this.
+
+21
+00:01:32,730 --> 00:01:33,320
+OK.
+
+22
+00:01:33,510 --> 00:01:38,080
+And this needs to be passed into the constructor or into this this and net.
+
+23
+00:01:38,100 --> 00:01:39,600
+This initializer.
+
+24
+00:01:40,110 --> 00:01:46,020
+And then any thing that we want to pass in when we initialize the object we also want to pass in.
+
+25
+00:01:46,050 --> 00:01:53,750
+So let's say for this user we want name email and age.
+
+26
+00:01:54,120 --> 00:02:00,750
+OK so those will get passed in then we have to assign them to assign them as properties to the class
+
+27
+00:02:00,750 --> 00:02:07,380
+so we're going to say self taught name room remember self just pertains to the actual class instance
+
+28
+00:02:08,280 --> 00:02:13,440
+and then we're going to set that to the name that's passed in and we're going to do the same thing with
+
+29
+00:02:13,860 --> 00:02:21,670
+email and we're going to do the same thing with hopes with age.
+
+30
+00:02:22,400 --> 00:02:23,030
+OK.
+
+31
+00:02:23,370 --> 00:02:24,360
+So that's that.
+
+32
+00:02:24,370 --> 00:02:29,170
+Now I'm going to go outside of the class now.
+
+33
+00:02:29,410 --> 00:02:33,490
+So make sure that you're on the same level if your if your indented you're going to be in the class
+
+34
+00:02:33,490 --> 00:02:40,490
+so just make sure you are outside of it and they want to initialize a user object using this class.
+
+35
+00:02:40,720 --> 00:02:41,940
+OK so let's say in
+
+36
+00:02:44,490 --> 00:02:46,380
+user object.
+
+37
+00:02:46,680 --> 00:02:52,590
+So we'll call this user Brad and or you could do like User 1 or something like that but I'm going to
+
+38
+00:02:52,590 --> 00:02:58,650
+call it Brad and I'm going to say equals user and for name
+
+39
+00:03:01,340 --> 00:03:04,360
+I'll just put my whole name and then email
+
+40
+00:03:08,160 --> 00:03:10,970
+and age.
+
+41
+00:03:11,100 --> 00:03:19,830
+OK so this will actually instantiate or initialize a user object using the class and then whatever I
+
+42
+00:03:19,830 --> 00:03:25,950
+pass in here is actually getting passed in here and it's going to be assigned as a as a prop..
+
+43
+00:03:25,980 --> 00:03:38,400
+So let's say that I want to see the user's name I could say Print Save Brad Daut name.
+
+44
+00:03:38,400 --> 00:03:50,500
+So now I'm going to run Python 3 classes dot PI and I get the name OK if I want to see the age around
+
+45
+00:03:50,550 --> 00:03:55,530
+that I can get the page so we have we have properties assigned to this object.
+
+46
+00:03:55,530 --> 00:03:58,700
+So if we want to edit a property I can do that as well.
+
+47
+00:03:58,700 --> 00:04:11,560
+I'm going to go right above the print let's say at property and I could say Brad Daut age equals 38.
+
+48
+00:04:12,230 --> 00:04:19,790
+And now if we print out Dodd age we get 38 case we can directly access properties like that.
+
+49
+00:04:19,790 --> 00:04:21,820
+We can also create methods.
+
+50
+00:04:22,010 --> 00:04:22,550
+All right.
+
+51
+00:04:22,550 --> 00:04:26,990
+Before we do that let me create another one just so you can create as many users as you want.
+
+52
+00:04:26,990 --> 00:04:29,430
+So I'll just go ahead and copy this down.
+
+53
+00:04:29,480 --> 00:04:32,540
+Let's create a user called Janet
+
+54
+00:04:36,090 --> 00:04:39,430
+to say Janet Williams
+
+55
+00:04:44,660 --> 00:04:47,280
+is a 27.
+
+56
+00:04:47,310 --> 00:04:47,670
+OK.
+
+57
+00:04:47,670 --> 00:04:53,370
+And if I wanted to I could say print Janet Daut whatever.
+
+58
+00:04:53,400 --> 00:05:00,960
+Let's look at her e-mail and we get Janet's e-mail OK so we can instantiate as many user objects from
+
+59
+00:05:00,960 --> 00:05:02,450
+this class as we want.
+
+60
+00:05:02,700 --> 00:05:04,680
+So let's attach a method case close.
+
+61
+00:05:04,680 --> 00:05:06,870
+Right now we just have a bunch of properties.
+
+62
+00:05:07,050 --> 00:05:14,340
+Let's create a method and we'll just call this greeting where it just kind of says returns a string
+
+63
+00:05:14,340 --> 00:05:15,630
+basically.
+
+64
+00:05:15,630 --> 00:05:23,040
+So when I say define and we'll call it greeting and that's going to take in self K these methods are
+
+65
+00:05:23,040 --> 00:05:29,190
+going to take in the self and we're going to return and let's just return an F string so when you say
+
+66
+00:05:29,190 --> 00:05:38,460
+half and then some quotes and I'll say my name is and then to access that user's name for instance we
+
+67
+00:05:38,460 --> 00:05:41,290
+want to use self name.
+
+68
+00:05:41,320 --> 00:05:46,260
+OK and remember this is very similar to using this in other languages.
+
+69
+00:05:46,560 --> 00:05:54,520
+So self-taught name and I am let's say self Daut age.
+
+70
+00:05:54,870 --> 00:06:01,590
+OK so now we have a method attached to our user class and we can call this any user can call this method.
+
+71
+00:06:01,590 --> 00:06:10,640
+So let's go ahead and do a print actual do a comment here we'll say call method and we'll say Janet
+
+72
+00:06:10,650 --> 00:06:17,430
+doc greeting K methods have to have the parentheses because they're functions.
+
+73
+00:06:17,670 --> 00:06:19,410
+So let's go ahead and run this and get.
+
+74
+00:06:19,410 --> 00:06:22,540
+My name is Janet Williams and I am 27.
+
+75
+00:06:23,040 --> 00:06:31,640
+OK we can also edit properties if we want from methods so let's say we have one called has birthday.
+
+76
+00:06:32,480 --> 00:06:40,070
+So say has underscore birth day pass and self.
+
+77
+00:06:40,590 --> 00:06:47,830
+And then all I want to do here is just increment their age by 1 so also a self-taught age and wolds
+
+78
+00:06:47,880 --> 00:06:52,490
+we can use a shortcut here by just saying plus equals 1.
+
+79
+00:06:52,920 --> 00:06:54,280
+And that encouraged by one.
+
+80
+00:06:54,280 --> 00:06:56,790
+So let's go ahead and
+
+81
+00:06:59,480 --> 00:06:59,960
+let's.
+
+82
+00:07:00,070 --> 00:07:01,570
+I don't need to put a comment.
+
+83
+00:07:01,650 --> 00:07:05,920
+We're going to keep the greeting here because I want this output but I'm going to give.
+
+84
+00:07:06,090 --> 00:07:14,310
+I'm going to call that has a birthday on the Janet object so let's say Janet Daut has birthday and now
+
+85
+00:07:14,410 --> 00:07:16,980
+it was remember I was 27 before now we run it.
+
+86
+00:07:16,980 --> 00:07:22,930
+Now she's 28 because the birthday method ran witching incremented her age by 1.
+
+87
+00:07:23,360 --> 00:07:24,260
+OK.
+
+88
+00:07:24,840 --> 00:07:27,680
+So I mean that's pretty much the gist of it.
+
+89
+00:07:27,720 --> 00:07:34,170
+If you want to extend a class so let's say we wanted to create a class called customer and we basically
+
+90
+00:07:34,170 --> 00:07:38,670
+wanted to have the same properties and methods and stuff as the user.
+
+91
+00:07:38,730 --> 00:07:41,670
+So we're going to say class customer.
+
+92
+00:07:41,700 --> 00:07:45,390
+And to extend user we just simply pass it in like that.
+
+93
+00:07:45,920 --> 00:07:54,330
+All right and then I'm going to actually grab this and net and paste that in and I'm going to add on
+
+94
+00:07:54,330 --> 00:07:55,560
+to this.
+
+95
+00:07:57,470 --> 00:08:04,250
+Balance OK I actually you know what I'm not going to do that I'm going to do is I'm going to say self-taught
+
+96
+00:08:04,730 --> 00:08:08,600
+balance and going to set that to zero by default.
+
+97
+00:08:08,690 --> 00:08:09,120
+OK.
+
+98
+00:08:09,140 --> 00:08:15,110
+And then we'll have a method in here called Set balance.
+
+99
+00:08:16,010 --> 00:08:21,670
+OK so same self set balance that takes itself and it's going to take in a balance.
+
+100
+00:08:22,100 --> 00:08:32,340
+And then we can simply say self-taught balance is equal to whatever the balance is that's passed in.
+
+101
+00:08:32,510 --> 00:08:32,910
+All right.
+
+102
+00:08:32,910 --> 00:08:40,790
+So let's go ahead and initialize a customer so we'll go down to the bottom here will say in net customer
+
+103
+00:08:40,870 --> 00:08:46,460
+will call him John will say instead of use or we're going to do customer and we're going to pass in
+
+104
+00:08:47,060 --> 00:08:49,470
+same thing to John Joe
+
+105
+00:08:53,370 --> 00:09:06,700
+John at GM now 40 K so i can do a print John Daut name
+
+106
+00:09:09,690 --> 00:09:11,310
+and we get John Doe.
+
+107
+00:09:11,310 --> 00:09:20,730
+All right so let's let's set a balance for John so we can say John Daut set balance.
+
+108
+00:09:20,760 --> 00:09:24,560
+And that takes in a balance so say 500.
+
+109
+00:09:24,570 --> 00:09:27,210
+Now I want a way to check this.
+
+110
+00:09:27,240 --> 00:09:29,340
+I mean we could just we could do this
+
+111
+00:09:32,490 --> 00:09:38,580
+for grown now we get 500 but I'm actually going to I'm going to do is create a method that tells us
+
+112
+00:09:38,580 --> 00:09:46,170
+the balance and I want to actually overwrite the greeting to include the balance so we just separate
+
+113
+00:09:46,170 --> 00:09:50,490
+this with a comment.
+
+114
+00:09:51,210 --> 00:09:51,710
+OK.
+
+115
+00:09:51,720 --> 00:09:56,300
+So I'm going to take that reading method and put it in customer.
+
+116
+00:09:56,430 --> 00:10:07,680
+And I'm just going to add to it and say My name is name and I am however old and I owe a balance kind
+
+117
+00:10:07,680 --> 00:10:08,630
+of a greeting.
+
+118
+00:10:08,750 --> 00:10:16,140
+But I mean these aren't like very practical examples but I'm trying to give you just examples that make
+
+119
+00:10:16,130 --> 00:10:18,670
+your make it easy to wrap your head around.
+
+120
+00:10:18,990 --> 00:10:26,430
+So I would say self Daut balance now even though we changed it down here.
+
+121
+00:10:26,430 --> 00:10:33,960
+If the if the if the object is initialized as a user greeting should still just do this.
+
+122
+00:10:33,980 --> 00:10:39,360
+OK it should just say name and age however if they're initialized as a customer it should include their
+
+123
+00:10:39,360 --> 00:10:40,570
+balance.
+
+124
+00:10:41,100 --> 00:10:51,360
+So let's go down here and let's print out John Daut greeting and since he's a customer it should give
+
+125
+00:10:51,360 --> 00:10:52,390
+us his balance.
+
+126
+00:10:52,390 --> 00:10:55,300
+So it's run it and there we go.
+
+127
+00:10:55,620 --> 00:10:57,510
+So I know a balance of five hundred.
+
+128
+00:10:57,500 --> 00:11:03,720
+Now this the one before when we called Janet Daag greeting that one didn't include the balance because
+
+129
+00:11:03,750 --> 00:11:07,440
+Janet is not a customer she's just a standard user.
+
+130
+00:11:07,680 --> 00:11:10,880
+So that is so that other greeting was called.
+
+131
+00:11:10,950 --> 00:11:17,460
+OK so hopefully that makes sense you can overwrite the methods using you know using inheritance.
+
+132
+00:11:18,000 --> 00:11:22,140
+All right so I think that's it guys in the next video we're getting there.
+
+133
+00:11:22,320 --> 00:11:28,200
+But in the next video I just want to quickly look at file manipulation we can do certain things with
+
+134
+00:11:28,200 --> 00:11:32,500
+files we can create them we can write to files and so on.
+
+135
+00:11:32,520 --> 00:11:34,870
+So we're going to look a little into that next.
+

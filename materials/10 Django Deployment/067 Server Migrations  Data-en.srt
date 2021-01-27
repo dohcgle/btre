@@ -1,0 +1,792 @@
+1
+00:00:00,140 --> 00:00:05,790
+All right guys so up to this point we have we created our local setting's which is just exclusive to
+
+2
+00:00:05,790 --> 00:00:12,540
+our server our droplet and we have all the database stuff added one thing are a couple of things I forgot
+
+3
+00:00:12,540 --> 00:00:15,270
+to add to this document which I just added.
+
+4
+00:00:15,270 --> 00:00:20,490
+Now you probably didn't see in the last video is we need to actually run our migrations because that's
+
+5
+00:00:20,490 --> 00:00:24,000
+what's going to create the tables and stuff inside of post-grads.
+
+6
+00:00:24,000 --> 00:00:28,500
+All right then we need to create a super user just like we did on the local development and then we
+
+7
+00:00:28,500 --> 00:00:34,650
+need to collect static because any static files that are in subfolder should be taken out and put in
+
+8
+00:00:34,650 --> 00:00:38,250
+a main static file in the root directory.
+
+9
+00:00:38,250 --> 00:00:44,700
+OK after that we can just test this out with the default Python server and then we'll move on to Unicorn
+
+10
+00:00:44,700 --> 00:00:45,990
+and stuff like that.
+
+11
+00:00:45,990 --> 00:00:49,710
+All right so let's go to our server and we're going to just go ahead and run.
+
+12
+00:00:49,710 --> 00:00:51,990
+Make sure you're in your BTR project.
+
+13
+00:00:51,990 --> 00:00:58,690
+We're going to run Python manage dot PI and let's do make migrations.
+
+14
+00:00:58,690 --> 00:01:05,250
+Now this should actually say that there are no migrations because we shouldn't have any that that that
+
+15
+00:01:05,250 --> 00:01:08,150
+haven't been ran so we go ahead and do that good.
+
+16
+00:01:08,160 --> 00:01:09,600
+No changes detected.
+
+17
+00:01:09,750 --> 00:01:14,090
+So now we actually want to do migrate which is going to create our tables.
+
+18
+00:01:14,310 --> 00:01:14,610
+OK.
+
+19
+00:01:14,670 --> 00:01:17,080
+So it's a migrate.
+
+20
+00:01:17,250 --> 00:01:18,090
+Awesome.
+
+21
+00:01:18,120 --> 00:01:24,010
+So seeing all these green OK's means that our database is connected correctly.
+
+22
+00:01:24,110 --> 00:01:30,210
+OK so we have arbitrary Prah database and all the stuff should have went in there and did what it was
+
+23
+00:01:30,210 --> 00:01:33,300
+supposed to do otherwise you'd have a bunch of read errors.
+
+24
+00:01:33,660 --> 00:01:38,640
+If you do have a bunch of read errors go into your local settings file that we create and then the last
+
+25
+00:01:38,640 --> 00:01:44,700
+video and make sure all of the parameters are exact to what you what you did on your remote server they
+
+26
+00:01:44,700 --> 00:01:48,050
+shouldn't match your local local settings.
+
+27
+00:01:48,440 --> 00:01:48,870
+All right.
+
+28
+00:01:48,870 --> 00:01:53,720
+And it should give you some some pretty some pretty clear errors as well.
+
+29
+00:01:53,910 --> 00:01:59,850
+So I want to clear this up so now that we did our migration let's create a super user so we'll say Python
+
+30
+00:02:01,230 --> 00:02:08,210
+managed up-I create super user.
+
+31
+00:02:08,790 --> 00:02:09,320
+OK.
+
+32
+00:02:09,330 --> 00:02:14,130
+So see I don't want to use Django admin.
+
+33
+00:02:15,090 --> 00:02:20,160
+I'm just going to use Brad as my super user and email address.
+
+34
+00:02:20,160 --> 00:02:26,780
+I'll just use Brad at GM now which is not a real email address by the way.
+
+35
+00:02:27,210 --> 00:02:31,830
+So password Oh do ABC 1 2 3
+
+36
+00:02:37,010 --> 00:02:39,590
+password is too short.
+
+37
+00:02:39,710 --> 00:02:43,760
+By-Passed validation is fine.
+
+38
+00:02:43,760 --> 00:02:44,260
+All right.
+
+39
+00:02:44,330 --> 00:02:49,610
+So are super users created and then the last thing I want to do here before we open our port and try
+
+40
+00:02:49,610 --> 00:02:55,460
+to run the server is we need to collect our static files OK so all the static files that are in subfolder
+
+41
+00:02:55,880 --> 00:03:00,620
+or apps should all be placed into a main static folder and that's what that's going to do.
+
+42
+00:03:00,620 --> 00:03:04,910
+So it's run Python managed by pie.
+
+43
+00:03:05,150 --> 00:03:08,440
+Collect static.
+
+44
+00:03:09,520 --> 00:03:15,550
+OK so 151 static files that's all CSSA all many.
+
+45
+00:03:15,550 --> 00:03:22,180
+You know javascript images even the admin stuff it's all it's all going to get put in the static folder
+
+46
+00:03:22,180 --> 00:03:22,870
+now.
+
+47
+00:03:23,060 --> 00:03:28,750
+In fact if we are less static you'll see even the admin folder isn't there.
+
+48
+00:03:28,910 --> 00:03:29,240
+All right.
+
+49
+00:03:29,240 --> 00:03:29,720
+Awesome.
+
+50
+00:03:29,720 --> 00:03:31,780
+So now let's open our port.
+
+51
+00:03:32,270 --> 00:03:39,950
+So sudo you have w this is our firewall we want to allow port heat thousand because that's what it runs
+
+52
+00:03:39,950 --> 00:03:41,430
+on by default.
+
+53
+00:03:41,820 --> 00:03:42,920
+Excuse me.
+
+54
+00:03:43,310 --> 00:03:45,560
+And let's try to run our local server.
+
+55
+00:03:45,710 --> 00:03:51,470
+So Python managed dot PI run server
+
+56
+00:03:54,190 --> 00:03:55,600
+actually you know what that's wrong.
+
+57
+00:03:55,600 --> 00:03:56,190
+I'm sorry.
+
+58
+00:03:56,230 --> 00:03:58,190
+We need to get out of that.
+
+59
+00:03:58,690 --> 00:04:05,350
+So if we look at the the gist here we actually want to do run server and then 0 0 0 port 8000.
+
+60
+00:04:05,350 --> 00:04:08,060
+So I'm just going to copy that.
+
+61
+00:04:08,070 --> 00:04:08,990
+Sorry about that.
+
+62
+00:04:09,000 --> 00:04:12,290
+Let's go and run it.
+
+63
+00:04:12,380 --> 00:04:17,010
+All right so now and then I realized that because it said one to 7 it should do.
+
+64
+00:04:17,010 --> 00:04:19,080
+It should have this 0 0 0.
+
+65
+00:04:19,080 --> 00:04:23,140
+So now let's take our IP address from Digital Ocean.
+
+66
+00:04:23,190 --> 00:04:28,650
+Let's go to a new tab and make sure we go to Kolin support eight thousand.
+
+67
+00:04:29,460 --> 00:04:29,960
+All right guys.
+
+68
+00:04:29,960 --> 00:04:36,360
+Now one thing I didn't account for is the static files because since since they said debug to false
+
+69
+00:04:36,480 --> 00:04:44,070
+in our local settings it's basically saying All right well engine X or whatever we use is going to take
+
+70
+00:04:44,070 --> 00:04:46,350
+care of static files.
+
+71
+00:04:46,350 --> 00:04:51,980
+So for now I'm going to go back I'm going to escape out of the server here.
+
+72
+00:04:52,380 --> 00:04:57,990
+And let's let's do pseudo Nano.
+
+73
+00:04:58,350 --> 00:05:07,500
+And we want to go into local settings which is in the B.T. are the and then local underscore settings
+
+74
+00:05:07,890 --> 00:05:09,120
+dot pi.
+
+75
+00:05:09,300 --> 00:05:20,460
+And for now let's set debug to true and hopefully that works so we'll get out of this save it.
+
+76
+00:05:20,470 --> 00:05:22,020
+Yes and or.
+
+77
+00:05:22,330 --> 00:05:22,760
+OK.
+
+78
+00:05:22,760 --> 00:05:24,490
+Now let's run the server again
+
+79
+00:05:26,950 --> 00:05:28,400
+and reload.
+
+80
+00:05:28,420 --> 00:05:29,050
+There we go.
+
+81
+00:05:29,110 --> 00:05:31,850
+OK.
+
+82
+00:05:31,960 --> 00:05:39,070
+And you know once once we start to implement unicorn and genetics and next will take care of our static
+
+83
+00:05:39,070 --> 00:05:39,660
+assets.
+
+84
+00:05:39,670 --> 00:05:44,320
+But for now I'm just going to leave debug to defaults.
+
+85
+00:05:44,580 --> 00:05:45,000
+OK.
+
+86
+00:05:45,010 --> 00:05:50,920
+And notice that there's nothing there's no team members there's no listings and that's exactly what
+
+87
+00:05:50,920 --> 00:05:51,360
+we want.
+
+88
+00:05:51,370 --> 00:05:53,640
+We didn't want to deploy with that data.
+
+89
+00:05:53,710 --> 00:05:56,470
+We want to deploy as a as a fresh application.
+
+90
+00:05:56,470 --> 00:05:58,380
+So that's exactly what we want.
+
+91
+00:05:58,420 --> 00:06:02,490
+So there's no users Let's check the admin area.
+
+92
+00:06:05,520 --> 00:06:10,910
+Hopes we don't want to go to listings admin We just want slash admin and let's see.
+
+93
+00:06:10,910 --> 00:06:12,680
+I used Brad
+
+94
+00:06:16,340 --> 00:06:21,870
+as our admin area if we go to like listings there's nothing here.
+
+95
+00:06:22,370 --> 00:06:22,940
+All right.
+
+96
+00:06:23,030 --> 00:06:25,550
+So that's exactly how it should be right now.
+
+97
+00:06:26,430 --> 00:06:31,970
+So let's actually add some data we don't have to add everything but let's make sure everything is working.
+
+98
+00:06:31,980 --> 00:06:38,260
+So we start by adding realtors so it's good to realtors say add new ones.
+
+99
+00:06:38,310 --> 00:06:46,210
+Good old Kyle Brown and say Choose file and we're going to go to the desktop.
+
+100
+00:06:46,260 --> 00:06:49,100
+You want to go to your resources.
+
+101
+00:06:49,480 --> 00:06:55,070
+Images realtors Kayal description.
+
+102
+00:06:55,080 --> 00:07:01,920
+I'm just going to grab some some dummy text from Lipscombe dot com.
+
+103
+00:07:04,180 --> 00:07:09,150
+Just generate some text here and I'll grab the loops.
+
+104
+00:07:09,170 --> 00:07:09,900
+Is that right.
+
+105
+00:07:10,010 --> 00:07:11,010
+Oh what the heck.
+
+106
+00:07:13,000 --> 00:07:14,670
+Oh I copied the wrong thing.
+
+107
+00:07:17,300 --> 00:07:20,380
+And by the way this obviously isn't going to be running on eight thousand.
+
+108
+00:07:20,390 --> 00:07:23,620
+This is just the default Django server.
+
+109
+00:07:23,630 --> 00:07:28,600
+We're going to be doing a more professional deployment using engine X and stuff like that.
+
+110
+00:07:28,610 --> 00:07:32,170
+But for now I just want to test out the functionality.
+
+111
+00:07:32,240 --> 00:07:33,600
+So phone number.
+
+112
+00:07:33,600 --> 00:07:42,570
+Email Kayal and we'll say is MVP and then hire date.
+
+113
+00:07:42,600 --> 00:07:50,330
+Just pick something back here in 2017 and let's save and hopefully this works let's go to the front
+
+114
+00:07:50,330 --> 00:07:51,120
+end.
+
+115
+00:07:51,200 --> 00:07:54,920
+So I'm just going to open the site in a new tab.
+
+116
+00:07:55,100 --> 00:07:56,410
+Let's go to a bow.
+
+117
+00:07:56,630 --> 00:08:00,490
+There is awesome.
+
+118
+00:08:00,830 --> 00:08:05,540
+And the picture shows up everything that's being uploaded is going to the media folder.
+
+119
+00:08:05,570 --> 00:08:06,840
+That's exactly what we want.
+
+120
+00:08:06,880 --> 00:08:11,670
+So let's add the other realtors since this is real quick so I will say Mark Hudson
+
+121
+00:08:15,910 --> 00:08:19,890
+piece that in two for us
+
+122
+00:08:29,490 --> 00:08:30,580
+Will Jenny
+
+123
+00:08:48,760 --> 00:08:49,490
+OK.
+
+124
+00:08:49,760 --> 00:08:52,610
+So now let's go back to see.
+
+125
+00:08:52,610 --> 00:08:53,710
+We'll go to listings
+
+126
+00:08:56,070 --> 00:08:58,200
+and let's to add listing
+
+127
+00:09:01,630 --> 00:09:05,280
+and choose Kyle this is going to be 45.
+
+128
+00:09:05,440 --> 00:09:09,990
+Dr. Woods circle see address.
+
+129
+00:09:10,010 --> 00:09:11,240
+I'm going to put the same thing
+
+130
+00:09:14,060 --> 00:09:15,480
+it auto filled for us.
+
+131
+00:09:15,480 --> 00:09:16,820
+That's cool.
+
+132
+00:09:17,100 --> 00:09:23,010
+So description not just page Sison price is let's see let's do 490
+
+133
+00:09:26,120 --> 00:09:42,620
+bedroom's is going to be three bathrooms to grudge two square feet square feet 3 2 9 8 0 and you can
+
+134
+00:09:42,620 --> 00:09:46,850
+put anything you want here for the mean you guys can just throw some crap in here just to test out.
+
+135
+00:09:46,850 --> 00:09:53,810
+But you know I just want to have have some some valid and valid looking data for the course.
+
+136
+00:09:53,810 --> 00:09:57,080
+So lot size to say two point three.
+
+137
+00:09:57,200 --> 00:10:06,920
+And then let's grab the photos so photo main is going to be in images homes home one OK.
+
+138
+00:10:06,960 --> 00:10:07,800
+Whoops yeah.
+
+139
+00:10:07,840 --> 00:10:08,140
+OK.
+
+140
+00:10:08,140 --> 00:10:14,620
+So photo one is going to be home inside one photo to be home inside to
+
+141
+00:10:17,300 --> 00:10:17,860
+re
+
+142
+00:10:21,030 --> 00:10:21,630
+for
+
+143
+00:10:24,070 --> 00:10:26,740
+five and six.
+
+144
+00:10:26,860 --> 00:10:28,680
+All right let's save it.
+
+145
+00:10:29,660 --> 00:10:32,250
+Let's go to our front end here to the home.
+
+146
+00:10:32,440 --> 00:10:34,070
+OK there's our feature listing.
+
+147
+00:10:34,070 --> 00:10:35,570
+Let's go to the listings page.
+
+148
+00:10:35,570 --> 00:10:36,700
+There it is.
+
+149
+00:10:36,770 --> 00:10:37,930
+More info.
+
+150
+00:10:37,940 --> 00:10:38,640
+Awesome.
+
+151
+00:10:38,780 --> 00:10:39,620
+Perfect.
+
+152
+00:10:44,050 --> 00:10:44,320
+All right.
+
+153
+00:10:44,320 --> 00:10:46,750
+So I'm just going to add a couple more here.
+
+154
+00:10:46,750 --> 00:10:48,040
+Let's see.
+
+155
+00:10:48,250 --> 00:10:56,180
+Let's do the next one let's do Jefferson lane which is Mark.
+
+156
+00:10:56,240 --> 00:11:05,720
+So it's 18 Jefferson Wayne Wilborn price on this is going to be 55
+
+157
+00:11:08,120 --> 00:11:22,930
+bedrooms will be four bathrooms two point five garage one square feet let's say 30 100 lot size 1.5
+
+158
+00:11:22,960 --> 00:11:29,910
+and then pictures let's do home to that's home inside on home too.
+
+159
+00:11:31,000 --> 00:11:36,840
+And this one will be home inside one home inside too.
+
+160
+00:11:36,850 --> 00:11:38,330
+And let's do one more.
+
+161
+00:11:40,850 --> 00:11:41,140
+OK.
+
+162
+00:11:41,150 --> 00:11:48,110
+So I'll go ahead and save that and now if we go back to the home page now we have our second listing
+
+163
+00:11:48,110 --> 00:11:48,910
+call.
+
+164
+00:11:49,070 --> 00:11:51,410
+So let's do one more for now.
+
+165
+00:11:52,090 --> 00:11:58,650
+So you would do an ad listing and see.
+
+166
+00:11:59,300 --> 00:12:00,950
+Well do Woodrow street.
+
+167
+00:12:00,950 --> 00:12:11,800
+So this one will be Jennies so be 1 8 7 wardrobe's tree.
+
+168
+00:12:12,040 --> 00:12:13,940
+I lost my text
+
+169
+00:12:17,790 --> 00:12:21,400
+OK so see the price for this one looks to five.
+
+170
+00:12:21,420 --> 00:12:21,900
+Eighty
+
+171
+00:12:24,950 --> 00:12:36,620
+bedrooms three bathrooms two two point five garage it's two one square feet will say thirty four hundred
+
+172
+00:12:37,520 --> 00:12:41,700
+and lots size will save 1.2.
+
+173
+00:12:42,050 --> 00:12:49,790
+And this is going to be home three for the image and I'll just describe one of the inside images cage
+
+174
+00:12:49,850 --> 00:12:56,260
+to kind of hurry hurry this along so let's save that reload and there we go.
+
+175
+00:12:56,780 --> 00:13:01,850
+All right guys so you can see we're logged in here on the front end because we're logged in as Brad
+
+176
+00:13:01,880 --> 00:13:04,850
+as the admin in the back end so it's going to show that.
+
+177
+00:13:05,150 --> 00:13:05,860
+OK.
+
+178
+00:13:06,620 --> 00:13:10,670
+So now what I want to do is obviously we don't want.
+
+179
+00:13:10,760 --> 00:13:16,220
+I mean if we left it like this we would have to always have the terminal open and you know you don't
+
+180
+00:13:16,220 --> 00:13:19,200
+want this is not a production way of doing things.
+
+181
+00:13:19,220 --> 00:13:25,310
+So this is where unicorn comes in where it will constantly serve it on port eight thousand without having
+
+182
+00:13:25,310 --> 00:13:29,290
+to you know just keep this caught up.
+
+183
+00:13:29,450 --> 00:13:33,250
+So you know we will be able to get out of this UPS.
+
+184
+00:13:33,320 --> 00:13:34,710
+I just do.
+
+185
+00:13:35,540 --> 00:13:41,370
+So we'll be able to get out of this if it lets me it's not letting me some reason.
+
+186
+00:13:44,800 --> 00:13:46,060
+Control-C.
+
+187
+00:13:46,210 --> 00:13:46,710
+There we go.
+
+188
+00:13:46,710 --> 00:13:47,010
+All right.
+
+189
+00:13:47,010 --> 00:13:48,100
+Geez.
+
+190
+00:13:48,630 --> 00:13:52,020
+So now you'll see if I go in I reload that's not going to work anymore.
+
+191
+00:13:52,020 --> 00:13:53,300
+Obviously that's not a good thing.
+
+192
+00:13:53,300 --> 00:13:59,040
+So that's where unicorn comes in and then we want to set up engine X so we can actually serve it on
+
+193
+00:13:59,040 --> 00:14:02,020
+port 80 so we don't have to go to Colon 8000.
+
+194
+00:14:02,130 --> 00:14:07,740
+That way the app will just be on this IP and then the final step is to connect a domain name so we can
+
+195
+00:14:07,740 --> 00:14:10,730
+actually go to whatever BT real estate dot co.
+
+196
+00:14:10,800 --> 00:14:13,820
+And it'll pull up our Python application and then we're done.
+
+197
+00:14:13,830 --> 00:14:19,280
+All right so we're almost there guys like I said in the next video we just check our deployment here
+
+198
+00:14:19,290 --> 00:14:23,280
+yeah and the next video we're going to start on the unicorn's set up so I'll see you then.
+

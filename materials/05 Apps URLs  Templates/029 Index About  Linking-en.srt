@@ -1,0 +1,640 @@
+1
+00:00:00,300 --> 00:00:00,570
+All right.
+
+2
+00:00:00,570 --> 00:00:07,050
+So in the last video we took care of our Levo using bootstrap and using you know putting the top bar
+
+3
+00:00:07,050 --> 00:00:11,490
+the now on the footer and because these are things that are going to be on every single page.
+
+4
+00:00:11,490 --> 00:00:13,010
+So we wanted these in our base.
+
+5
+00:00:13,010 --> 00:00:14,400
+Each Al file.
+
+6
+00:00:14,400 --> 00:00:19,260
+I also showed you how to link static assets using load's static.
+
+7
+00:00:19,290 --> 00:00:22,100
+So now we're going to work on the inner content here.
+
+8
+00:00:22,110 --> 00:00:23,700
+So we'll start on the index page.
+
+9
+00:00:23,700 --> 00:00:27,970
+So let's head over to Sublime Text which has just daar our theme.
+
+10
+00:00:28,050 --> 00:00:29,960
+This is all just the HVM owl.
+
+11
+00:00:30,090 --> 00:00:35,730
+And what I'm going to do is copy everything that we don't have that we didn't put into the base aged
+
+12
+00:00:35,730 --> 00:00:36,070
+him.
+
+13
+00:00:36,130 --> 00:00:42,000
+So we have the footer and the script and stuff so let's start right here at the bottom above the water
+
+14
+00:00:42,660 --> 00:00:48,340
+and then go all the way up until we hit under the nav bar.
+
+15
+00:00:49,490 --> 00:00:54,170
+OK which already past's we want to go back down.
+
+16
+00:00:54,190 --> 00:00:56,340
+So right here to the showcase.
+
+17
+00:00:56,350 --> 00:01:01,510
+OK so going to copy all this and this is all going to go into our index each team.
+
+18
+00:01:01,520 --> 00:01:06,650
+Now remember right now everything is just static it's like this form is obviously not going to work.
+
+19
+00:01:06,790 --> 00:01:12,190
+We're not going to get the latest listings or have we haven't even installed the database yet we just
+
+20
+00:01:12,190 --> 00:01:17,440
+want to get the markup to show and it's going to be like that for quite a while until we get into creating
+
+21
+00:01:17,440 --> 00:01:19,090
+our models and all that stuff.
+
+22
+00:01:19,090 --> 00:01:21,000
+So just keep that in mind.
+
+23
+00:01:21,010 --> 00:01:27,720
+All right so let's head to when they have so many things open at once.
+
+24
+00:01:27,790 --> 00:01:37,090
+We're going to go to our project and close this up actually base each team so we can close up for now
+
+25
+00:01:37,540 --> 00:01:45,470
+and then let's go to let's see templates pages and then index each team out which should look like this
+
+26
+00:01:45,490 --> 00:01:46,910
+right now.
+
+27
+00:01:46,910 --> 00:01:47,270
+All right.
+
+28
+00:01:47,290 --> 00:01:52,210
+And then we're going to just replace this H-1 with everything that we just copied.
+
+29
+00:01:52,210 --> 00:01:56,540
+So I'm going to paste all of that in and save.
+
+30
+00:01:56,570 --> 00:02:02,160
+And then let's go back to Chrome and reload and there we go.
+
+31
+00:02:02,150 --> 00:02:07,760
+So we have basically just kind of a shell of an application.
+
+32
+00:02:07,760 --> 00:02:13,340
+So it's not actually fetching anything or anything like that it's just basically the H Tim L placed
+
+33
+00:02:13,340 --> 00:02:14,510
+in a template.
+
+34
+00:02:14,990 --> 00:02:22,220
+Now as far as the listings here remember we're going to be adding the listings from the admin area which
+
+35
+00:02:22,220 --> 00:02:24,490
+we haven't even talked about yet.
+
+36
+00:02:24,530 --> 00:02:27,890
+So the images will come from somewhere different.
+
+37
+00:02:27,890 --> 00:02:30,250
+They're not going to come from the static files.
+
+38
+00:02:30,290 --> 00:02:32,520
+Ok so this will look like this for now.
+
+39
+00:02:32,520 --> 00:02:35,920
+So don't worry about that yet and then.
+
+40
+00:02:35,970 --> 00:02:38,450
+Yes so the rest will just keep as is.
+
+41
+00:02:38,510 --> 00:02:40,840
+Now let's do the same with the home page.
+
+42
+00:02:40,880 --> 00:02:47,570
+So I'm going to go to the theme that I have open in sublime text and go to about aged hemol and just
+
+43
+00:02:47,570 --> 00:02:53,740
+get everything below the nav bar basically between the nav bar and the foot or so here.
+
+44
+00:02:55,860 --> 00:03:02,680
+And if I scroll down to here right above the footer I'm going to copy that.
+
+45
+00:03:02,890 --> 00:03:13,940
+OK we're going to go to the about dot each team L in our jingle app and we're going to paste that in.
+
+46
+00:03:14,100 --> 00:03:17,160
+So let's save that.
+
+47
+00:03:17,550 --> 00:03:18,360
+Let's take a look.
+
+48
+00:03:18,360 --> 00:03:23,950
+So now I'm just going to navigate to slash about and there's a boat page.
+
+49
+00:03:23,950 --> 00:03:28,890
+Now remember there is a static image on this page.
+
+50
+00:03:28,890 --> 00:03:33,520
+OK so there is that picture of the inside of the office.
+
+51
+00:03:33,600 --> 00:03:36,420
+So we do want we do want to include that.
+
+52
+00:03:36,870 --> 00:03:40,080
+So it's head on over back to to that about each team.
+
+53
+00:03:40,080 --> 00:03:45,690
+All this other stuff the realtors this is going to be coming from the database so we don't need to worry
+
+54
+00:03:45,690 --> 00:03:48,450
+about that or the seller of the month.
+
+55
+00:03:48,480 --> 00:03:58,950
+We just want to go up to see right here where it's loading this assets about J bag so we want to actually
+
+56
+00:03:58,950 --> 00:04:06,360
+load static and it's very important to know that when you extend a label like we are here it has to
+
+57
+00:04:06,360 --> 00:04:07,740
+be the first line.
+
+58
+00:04:07,890 --> 00:04:13,600
+So our load static can't go at the top it has to go below that.
+
+59
+00:04:13,730 --> 00:04:17,440
+So it's a load static.
+
+60
+00:04:17,510 --> 00:04:20,560
+And then we'll go back down to this about JPEG.
+
+61
+00:04:20,580 --> 00:04:22,090
+Let's get rid of this.
+
+62
+00:04:22,470 --> 00:04:27,100
+Hey we're just doing the same thing that we've been doing by saying static.
+
+63
+00:04:27,110 --> 00:04:32,910
+I want to wrap this in single quotes and then close that up right.
+
+64
+00:04:32,930 --> 00:04:38,100
+So I'll save that let's take a look and we reload and there's the image.
+
+65
+00:04:38,660 --> 00:04:42,100
+All right so now what I want to do is talk about linking.
+
+66
+00:04:42,200 --> 00:04:43,930
+OK so linking to.
+
+67
+00:04:43,940 --> 00:04:47,140
+You know we have the in the breadcrumbs we have a link.
+
+68
+00:04:47,330 --> 00:04:48,170
+We have a link here.
+
+69
+00:04:48,170 --> 00:04:51,120
+This will go to the listings which hasn't been created yet.
+
+70
+00:04:51,200 --> 00:04:52,740
+So we'll do that a little later.
+
+71
+00:04:52,970 --> 00:05:00,440
+We'll also do link in the nav bar at the home and the about at least so to link let's use the breadcrumb
+
+72
+00:05:00,440 --> 00:05:05,510
+right here so you can see it's going to index each year and that's obviously not what we want.
+
+73
+00:05:05,510 --> 00:05:13,850
+So here we want to put in our tags and we want to do you Arel single quote and then index.
+
+74
+00:05:14,110 --> 00:05:14,470
+OK.
+
+75
+00:05:14,480 --> 00:05:18,050
+So let's try that in a reload.
+
+76
+00:05:18,050 --> 00:05:21,530
+I'm going to hit home brings us back home now that index.
+
+77
+00:05:21,620 --> 00:05:29,420
+If you're wondering what this is where this come comes from is if we go to our pages app and we go to
+
+78
+00:05:30,060 --> 00:05:38,420
+pi we named this index so we can use this basically and you know to link to same thing with a boat.
+
+79
+00:05:38,630 --> 00:05:41,820
+So let's go to our NAV K.R. now.
+
+80
+00:05:41,840 --> 00:05:43,280
+Partial here.
+
+81
+00:05:43,280 --> 00:05:47,900
+And we have the branding which I want to go to the home page so we'll simply
+
+82
+00:05:51,210 --> 00:05:55,850
+throwing you r l index there.
+
+83
+00:05:55,850 --> 00:06:05,570
+Same thing for home.
+
+84
+00:06:05,880 --> 00:06:07,120
+And then for about
+
+85
+00:06:14,900 --> 00:06:18,020
+we're going to say you are old both because it's the name we gave it.
+
+86
+00:06:18,560 --> 00:06:27,570
+So save now for relo we should be able to go back and forth Okay now for listing know we have a featured
+
+87
+00:06:27,570 --> 00:06:31,930
+listings if we try and do that here.
+
+88
+00:06:35,840 --> 00:06:40,170
+You are all OK.
+
+89
+00:06:40,200 --> 00:06:45,110
+So if I save that we go back and reload we get an error because that doesn't exist.
+
+90
+00:06:45,120 --> 00:06:47,970
+It doesn't even let us put it as a link.
+
+91
+00:06:48,000 --> 00:06:50,130
+It just it's just just not going to work.
+
+92
+00:06:50,130 --> 00:06:52,250
+So for now I'm just going to do.
+
+93
+00:06:52,250 --> 00:06:53,500
+Index.
+
+94
+00:06:53,540 --> 00:06:53,840
+OK.
+
+95
+00:06:53,850 --> 00:06:57,940
+And then later on when we create our listings app we'll fix this.
+
+96
+00:06:57,960 --> 00:06:58,230
+All right.
+
+97
+00:06:58,230 --> 00:07:03,210
+So now what I want to do is handle the highlighting of the link because right now if we look if we go
+
+98
+00:07:03,210 --> 00:07:08,670
+on the About page home it's still highlighted it's still active and if you're not familiar with bootstrap
+
+99
+00:07:08,670 --> 00:07:12,190
+what's causing that is the class of active on the fly.
+
+100
+00:07:12,330 --> 00:07:18,080
+OK if we move the active to the ally of about that will be highlighted but we want this to be dynamic
+
+101
+00:07:18,090 --> 00:07:23,340
+if we go to the About page we want that to be highlighted and this is going to add a little bit of clutter
+
+102
+00:07:23,340 --> 00:07:26,760
+to your template because we have to use conditionals.
+
+103
+00:07:26,760 --> 00:07:31,230
+But if you want that functionality then this is this is how you're going to have to do it.
+
+104
+00:07:31,230 --> 00:07:33,520
+I mean there are there's other ways to do it.
+
+105
+00:07:33,540 --> 00:07:39,400
+There may even be shorter ways like cleaner ways but this is just the way that I do it.
+
+106
+00:07:39,420 --> 00:07:44,820
+So what we want to do is we need a conditional if that condition was met.
+
+107
+00:07:44,820 --> 00:07:51,660
+So if this is the home page we want to display class with active if it's not we want to display class
+
+108
+00:07:51,660 --> 00:07:53,040
+without active.
+
+109
+00:07:53,040 --> 00:07:57,200
+So I'm going to get rid of actually going to copy.
+
+110
+00:07:57,470 --> 00:08:02,890
+I'm going to copy this or cut it rather.
+
+111
+00:08:03,240 --> 00:08:09,240
+And this ally I'm actually going to go onto the next line and make sure that the year inside the ally
+
+112
+00:08:09,240 --> 00:08:13,470
+you the angle bracket down here and we want to do an F..
+
+113
+00:08:13,660 --> 00:08:14,040
+OK.
+
+114
+00:08:14,040 --> 00:08:18,310
+So in these these templates you can do if statements.
+
+115
+00:08:18,430 --> 00:08:30,180
+So I want to say if slash is equal to request Daut paff case who are testing the request path.
+
+116
+00:08:30,180 --> 00:08:36,930
+So basically the page if that's true then I'm going to paste in what we have.
+
+117
+00:08:36,930 --> 00:08:42,070
+So we want class and we want active included in that.
+
+118
+00:08:42,280 --> 00:08:55,830
+Now if it's not so we want to do an else if it's not then we want class with out active in that.
+
+119
+00:08:55,840 --> 00:08:59,620
+OK so let's save that let's test that that out.
+
+120
+00:08:59,640 --> 00:09:03,910
+So if I reload this unclose tag.
+
+121
+00:09:04,560 --> 00:09:06,560
+Oh I forgot the N.F..
+
+122
+00:09:06,690 --> 00:09:08,230
+So right here we have to do a
+
+123
+00:09:11,740 --> 00:09:12,280
+END-IF
+
+124
+00:09:15,430 --> 00:09:15,860
+OK.
+
+125
+00:09:15,870 --> 00:09:21,510
+So about there it is it's highlighted a I mean I'm sorry home it's highlighted.
+
+126
+00:09:21,510 --> 00:09:23,120
+We go to a about and it's not.
+
+127
+00:09:23,340 --> 00:09:25,750
+So we need to do the same for a bone.
+
+128
+00:09:25,830 --> 00:09:29,390
+So what I'll do is copy all of this.
+
+129
+00:09:29,580 --> 00:09:36,940
+So the whole Eli tag to the last angle bracket and then I'm going to just paste this in for this.
+
+130
+00:09:37,010 --> 00:09:43,780
+The ABOUT ally like that and the condition is going to be a bit different when it's not the home page.
+
+131
+00:09:43,860 --> 00:09:49,140
+So instead of doing like Slash equals request path we're going to do if
+
+132
+00:09:51,770 --> 00:09:53,280
+about.
+
+133
+00:09:53,950 --> 00:10:05,530
+OK so if about in request path request path OK if that's true then we want active.
+
+134
+00:10:05,530 --> 00:10:06,580
+If not we don't.
+
+135
+00:10:06,680 --> 00:10:14,960
+So save that and let's go back to our browser and reload and you see home is highlighted.
+
+136
+00:10:14,960 --> 00:10:19,290
+Now if I go to a boat a boat is highlighted OK or active.
+
+137
+00:10:19,850 --> 00:10:20,360
+So good.
+
+138
+00:10:20,360 --> 00:10:23,740
+Now once we do the listings We'll have that working as well.
+
+139
+00:10:23,780 --> 00:10:30,530
+Same thing with the register and log in but for now we only have the index in about page so that's all
+
+140
+00:10:30,530 --> 00:10:31,480
+we're going to do for now.
+
+141
+00:10:31,580 --> 00:10:31,980
+All right.
+
+142
+00:10:31,990 --> 00:10:37,910
+So just a quick note before we move on I know that I've said this I said this in the beginning but this
+
+143
+00:10:37,910 --> 00:10:43,040
+is a little different than a lot of other courses it's not just Django like here's how you do this here's
+
+144
+00:10:43,040 --> 00:10:43,920
+how you do this.
+
+145
+00:10:43,940 --> 00:10:49,490
+We're building an app a real application and I'm building it as if it were a real application.
+
+146
+00:10:49,490 --> 00:10:56,150
+And what I would do is have all of the templates created all the views in the UI before I do anything
+
+147
+00:10:56,150 --> 00:10:58,250
+with the database.
+
+148
+00:10:58,250 --> 00:11:00,590
+Setting up models migrations.
+
+149
+00:11:00,590 --> 00:11:02,550
+Stuff like that the admin area.
+
+150
+00:11:02,630 --> 00:11:06,420
+I just want to get the front end UI done before we do that.
+
+151
+00:11:06,500 --> 00:11:10,170
+OK so next what we'll do is create our listings app.
+
+152
+00:11:10,310 --> 00:11:15,440
+OK we're going to create our listings app and I think we'll create the realtor's app too at the same
+
+153
+00:11:15,440 --> 00:11:18,200
+time and get that template up.
+
+154
+00:11:18,200 --> 00:11:23,500
+So when we can actually go to a featured listings and we'll see the static content.
+
+155
+00:11:23,990 --> 00:11:29,450
+And then once we do that we can start to think about our models and how to set them up and you know
+
+156
+00:11:29,450 --> 00:11:32,540
+obviously we need to install postgrads and all that stuff.
+
+157
+00:11:32,540 --> 00:11:37,040
+All right so hopefully you guys can appreciate that it's not really a traditional course it's more of
+
+158
+00:11:37,040 --> 00:11:40,130
+a project you know hands on project course.
+
+159
+00:11:40,250 --> 00:11:41,230
+So that's it.
+
+160
+00:11:41,240 --> 00:11:42,680
+I will see you in the next video.
+

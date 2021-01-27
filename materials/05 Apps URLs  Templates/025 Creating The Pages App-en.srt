@@ -1,0 +1,592 @@
+1
+00:00:00,360 --> 00:00:04,200
+All right guys so we're going to create our first app in Django.
+
+2
+00:00:04,200 --> 00:00:04,500
+OK.
+
+3
+00:00:04,500 --> 00:00:08,300
+So again apps you have you have multiple apps per project.
+
+4
+00:00:08,340 --> 00:00:12,990
+This is going to be the pages app which is going to take care of displaying the home page and the About
+
+5
+00:00:12,990 --> 00:00:17,040
+page and any other static pages that you would want to create.
+
+6
+00:00:17,340 --> 00:00:21,480
+And you can bring models into it like for instance our home page.
+
+7
+00:00:21,480 --> 00:00:26,730
+We're going to want the latest listings on our boat page we're going to want realtors and this stuff
+
+8
+00:00:26,730 --> 00:00:28,880
+is going to come from the database.
+
+9
+00:00:28,980 --> 00:00:35,490
+So what we can do is we can import models from the listings app or from the realtor's app into pages
+
+10
+00:00:35,490 --> 00:00:37,050
+so that we can display it.
+
+11
+00:00:37,110 --> 00:00:42,450
+All right but for now we're just going to focus on just getting a home page and an About page set up.
+
+12
+00:00:42,570 --> 00:00:48,570
+So I have my server running down here so I'm going to open up a new terminal here and make sure you're
+
+13
+00:00:48,570 --> 00:00:53,550
+in your virtual environment and let's create the pages app so to do that.
+
+14
+00:00:53,550 --> 00:01:04,500
+We're going to say Python say Python manage dot PI and then we're going to say start app and then we
+
+15
+00:01:04,500 --> 00:01:07,630
+want to name it so we're going to call this pages.
+
+16
+00:01:08,100 --> 00:01:09,380
+OK so we'll run that.
+
+17
+00:01:09,390 --> 00:01:15,000
+And what happens is it creates a new folder called pages with a bunch of files inside of it.
+
+18
+00:01:15,000 --> 00:01:18,710
+So these are all the default files for when you create now.
+
+19
+00:01:18,870 --> 00:01:24,180
+So we have an IT UP HIGH just like we do and be Tiare it's just completely empty we don't have to worry
+
+20
+00:01:24,180 --> 00:01:24,970
+about it.
+
+21
+00:01:25,020 --> 00:01:28,730
+Migrations is for any database migrations we create.
+
+22
+00:01:28,830 --> 00:01:33,720
+We're not going to have any migrations for this particular app but we will in some of the other ones
+
+23
+00:01:34,200 --> 00:01:40,620
+admen is if you want to like you want to show stuff in the admin area.
+
+24
+00:01:40,620 --> 00:01:43,860
+We're not going to need to do that here in our listings app.
+
+25
+00:01:43,860 --> 00:01:49,170
+We will because we'll want to will want to manage our listings from the admin area but we won't touch
+
+26
+00:01:49,170 --> 00:01:50,070
+this one.
+
+27
+00:01:50,070 --> 00:01:51,470
+And then AppStore pie.
+
+28
+00:01:51,480 --> 00:01:54,540
+This shows you the class of the conflict.
+
+29
+00:01:54,540 --> 00:01:59,950
+This will actually have to go in our settings file or show you that in the second models.
+
+30
+00:02:00,180 --> 00:02:02,010
+This is where we create our models.
+
+31
+00:02:02,040 --> 00:02:08,340
+This particular app doesn't have a model but for instance listings will have like the the title The
+
+32
+00:02:08,340 --> 00:02:13,790
+address the number of bedrooms all that stuff is going to be defined inside of a model.
+
+33
+00:02:13,980 --> 00:02:19,680
+Then we have our tests if we want to run any tests and have used up my file where we can create methods
+
+34
+00:02:19,980 --> 00:02:23,330
+and we can actually link you or else to those methods.
+
+35
+00:02:23,340 --> 00:02:25,790
+So first thing I want to do it before I forget.
+
+36
+00:02:25,800 --> 00:02:32,160
+Because a lot of times I do forget is to add this app to our settings so lets go to the BTR settings
+
+37
+00:02:32,230 --> 00:02:39,000
+up high and what we're going to want to put here and the installed apps is a set of quotes and a comma
+
+38
+00:02:39,050 --> 00:02:42,910
+and we're going to say pages dot apps.
+
+39
+00:02:44,020 --> 00:02:47,430
+Daut pages.
+
+40
+00:02:48,290 --> 00:02:49,340
+Config.
+
+41
+00:02:49,630 --> 00:02:56,360
+OK so we want to go like that in where I got this page config from is in the App Store pi.
+
+42
+00:02:56,380 --> 00:03:00,230
+So whatever this is right here is what goes right here.
+
+43
+00:03:00,220 --> 00:03:08,440
+So if I save this that will cause Django to recognize this as an app right now what I saved I got this
+
+44
+00:03:08,440 --> 00:03:10,500
+message down here in vs code.
+
+45
+00:03:10,600 --> 00:03:17,950
+So if you're using the code and you get this auto pep 8 message this is a formatter.
+
+46
+00:03:18,100 --> 00:03:24,100
+Now if you just go ahead and click yes I believe it installs it globally and you're going to have some
+
+47
+00:03:24,100 --> 00:03:25,690
+issues with paths and stuff.
+
+48
+00:03:25,690 --> 00:03:31,480
+So what I would suggest doing is going to your terminal while you're in your virtual environment and
+
+49
+00:03:31,480 --> 00:03:41,760
+then doing a Pipp install an auto pap 8 like that.
+
+50
+00:03:41,880 --> 00:03:44,530
+And that should install in your virtual environment.
+
+51
+00:03:44,550 --> 00:03:46,950
+And if we close this up.
+
+52
+00:03:46,950 --> 00:03:50,160
+Let's just do a pip freeze.
+
+53
+00:03:50,160 --> 00:03:51,850
+This can become a real pain in the butt.
+
+54
+00:03:51,870 --> 00:03:56,780
+Yeah you see now we have autopay have eight so hopefully we don't get that message anymore.
+
+55
+00:03:57,450 --> 00:04:01,820
+All right so let me just try to resave this and make sure that we don't get that.
+
+56
+00:04:01,830 --> 00:04:02,110
+OK.
+
+57
+00:04:02,130 --> 00:04:02,570
+We don't.
+
+58
+00:04:02,570 --> 00:04:03,510
+Good.
+
+59
+00:04:04,430 --> 00:04:06,540
+All right so let's close that up.
+
+60
+00:04:06,560 --> 00:04:12,330
+And now what I wanted to do is create a pie file for this pages app.
+
+61
+00:04:12,350 --> 00:04:19,110
+So inside the pages folder here let's create a new file called Earles dot pi.
+
+62
+00:04:20,080 --> 00:04:20,710
+OK.
+
+63
+00:04:20,930 --> 00:04:25,470
+And we're going to have to bring in here.
+
+64
+00:04:25,700 --> 00:04:35,520
+See we're going to save from Django So the main Gengel package Daut you ourselves.
+
+65
+00:04:35,790 --> 00:04:39,240
+We want to import something called paff.
+
+66
+00:04:39,560 --> 00:04:40,140
+OK.
+
+67
+00:04:40,370 --> 00:04:45,500
+And if we look at the other you are a closed door pie file you'll see that they do the same thing because
+
+68
+00:04:45,500 --> 00:04:50,980
+if you want to define a path like this you have to actually bring that path package in.
+
+69
+00:04:50,990 --> 00:04:53,490
+So back to the other you are Elle's dot Pi.
+
+70
+00:04:53,510 --> 00:05:01,190
+We want to then bring in the views because the idea here is to have a path that or u r l or a path or
+
+71
+00:05:01,190 --> 00:05:04,450
+row whatever you want to call it that is attached to a method.
+
+72
+00:05:04,460 --> 00:05:06,400
+Inside this view file.
+
+73
+00:05:06,650 --> 00:05:10,400
+Ok so we want a u r l for our home page.
+
+74
+00:05:10,640 --> 00:05:15,230
+So to bring in the views we want to say from all import views.
+
+75
+00:05:15,660 --> 00:05:16,290
+Okay.
+
+76
+00:05:16,580 --> 00:05:22,670
+And then down here we want to define u r l patterns just like the other file.
+
+77
+00:05:23,200 --> 00:05:23,640
+OK.
+
+78
+00:05:23,660 --> 00:05:31,400
+So we'll set that to a list and then let's say path because we brought in path and the path that I want
+
+79
+00:05:31,400 --> 00:05:32,430
+is just nothing.
+
+80
+00:05:32,450 --> 00:05:35,520
+Which means the root path like the home page.
+
+81
+00:05:35,710 --> 00:05:40,640
+OK and a lot of not a lot of frameworks and stuff you'll see just slash but we're just going to leave
+
+82
+00:05:40,640 --> 00:05:41,740
+this empty.
+
+83
+00:05:42,010 --> 00:05:46,440
+OK the second parameter is going to be the method we want to connect this to in the view.
+
+84
+00:05:46,460 --> 00:05:52,160
+So we want to say views Daut and then the method which is going to be called index and then the final
+
+85
+00:05:52,160 --> 00:05:54,170
+parameter is going to be the name.
+
+86
+00:05:54,350 --> 00:06:00,560
+OK we're going to set a name here to easily access this path which we'll call index.
+
+87
+00:06:00,560 --> 00:06:03,030
+All right so going to save that.
+
+88
+00:06:03,440 --> 00:06:04,820
+Now we're getting in error here.
+
+89
+00:06:04,850 --> 00:06:10,520
+And it says that there's no index member So basically it's we're getting this because there's no there's
+
+90
+00:06:10,520 --> 00:06:14,420
+no method called index inside the views file.
+
+91
+00:06:14,600 --> 00:06:16,090
+So let's take care of that.
+
+92
+00:06:16,130 --> 00:06:24,310
+Let's go to views and we'll get rid of that line here and actually let me make this smaller.
+
+93
+00:06:24,830 --> 00:06:28,550
+And then let's write a function so we say def index.
+
+94
+00:06:28,550 --> 00:06:31,670
+When I say function or method I'm using those interchangeably.
+
+95
+00:06:31,850 --> 00:06:41,450
+So we'll define this as index and we want to pass in a request here as a parameter and then put a colon
+
+96
+00:06:41,750 --> 00:06:43,980
+and then what we want to happen here.
+
+97
+00:06:44,180 --> 00:06:49,090
+Now ultimately we want to render a template for the home page.
+
+98
+00:06:49,100 --> 00:06:59,600
+But for now I'm just going to bring in we're going to say from Django dot h t t p we want to import
+
+99
+00:07:01,020 --> 00:07:08,050
+and saying Poor HTP response need to get these drop downs because we have the python extension installed.
+
+100
+00:07:08,240 --> 00:07:15,650
+And then and here let's simply return let's say return HTP response.
+
+101
+00:07:16,010 --> 00:07:23,810
+And inside here we'll just say we can actually put h Tim Allen here we'll put an H on and we'll say
+
+102
+00:07:24,680 --> 00:07:25,980
+hello world.
+
+103
+00:07:26,150 --> 00:07:27,930
+All right we'll save that.
+
+104
+00:07:28,190 --> 00:07:28,660
+OK.
+
+105
+00:07:28,670 --> 00:07:31,960
+Now this isn't going to work yet.
+
+106
+00:07:31,970 --> 00:07:37,170
+If I go to our application it opens.
+
+107
+00:07:37,170 --> 00:07:39,560
+Where is it right here.
+
+108
+00:07:39,560 --> 00:07:45,580
+And we reload we still see this page because what we need to do is we need to take this you are Elle's
+
+109
+00:07:45,590 --> 00:07:50,220
+PI file that we created and we knew why is we.
+
+110
+00:07:50,240 --> 00:07:57,980
+Why are we still getting this error pages of views has no index member should it does
+
+111
+00:08:01,220 --> 00:08:05,330
+that's weird There you go.
+
+112
+00:08:05,350 --> 00:08:06,160
+All right.
+
+113
+00:08:06,290 --> 00:08:09,110
+Now we want to go to the other you or else.
+
+114
+00:08:09,120 --> 00:08:14,840
+Pi the main one in the very folder and I'm just going to get rid of all these comments because we don't
+
+115
+00:08:14,840 --> 00:08:17,330
+need those OK.
+
+116
+00:08:17,370 --> 00:08:20,800
+And we want to go right here.
+
+117
+00:08:20,830 --> 00:08:21,350
+Let's go.
+
+118
+00:08:21,360 --> 00:08:30,390
+But this will go above the admin and say paff tree put a comma here and then whatever we want the main
+
+119
+00:08:31,160 --> 00:08:36,460
+the the first segment of the R L to be for the pages app.
+
+120
+00:08:36,480 --> 00:08:41,670
+Now I don't want it to be anything because I don't want to have to go to like pages slash about or pages
+
+121
+00:08:41,670 --> 00:08:42,870
+slash anything.
+
+122
+00:08:42,870 --> 00:08:45,040
+Otherwise we would do that.
+
+123
+00:08:45,120 --> 00:08:50,460
+I want to be able to just go to slash about and just nothing for the home page just slash So we're going
+
+124
+00:08:50,480 --> 00:08:54,640
+actually going to leave this blank OK for listings and stuff like that.
+
+125
+00:08:54,660 --> 00:09:00,360
+Then we'll have listings slash or realtors whatever whatever the path may be.
+
+126
+00:09:00,360 --> 00:09:02,880
+But in this case I want to leave it blank.
+
+127
+00:09:02,880 --> 00:09:03,270
+All right.
+
+128
+00:09:03,270 --> 00:09:05,900
+And then we want to include.
+
+129
+00:09:05,970 --> 00:09:07,390
+So we want to include.
+
+130
+00:09:07,440 --> 00:09:12,900
+And then inside quotes here pages Daut you are Elle's.
+
+131
+00:09:13,120 --> 00:09:18,660
+Okay so we're essentially linking to the you are L's pie of the pages app.
+
+132
+00:09:18,660 --> 00:09:20,770
+If I save this we're going to get an error.
+
+133
+00:09:20,910 --> 00:09:26,580
+And the reason for that is because include we actually need to bring that in because that's part of
+
+134
+00:09:26,580 --> 00:09:29,050
+the Django you are Elle's package.
+
+135
+00:09:29,070 --> 00:09:34,290
+So we simply need to put a comma here and say we want to bring in includes so that we can use it and
+
+136
+00:09:34,290 --> 00:09:38,030
+I'll save that and now you'll see that that error goes away.
+
+137
+00:09:38,160 --> 00:09:42,910
+And now we should be able to access the index.
+
+138
+00:09:42,930 --> 00:09:43,690
+Okay.
+
+139
+00:09:44,040 --> 00:09:48,320
+Which should be just the home page because we left this blank.
+
+140
+00:09:48,730 --> 00:09:50,540
+So let's check it out.
+
+141
+00:09:50,550 --> 00:09:57,150
+Let's go to our It's the let's go here and reload and there we go.
+
+142
+00:09:57,170 --> 00:09:59,480
+So we're getting Hello world.
+
+143
+00:09:59,480 --> 00:10:07,430
+Now obviously we don't want to if I go back to our views we don't want to be putting our h team inside
+
+144
+00:10:07,430 --> 00:10:13,790
+of inside here like inside an HDP response we want to actually render a template.
+
+145
+00:10:13,850 --> 00:10:18,950
+So in the next video I'm going to show you how we can do that and we're going to create templates folder
+
+146
+00:10:19,190 --> 00:10:25,040
+and we'll start to create a structure there so that we can add our each team around to be served instead
+
+147
+00:10:25,040 --> 00:10:27,830
+of putting it right into a response like this.
+
+148
+00:10:27,830 --> 00:10:29,380
+All right so I'll see you in the next video.
+

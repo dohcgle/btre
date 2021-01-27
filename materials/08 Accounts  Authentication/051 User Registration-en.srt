@@ -1,0 +1,732 @@
+1
+00:00:00,390 --> 00:00:03,870
+All right guys so in this video we're going to start to work on our registration.
+
+2
+00:00:03,870 --> 00:00:09,150
+We need to do a little bit of validation for our form and then we're going to register a user.
+
+3
+00:00:09,150 --> 00:00:15,240
+Right now we're checking to see if it's a POST request if it is in the last video we just tested out
+
+4
+00:00:15,240 --> 00:00:15,990
+the messaging.
+
+5
+00:00:15,990 --> 00:00:20,510
+So I'm going to get rid of these two lines and we're going to want to put everything into variables.
+
+6
+00:00:20,650 --> 00:00:28,580
+OK so every every form field that's submitted we want to put into variables so let's say get form values.
+
+7
+00:00:28,800 --> 00:00:36,050
+So we're going to create a first name and the way that we get these values is by using request.
+
+8
+00:00:36,150 --> 00:00:41,520
+But instead of using get like we did with the the you are l queries and the GET requests we want to
+
+9
+00:00:41,520 --> 00:00:47,850
+use post since it's a post for and then we just want to put whatever the input name is in this case
+
+10
+00:00:47,860 --> 00:00:53,910
+this first name and we want six of these so two three four five six.
+
+11
+00:00:53,970 --> 00:00:56,600
+And we're going to change this one to last name
+
+12
+00:01:00,950 --> 00:01:02,960
+K then we're going to do a user name
+
+13
+00:01:09,070 --> 00:01:10,490
+then we're going to do email
+
+14
+00:01:16,850 --> 00:01:18,990
+OK we also want password
+
+15
+00:01:24,660 --> 00:01:26,980
+password and we want the password to
+
+16
+00:01:32,390 --> 00:01:33,340
+OK.
+
+17
+00:01:33,360 --> 00:01:43,290
+So now that we have those we want to start to do some validation lets say check if passwords match.
+
+18
+00:01:43,290 --> 00:01:45,070
+So we simply say if wups.
+
+19
+00:01:45,090 --> 00:01:48,750
+No no parentheses.
+
+20
+00:01:48,750 --> 00:01:53,500
+Password is equal to password 2.
+
+21
+00:01:54,210 --> 00:01:59,820
+Then we want to actually let's do our else first so else.
+
+22
+00:02:00,540 --> 00:02:07,410
+So if there is no or if the passwords don't match then what do we want to do we want to show an error
+
+23
+00:02:07,420 --> 00:02:09,760
+or I just like just like I did before.
+
+24
+00:02:09,960 --> 00:02:15,470
+So we're going to say message is you know WANT THAT THERE.
+
+25
+00:02:15,480 --> 00:02:24,390
+When do message or messages I'm sorry dot error takes in request and then takes in whatever we want
+
+26
+00:02:24,390 --> 00:02:32,410
+to output as a message which is going to be passwords do not match.
+
+27
+00:02:32,540 --> 00:02:32,900
+OK.
+
+28
+00:02:32,910 --> 00:02:35,190
+And then after that we're going to redirect.
+
+29
+00:02:35,190 --> 00:02:44,810
+So we want to return redirect and we're going to redirect to the same page or just register.
+
+30
+00:02:45,880 --> 00:02:46,220
+OK.
+
+31
+00:02:46,230 --> 00:02:50,800
+So let's actually just try that so far make sure that the validation works.
+
+32
+00:02:50,810 --> 00:02:56,190
+Let's just put a return in here for now just to shut the error up.
+
+33
+00:02:56,430 --> 00:03:03,030
+OK so we'll go back to our registry and reload and doesn't matter what we put in here.
+
+34
+00:03:03,030 --> 00:03:05,160
+This can be anything.
+
+35
+00:03:05,520 --> 00:03:06,180
+Password.
+
+36
+00:03:06,180 --> 00:03:14,040
+Now I'm going to make this not match so I'll do like 1 1 1 2 2 to register.
+
+37
+00:03:14,040 --> 00:03:15,970
+There we go passwords do not match.
+
+38
+00:03:15,970 --> 00:03:21,500
+And after three seconds that disappears that's exactly what I want to happen.
+
+39
+00:03:21,510 --> 00:03:21,830
+All right.
+
+40
+00:03:21,830 --> 00:03:24,720
+So let's go back now.
+
+41
+00:03:24,740 --> 00:03:26,090
+They do match.
+
+42
+00:03:26,150 --> 00:03:31,550
+We want to move on but we have some more validation to do we don't want to have duplicate user names
+
+43
+00:03:31,850 --> 00:03:36,850
+or duplicate emails so that's those are some things we're going to have to add here.
+
+44
+00:03:36,890 --> 00:03:45,960
+So let's say check user name and to do that we need to actually bring in the user model.
+
+45
+00:03:46,250 --> 00:03:50,650
+OK so we didn't create the user model but it comes default with Django.
+
+46
+00:03:50,660 --> 00:03:52,880
+But we still need to bring it in to use it.
+
+47
+00:03:52,910 --> 00:04:05,600
+So a peer will say from outside it's going to be from Django dot contrib dot off dot models and then
+
+48
+00:04:05,600 --> 00:04:13,760
+we want to import uppercase U user and then we can use that model just like we could use any model just
+
+49
+00:04:13,760 --> 00:04:16,760
+like we did with the listing in the realtor and so on.
+
+50
+00:04:16,760 --> 00:04:23,150
+So for the check username we're going to do it if we're going to say user dot objects remember objects
+
+51
+00:04:23,150 --> 00:04:24,800
+fetches from the database.
+
+52
+00:04:24,950 --> 00:04:33,440
+We want to put a filter case we want to do filter and we want to filter by user name equals username.
+
+53
+00:04:33,440 --> 00:04:39,500
+OK we're checking the user name field in the database for this value which is this this variable up
+
+54
+00:04:39,500 --> 00:04:44,760
+here and then we simply want to tack on Dot exists.
+
+55
+00:04:44,810 --> 00:04:50,360
+Ok so it's just a helpful method that will let us know if that user name exists.
+
+56
+00:04:50,360 --> 00:04:56,360
+So we'll put a colon colon here and if that's true then we want to show an error because that means
+
+57
+00:04:56,360 --> 00:04:58,950
+there is already a user with that username right.
+
+58
+00:04:58,970 --> 00:05:08,690
+So we don't we don't want them to be able to register so we're going to send an error say request and
+
+59
+00:05:08,690 --> 00:05:14,700
+the error will say that user name is taken.
+
+60
+00:05:15,140 --> 00:05:23,120
+And then again we're going to return a redirect to the register.
+
+61
+00:05:23,550 --> 00:05:26,060
+So this needs an else.
+
+62
+00:05:26,160 --> 00:05:31,830
+So if there is no user name that means we want to continue but we want to check for that e-mail because
+
+63
+00:05:31,830 --> 00:05:33,000
+we want that to be unique.
+
+64
+00:05:33,000 --> 00:05:35,310
+So it's going to be virtually the same thing.
+
+65
+00:05:35,310 --> 00:05:41,150
+So I'm going to just copy this right here this whole if else and we want to make sure we're and we're
+
+66
+00:05:41,170 --> 00:05:48,540
+indented here inside this else piece that in case this should be like that.
+
+67
+00:05:48,540 --> 00:05:54,570
+And we're just going to say if user data object start filter by e-mail.
+
+68
+00:05:54,660 --> 00:05:57,030
+So e-mail equals e-mail exists.
+
+69
+00:05:57,030 --> 00:06:08,590
+Then we're going to say that e-mail that e-mail is is being used and we're going to redirect.
+
+70
+00:06:08,670 --> 00:06:12,500
+OK else then we'll just say looks good.
+
+71
+00:06:12,570 --> 00:06:14,630
+OK so everything is passed.
+
+72
+00:06:14,910 --> 00:06:18,530
+So I'm going to say this I just want to test those things.
+
+73
+00:06:18,750 --> 00:06:26,240
+Now as far as users we have one user in the database I believe it's what's what's the user name.
+
+74
+00:06:26,240 --> 00:06:32,800
+Brad I believe I mean we can check when we can check in the back end here for go back home.
+
+75
+00:06:33,060 --> 00:06:35,020
+Will I not have my server running.
+
+76
+00:06:35,300 --> 00:06:36,240
+Oops.
+
+77
+00:06:36,870 --> 00:06:41,480
+You just check something real quick it's probably because there's nothing here so let me just do.
+
+78
+00:06:42,030 --> 00:06:48,490
+Let me just put a return here and save and make sure my server is still running.
+
+79
+00:06:48,490 --> 00:06:49,950
+It's in the other terminal.
+
+80
+00:06:50,190 --> 00:06:51,780
+OK good that fixed it.
+
+81
+00:06:53,610 --> 00:06:53,910
+All right.
+
+82
+00:06:54,040 --> 00:06:57,060
+So I will go back and reload.
+
+83
+00:06:57,500 --> 00:06:58,950
+OK so users.
+
+84
+00:06:58,970 --> 00:07:04,880
+And you can see we have a username of Brad in an e-mail address of Brad at gmail so I should not be
+
+85
+00:07:04,880 --> 00:07:09,140
+able to register with either of those.
+
+86
+00:07:09,140 --> 00:07:11,740
+All right so let's try that.
+
+87
+00:07:11,750 --> 00:07:12,810
+Let's start with.
+
+88
+00:07:12,860 --> 00:07:15,220
+It doesn't matter what we put in here or here.
+
+89
+00:07:15,230 --> 00:07:17,600
+I just want to try that Brad user name.
+
+90
+00:07:17,880 --> 00:07:18,290
+OK.
+
+91
+00:07:18,320 --> 00:07:18,950
+E-mail.
+
+92
+00:07:18,970 --> 00:07:21,580
+I'm not going to it doesn't matter.
+
+93
+00:07:21,860 --> 00:07:23,730
+Password.
+
+94
+00:07:23,780 --> 00:07:24,890
+Now this has to match.
+
+95
+00:07:24,890 --> 00:07:28,940
+We'll get an error so let's do just one one one one on one.
+
+96
+00:07:28,940 --> 00:07:30,170
+It's register.
+
+97
+00:07:30,170 --> 00:07:30,730
+There you go.
+
+98
+00:07:30,740 --> 00:07:32,390
+That user name is taken.
+
+99
+00:07:32,450 --> 00:07:33,500
+Perfect.
+
+100
+00:07:33,530 --> 00:07:36,240
+So let's try the e-mail now.
+
+101
+00:07:36,260 --> 00:07:42,100
+So remember that e-mail is Bradd at gmail dot com.
+
+102
+00:07:42,170 --> 00:07:48,880
+I'm sorry that you go in here username we'll just say whatever password
+
+103
+00:07:51,800 --> 00:07:54,290
+that e-mail is being used.
+
+104
+00:07:54,290 --> 00:07:59,930
+All right so all the validation is working now we want to continue to actually register the user.
+
+105
+00:08:00,110 --> 00:08:05,040
+So to do that and get rid of this return let's create a variable called the user.
+
+106
+00:08:05,360 --> 00:08:12,860
+And we're going to send it to a user Daut objects and there's a method called create user guys who want
+
+107
+00:08:12,860 --> 00:08:20,690
+to do that and we want to pass in all the fields so a user name equals user name we want to do password
+
+108
+00:08:22,100 --> 00:08:39,110
+equals password email equals email first name he called his first name last name.
+
+109
+00:08:39,120 --> 00:08:41,910
+He calls last name is that it.
+
+110
+00:08:41,960 --> 00:08:44,480
+I think that's it.
+
+111
+00:08:44,480 --> 00:08:47,310
+Username password email.
+
+112
+00:08:47,330 --> 00:08:49,030
+Yeah that should be it.
+
+113
+00:08:49,040 --> 00:08:51,800
+So I I just want to show you two ways of doing it.
+
+114
+00:08:51,800 --> 00:08:59,510
+Now if you want to log the user and once they're registered will say law you log in after register what
+
+115
+00:08:59,510 --> 00:09:09,110
+you could do is you could say off Daut log in and you could pass in the request and the user that we
+
+116
+00:09:09,110 --> 00:09:11,260
+just created here.
+
+117
+00:09:11,300 --> 00:09:16,700
+Now if you want to use this off object right here you actually have to bring it in and it's part of
+
+118
+00:09:16,700 --> 00:09:18,140
+Gengel called Treb.
+
+119
+00:09:18,320 --> 00:09:26,510
+So we can just add it right here and that should work but I'm not I'm actually not going to do that.
+
+120
+00:09:27,140 --> 00:09:30,920
+If you do do that what I would do is put a message underneath.
+
+121
+00:09:30,920 --> 00:09:37,040
+So I'd say messages dot success OK because you don't want to be in error.
+
+122
+00:09:37,040 --> 00:09:41,540
+We want it to be a success message and say request
+
+123
+00:09:44,020 --> 00:09:49,800
+and we'll say you are now logged in.
+
+124
+00:09:50,240 --> 00:09:50,660
+OK.
+
+125
+00:09:50,660 --> 00:09:54,850
+And then just return redirect
+
+126
+00:09:57,310 --> 00:10:02,110
+to slash or index you could do index.
+
+127
+00:10:02,530 --> 00:10:03,700
+OK so that would do that.
+
+128
+00:10:03,700 --> 00:10:04,140
+I'm not.
+
+129
+00:10:04,180 --> 00:10:08,440
+I'm not going to do that but I'm going to comment it out just in case you guys want what I want to do
+
+130
+00:10:08,440 --> 00:10:14,440
+is register the user and then give them a message and redirect them to the logon page so that they can
+
+131
+00:10:14,710 --> 00:10:17,210
+manually log in after they register.
+
+132
+00:10:17,380 --> 00:10:20,870
+So to do that we take the user and we just call save.
+
+133
+00:10:21,360 --> 00:10:24,390
+OK so we say use your dot save let's do a success.
+
+134
+00:10:24,390 --> 00:10:31,720
+I'll just grab this and let's say you are now logged in or you are now registered
+
+135
+00:10:34,740 --> 00:10:38,960
+and can log in.
+
+136
+00:10:39,740 --> 00:10:41,610
+Whoops I put a semi-colon.
+
+137
+00:10:41,940 --> 00:10:44,370
+I mean like javascript mode today.
+
+138
+00:10:45,090 --> 00:10:52,010
+And then we're going to return a redirect and we do want to redirect to the logon page.
+
+139
+00:10:52,140 --> 00:10:55,100
+OK so hopefully hopefully this works.
+
+140
+00:10:55,100 --> 00:10:56,130
+Let's try it out.
+
+141
+00:10:58,150 --> 00:11:04,510
+So I'm going to reload the register page and I'm actually going to try and register so let's say it
+
+142
+00:11:04,510 --> 00:11:19,550
+was say Kathy last name Smith username which is to Cathy g mail and let's match these passwords.
+
+143
+00:11:19,720 --> 00:11:24,480
+It's going to do one through six and register.
+
+144
+00:11:24,730 --> 00:11:28,290
+OK success you are registered and can log in.
+
+145
+00:11:28,300 --> 00:11:29,320
+Awesome.
+
+146
+00:11:29,350 --> 00:11:37,750
+So if we go to our admin area into the user section if I reload there was Kathy OK and if you look at
+
+147
+00:11:37,750 --> 00:11:45,190
+Staff Status there's an app excuse me there's an X mark because she's just a regular front end user.
+
+148
+00:11:46,160 --> 00:11:46,660
+OK.
+
+149
+00:11:46,680 --> 00:11:51,360
+And notice the password is hashed automatically so you don't have to worry about any of that.
+
+150
+00:11:51,360 --> 00:11:55,360
+You don't have to worry about hashing your passwords It just happens automatically.
+
+151
+00:11:55,770 --> 00:12:00,970
+So awesome we can now register for we can now register on the front end.
+
+152
+00:12:00,990 --> 00:12:04,980
+So what I want to do next is handle the log in.
+
+153
+00:12:05,130 --> 00:12:09,950
+But before I do that I just want to add in a couple of play.
+
+154
+00:12:09,950 --> 00:12:11,570
+Actually I think only the home page.
+
+155
+00:12:11,580 --> 00:12:20,460
+I want to add the ability to have messages or alerts because you know how I put if you wanted to log
+
+156
+00:12:20,460 --> 00:12:25,610
+in after you register it puts out a message and then redirects you to the index.
+
+157
+00:12:25,620 --> 00:12:28,260
+But the index page doesn't have the alerts.
+
+158
+00:12:28,260 --> 00:12:30,750
+I don't believe the alerts partial included.
+
+159
+00:12:30,750 --> 00:12:39,150
+So let's go down to templates and then go to see where we go and pages indexed on each team.
+
+160
+00:12:39,630 --> 00:12:44,380
+And we want to put the alerts somewhere in here.
+
+161
+00:12:44,400 --> 00:12:47,930
+So let's see I think
+
+162
+00:12:51,510 --> 00:12:52,980
+a good place to put this.
+
+163
+00:12:52,980 --> 00:12:56,490
+Let's go under the whole Showcase area.
+
+164
+00:12:59,460 --> 00:13:06,530
+And I actually don't know where to put this.
+
+165
+00:13:06,610 --> 00:13:07,670
+I mean I guess
+
+166
+00:13:12,000 --> 00:13:14,810
+let's just take a look at the front end here.
+
+167
+00:13:15,010 --> 00:13:22,930
+We could put it right above the latest listings like right here know let's do that sort of latest listings
+
+168
+00:13:23,680 --> 00:13:32,420
+I believe the alerts if we look at the partial history here we have Dave idea message it has a class
+
+169
+00:13:32,420 --> 00:13:38,490
+of containers so it will be it'll be put in the middle so that should be fine.
+
+170
+00:13:38,520 --> 00:13:39,780
+So for that
+
+171
+00:13:43,190 --> 00:13:44,700
+I'll put it right here.
+
+172
+00:13:50,510 --> 00:13:51,860
+So let's do our include
+
+173
+00:13:59,130 --> 00:14:04,660
+Parshall's slash underscore alerts studies.
+
+174
+00:14:05,010 --> 00:14:10,680
+OK so just in case you redirect to the home page and you want to and you want to show a message you
+
+175
+00:14:10,680 --> 00:14:12,290
+want to show an alert.
+
+176
+00:14:12,990 --> 00:14:13,720
+All right guys.
+
+177
+00:14:13,840 --> 00:14:18,090
+In the next video we're going to make it so that we can take the use of that we just created and we
+
+178
+00:14:18,090 --> 00:14:20,160
+can log in with that user.
+
+179
+00:14:20,430 --> 00:14:26,200
+OK so we're going to do authentication then we're going to work on the nav bar because obviously this
+
+180
+00:14:26,200 --> 00:14:28,630
+should be different if we're logged in.
+
+181
+00:14:28,650 --> 00:14:30,240
+We should also have a way to log out.
+
+182
+00:14:30,240 --> 00:14:32,130
+So we need to work on all that stuff.
+
+183
+00:14:32,130 --> 00:14:33,710
+So I will see you in the next video.
+

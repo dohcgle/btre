@@ -1,0 +1,948 @@
+1
+00:00:00,540 --> 00:00:08,430
+All right guys so in the last video we went ahead and added pagination we made it so that only the published
+
+2
+00:00:08,520 --> 00:00:10,900
+listings show on the front end web site.
+
+3
+00:00:11,070 --> 00:00:12,330
+We also did.
+
+4
+00:00:12,690 --> 00:00:15,780
+We made it so that they're ordered by list state.
+
+5
+00:00:15,780 --> 00:00:20,370
+Now what I want to do before we move to like the single listing and all that I want to make the home
+
+6
+00:00:20,370 --> 00:00:25,460
+page listings dynamic the latest listings here because right now this is just mark up.
+
+7
+00:00:25,470 --> 00:00:25,820
+All right.
+
+8
+00:00:25,830 --> 00:00:26,910
+I want to take care of that.
+
+9
+00:00:26,910 --> 00:00:32,100
+I also want to take care of the About page because we have some dynamic data here that needs to be displayed
+
+10
+00:00:32,370 --> 00:00:35,480
+like the realtors and the seller of the month.
+
+11
+00:00:35,640 --> 00:00:37,410
+So we're going to work on that.
+
+12
+00:00:37,410 --> 00:00:37,800
+All right.
+
+13
+00:00:37,800 --> 00:00:43,950
+So let's head on over to vs code and we're going to close up the pie from the listings app and we're
+
+14
+00:00:43,950 --> 00:00:49,390
+going to open up views not pie in pages which I mean just close this too.
+
+15
+00:00:49,560 --> 00:00:53,780
+So don't confuse people close everything up and go to pages.
+
+16
+00:00:53,790 --> 00:01:00,570
+We want to go to views dot pi which is very simple right now it's just loading the templates.
+
+17
+00:01:00,570 --> 00:01:07,980
+I also want to go to the pages index study each team a template where we have the static markup which
+
+18
+00:01:07,980 --> 00:01:12,030
+is right here so listing 1 2 and 3.
+
+19
+00:01:12,030 --> 00:01:16,080
+All right we're basically going to do the same thing we did for the listings page except we only want
+
+20
+00:01:16,080 --> 00:01:16,990
+three listings.
+
+21
+00:01:17,010 --> 00:01:19,170
+No pagination or anything like that.
+
+22
+00:01:19,410 --> 00:01:26,190
+So in our view even though we're inside the pages app we can we can get any model we want.
+
+23
+00:01:26,190 --> 00:01:33,360
+So we want to bring in the listing model so we're going to say from listings basically from the listings
+
+24
+00:01:33,360 --> 00:01:35,170
+app models.
+
+25
+00:01:35,220 --> 00:01:39,020
+We want to import the listing model.
+
+26
+00:01:39,530 --> 00:01:40,260
+Okay.
+
+27
+00:01:40,530 --> 00:01:47,820
+And down here this is going to be pretty simple we're just going to create a listings variable set it
+
+28
+00:01:47,820 --> 00:01:49,690
+to the listing model.
+
+29
+00:01:49,980 --> 00:01:58,460
+I do want to order it by dates and when I say order and order underscore by and we want to do by list
+
+30
+00:01:58,490 --> 00:01:59,420
+date.
+
+31
+00:01:59,570 --> 00:02:02,210
+So just underscore day.
+
+32
+00:02:02,430 --> 00:02:06,380
+And of course we only want the ones that are published even though this is the home page.
+
+33
+00:02:06,480 --> 00:02:09,190
+We still don't want to show unpublished listings.
+
+34
+00:02:09,330 --> 00:02:18,150
+So we're going to do dot filter and we're going to pass and is underscore published and we only want
+
+35
+00:02:18,150 --> 00:02:20,420
+to show ones that are true.
+
+36
+00:02:20,580 --> 00:02:25,890
+And then I want to limit this to only three listings so I'm just going to pass on some brackets and
+
+37
+00:02:25,890 --> 00:02:32,910
+do Colan 3 that's going to say that we only want 3 listings and then we'll just create a context variable
+
+38
+00:02:32,910 --> 00:02:43,980
+just like we did in the other views file so intact in text context equals dictionary with listings and
+
+39
+00:02:43,980 --> 00:02:46,550
+we'll set that to listings.
+
+40
+00:02:46,590 --> 00:02:52,520
+Okay and then we just want to pass that into the index template here like that.
+
+41
+00:02:52,540 --> 00:02:52,830
+All right.
+
+42
+00:02:52,830 --> 00:02:57,350
+So that should do it so I'll save now we're passing it into the index each time.
+
+43
+00:02:57,360 --> 00:03:03,000
+We just need to now receive it and loop through them and display the dynamic data just like we did with
+
+44
+00:03:03,000 --> 00:03:05,730
+the listings each team I'll file.
+
+45
+00:03:05,730 --> 00:03:10,230
+All right so we're going to go right here.
+
+46
+00:03:10,240 --> 00:03:18,710
+OK right in this row and we just want to do the exact same thing just use a for loop loop through first
+
+47
+00:03:18,700 --> 00:03:21,380
+of all we want to check to see if there's any listings.
+
+48
+00:03:21,390 --> 00:03:28,620
+So for now I'm just going to go right here below the div. of Roe and I'm going to put in my IF statement
+
+49
+00:03:28,620 --> 00:03:31,420
+to check if there's any listings.
+
+50
+00:03:31,920 --> 00:03:43,280
+So if listings and let's end that if and if then actually we wanted the else as well
+
+51
+00:03:47,310 --> 00:03:54,920
+okay so if there if there are no listings then let's just put a what should we do here.
+
+52
+00:03:55,050 --> 00:03:58,260
+Let's put a div.
+
+53
+00:03:59,050 --> 00:04:07,860
+So we'll do a div call M.D 12 just a 12 column div in them will put a paragraph in will say no listings
+
+54
+00:04:09,510 --> 00:04:10,790
+available.
+
+55
+00:04:11,200 --> 00:04:11,660
+OK.
+
+56
+00:04:11,670 --> 00:04:16,570
+Now if there are listings that means we want to loop through them so we're going to go right here.
+
+57
+00:04:16,560 --> 00:04:21,060
+We're going to put in our tags and we're going to do a four.
+
+58
+00:04:21,100 --> 00:04:30,350
+So we want to save for listing our singular in listings plural.
+
+59
+00:04:31,000 --> 00:04:33,150
+OK then we want to make sure we end that for
+
+60
+00:04:36,490 --> 00:04:42,470
+and in here is where we want to put our listing mark up with some dynamic values.
+
+61
+00:04:42,480 --> 00:04:48,860
+And I'm just going to copy this listing one so this div to this div.
+
+62
+00:04:49,080 --> 00:04:50,110
+Can I grab that
+
+63
+00:04:53,270 --> 00:05:01,520
+and I'm actually going to cut it out and put it in the four because it's going to display that for each
+
+64
+00:05:01,520 --> 00:05:02,100
+one.
+
+65
+00:05:02,240 --> 00:05:05,100
+And then I'm going to get rid of listing to enlisting three.
+
+66
+00:05:05,120 --> 00:05:05,390
+OK.
+
+67
+00:05:05,390 --> 00:05:15,650
+So that's listing to just static stuff listing three ends right here so one can delete that as well.
+
+68
+00:05:17,170 --> 00:05:19,750
+All right so we shorten up this file quite a bit.
+
+69
+00:05:19,780 --> 00:05:21,240
+Whoops.
+
+70
+00:05:22,120 --> 00:05:22,980
+OK.
+
+71
+00:05:23,590 --> 00:05:29,170
+So let's go ahead and start to change some of this over to dynamic content.
+
+72
+00:05:29,260 --> 00:05:31,900
+So I'm actually going to Tab this over a bit
+
+73
+00:05:35,330 --> 00:05:41,230
+so we'll start with let's say the one to do here let's do the image.
+
+74
+00:05:41,270 --> 00:05:45,670
+So for the image it's going to be pretty much the same exact thing we did on the listings.
+
+75
+00:05:45,710 --> 00:05:51,500
+So we want to do listing Daut and the field name as photo underscore main.
+
+76
+00:05:51,800 --> 00:05:53,100
+And we just want to do dot.
+
+77
+00:05:53,110 --> 00:05:55,750
+You are L since it was an image field.
+
+78
+00:05:55,750 --> 00:05:59,710
+All right for the pricing.
+
+79
+00:05:59,780 --> 00:06:05,330
+I want to do the comma thing just like we did before and remember we used an app called human eyes which
+
+80
+00:06:05,330 --> 00:06:11,390
+we loaded in the settings file but we have to also load it up at the top to be able to use it.
+
+81
+00:06:11,390 --> 00:06:12,710
+So we're going to say load
+
+82
+00:06:15,730 --> 00:06:17,790
+humanised like that.
+
+83
+00:06:18,330 --> 00:06:18,640
+OK.
+
+84
+00:06:18,760 --> 00:06:28,030
+And then we're going to go down back down here and we now should be able to put in the listing price
+
+85
+00:06:31,360 --> 00:06:44,250
+so listing price and we can put a type character and say int comma case that should work.
+
+86
+00:06:44,250 --> 00:06:46,080
+Now let's do the title
+
+87
+00:06:50,280 --> 00:06:56,250
+see a title I actually like to put spaces on the ends here like that.
+
+88
+00:06:56,250 --> 00:06:56,990
+You don't have to.
+
+89
+00:06:57,000 --> 00:06:58,910
+But I think it looks a little cleaner.
+
+90
+00:07:01,750 --> 00:07:02,970
+All right.
+
+91
+00:07:02,970 --> 00:07:04,590
+And then what else do we have.
+
+92
+00:07:04,590 --> 00:07:07,510
+Here we have the the address.
+
+93
+00:07:07,600 --> 00:07:15,210
+So actually this the listing title and then I'm going to copy this.
+
+94
+00:07:15,210 --> 00:07:18,110
+And we have three different values here.
+
+95
+00:07:18,150 --> 00:07:23,350
+So going to paste in all of these and then we're going to change this first one to city.
+
+96
+00:07:23,370 --> 00:07:29,410
+We're going to change this one to state and this one two zip code.
+
+97
+00:07:29,660 --> 00:07:33,310
+Sort of reach into the database and they'll get those fields for us.
+
+98
+00:07:33,330 --> 00:07:35,850
+Then we have the square feet.
+
+99
+00:07:35,850 --> 00:07:47,740
+So I'm going to go ahead and say listing dots as q f t c with the garage.
+
+100
+00:07:47,900 --> 00:07:48,400
+So just
+
+101
+00:07:51,880 --> 00:07:55,880
+just copy one of these.
+
+102
+00:07:56,060 --> 00:07:58,570
+So this will be listing dark garage.
+
+103
+00:07:58,790 --> 00:08:00,840
+OK then we want bedrooms.
+
+104
+00:08:09,080 --> 00:08:10,450
+The bathrooms
+
+105
+00:08:15,720 --> 00:08:17,410
+Let's see.
+
+106
+00:08:17,410 --> 00:08:24,630
+So for the realtor we should be able to just do listing our realtor and that will automatically give
+
+107
+00:08:24,630 --> 00:08:25,410
+us his name
+
+108
+00:08:29,480 --> 00:08:30,800
+and then for the date
+
+109
+00:08:34,170 --> 00:08:37,600
+we're going to do listing Daut listee.
+
+110
+00:08:39,120 --> 00:08:46,010
+So list underscore date and then we want to add a pipe character and we want to use time.
+
+111
+00:08:46,390 --> 00:08:49,570
+Since.
+
+112
+00:08:49,700 --> 00:08:50,500
+All right.
+
+113
+00:08:50,560 --> 00:08:54,900
+Now for the more info obviously we don't want to link to listing each team.
+
+114
+00:08:54,910 --> 00:09:00,220
+We want to use you are l to make sure we're going to put this in our tags.
+
+115
+00:09:01,600 --> 00:09:10,690
+So we want to use you Arel and we want to go to listing and we also want to pass in the listing dot
+
+116
+00:09:10,720 --> 00:09:11,850
+I.D..
+
+117
+00:09:12,870 --> 00:09:13,180
+OK.
+
+118
+00:09:13,180 --> 00:09:13,960
+For more info.
+
+119
+00:09:13,960 --> 00:09:14,990
+So let's save that.
+
+120
+00:09:15,070 --> 00:09:22,840
+Let's go back to our home page type Object listing has no attribute.
+
+121
+00:09:22,840 --> 00:09:23,810
+Ordered by.
+
+122
+00:09:23,820 --> 00:09:27,640
+Let's see what's going on there because that's not right.
+
+123
+00:09:27,660 --> 00:09:32,560
+Listing Daut order by you know what I forgot.
+
+124
+00:09:32,560 --> 00:09:37,510
+Objects should be objects ordered by.
+
+125
+00:09:37,540 --> 00:09:39,340
+Sorry about that.
+
+126
+00:09:39,340 --> 00:09:40,060
+And there we go.
+
+127
+00:09:40,060 --> 00:09:45,870
+We have our latest listings and these are now coming from the database which is exactly what we want.
+
+128
+00:09:46,150 --> 00:09:46,800
+All right cool.
+
+129
+00:09:46,800 --> 00:09:57,520
+So the next step is for the for the about page K so for the about we want to have the the team members
+
+130
+00:09:57,520 --> 00:10:02,320
+of the realtors and we want to have the seller of the month as well.
+
+131
+00:10:02,320 --> 00:10:08,140
+So let's go back to the used up high in our pages we have about right here.
+
+132
+00:10:08,410 --> 00:10:14,590
+So that's what we want and want to do the same kind of thing except now we're dealing with realtors
+
+133
+00:10:14,590 --> 00:10:16,460
+so we need the realtor model.
+
+134
+00:10:16,570 --> 00:10:23,660
+So we don't just copy this down and instead of listing we want realtor.
+
+135
+00:10:23,800 --> 00:10:27,730
+And this is going to come from realtors dot models.
+
+136
+00:10:28,870 --> 00:10:42,610
+Ok realtors dot models import realtor and let's say we'll do comment here we'll say get all realtors.
+
+137
+00:10:42,670 --> 00:10:48,380
+So create a variable called realtors and set it to the model.
+
+138
+00:10:48,910 --> 00:11:01,490
+And we want to do Daut objects and I'm going to do order by hand let's do by hired de.
+
+139
+00:11:01,910 --> 00:11:04,150
+All right so ordered by hire date.
+
+140
+00:11:04,290 --> 00:11:09,270
+And let's see we also want to get the seller of the month.
+
+141
+00:11:09,270 --> 00:11:12,530
+Now remember the sell of the month has the MVP check.
+
+142
+00:11:12,560 --> 00:11:17,210
+If we go back to the admin area I don't think we actually set it for anybody.
+
+143
+00:11:17,490 --> 00:11:18,980
+So let's go.
+
+144
+00:11:18,990 --> 00:11:21,890
+Let's set up for collops we want to go to realtors.
+
+145
+00:11:21,930 --> 00:11:23,910
+Let's set up for Kyle Brown.
+
+146
+00:11:23,910 --> 00:11:27,050
+So right here the check I'm going to say is MVP.
+
+147
+00:11:27,140 --> 00:11:28,510
+Well go ahead and save that.
+
+148
+00:11:28,650 --> 00:11:31,080
+And now he should be.
+
+149
+00:11:31,080 --> 00:11:34,820
+We want to make it so that he shows on the About page in that section.
+
+150
+00:11:34,860 --> 00:11:47,730
+So let's go back and let's say get in the P and all just two MVP underscore realtors.
+
+151
+00:11:47,760 --> 00:11:54,960
+Now even though we plan on just having one MVP or seller of the month I'm just using these anonymously.
+
+152
+00:11:54,960 --> 00:11:59,390
+I still want to I still want to grab a group.
+
+153
+00:11:59,400 --> 00:12:01,530
+Basically there can be more than one.
+
+154
+00:12:01,740 --> 00:12:05,250
+OK just in case they want to add more than one.
+
+155
+00:12:05,910 --> 00:12:13,970
+So we'll set this to set it to the same thing real Turcotte objects stock order by.
+
+156
+00:12:14,380 --> 00:12:17,590
+Actually we don't want order by we're just going to do it all.
+
+157
+00:12:18,310 --> 00:12:21,410
+So dot all and then the filter.
+
+158
+00:12:21,430 --> 00:12:28,030
+So we want to do a filter is going to be by is underscore NBP it's going to look at that field and it's
+
+159
+00:12:28,030 --> 00:12:32,620
+only going to grab the ones that are true and checking that box off that they just showed you is going
+
+160
+00:12:32,620 --> 00:12:34,380
+to make that true.
+
+161
+00:12:34,390 --> 00:12:37,910
+So now we just need to make a context.
+
+162
+00:12:38,880 --> 00:12:50,350
+OK so we'll set this to a dictionary and we'll do realtors set that to realtors and then let's do MVP
+
+163
+00:12:50,350 --> 00:12:51,160
+realtors
+
+164
+00:12:55,520 --> 00:13:03,300
+so that too MVP realtors and then will just pass the context into the about perfect.
+
+165
+00:13:03,660 --> 00:13:13,830
+So save that and now we want to go to the about each team Al which is right here and let's start off
+
+166
+00:13:13,830 --> 00:13:22,510
+with just doing the whole realtors section so down at the bottom let's see we have like here team.
+
+167
+00:13:22,980 --> 00:13:30,200
+So we have this column this column all these call em d as these are all the team members.
+
+168
+00:13:30,210 --> 00:13:37,340
+So what I'm going to do is go right here above the first call M.D for and I'm going to check for realtors.
+
+169
+00:13:38,280 --> 00:13:48,030
+So if realtors I'd like to just do all my logic up at the top and then we'll just put in what we need
+
+170
+00:13:48,750 --> 00:13:51,510
+instead of just trying to wrap everything.
+
+171
+00:13:52,350 --> 00:13:57,210
+OK let's do one else as well because if there are no realtors we'll just say I don't know.
+
+172
+00:13:57,210 --> 00:14:00,010
+No team member is available.
+
+173
+00:14:01,230 --> 00:14:02,200
+OK.
+
+174
+00:14:02,470 --> 00:14:17,110
+So so for the else let's do a call dash empty dash 12 paragraph and we'll say no realtor's available.
+
+175
+00:14:18,230 --> 00:14:18,670
+OK.
+
+176
+00:14:18,690 --> 00:14:21,170
+And if there are realtors then we want to loop through them
+
+177
+00:14:24,150 --> 00:14:34,920
+so let's say for realtor in realtors and we'll end that for
+
+178
+00:14:38,770 --> 00:14:45,550
+and then we want to grab just one of these div with the call declasse of call em D4.
+
+179
+00:14:45,960 --> 00:14:52,710
+So just go ahead and cut that out and put that right in that for loop and then we just want to get rid
+
+180
+00:14:52,710 --> 00:14:53,570
+of the other two.
+
+181
+00:14:53,640 --> 00:14:53,910
+OK.
+
+182
+00:14:53,910 --> 00:14:54,870
+Because they're just static.
+
+183
+00:14:54,870 --> 00:15:00,310
+So this one and this one go up to here.
+
+184
+00:15:00,390 --> 00:15:04,920
+Get rid of that so shorten our page up good.
+
+185
+00:15:05,060 --> 00:15:09,660
+So now we just want some dynamic stuff in here like the realtor's name.
+
+186
+00:15:09,830 --> 00:15:14,250
+So we'll go ahead and replace that.
+
+187
+00:15:15,280 --> 00:15:23,750
+So realtor Don name and then the image or the photo.
+
+188
+00:15:24,060 --> 00:15:26,060
+So we have real door.
+
+189
+00:15:26,100 --> 00:15:31,270
+And we just called it photo I believe but it's a you are also want to make sure we put that in there.
+
+190
+00:15:31,500 --> 00:15:34,840
+OK we also want.
+
+191
+00:15:35,560 --> 00:15:40,300
+Let's see we have the phone number.
+
+192
+00:15:45,200 --> 00:15:50,000
+So it's a real to her dot phone
+
+193
+00:15:52,800 --> 00:15:54,160
+will do the email
+
+194
+00:15:59,520 --> 00:16:00,110
+like that.
+
+195
+00:16:00,150 --> 00:16:01,570
+And I think that's it.
+
+196
+00:16:03,370 --> 00:16:10,510
+So let's go back to the about and reload and go down and there we go.
+
+197
+00:16:10,900 --> 00:16:14,980
+So these these are actually coming from the database.
+
+198
+00:16:14,980 --> 00:16:16,710
+OK so what
+
+199
+00:16:20,160 --> 00:16:20,670
+see.
+
+200
+00:16:20,790 --> 00:16:25,860
+Let's take care of this now so Realtor of the month or seller of the month MVP whatever you want to
+
+201
+00:16:25,860 --> 00:16:27,540
+call it let's do that.
+
+202
+00:16:27,540 --> 00:16:33,170
+We're going to go back to that same template go up to right here.
+
+203
+00:16:33,300 --> 00:16:41,370
+So sell over the month are going to go in this call M.D four and we're going to check for an MVP so
+
+204
+00:16:42,600 --> 00:16:51,340
+let's say if MVP underscore Realtors like I said we're going to do our logic First up here.
+
+205
+00:16:55,340 --> 00:17:01,460
+I'm not going to do it but in house because if there's no MVP we're just we're just not going to display
+
+206
+00:17:01,460 --> 00:17:02,500
+anything here.
+
+207
+00:17:02,570 --> 00:17:06,850
+So we'll do the if and then if there is one then we'll go ahead and loop through.
+
+208
+00:17:06,850 --> 00:17:16,070
+So because remember it's going to return in our objects multiple objects but we're just going to make
+
+209
+00:17:16,070 --> 00:17:17,680
+sure that just one is checked.
+
+210
+00:17:17,690 --> 00:17:19,930
+But it is possible to check more than one.
+
+211
+00:17:20,180 --> 00:17:26,030
+So it's safe for the let's just let's just call a realtor.
+
+212
+00:17:26,030 --> 00:17:29,990
+We can do that in MVP realtors.
+
+213
+00:17:30,770 --> 00:17:32,240
+That's what matters.
+
+214
+00:17:32,780 --> 00:17:34,730
+And then we're going to do an end for
+
+215
+00:17:40,230 --> 00:17:43,430
+k and then I'm going to grab the card.
+
+216
+00:17:43,560 --> 00:17:50,050
+So this right here I cut that out and put that right in there.
+
+217
+00:17:51,000 --> 00:17:54,030
+And then just replace the name right here
+
+218
+00:17:58,330 --> 00:18:02,410
+with realtor dot name and remember they also have a description that's it's going to go here
+
+219
+00:18:11,230 --> 00:18:12,340
+like that.
+
+220
+00:18:12,880 --> 00:18:16,960
+OK so let's say actually the photo to make sure we do that
+
+221
+00:18:21,530 --> 00:18:30,920
+so let's see if we want to do realtor dot photo dot you are l and save.
+
+222
+00:18:31,460 --> 00:18:34,850
+OK let's go back and let's reload.
+
+223
+00:18:34,850 --> 00:18:38,560
+There we go Kyle Brown.
+
+224
+00:18:38,710 --> 00:18:42,650
+So let's test it out and let's uncheck Kyle Brown.
+
+225
+00:18:42,670 --> 00:18:45,590
+So if I do that we should have no seller of the month.
+
+226
+00:18:46,000 --> 00:18:53,500
+And let's go ahead and let's make Ginny JOHNSON So our of the month or MVP and reload and there we go.
+
+227
+00:18:53,500 --> 00:18:55,920
+So this is completely dynamic now.
+
+228
+00:18:56,410 --> 00:18:56,920
+All right good.
+
+229
+00:18:56,920 --> 00:19:04,840
+So next thing I want to do is focus on the single Wisting page so we'll make our queery for a particular
+
+230
+00:19:04,840 --> 00:19:11,200
+listing because when we click this it takes us to whatever listings slash and then the ID we want to
+
+231
+00:19:11,200 --> 00:19:15,640
+take that Id make our queery fetch that listing and then load the template.
+
+232
+00:19:15,710 --> 00:19:16,230
+OK.
+
+233
+00:19:16,330 --> 00:19:22,300
+Now for the template we're going to have to copy a bunch of H.T. mail from the bootstrap theme and then
+
+234
+00:19:22,300 --> 00:19:25,840
+more we'll just make it dynamic just like we did with these other pages.
+
+235
+00:19:25,840 --> 00:19:26,130
+All right.
+
+236
+00:19:26,140 --> 00:19:26,640
+So that's it.
+
+237
+00:19:26,650 --> 00:19:28,000
+I will see you in the next video.
+

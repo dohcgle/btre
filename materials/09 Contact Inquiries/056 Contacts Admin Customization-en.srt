@@ -1,0 +1,176 @@
+1
+00:00:00,360 --> 00:00:05,430
+All right guys so in the last video we went ahead and created our contacts app we created our model
+
+2
+00:00:05,670 --> 00:00:07,180
+and we ran the migration.
+
+3
+00:00:07,180 --> 00:00:10,640
+So now we actually have a contacts database table.
+
+4
+00:00:10,890 --> 00:00:17,340
+Now we're going to go to the admin dot pie here because we want to register our contact model so that
+
+5
+00:00:17,340 --> 00:00:20,490
+we can actually see them in the admin area.
+
+6
+00:00:20,490 --> 00:00:26,180
+So let's go ahead and bring in we'll say from Daut models.
+
+7
+00:00:26,220 --> 00:00:44,250
+Want to import contact and let's do class contact admin and pass in the admin Daut model admin and then
+
+8
+00:00:44,250 --> 00:00:50,730
+we can do our customisations here and then after that we want to run it through admin dot site dot
+
+9
+00:00:54,130 --> 00:01:04,500
+register pass in the name of the model contact and then the name of the class which is contact admin.
+
+10
+00:01:05,410 --> 00:01:11,710
+OK so in here as far as customisations Let's do our list display so we've done this before with other
+
+11
+00:01:11,710 --> 00:01:12,560
+models.
+
+12
+00:01:12,880 --> 00:01:14,380
+Solist display I'm going to do.
+
+13
+00:01:14,380 --> 00:01:17,360
+ID.
+
+14
+00:01:17,440 --> 00:01:24,450
+ID let's do name let's do listing.
+
+15
+00:01:24,890 --> 00:01:33,460
+OK so that will be the actual listing name email and contact date.
+
+16
+00:01:33,470 --> 00:01:36,510
+And if you want to change any of these up feel free to do that.
+
+17
+00:01:36,650 --> 00:01:38,510
+Snellius do list display links.
+
+18
+00:01:38,510 --> 00:01:49,460
+Which ones do we want to actually be links and I just want to do ID and name OK let's do search fields
+
+19
+00:01:51,140 --> 00:01:53,270
+so search fields I'm going to do name
+
+20
+00:01:56,070 --> 00:01:59,310
+email and listing
+
+21
+00:02:03,020 --> 00:02:08,350
+and then finally let's do list per page.
+
+22
+00:02:08,360 --> 00:02:09,620
+And that's going to be 25.
+
+23
+00:02:09,620 --> 00:02:10,690
+Just like the rest.
+
+24
+00:02:10,790 --> 00:02:11,320
+And that's it.
+
+25
+00:02:11,330 --> 00:02:14,300
+I'm not going to do anything crazy here so let's save that.
+
+26
+00:02:14,300 --> 00:02:16,660
+And now we go to our back end.
+
+27
+00:02:16,670 --> 00:02:25,980
+We're going to have to log in reload this we have to log in as Bradd or whatever your admin user is.
+
+28
+00:02:26,370 --> 00:02:33,600
+And let's go to our home and now we see contacts if we click on that we don't have any contacts obviously.
+
+29
+00:02:33,630 --> 00:02:39,630
+Now you can add them from here if you want but I really don't know why you would do this.
+
+30
+00:02:39,620 --> 00:02:44,030
+I guess maybe a few If like you talked to.
+
+31
+00:02:44,070 --> 00:02:50,130
+If the company if someone from the company talked to someone outside of the Web site like in real life
+
+32
+00:02:50,130 --> 00:02:54,990
+and then they wanted to add their information into the admin area I guess they could do it this way.
+
+33
+00:02:54,990 --> 00:02:58,950
+But for the most part the contacts that are going to be listed here they're going to come from that
+
+34
+00:02:58,980 --> 00:03:02,490
+inquiry form on in the application.
+
+35
+00:03:02,490 --> 00:03:04,590
+So that's that's really what this is for.
+
+36
+00:03:04,620 --> 00:03:08,330
+So I'm not going to go out I'm not going to add any contacts through here.
+
+37
+00:03:08,400 --> 00:03:13,320
+I just wanted to go ahead and add that those customisations for the admin area.
+
+38
+00:03:13,320 --> 00:03:18,140
+All right so in the next video what I want to do is prepare our inquiry form.
+
+39
+00:03:18,300 --> 00:03:24,780
+So this right here when I say make an inquiry I want to do a few things here we need to change this
+
+40
+00:03:24,780 --> 00:03:28,800
+because this is just hard coded right now or just just static each time.
+
+41
+00:03:28,800 --> 00:03:35,670
+Now I also want to put the name in the email of the logged in user if they're logged in I want I want
+
+42
+00:03:35,670 --> 00:03:42,120
+that information in there as well as some hidden fields so I want to prepare this form in the next video
+
+43
+00:03:42,120 --> 00:03:47,450
+and then we'll move on to actually submitting it and and getting that data into the database.
+
+44
+00:03:47,490 --> 00:03:49,360
+OK so I'll see you in the next video.
+

@@ -1,0 +1,580 @@
+1
+00:00:00,240 --> 00:00:05,940
+All right guys so our submission for the contact form is going through but there's a couple more things
+
+2
+00:00:05,940 --> 00:00:06,990
+you want to do.
+
+3
+00:00:07,020 --> 00:00:12,720
+I want to make it so that if the authenticated user has already sent to an inquiry that they get a message
+
+4
+00:00:12,720 --> 00:00:18,600
+saying they've already sent it and then I also want to add the functionality of e-mail I want to send
+
+5
+00:00:18,840 --> 00:00:26,180
+whoever the realtor email is I want to send them an email notifying them that there's been a submission.
+
+6
+00:00:26,250 --> 00:00:31,980
+So let's start off with telling the user that they've already had eight inquiries so we're going to
+
+7
+00:00:31,980 --> 00:00:38,730
+go right here let's say check if user has made
+
+8
+00:00:42,810 --> 00:00:44,310
+inquiry already.
+
+9
+00:00:44,580 --> 00:00:54,270
+So we're first going to just say if I request dog user dog and then we want to use that is authenticated
+
+10
+00:00:57,140 --> 00:00:57,430
+OK.
+
+11
+00:00:57,430 --> 00:00:59,730
+So if they're authenticated then we want to get.
+
+12
+00:00:59,750 --> 00:01:11,770
+We're going to say user ID equals request dot user dot ID.
+
+13
+00:01:11,800 --> 00:01:12,210
+All right.
+
+14
+00:01:12,220 --> 00:01:22,450
+And then after that I'm going to say has underscore contacted and said that to our contact model and
+
+15
+00:01:22,450 --> 00:01:32,890
+then objects dot all and then I want to filter can I want to filter I'm going to say listing underscore
+
+16
+00:01:32,980 --> 00:01:40,840
+ID equals listing underscore ID because I want to check for the current listing and the current user.
+
+17
+00:01:40,870 --> 00:01:49,070
+So user underscore ID equals user underscore ID.
+
+18
+00:01:50,190 --> 00:01:50,630
+OK.
+
+19
+00:01:50,640 --> 00:01:56,020
+And then right under that we're going to do it if we're going to check that has contacted.
+
+20
+00:01:56,400 --> 00:02:02,210
+So if has contacted We want to send an error message some messages dot error
+
+21
+00:02:07,220 --> 00:02:20,390
+and we'll just say you have already made an inquiry for this listing and then we'll redirect back to
+
+22
+00:02:20,390 --> 00:02:22,250
+the same listing.
+
+23
+00:02:22,250 --> 00:02:26,100
+So I'm just going to copy this redirect down here put that there.
+
+24
+00:02:26,120 --> 00:02:27,900
+Make sure it's on the same line.
+
+25
+00:02:28,770 --> 00:02:29,530
+OK.
+
+26
+00:02:29,710 --> 00:02:32,450
+So let's go ahead and save that and let's give it a shot.
+
+27
+00:02:33,300 --> 00:02:38,760
+So let's go back and let's reload.
+
+28
+00:02:38,760 --> 00:02:44,020
+So I want to log in as Kathy because she already made a list.
+
+29
+00:02:44,120 --> 00:02:52,760
+What is she called it 20 Giffard Street So Kathy then two three four five six.
+
+30
+00:02:52,770 --> 00:02:59,250
+All right Snel Let's go to that Giffard story and let's try to make an inquiry.
+
+31
+00:02:59,520 --> 00:03:01,030
+Guys I'm just going to send.
+
+32
+00:03:01,380 --> 00:03:05,520
+And there we go you've already made an inquiry for this listing.
+
+33
+00:03:05,520 --> 00:03:07,290
+So let's try it let's go to another one.
+
+34
+00:03:07,320 --> 00:03:12,790
+Make sure we can make them to make an inquiry to one we haven't actually done yet.
+
+35
+00:03:13,140 --> 00:03:18,420
+And that works so if we go to the admin area we're going to have to re log in as Brad
+
+36
+00:03:21,880 --> 00:03:24,200
+and she has one for 12 united.
+
+37
+00:03:24,210 --> 00:03:29,750
+But notice that she doesn't have to for 28 Giffard street so prevented that from happening.
+
+38
+00:03:30,210 --> 00:03:37,300
+So there's no way to prevent an unregistered user from making multiple inquiries on the same on the
+
+39
+00:03:37,300 --> 00:03:43,220
+same property unless you add like IP tracking and stuff like that but we're not going to get into that.
+
+40
+00:03:43,240 --> 00:03:49,890
+We just want to make sure that logged in users don't don't make double inquiries.
+
+41
+00:03:49,890 --> 00:03:52,820
+All right cool so now let's do the e-mail stuff.
+
+42
+00:03:52,890 --> 00:03:56,190
+So we go to Django.
+
+43
+00:03:56,680 --> 00:04:04,240
+So say Django email and right here the sending email documentation what we need to do is is pretty simple
+
+44
+00:04:04,240 --> 00:04:07,930
+we just bring in send e-mail from Gengel call our mail.
+
+45
+00:04:07,930 --> 00:04:16,660
+We simply run sendmail we put the subject the message from e-mail any two e-mails fail silently so that
+
+46
+00:04:16,660 --> 00:04:18,620
+the false will use the default.
+
+47
+00:04:18,640 --> 00:04:19,620
+So you have to do that.
+
+48
+00:04:19,660 --> 00:04:24,220
+And then in the settings we have to add some stuff as well.
+
+49
+00:04:24,910 --> 00:04:28,480
+I don't know if it should be on this page.
+
+50
+00:04:28,550 --> 00:04:32,500
+We have to add like our e-mail server and stuff like that.
+
+51
+00:04:32,500 --> 00:04:34,670
+And I'm just going to be using G-mail.
+
+52
+00:04:34,790 --> 00:04:41,630
+Yes so these are the the variables we need like e-mail host e-mail port things like that.
+
+53
+00:04:41,630 --> 00:04:44,330
+So I'm going to show you how to use it with G-mail.
+
+54
+00:04:44,900 --> 00:04:45,390
+OK.
+
+55
+00:04:45,430 --> 00:04:48,440
+And let's go it's got our settings.
+
+56
+00:04:49,040 --> 00:04:59,490
+So we're going to go to be Tiare settings up PI and go all the way down to the end and let's do e-mail
+
+57
+00:05:00,570 --> 00:05:02,540
+config.
+
+58
+00:05:02,640 --> 00:05:07,300
+So I want to say e-mail underscore host.
+
+59
+00:05:07,830 --> 00:05:17,520
+So our host since using Gmail is going to be s m t p dot G-mail dot com and we want the poor.
+
+60
+00:05:17,540 --> 00:05:27,390
+So it's a e-mail underscore poort and that's going to be 5 8 7 depending on your S-M T.P. server whoever
+
+61
+00:05:27,420 --> 00:05:31,660
+you are using this port may be different than you want your user.
+
+62
+00:05:31,670 --> 00:05:36,660
+So email underscore host underscore user.
+
+63
+00:05:37,280 --> 00:05:37,910
+All right.
+
+64
+00:05:38,030 --> 00:05:43,790
+I'm actually going to do this off camera but you want to put your Gmail user and then e-mail underscore
+
+65
+00:05:44,300 --> 00:05:54,940
+host underscore password and you want to put your Gmail password and then we want to set email.
+
+66
+00:05:55,350 --> 00:06:00,240
+The e-mail underscore use underscore last.
+
+67
+00:06:00,470 --> 00:06:02,820
+And we're going to set that to true.
+
+68
+00:06:02,990 --> 00:06:08,680
+So those should be the only options that we need here in order to use Gmail.
+
+69
+00:06:08,720 --> 00:06:10,430
+So I'm going to save this.
+
+70
+00:06:10,430 --> 00:06:16,970
+And then let's go to views dot PI and we need to figure out where we want to put this and that's going
+
+71
+00:06:16,970 --> 00:06:22,850
+to be I'm going to do it right after we save because I only want the email to be sent out if it's saved
+
+72
+00:06:22,850 --> 00:06:25,130
+if we put it up here and something goes wrong.
+
+73
+00:06:25,190 --> 00:06:27,190
+I don't want the email to be sent.
+
+74
+00:06:27,420 --> 00:06:39,230
+So we actually need to bring this in up top so let's say go right here and we'll say from Django dot
+
+75
+00:06:39,530 --> 00:06:43,420
+core dot mail.
+
+76
+00:06:44,030 --> 00:06:50,730
+We want to in poor send email OK.
+
+77
+00:06:51,400 --> 00:06:59,680
+So see I think you should be good here.
+
+78
+00:06:59,760 --> 00:07:01,060
+Let's go down here.
+
+79
+00:07:03,970 --> 00:07:12,710
+Let's do send underscore mail all right and this is going to get a few things so that the message or
+
+80
+00:07:12,710 --> 00:07:20,350
+the I'm sorry the subject I'm going to say property listing inquiry
+
+81
+00:07:24,300 --> 00:07:30,570
+and then we want the body which I'm just going to keep very simple I'm going to say look we want quotes
+
+82
+00:07:30,570 --> 00:07:31,280
+here.
+
+83
+00:07:31,650 --> 00:07:34,380
+I'm going to say there has been
+
+84
+00:07:37,620 --> 00:07:46,430
+an inquiry for and then I'm going to just concatenate the listing K which is like the listing title.
+
+85
+00:07:47,150 --> 00:07:51,510
+You could put this in the subject if you want as well.
+
+86
+00:07:51,510 --> 00:08:04,890
+So put like this to a period and then a space and we'll say sign into the admin panel for more info
+
+87
+00:08:04,890 --> 00:08:09,630
+and you can construct this and make this a lot more in-depth if you want but that's going to be our
+
+88
+00:08:09,630 --> 00:08:10,670
+body.
+
+89
+00:08:10,680 --> 00:08:19,160
+Next thing we need is the the from address which is going to be the the the address we set up for S-M
+
+90
+00:08:19,190 --> 00:08:22,790
+T.P. which is going to be our Google.
+
+91
+00:08:22,800 --> 00:08:25,150
+And let's just put it in here it's a junky mail anyway.
+
+92
+00:08:25,200 --> 00:08:31,480
+Anyway so mine is going to be traversed dot Brad at G.M. dot com.
+
+93
+00:08:31,650 --> 00:08:33,820
+So that that that is what would go right.
+
+94
+00:08:33,820 --> 00:08:34,830
+Here's the user
+
+95
+00:08:39,470 --> 00:08:40,660
+that OK.
+
+96
+00:08:40,690 --> 00:08:42,770
+Obviously you want to put your password in.
+
+97
+00:08:43,620 --> 00:08:53,320
+Let's see so the next thing we want is we want to put in an array or a list I should say of of e-mail
+
+98
+00:08:53,320 --> 00:08:58,010
+addresses that you want that you want these to get sent to.
+
+99
+00:08:58,010 --> 00:09:02,620
+Now what I want to do is use the realtor email right here.
+
+100
+00:09:02,740 --> 00:09:11,540
+So we're going to take that and put that in there and then I also I'm going to send to one of my e-mail
+
+101
+00:09:11,540 --> 00:09:14,030
+addresses so I can check it so I'm going to say.
+
+102
+00:09:14,030 --> 00:09:19,120
+Tech Guy info at G-mail dot com OK.
+
+103
+00:09:19,120 --> 00:09:21,980
+So just so I can check to make sure it works.
+
+104
+00:09:22,090 --> 00:09:27,470
+And then we're going to do our fail silently equals falls.
+
+105
+00:09:28,360 --> 00:09:33,230
+OK so it'll show us some error error messages if something goes wrong.
+
+106
+00:09:33,250 --> 00:09:33,650
+All right.
+
+107
+00:09:33,700 --> 00:09:35,580
+So I think I think that's it.
+
+108
+00:09:35,590 --> 00:09:45,160
+So I'm what I'll do is I'll save this and then let's see off screen I'll put my password in and then
+
+109
+00:09:45,160 --> 00:09:46,370
+we'll test it.
+
+110
+00:09:46,420 --> 00:09:52,230
+So I'm just going to pause for a second put my password in then we'll go and test it.
+
+111
+00:09:52,240 --> 00:09:56,800
+All right so I put my password into the settings and everything should be OK.
+
+112
+00:09:56,830 --> 00:10:00,820
+So I'm going to actually just send in a submission I'm not logged in.
+
+113
+00:10:00,820 --> 00:10:12,060
+That doesn't matter though and it's put something in here so I'll just say like Jack say Jack Williams
+
+114
+00:10:17,950 --> 00:10:19,400
+dot com.
+
+115
+00:10:19,810 --> 00:10:21,150
+And let's just send that
+
+116
+00:10:24,710 --> 00:10:25,070
+OK.
+
+117
+00:10:25,070 --> 00:10:27,130
+So your request has been sent.
+
+118
+00:10:27,180 --> 00:10:32,980
+If we go to the back end was going to log in again.
+
+119
+00:10:33,240 --> 00:10:34,730
+So there's Jack Williams.
+
+120
+00:10:34,740 --> 00:10:40,590
+Now I'm going to check my e-mail so I'm actually just going to pull a tag tab off the screen for a second
+
+121
+00:10:40,680 --> 00:10:42,030
+and just check it out.
+
+122
+00:10:49,840 --> 00:10:50,170
+OK.
+
+123
+00:10:50,170 --> 00:10:51,660
+So there it is.
+
+124
+00:10:51,820 --> 00:10:56,560
+I don't really want to show you guys like my whole inbox I'm going to click on it and then I'm going
+
+125
+00:10:56,560 --> 00:10:57,810
+to bring it over.
+
+126
+00:11:00,820 --> 00:11:03,850
+OK so we get property listing inquiry.
+
+127
+00:11:03,970 --> 00:11:10,540
+And this was not in my spam box it was righton G-mail and has the from e-mail address which is the the
+
+128
+00:11:12,360 --> 00:11:15,640
+the Gmail privacy dot.
+
+129
+00:11:16,090 --> 00:11:23,140
+And in here you can see it also went to Kayal at Beati real estate Daco which is not a valid email address
+
+130
+00:11:23,170 --> 00:11:25,040
+but that's what is in.
+
+131
+00:11:25,060 --> 00:11:28,460
+That's the e-mail address that Kyle has in the system.
+
+132
+00:11:28,540 --> 00:11:29,950
+So that's who it goes to.
+
+133
+00:11:30,100 --> 00:11:35,770
+So you don't it's not like it just goes to one master e-mail address.
+
+134
+00:11:35,770 --> 00:11:40,840
+I mean you could do that but we're actually having a go to that specific realtors e-mail address.
+
+135
+00:11:40,840 --> 00:11:41,170
+OK.
+
+136
+00:11:41,170 --> 00:11:46,220
+So like Mark or Jenny they wouldn't get the e-mail because it's not their listing.
+
+137
+00:11:46,630 --> 00:11:52,660
+OK makes sense and it says there has been an inquiry for 12 United road sign into the admin panel for
+
+138
+00:11:52,660 --> 00:11:57,430
+more so whatever the listing is will be put here and you could put that in the subject if you want as
+
+139
+00:11:57,430 --> 00:11:59,080
+well.
+
+140
+00:11:59,080 --> 00:11:59,780
+All right cool.
+
+141
+00:11:59,830 --> 00:12:03,620
+So that's all working so we can make inquiries.
+
+142
+00:12:03,700 --> 00:12:08,080
+It goes into the database and not only that an e-mail gets sent as well.
+
+143
+00:12:08,200 --> 00:12:09,350
+All right so that's going to be at.
+
+144
+00:12:09,490 --> 00:12:11,540
+That's going to be it for this video guys.
+
+145
+00:12:11,540 --> 00:12:13,100
+I will see you in the next one.
+

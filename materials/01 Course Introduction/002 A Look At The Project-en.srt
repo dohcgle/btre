@@ -1,0 +1,464 @@
+1
+00:00:00,180 --> 00:00:04,530
+All right guys so now I'm going to just give you a quick demo of the application will be building both
+
+2
+00:00:04,530 --> 00:00:07,560
+the front facing web site and the admin area.
+
+3
+00:00:07,560 --> 00:00:11,780
+So this is the home page you can see there's a big search box here with some fields.
+
+4
+00:00:11,790 --> 00:00:13,110
+I'm going to show you that in a second.
+
+5
+00:00:13,110 --> 00:00:18,870
+That functionality we have the latest listings so whatever the latest three listings in the database
+
+6
+00:00:19,080 --> 00:00:20,930
+those will be placed here.
+
+7
+00:00:20,980 --> 00:00:26,220
+Again we're using post-grads for a database down here is just some static markup with some services
+
+8
+00:00:26,220 --> 00:00:27,020
+and so on.
+
+9
+00:00:27,270 --> 00:00:33,360
+And then on the About page we have some about data and then we have some realtors OK so the realtors
+
+10
+00:00:33,360 --> 00:00:39,240
+can get added in the admin area and they'll automatically be shown here and there's going to be a checkbox
+
+11
+00:00:39,240 --> 00:00:44,490
+for Celera of the month so we can choose that in the admin area and now whoever the seller of the month
+
+12
+00:00:44,490 --> 00:00:46,700
+will automatically show up right here.
+
+13
+00:00:46,900 --> 00:00:49,800
+OK so some dynamic data on the About page.
+
+14
+00:00:49,800 --> 00:00:51,550
+This is the listings page.
+
+15
+00:00:51,570 --> 00:00:53,880
+So there's six listings total right now.
+
+16
+00:00:53,970 --> 00:00:57,650
+If I were to add one more it would add some pagination down here.
+
+17
+00:00:57,990 --> 00:01:00,450
+Right now I have it set to 6 per page.
+
+18
+00:01:00,450 --> 00:01:06,900
+So we have the main image the price some other data if I click more info that takes us to the single
+
+19
+00:01:06,900 --> 00:01:13,680
+listing page where we have you know breadcrumbs you have the title up here or the address we have the
+
+20
+00:01:13,680 --> 00:01:14,460
+realtor.
+
+21
+00:01:14,550 --> 00:01:20,730
+So realtors and listings are going to have a relationship so that on the listings page we can access
+
+22
+00:01:21,000 --> 00:01:24,700
+any of that particular realtors information that we want.
+
+23
+00:01:24,750 --> 00:01:30,440
+OK because the idea here is that each realtor will be assigned certain listings.
+
+24
+00:01:30,630 --> 00:01:34,330
+OK as you can see Cuyo Brown is the realtor for this listing here.
+
+25
+00:01:34,530 --> 00:01:38,490
+And we have a main image you have some smaller images that open up in a light box.
+
+26
+00:01:38,490 --> 00:01:41,340
+We're going to use something called light box 2 for this.
+
+27
+00:01:41,340 --> 00:01:46,980
+And down here we have some data like the square feet the lot size the price description.
+
+28
+00:01:47,100 --> 00:01:50,720
+We have to make an inquiry button if I click this it'll open up a modal.
+
+29
+00:01:50,730 --> 00:01:56,640
+Now if it were registered and logged in in the front facing Web site the name and email will be auto
+
+30
+00:01:56,640 --> 00:01:59,580
+populated from the database from that user.
+
+31
+00:01:59,610 --> 00:02:01,280
+I'm going to show you that in a second.
+
+32
+00:02:01,490 --> 00:02:03,410
+OK but let's take a look at the search.
+
+33
+00:02:03,420 --> 00:02:07,680
+OK so one of these has pool in the description.
+
+34
+00:02:07,710 --> 00:02:14,290
+So I'm going to search for the word pool and if I search you see we we go to this search results page
+
+35
+00:02:14,290 --> 00:02:19,100
+which has a form up here for we want to keep on searching and this is the result here.
+
+36
+00:02:19,210 --> 00:02:20,800
+So I'm going to clear that out.
+
+37
+00:02:20,800 --> 00:02:22,930
+You can search by like bedroom's.
+
+38
+00:02:22,990 --> 00:02:27,370
+So if I choose three bedrooms what it's going to do is it's going to look for any house that has three
+
+39
+00:02:27,370 --> 00:02:28,480
+bedrooms or less.
+
+40
+00:02:28,510 --> 00:02:30,930
+OK so it's going to be less than or equal to.
+
+41
+00:02:31,090 --> 00:02:37,240
+So if I submit you'll see that all of these these have three bedrooms this one down here actually they
+
+42
+00:02:37,240 --> 00:02:38,040
+all of the bedrooms.
+
+43
+00:02:38,050 --> 00:02:45,010
+But if there were two bedroom or one bedroom it would also show that OK if I say four bedroom submit
+
+44
+00:02:45,670 --> 00:02:49,120
+and I can see the four bedrooms included as well.
+
+45
+00:02:49,440 --> 00:02:51,170
+You can also go by price.
+
+46
+00:02:51,190 --> 00:02:57,430
+So it's two three bedroom and let's say four hundred thousand or less.
+
+47
+00:02:57,430 --> 00:02:58,860
+OK so that's how this is going to work.
+
+48
+00:02:58,870 --> 00:03:00,580
+Or less submit.
+
+49
+00:03:00,580 --> 00:03:06,010
+And we have to have one for two thirty one for 380 and they're both three bedrooms.
+
+50
+00:03:06,010 --> 00:03:09,110
+We can also search by state or city.
+
+51
+00:03:09,130 --> 00:03:16,040
+So let's say it's the this one's in Bedford so I'll say Bedford submit.
+
+52
+00:03:16,050 --> 00:03:17,050
+And there we go.
+
+53
+00:03:17,220 --> 00:03:21,760
+All right so the search is pretty simple it's not the most intuitive search in the world this isn't
+
+54
+00:03:21,770 --> 00:03:28,170
+Zillo dot com or anything like that but it's going to show you guys how to build query sets and how
+
+55
+00:03:28,170 --> 00:03:29,540
+to filter your data.
+
+56
+00:03:29,580 --> 00:03:32,470
+When you're when you're fetching from the database.
+
+57
+00:03:32,490 --> 00:03:37,160
+All right so now let's go ahead and register for an account case we have register and log in.
+
+58
+00:03:37,200 --> 00:03:41,370
+I'm just going to create a user called Let's call him Bob.
+
+59
+00:03:41,410 --> 00:03:46,570
+Say Bob Johnson and username Bob.
+
+60
+00:03:46,720 --> 00:03:47,460
+Email
+
+61
+00:03:50,700 --> 00:03:55,170
+password and let's register.
+
+62
+00:03:55,560 --> 00:04:00,800
+OK so we get a little message we're going to use Jango messages and kind of format them with bootstrap.
+
+63
+00:04:00,810 --> 00:04:06,060
+We also added a little bit of Javascript so that it disappears after three seconds so let's log in with
+
+64
+00:04:06,060 --> 00:04:14,400
+Bob case that takes us to a dashboard we get rid of this tells us we're logged in the message disappears
+
+65
+00:04:14,730 --> 00:04:18,660
+and the dashboard is basically just a list of any inquiries that you've made.
+
+66
+00:04:18,660 --> 00:04:19,240
+OK.
+
+67
+00:04:19,380 --> 00:04:24,660
+And up here you can see it says welcome in our username dashboard so obviously these links change once
+
+68
+00:04:24,660 --> 00:04:25,980
+you're logged in.
+
+69
+00:04:25,980 --> 00:04:33,060
+If I go to feature listings and let's say say were interested on this property make an inquiry and notice
+
+70
+00:04:33,060 --> 00:04:35,760
+that the name and the e-mails are already in here.
+
+71
+00:04:35,850 --> 00:04:39,900
+OK if you want you can put a phone number and message as well but that's optional.
+
+72
+00:04:39,930 --> 00:04:46,500
+So when I say send we get a success message saying they'll get back to us if I try to make another request
+
+73
+00:04:46,500 --> 00:04:47,970
+on the same property.
+
+74
+00:04:47,970 --> 00:04:51,030
+We're going to get an error saying we've already made that request.
+
+75
+00:04:51,030 --> 00:04:57,120
+OK so we're going to have that functionality if we go to the dashboard you'll see the Essex circle.
+
+76
+00:04:57,180 --> 00:05:00,890
+That's the one that we just made the inquiry to.
+
+77
+00:05:00,930 --> 00:05:03,870
+And if I say View listing it will take us to that listing.
+
+78
+00:05:04,200 --> 00:05:04,710
+OK.
+
+79
+00:05:04,890 --> 00:05:08,280
+So let's I want to inquiry for this one.
+
+80
+00:05:08,280 --> 00:05:12,190
+It could send and go to a dashboard and we'll see that here.
+
+81
+00:05:12,210 --> 00:05:14,430
+So that's the front end functionality.
+
+82
+00:05:14,430 --> 00:05:16,810
+Now let's take a look at the admin side.
+
+83
+00:05:16,810 --> 00:05:18,520
+I'm going to go to slash admen.
+
+84
+00:05:18,660 --> 00:05:25,950
+It's going to tell us to log out because Bob is not a staff user or are not logo but log in here with
+
+85
+00:05:25,950 --> 00:05:32,940
+an admin user so I'm going to put in my brad user which is the admin and you can see that we've customized
+
+86
+00:05:32,940 --> 00:05:34,730
+the colors to match the branding.
+
+87
+00:05:34,730 --> 00:05:36,640
+We've added the logo up here.
+
+88
+00:05:36,990 --> 00:05:43,780
+If we go to this site just see groups and users this is just standard Django functionality that's there
+
+89
+00:05:43,800 --> 00:05:46,770
+by default all your users and stuff like that.
+
+90
+00:05:47,230 --> 00:05:51,630
+But you can see we have realtors listings and contacts.
+
+91
+00:05:51,630 --> 00:05:56,020
+OK so any inquiries that are made will be put in contacts.
+
+92
+00:05:56,370 --> 00:06:00,990
+All of our listings are here and we can also choose to unpublished them.
+
+93
+00:06:01,080 --> 00:06:06,550
+OK this is not standard Gengel functionality we added this field is published in the database.
+
+94
+00:06:06,720 --> 00:06:11,520
+Let's say the United road we want to unpublished that I could uncheck and save.
+
+95
+00:06:11,820 --> 00:06:20,210
+And if we go back to the front facing Web site now we'll go to featured listings and you can see that
+
+96
+00:06:21,060 --> 00:06:21,920
+one.
+
+97
+00:06:22,040 --> 00:06:22,670
+What was that.
+
+98
+00:06:22,670 --> 00:06:24,490
+That was a United road you'll see it.
+
+99
+00:06:24,500 --> 00:06:25,990
+That one is now gone.
+
+100
+00:06:26,300 --> 00:06:32,930
+OK so we can publish an unpublished really easily if we go to one of these forms you'll see we can choose
+
+101
+00:06:32,930 --> 00:06:33,760
+a realtor.
+
+102
+00:06:33,770 --> 00:06:37,760
+So there's a relationship between the realtor and the listings.
+
+103
+00:06:37,760 --> 00:06:40,460
+We can upload images for the main image.
+
+104
+00:06:40,460 --> 00:06:44,890
+These are for the other ones published list state and so on.
+
+105
+00:06:45,110 --> 00:06:53,710
+And then if we go to realtors you know see we have Jenny Mark Kyle and if I go to Jenny notice that
+
+106
+00:06:53,740 --> 00:06:55,450
+is MVP is checked.
+
+107
+00:06:55,510 --> 00:07:04,330
+So I'm going to uncheck that and save and go to Mark Hudson and check is MVP and save and if we go to
+
+108
+00:07:04,330 --> 00:07:05,140
+the About page.
+
+109
+00:07:05,140 --> 00:07:08,330
+Now notice that Mark Hudson is now a seller of the month.
+
+110
+00:07:08,680 --> 00:07:09,220
+OK.
+
+111
+00:07:09,370 --> 00:07:13,730
+And whatever realtor you add is going to show up down here on the About page.
+
+112
+00:07:14,140 --> 00:07:18,640
+So that's that's pretty much it guys as far as the functionality.
+
+113
+00:07:18,640 --> 00:07:24,700
+So we're going to go through this course in a very just just practical manner as I would if I were building
+
+114
+00:07:24,700 --> 00:07:27,150
+this for a client.
+
+115
+00:07:27,370 --> 00:07:29,230
+You know so hopefully you enjoy it.
+
+116
+00:07:29,350 --> 00:07:30,710
+And let's get started.
+

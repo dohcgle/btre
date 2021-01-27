@@ -1,0 +1,792 @@
+1
+00:00:00,380 --> 00:00:04,620
+All right guys soon this video we're going to start to think about the single listings page.
+
+2
+00:00:04,630 --> 00:00:09,100
+OK so when we go to our listings and we click on more info.
+
+3
+00:00:09,210 --> 00:00:10,410
+The road is all set.
+
+4
+00:00:10,410 --> 00:00:16,380
+The template is displaying But we want this to display the correct mark up as well as we want to reach
+
+5
+00:00:16,380 --> 00:00:19,510
+into the database and display the correct listing data.
+
+6
+00:00:19,530 --> 00:00:24,420
+OK so let's jump in the VS code and basically two files we're going to need to work on.
+
+7
+00:00:24,420 --> 00:00:28,120
+One is listings views dot pi.
+
+8
+00:00:28,130 --> 00:00:31,940
+OK because now we're dealing with this method this is the single listing.
+
+9
+00:00:32,070 --> 00:00:38,240
+And we also want to open up the template in templates listings and then listing it aged himself.
+
+10
+00:00:38,250 --> 00:00:39,720
+So these two files.
+
+11
+00:00:39,750 --> 00:00:42,090
+So first thing I'm going to do is get the markup.
+
+12
+00:00:42,090 --> 00:00:48,480
+Now remember I have in Sublime Text I have our bootstrap theme.
+
+13
+00:00:48,480 --> 00:00:52,920
+Just all the static data not data but static markup each time.
+
+14
+00:00:53,130 --> 00:00:55,790
+And we're going to open up a listing Daut aged mail.
+
+15
+00:00:55,800 --> 00:00:59,820
+We don't want to take everything because remember although like the head tag all that stuff that's in
+
+16
+00:00:59,820 --> 00:01:04,900
+the base lay out we don't need that we don't need the top bar or the nav bar.
+
+17
+00:01:04,950 --> 00:01:07,030
+All we need is from here.
+
+18
+00:01:07,050 --> 00:01:11,190
+So this section right here and we want to go all the way down.
+
+19
+00:01:12,590 --> 00:01:16,260
+To right above the footer I believe is what we want.
+
+20
+00:01:16,390 --> 00:01:18,130
+So right above the footer.
+
+21
+00:01:18,470 --> 00:01:26,130
+OK so we're going to grab that and we're going to first of all before I paste that in I'm going to extend
+
+22
+00:01:26,190 --> 00:01:35,990
+the base layout so I'm going to just to extend base Daut each team now they want to make sure we do
+
+23
+00:01:35,990 --> 00:01:36,320
+that.
+
+24
+00:01:36,350 --> 00:01:42,680
+And then remember everything that we want in this template has to be wrapped in a block.
+
+25
+00:01:42,980 --> 00:01:58,260
+So let's put right here we want to do block content and we want to end that block.
+
+26
+00:01:58,290 --> 00:02:02,040
+Another thing I'm going to do is load humanised because we're going to want to use that as well.
+
+27
+00:02:02,070 --> 00:02:04,810
+So we might as well throw that in now while we're here.
+
+28
+00:02:07,890 --> 00:02:08,450
+All right.
+
+29
+00:02:08,640 --> 00:02:14,340
+And then in between the block content I'm going to paste everything I just copied so if I save this
+
+30
+00:02:14,610 --> 00:02:18,030
+and we go back and reload.
+
+31
+00:02:18,030 --> 00:02:18,720
+There we go.
+
+32
+00:02:18,870 --> 00:02:22,360
+OK now it's just it's just static markup right now.
+
+33
+00:02:22,680 --> 00:02:29,200
+The form will open if we click the make inquiry because we do have the the each team for the the motile
+
+34
+00:02:29,610 --> 00:02:31,850
+But let's start to make this dynamic.
+
+35
+00:02:31,860 --> 00:02:39,150
+OK so in order to do that we're going to need to to reach into the model and grab this particular listings
+
+36
+00:02:39,150 --> 00:02:40,060
+data.
+
+37
+00:02:40,560 --> 00:02:46,480
+So to do that we need to go to use dot PI and down in the listing method.
+
+38
+00:02:47,210 --> 00:02:50,070
+OK we want to use de-listing model which we already brought in.
+
+39
+00:02:50,070 --> 00:02:52,880
+You can see we already brought that into this file.
+
+40
+00:02:52,890 --> 00:03:00,900
+Now I'm going to set a variable called listing singular and instead of just doing listing objects I
+
+41
+00:03:00,900 --> 00:03:09,750
+actually want to do something called Get underscore object underscore or underscore 404.
+
+42
+00:03:09,750 --> 00:03:15,740
+Now what this is going to do is it's going to make it so that if I go to like let's say listings slash
+
+43
+00:03:15,750 --> 00:03:16,680
+10.
+
+44
+00:03:17,020 --> 00:03:23,930
+OK if I go to that right now nothing happens but I want that to show a 404 page.
+
+45
+00:03:24,000 --> 00:03:25,190
+So that's what this is going to do.
+
+46
+00:03:25,190 --> 00:03:27,360
+It's going to check to see if it exists.
+
+47
+00:03:27,390 --> 00:03:30,990
+So we need to pass in two things one is going to be the model.
+
+48
+00:03:30,990 --> 00:03:37,740
+And second is going to be the primary key we want to set P K equals and then the listing underscore
+
+49
+00:03:37,740 --> 00:03:38,370
+ID.
+
+50
+00:03:38,370 --> 00:03:46,070
+Now this comes in right here and this listing ID is passed in through the u r l right here.
+
+51
+00:03:46,470 --> 00:03:49,490
+OK and if you look at the browser it's this here.
+
+52
+00:03:49,790 --> 00:03:50,510
+OK.
+
+53
+00:03:50,880 --> 00:04:03,370
+So now that we've done that let's go ahead and create our contex variable contacts not Konst So contacts
+
+54
+00:04:04,280 --> 00:04:14,310
+and we're going to set listing and let's set that to listing and then we'll pass in the context
+
+55
+00:04:16,870 --> 00:04:18,480
+that.
+
+56
+00:04:19,040 --> 00:04:21,080
+OK let's go ahead and save this.
+
+57
+00:04:21,080 --> 00:04:24,290
+Now this object of 404 you actually have to bring that in.
+
+58
+00:04:24,290 --> 00:04:25,750
+It's from jingoes shortcut.
+
+59
+00:04:25,740 --> 00:04:36,140
+So along with the render we hadn't bring that in so we'll say get underscore object or UPS or underscore
+
+60
+00:04:36,160 --> 00:04:37,540
+404.
+
+61
+00:04:37,600 --> 00:04:41,730
+I will save now that red line should go away and it should work.
+
+62
+00:04:41,730 --> 00:04:48,720
+So let's go back and if I go to listings slash 10 which doesn't exist we get page not found.
+
+63
+00:04:48,740 --> 00:04:52,550
+All right if we go to six slash six that does exist.
+
+64
+00:04:52,550 --> 00:04:53,860
+So that's going to work.
+
+65
+00:04:54,260 --> 00:04:54,650
+OK.
+
+66
+00:04:54,680 --> 00:04:57,600
+So anything I go to five that should work.
+
+67
+00:04:57,650 --> 00:04:58,820
+We have six total.
+
+68
+00:04:58,820 --> 00:05:02,150
+So we should have I.D. 1 through 6.
+
+69
+00:05:02,150 --> 00:05:08,960
+All right so now we've done that we should be able to access the listing data within the template because
+
+70
+00:05:08,960 --> 00:05:11,640
+we passed it in here with with the contacts.
+
+71
+00:05:11,650 --> 00:05:14,180
+So it's good to listing each team now.
+
+72
+00:05:15,140 --> 00:05:20,940
+Let's go up to the very top and I want the title displayed right here.
+
+73
+00:05:21,230 --> 00:05:26,600
+So we should be able to just simply say listing dot title.
+
+74
+00:05:26,640 --> 00:05:30,380
+Okay let's see if that works we'll go back and reload.
+
+75
+00:05:30,470 --> 00:05:32,790
+There it is 12 United road.
+
+76
+00:05:33,050 --> 00:05:40,870
+If we go back to the listings page and click on let's say Giffard that works as well.
+
+77
+00:05:40,940 --> 00:05:44,360
+So let's head back to listing dot HVM balance.
+
+78
+00:05:44,350 --> 00:05:50,210
+Finish this up so I'm going to copy what we just did here with the listing title and we're going to
+
+79
+00:05:50,210 --> 00:05:55,920
+do the same for the city the state and the zip code.
+
+80
+00:05:56,000 --> 00:05:57,260
+So this will be city
+
+81
+00:06:00,030 --> 00:06:00,800
+state
+
+82
+00:06:03,940 --> 00:06:06,810
+and zip code.
+
+83
+00:06:06,820 --> 00:06:13,900
+All right now down here in the breadcrumb we want to fix these links here so to go to the home we want
+
+84
+00:06:13,900 --> 00:06:23,380
+to do our tags and we want to say you are ill and we wanted to go to index and then this should go to
+
+85
+00:06:23,380 --> 00:06:25,450
+the listings page so this will be
+
+86
+00:06:30,050 --> 00:06:30,740
+you are Al
+
+87
+00:06:34,050 --> 00:06:36,120
+listings.
+
+88
+00:06:36,330 --> 00:06:36,720
+OK.
+
+89
+00:06:36,720 --> 00:06:45,260
+Now this here is the title again because this is in the breadcrumb so I'm also going to put listing
+
+90
+00:06:45,500 --> 00:06:46,670
+title here.
+
+91
+00:06:46,670 --> 00:06:52,050
+So whatever the title is will actually be in the breadcrumb and then for the listing itself this back
+
+92
+00:06:52,580 --> 00:06:55,640
+should be the same as this.
+
+93
+00:06:55,640 --> 00:06:58,280
+This right here your L listings.
+
+94
+00:06:58,400 --> 00:07:04,030
+OK we never want to do an H html page that that's just what we did for the theme.
+
+95
+00:07:04,280 --> 00:07:13,350
+So it's do you l listings and then down here we want the main image.
+
+96
+00:07:13,700 --> 00:07:20,180
+So I'm going to pay Sison and it's called Photo underscore main is the name of the field and we want
+
+97
+00:07:20,180 --> 00:07:21,710
+to you are l.
+
+98
+00:07:21,710 --> 00:07:26,270
+So let's just see if that works we'll go back and reload.
+
+99
+00:07:26,660 --> 00:07:31,480
+And there we go and you can see the title is now on the bright chrome we have our links to go back in
+
+100
+00:07:31,490 --> 00:07:34,330
+the breadcrumb we have the main image.
+
+101
+00:07:34,370 --> 00:07:38,290
+Now we want to do all of the smaller images underneath.
+
+102
+00:07:38,570 --> 00:07:42,800
+Right now they're not showing because this this doesn't exist this location.
+
+103
+00:07:43,340 --> 00:07:54,440
+So what we need to do is just put in dynamic values just like we did for the photo above.
+
+104
+00:07:54,790 --> 00:08:04,230
+So we want to do photo underscore one Daut you RL And we want to do the same thing for the image tag
+
+105
+00:08:04,240 --> 00:08:09,100
+so this should be for the link and the image tag that's how the Lightbox chooses the images.
+
+106
+00:08:09,510 --> 00:08:13,140
+OK so we want to just paste that in and let's do that for all of these.
+
+107
+00:08:13,140 --> 00:08:16,010
+So we're going to just grab that and the next one.
+
+108
+00:08:16,210 --> 00:08:21,700
+OK paste that in except to will the photo to answer the same thing here.
+
+109
+00:08:21,710 --> 00:08:30,110
+So highlight this to a control D to get the next one pasted in changes to three we'll do it here as
+
+110
+00:08:30,110 --> 00:08:31,160
+well.
+
+111
+00:08:31,160 --> 00:08:41,330
+Change this to control d paste save for 4.
+
+112
+00:08:41,590 --> 00:08:42,030
+All right.
+
+113
+00:08:42,070 --> 00:08:47,070
+And I'm going to show we get if we have to do another step after this because we might not have these
+
+114
+00:08:47,070 --> 00:08:53,550
+photos so we do have to do an if statement around them or will get an error or so let's go ahead and
+
+115
+00:08:53,550 --> 00:08:58,400
+put these in here this is for photo 5.
+
+116
+00:08:58,490 --> 00:09:03,960
+Can this last one here is going to be photo 6.
+
+117
+00:09:05,630 --> 00:09:06,920
+All right so let's take a look at that.
+
+118
+00:09:06,920 --> 00:09:08,140
+Let's save this.
+
+119
+00:09:08,190 --> 00:09:11,940
+Let's go back and let's reload.
+
+120
+00:09:11,940 --> 00:09:17,550
+Now this this particular listing happens to have six images so there's no issues and you'll see if we
+
+121
+00:09:17,550 --> 00:09:24,540
+open it up and we can pretty much just navigate through all the images which is part of the requirements
+
+122
+00:09:24,540 --> 00:09:25,620
+for the project.
+
+123
+00:09:25,950 --> 00:09:29,380
+But let's go back to a listing that doesn't have all of the images.
+
+124
+00:09:29,490 --> 00:09:34,880
+And notice we get an error saying photo four attribute has no file associated with it.
+
+125
+00:09:34,890 --> 00:09:41,250
+So what's going on is it's it's trying to load photo for when there isn't a file for it because we didn't
+
+126
+00:09:41,310 --> 00:09:44,040
+we didn't add photo four for this listing.
+
+127
+00:09:44,280 --> 00:09:50,100
+So the solution for this is just to wrap these in if statements checking to see if the photos actually
+
+128
+00:09:50,100 --> 00:09:52,010
+there because remember they're optional.
+
+129
+00:09:52,320 --> 00:09:57,710
+So where we want to put this is right above the call M.D to.
+
+130
+00:09:58,070 --> 00:10:00,900
+OK so we're going to put an if statement here.
+
+131
+00:10:01,420 --> 00:10:08,520
+You know we're going to do if listing dot photo underscore one.
+
+132
+00:10:08,730 --> 00:10:09,500
+OK that's it.
+
+133
+00:10:09,510 --> 00:10:12,970
+And we're going to end it after the div..
+
+134
+00:10:13,530 --> 00:10:22,700
+So we're going to do and fight that and right under it we're going to do another four photo two sort
+
+135
+00:10:22,700 --> 00:10:24,380
+of say a photo or two.
+
+136
+00:10:24,750 --> 00:10:31,530
+And what I'm going to do is copy the end if in the beginning if here go under this div pace that we're
+
+137
+00:10:31,530 --> 00:10:33,870
+going to check for a photo or three.
+
+138
+00:10:34,190 --> 00:10:36,050
+OK will go to the next one.
+
+139
+00:10:36,090 --> 00:10:41,170
+We're going to check for photo for next one.
+
+140
+00:10:42,090 --> 00:10:45,560
+Check for photo five.
+
+141
+00:10:45,870 --> 00:10:48,300
+Next on Fotos six.
+
+142
+00:10:48,900 --> 00:10:53,250
+And that's the last one so then we just need an and if we don't need this here.
+
+143
+00:10:53,280 --> 00:10:54,480
+So we'll get rid of that.
+
+144
+00:10:54,510 --> 00:11:00,480
+Now if I save and we go back to that page it just gave us an error and reload it works and it just gives
+
+145
+00:11:00,480 --> 00:11:06,060
+us the images that it has which is which is only three images and we can still go ahead and navigate
+
+146
+00:11:06,090 --> 00:11:06,810
+through them.
+
+147
+00:11:08,430 --> 00:11:10,320
+All right so that's perfect.
+
+148
+00:11:10,320 --> 00:11:14,790
+So now we want to move on to these fields because right now it's just static HD a mouse.
+
+149
+00:11:14,790 --> 00:11:16,910
+Let's go down a little further.
+
+150
+00:11:17,190 --> 00:11:18,950
+Let's go to our price here.
+
+151
+00:11:19,170 --> 00:11:27,390
+OK we're going to leave the dollar sign and we're going to say listing Daut price and remember we brought
+
+152
+00:11:27,390 --> 00:11:28,340
+in humanised.
+
+153
+00:11:28,360 --> 00:11:34,850
+That means we can use the pipe character and we can say it comma so we can add the commas.
+
+154
+00:11:34,950 --> 00:11:36,690
+Let's go right here.
+
+155
+00:11:36,750 --> 00:11:48,300
+Two bedrooms and this is going to be listing two bedrooms and I'm actually going to just copy this and
+
+156
+00:11:48,300 --> 00:11:49,440
+we'll do bathroom's
+
+157
+00:11:53,430 --> 00:11:54,670
+OK garage
+
+158
+00:11:59,270 --> 00:12:02,530
+and see what else we got square feet.
+
+159
+00:12:06,160 --> 00:12:11,520
+Is it Eskew T.
+
+160
+00:12:11,990 --> 00:12:15,560
+So we get squiffy we get lot size.
+
+161
+00:12:15,890 --> 00:12:21,650
+So right here I'll pass and listing a lot on their scores size.
+
+162
+00:12:21,890 --> 00:12:27,920
+And then for the listing date I actually do want the listing date I'm not going to do like the five
+
+163
+00:12:27,920 --> 00:12:32,540
+days ago or whatever that's on the main that's on the listings page on this I actually want to put the
+
+164
+00:12:32,540 --> 00:12:38,090
+listing date so will say listing Daut list underscored date.
+
+165
+00:12:38,240 --> 00:12:43,530
+And then we want our realtor since we have that relationship between the models we can just simply say
+
+166
+00:12:43,550 --> 00:12:49,220
+realtor and it will give us his name or her name and then the description.
+
+167
+00:12:49,350 --> 00:12:56,620
+OK want to replace this right here with the listing datt description.
+
+168
+00:12:57,560 --> 00:12:58,590
+All right.
+
+169
+00:12:58,660 --> 00:13:01,950
+Let's see then we have the the seller.
+
+170
+00:13:02,090 --> 00:13:03,980
+This all says seller of the month.
+
+171
+00:13:03,980 --> 00:13:07,700
+That shouldn't be there I'm just going to get rid of that because this isn't the seller of the month.
+
+172
+00:13:07,700 --> 00:13:15,020
+This is just who whoever the realtor of the property is and to get his name.
+
+173
+00:13:15,020 --> 00:13:19,280
+So right here we can just do just like we did above realtor.
+
+174
+00:13:19,740 --> 00:13:20,300
+All right.
+
+175
+00:13:20,310 --> 00:13:23,930
+Now see
+
+176
+00:13:26,820 --> 00:13:29,940
+think great here I think we're good.
+
+177
+00:13:30,070 --> 00:13:32,170
+You know we should be good for now.
+
+178
+00:13:32,170 --> 00:13:38,050
+We're not going to handle the increase yet I just want to get the actual day that displayed so always
+
+179
+00:13:38,050 --> 00:13:40,190
+photo for the photo.
+
+180
+00:13:40,210 --> 00:13:45,280
+What's cool about about the way that we created the relationship between the listings and the realtors
+
+181
+00:13:45,640 --> 00:13:54,670
+is we can get any realtor field so we can just simply say listing realtor dot photo dot you r l k so
+
+182
+00:13:54,730 --> 00:13:59,530
+save that let's go back let's reload and there we go.
+
+183
+00:14:01,100 --> 00:14:05,330
+So the stuff is all coming from the database if we go to a different listing Let's see.
+
+184
+00:14:05,330 --> 00:14:08,810
+By Mark Hudson we should see his image over here.
+
+185
+00:14:08,810 --> 00:14:13,480
+One thing I'm seeing though is this each six tags so something is off.
+
+186
+00:14:14,540 --> 00:14:20,270
+So let's go to the bottom here and just check that out.
+
+187
+00:14:20,480 --> 00:14:20,930
+Where is it.
+
+188
+00:14:20,930 --> 00:14:22,820
+That's the motile.
+
+189
+00:14:23,170 --> 00:14:25,900
+Yeah we just need to add that
+
+190
+00:14:30,690 --> 00:14:31,780
+ok cool.
+
+191
+00:14:32,130 --> 00:14:35,820
+All right so I think the next thing that I want to work on is the search.
+
+192
+00:14:35,950 --> 00:14:39,870
+OK so we have the the listing on the home page letus listings.
+
+193
+00:14:39,870 --> 00:14:41,390
+We have these listings.
+
+194
+00:14:41,400 --> 00:14:46,410
+We can go to a single line and we can go to them from the home page as well obviously.
+
+195
+00:14:46,410 --> 00:14:50,030
+So I want to work on the home search right here.
+
+196
+00:14:50,280 --> 00:14:57,450
+And once we submit this it'll go to a search it will show a search template which will look like the
+
+197
+00:14:57,450 --> 00:15:03,360
+listings page like this except it'll have another search form up here if you want to make another search.
+
+198
+00:15:03,570 --> 00:15:06,770
+OK so we're going to get into that in the next section.
+

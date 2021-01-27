@@ -1,0 +1,536 @@
+1
+00:00:00,540 --> 00:00:07,650
+All right guys so before we actually jump in to code it's always a good idea to map out your your database
+
+2
+00:00:07,650 --> 00:00:13,470
+schema OK before you do that because you want to know exactly what you're doing exactly what fields
+
+3
+00:00:13,470 --> 00:00:15,200
+you're putting into your models.
+
+4
+00:00:15,240 --> 00:00:21,540
+So usually the way that you figure this out is by looking at the requirements what what needs to be
+
+5
+00:00:21,540 --> 00:00:25,510
+displayed on this in this application and this Web site.
+
+6
+00:00:25,620 --> 00:00:32,430
+So I have the initial requirements here and then they have a text file called schemas dot taxed and
+
+7
+00:00:32,430 --> 00:00:37,080
+we're just going to map out our scheme and now if you want to use more advanced software where you can
+
+8
+00:00:37,080 --> 00:00:41,340
+have a little diagram with boxes that are connected and stuff like that you can do that.
+
+9
+00:00:41,340 --> 00:00:43,400
+I just want to keep it simple.
+
+10
+00:00:43,440 --> 00:00:50,590
+So in this file it's a model slash D.B fields.
+
+11
+00:00:50,890 --> 00:00:51,320
+OK.
+
+12
+00:00:51,330 --> 00:00:58,260
+So basically we're going to have three separate tables for what we need and one table is going to be
+
+13
+00:00:59,940 --> 00:01:06,330
+listings or I'll just call it listing because the model name will be singular so I'll say listing let's
+
+14
+00:01:06,330 --> 00:01:13,210
+say realtor and let's say contact.
+
+15
+00:01:13,670 --> 00:01:21,120
+OK so basically listings are the property listings of the realtors and then contact is any inquiry that's
+
+16
+00:01:21,120 --> 00:01:28,650
+made to the application should be saved in the database in a table and a contact table.
+
+17
+00:01:28,650 --> 00:01:35,140
+So let's start off by figuring out what fields the listing listings will have.
+
+18
+00:01:35,390 --> 00:01:42,450
+OK now if we go down to the bottom here we have a listing page field so this is basically what they
+
+19
+00:01:42,450 --> 00:01:46,440
+want displayed on the single listing page.
+
+20
+00:01:46,470 --> 00:01:55,560
+So let's start off with just putting in an ID because of course every every table needs to have an ID
+
+21
+00:01:55,560 --> 00:01:56,280
+column.
+
+22
+00:01:56,400 --> 00:01:59,720
+And with postgrads the way that things are set up.
+
+23
+00:01:59,760 --> 00:02:04,640
+It's that ID will get put in automatically and it will also be auto increment.
+
+24
+00:02:04,770 --> 00:02:09,600
+So we don't have to worry about putting in the ID when we insert data.
+
+25
+00:02:09,810 --> 00:02:13,330
+So an ID is going to be of the data type of event.
+
+26
+00:02:13,380 --> 00:02:13,800
+All right.
+
+27
+00:02:13,800 --> 00:02:21,170
+Now we also want to connect connect realtors to listings.
+
+28
+00:02:21,180 --> 00:02:25,890
+OK because each realtor is assigned a group of listings.
+
+29
+00:02:25,950 --> 00:02:32,960
+So when we go to like let's say 45 main street there should be a realtor that's in charge of 45 Main
+
+30
+00:02:32,960 --> 00:02:33,360
+Street.
+
+31
+00:02:33,360 --> 00:02:40,110
+So that means that we have to have a realtor field OK and it's going to be an integer but it's going
+
+32
+00:02:40,110 --> 00:02:41,890
+to be a foreign key fields.
+
+33
+00:02:41,890 --> 00:02:50,730
+And when I say foreign key from the realtor table the realtor model.
+
+34
+00:02:51,300 --> 00:02:51,590
+All right.
+
+35
+00:02:51,590 --> 00:02:57,680
+That way we can associate an entire realtor and all of their fields with a listing.
+
+36
+00:02:58,170 --> 00:03:04,890
+So that way like if we wanted to display in their image or their name or their contact info in a listing
+
+37
+00:03:04,890 --> 00:03:10,630
+page we could do that because we have an entire realtor connected to the listing.
+
+38
+00:03:10,680 --> 00:03:16,710
+So next thing we'll need is a title as you can see in the document so let's say title titles are going
+
+39
+00:03:16,710 --> 00:03:19,160
+to be a string.
+
+40
+00:03:19,440 --> 00:03:20,760
+Put a call in here.
+
+41
+00:03:21,170 --> 00:03:21,560
+OK.
+
+42
+00:03:21,570 --> 00:03:24,580
+So we have title we have address.
+
+43
+00:03:24,600 --> 00:03:29,900
+In most cases the title will be the address but they'll have the option for it not to be.
+
+44
+00:03:29,940 --> 00:03:36,060
+Also you can see where they want the whole address so will also need a city to be a string will need
+
+45
+00:03:36,090 --> 00:03:40,940
+a state string and do zip code
+
+46
+00:03:43,940 --> 00:03:44,650
+OK.
+
+47
+00:03:44,920 --> 00:03:46,060
+So that's the address.
+
+48
+00:03:46,060 --> 00:03:52,220
+We also want a description which is actually not here is it.
+
+49
+00:03:52,270 --> 00:03:53,810
+It's actually not in the.
+
+50
+00:03:53,830 --> 00:03:58,740
+The initial requirements I may add it so you may see it but it's not here.
+
+51
+00:03:58,750 --> 00:04:06,330
+But we know that we do need a description OK and that's going to be a string actually that's going to
+
+52
+00:04:06,330 --> 00:04:14,730
+be a text field which is a little different because it's going to be longer so we also want price.
+
+53
+00:04:15,230 --> 00:04:15,620
+OK.
+
+54
+00:04:15,620 --> 00:04:18,280
+Price is going to be in and.
+
+55
+00:04:18,420 --> 00:04:22,260
+It's not going to be a float because there's not going to be any like there's not going be any decimal
+
+56
+00:04:22,260 --> 00:04:22,720
+points.
+
+57
+00:04:22,720 --> 00:04:25,510
+I can do sense on prices of homes.
+
+58
+00:04:25,650 --> 00:04:28,200
+So an inch is just fine.
+
+59
+00:04:28,200 --> 00:04:28,830
+Let's see.
+
+60
+00:04:28,830 --> 00:04:37,800
+We also want bedrooms in bathrooms so bedroom bedrooms is going to be in it's just a number of bedrooms
+
+61
+00:04:37,800 --> 00:04:39,230
+same thing with bathrooms
+
+62
+00:04:43,290 --> 00:04:46,700
+OK so let's see what else we want at garage.
+
+63
+00:04:46,940 --> 00:04:49,570
+Garage is going to be an inside number a garage.
+
+64
+00:04:49,730 --> 00:04:53,160
+It will do zero as the default.
+
+65
+00:04:53,160 --> 00:04:56,320
+Let's see we also want a list.
+
+66
+00:04:56,790 --> 00:05:01,380
+So instead of a list underscore a date that's going to be of the type of day.
+
+67
+00:05:02,400 --> 00:05:07,020
+So real her name and image this is going to come from this foreign key right here.
+
+68
+00:05:07,020 --> 00:05:14,610
+So we'll be able to get anything about the realtor by use by forming that relationship.
+
+69
+00:05:14,640 --> 00:05:19,050
+We also need the square feet in lot size.
+
+70
+00:05:19,060 --> 00:05:23,180
+What about that so it's here we'll say Eskew.
+
+71
+00:05:23,880 --> 00:05:29,940
+That's going to be in and out and then a lot size.
+
+72
+00:05:30,060 --> 00:05:39,000
+So lot size is actually going to be a float because I want to be able to do say like 1.2 acres or 2.3
+
+73
+00:05:39,000 --> 00:05:40,260
+acres or something like that.
+
+74
+00:05:40,260 --> 00:05:44,080
+So we'll save float for a lot size.
+
+75
+00:05:44,200 --> 00:05:46,760
+It would seem so for images.
+
+76
+00:05:47,250 --> 00:05:54,070
+We basically want to have one main image and then it says five other images but I want to do six.
+
+77
+00:05:54,120 --> 00:05:56,340
+So we're going to do.
+
+78
+00:05:56,490 --> 00:06:03,780
+We're going to do a photo underscore main which will be strong and just to be clear we're not actually
+
+79
+00:06:03,780 --> 00:06:06,390
+storing images in a database.
+
+80
+00:06:06,510 --> 00:06:09,120
+We're storing the location of the image.
+
+81
+00:06:09,210 --> 00:06:14,610
+That way we can fetch that location and we can simply put it into an image source so that it displays
+
+82
+00:06:14,610 --> 00:06:15,700
+on the page.
+
+83
+00:06:15,990 --> 00:06:22,460
+OK so we'll have the main image and then we'll have photo underscore one.
+
+84
+00:06:23,970 --> 00:06:32,340
+And then we'll have one through six so I'm just going to copy that two three four five six and we'll
+
+85
+00:06:32,360 --> 00:06:40,410
+just go ahead and change these up.
+
+86
+00:06:40,540 --> 00:06:44,740
+So 1:36 and that should do it for our listings case.
+
+87
+00:06:44,760 --> 00:06:49,170
+These are all the fields that we're going to need in the listing model and these will all get created
+
+88
+00:06:49,170 --> 00:06:54,210
+as rows in the listings table in the database.
+
+89
+00:06:54,210 --> 00:06:57,630
+So now let's let's do the realtor.
+
+90
+00:06:57,840 --> 00:07:00,820
+So for realtor we're going to have an ID.
+
+91
+00:07:01,050 --> 00:07:10,010
+OK all all tables will have an ID that will be in and we're also going to want the realtor's name so
+
+92
+00:07:10,010 --> 00:07:15,340
+it's do string and for name it's just it's going to be first and last name I don't want to have them
+
+93
+00:07:15,340 --> 00:07:16,570
+separate fields.
+
+94
+00:07:16,720 --> 00:07:24,270
+Also photo there should be one photo of the Realtor also a description.
+
+95
+00:07:25,060 --> 00:07:31,160
+So just like a short description let's say text for that.
+
+96
+00:07:31,390 --> 00:07:37,890
+And let's see we're going to want a and email a phone
+
+97
+00:07:41,770 --> 00:07:45,880
+now remember that number they want the option to do a seller of the month.
+
+98
+00:07:45,880 --> 00:07:48,790
+So we need a field for that which will be a boolean.
+
+99
+00:07:49,000 --> 00:07:53,620
+That reminds me of something I've forgotten the listings as well which I'll get to but I'm going to
+
+100
+00:07:53,620 --> 00:08:00,420
+call this is MVP something short list is MVP and then that will be a boolean.
+
+101
+00:08:00,430 --> 00:08:00,730
+All right.
+
+102
+00:08:00,730 --> 00:08:08,560
+Now what I forgot up here in the listings is remember they also want the option to publish an unpublished
+
+103
+00:08:08,560 --> 00:08:09,490
+listings.
+
+104
+00:08:09,490 --> 00:08:11,650
+So we need to add that as a field as well.
+
+105
+00:08:11,650 --> 00:08:18,820
+So let's go Ray here and say is underscore published.
+
+106
+00:08:19,410 --> 00:08:19,900
+OK.
+
+107
+00:08:19,900 --> 00:08:22,720
+And that's going to be a boolean.
+
+108
+00:08:22,720 --> 00:08:27,970
+And then in brackets here let's put the default so we want the default to be true which should be published
+
+109
+00:08:27,970 --> 00:08:29,640
+by default.
+
+110
+00:08:29,650 --> 00:08:30,440
+All right.
+
+111
+00:08:30,550 --> 00:08:32,130
+Also garage.
+
+112
+00:08:32,320 --> 00:08:40,620
+I want to have a default of 0 and then for the MVP of course you want a default of 0
+
+113
+00:08:43,270 --> 00:08:47,020
+and the last thing we want for realtor is the higher date.
+
+114
+00:08:47,410 --> 00:08:49,080
+OK so that's going to be a day.
+
+115
+00:08:49,150 --> 00:08:51,480
+So it's just the date they were hired.
+
+116
+00:08:51,490 --> 00:08:51,850
+All right.
+
+117
+00:08:51,850 --> 00:08:53,620
+So I'm going to just save this so far.
+
+118
+00:08:53,860 --> 00:09:00,160
+And now we just have the contacts came in contacts are just like the inquiries that are sent in.
+
+119
+00:09:00,160 --> 00:09:06,490
+So each one will have an ID when we just move this up.
+
+120
+00:09:06,760 --> 00:09:08,640
+So we will have an ID.
+
+121
+00:09:08,800 --> 00:09:15,940
+Also we want to know which user are sent in that inquiry if the users are registered and logged in.
+
+122
+00:09:15,940 --> 00:09:22,780
+So let's say a user underscore ID and that will be an event.
+
+123
+00:09:22,940 --> 00:09:25,620
+And we also want to know the listing.
+
+124
+00:09:26,360 --> 00:09:34,030
+And and I'm also going to do the listing I.D. So the listing is actually going to be connected to the
+
+125
+00:09:34,100 --> 00:09:39,380
+title or the name of the listing and then the ID will obviously be the ID.
+
+126
+00:09:39,620 --> 00:09:47,480
+OK we also want a name should be string will be the name of the person that's sending in the inquiry
+
+127
+00:09:47,810 --> 00:09:51,470
+we want their email phone
+
+128
+00:09:54,050 --> 00:09:55,370
+and a message
+
+129
+00:09:58,630 --> 00:10:06,380
+and then we also want a contact date which should be a date and that's it.
+
+130
+00:10:06,400 --> 00:10:07,660
+That's our entire schema.
+
+131
+00:10:07,660 --> 00:10:13,780
+So when we create our models and Django we want to model it after this file and after all these fields.
+
+132
+00:10:14,020 --> 00:10:14,380
+OK.
+
+133
+00:10:14,380 --> 00:10:20,100
+So that's all I want to do in this video guys in the next one will start to actually create the models.
+
+134
+00:10:20,260 --> 00:10:21,280
+All right so I'll see that.
+

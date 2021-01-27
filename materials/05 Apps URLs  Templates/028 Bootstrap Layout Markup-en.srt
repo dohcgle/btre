@@ -1,0 +1,704 @@
+1
+00:00:00,420 --> 00:00:03,920
+All right guys soon the last video we took care of are static files.
+
+2
+00:00:03,930 --> 00:00:12,300
+We should have a BT houri folder with the static folder for all our stuff that we created you know with
+
+3
+00:00:12,300 --> 00:00:18,710
+our theme and then our main static folder in the room will have that all that plus the admin.
+
+4
+00:00:18,750 --> 00:00:20,610
+OK and this is when we when we deploy.
+
+5
+00:00:20,610 --> 00:00:23,150
+This is where it'll look to.
+
+6
+00:00:23,160 --> 00:00:23,450
+All right.
+
+7
+00:00:23,460 --> 00:00:26,640
+So now what I want to do is start to implement our bootstrap theme.
+
+8
+00:00:26,640 --> 00:00:28,050
+So I'm on my base.
+
+9
+00:00:28,050 --> 00:00:34,800
+Each team will lay out which is in the templates folder and we're going to start to kind of just add
+
+10
+00:00:34,800 --> 00:00:36,660
+stuff here to this.
+
+11
+00:00:36,660 --> 00:00:39,270
+This file from our bootstrap theme.
+
+12
+00:00:39,360 --> 00:00:46,290
+Now the way that I'm going to do this is I'm going to use Sublime Text which is a different text editor.
+
+13
+00:00:46,320 --> 00:00:53,070
+Hold on let me just open up a new window here and I'm going to open up the bootstrap theme in Sublime
+
+14
+00:00:53,070 --> 00:01:00,060
+Text that way I don't get confused by which is which you know so I'll know that if it's Sublime Text
+
+15
+00:01:00,060 --> 00:01:02,560
+it's just the theme just the each team.
+
+16
+00:01:02,670 --> 00:01:08,310
+And our main project is in vs code so you don't have to do this if you want to open it in the same text
+
+17
+00:01:08,310 --> 00:01:11,950
+editor or something else whenever you want to do is absolutely fine.
+
+18
+00:01:12,000 --> 00:01:16,820
+But this is what I'm doing so I'm going to go to a project and you guys can see the menu but I'm going
+
+19
+00:01:16,820 --> 00:01:26,340
+to project add folder to project and I'm going to find my C desktop I'm going to go to VTR resources
+
+20
+00:01:26,370 --> 00:01:30,460
+BTR theme and I want the dist folder or I don't care about any of this.
+
+21
+00:01:30,460 --> 00:01:32,580
+That's just for development for the theme.
+
+22
+00:01:32,760 --> 00:01:34,690
+So we just want our disks folder.
+
+23
+00:01:35,000 --> 00:01:35,410
+All right.
+
+24
+00:01:35,430 --> 00:01:39,990
+So now over here I'm going to open up in next each team Mallam We want to start to bring some of this
+
+25
+00:01:39,990 --> 00:01:42,840
+stuff over so we're gonna start with the head.
+
+26
+00:01:42,840 --> 00:01:49,560
+This is where we include our static files like Fonte awesome bootstrap our custom style sheet and so
+
+27
+00:01:49,560 --> 00:01:49,850
+on.
+
+28
+00:01:49,850 --> 00:01:56,850
+So we're going to copy these lines and go back to vs code into our base each DML and I'm going to paste
+
+29
+00:01:56,850 --> 00:01:58,140
+these in.
+
+30
+00:01:58,140 --> 00:02:05,510
+All right then I'm going to go and navigate to the bottom where we have all the javascript which are
+
+31
+00:02:05,520 --> 00:02:11,040
+these three script tags here and I'm going to copy these and I'm going to go to vs code.
+
+32
+00:02:11,040 --> 00:02:14,840
+I'm going to put that right above the ending body tag.
+
+33
+00:02:15,300 --> 00:02:16,200
+OK.
+
+34
+00:02:16,380 --> 00:02:23,190
+Now if I save this the way it is obviously I know that a lot of you guys know that this is not going
+
+35
+00:02:23,190 --> 00:02:25,380
+to work.
+
+36
+00:02:25,500 --> 00:02:30,870
+So if I reload this and we take a look at our chrome tools and our cons. we're going to get a ton of
+
+37
+00:02:30,900 --> 00:02:35,450
+errors here because it's looking for these files in there.
+
+38
+00:02:35,460 --> 00:02:36,940
+They're nowhere to be found.
+
+39
+00:02:36,990 --> 00:02:43,440
+OK because if we look at where that pointing to it's looking at assets CSSA we don't even have an assets
+
+40
+00:02:43,440 --> 00:02:44,500
+folder.
+
+41
+00:02:44,520 --> 00:02:51,690
+So the way that we can reference the static files that we just brought in we have to we have to actually
+
+42
+00:02:52,740 --> 00:02:54,300
+do a couple things here.
+
+43
+00:02:54,540 --> 00:03:02,850
+So at the very top of this each time I'll file if you want to use static if you want to use the special
+
+44
+00:03:02,850 --> 00:03:09,420
+static helper I guess we can call it you want to use your template tags here and you just want to say
+
+45
+00:03:09,420 --> 00:03:12,380
+load static like that.
+
+46
+00:03:12,750 --> 00:03:13,240
+OK.
+
+47
+00:03:13,240 --> 00:03:20,280
+Now wherever we have a static file coming in like let's say this all DOD CSX which is the font.
+
+48
+00:03:20,270 --> 00:03:21,860
+Awesome file.
+
+49
+00:03:22,080 --> 00:03:29,390
+What we want to do is in the ATRA if we want to first of all get rid of this asset slash because there's
+
+50
+00:03:29,430 --> 00:03:31,670
+no such thing in our jingle project.
+
+51
+00:03:32,070 --> 00:03:35,020
+And we want to open up a template tag.
+
+52
+00:03:35,320 --> 00:03:45,250
+So we want to do percent and we want to see a static static and just space and then we want to wrap
+
+53
+00:03:45,430 --> 00:03:56,300
+the CSSA slash all Dotsie SS in single quotes and then we want to end that and the tag like that.
+
+54
+00:03:57,040 --> 00:04:02,530
+All right so this will actually reference whatever our static folder is which we defined in our settings
+
+55
+00:04:02,760 --> 00:04:09,930
+and it will look for a CSSA slash all Dotsie SS and it should be able to find it hopefully.
+
+56
+00:04:09,940 --> 00:04:13,540
+So now I'm just going to copy this whole thing here.
+
+57
+00:04:13,930 --> 00:04:19,270
+And let's go to the next one which is bootstrap and we'll paste that in and we'll just change this to
+
+58
+00:04:20,110 --> 00:04:28,110
+bootstrap and then this one here will change this to stifle.
+
+59
+00:04:28,180 --> 00:04:31,370
+All right so that should take care of the CSSA actually.
+
+60
+00:04:31,840 --> 00:04:35,610
+I forgot the light box that's in there correct.
+
+61
+00:04:37,340 --> 00:04:37,930
+Yes.
+
+62
+00:04:37,980 --> 00:04:38,670
+Light box.
+
+63
+00:04:38,670 --> 00:04:39,760
+MAN Yeah.
+
+64
+00:04:40,000 --> 00:04:42,820
+All right so let's add that as well.
+
+65
+00:04:42,820 --> 00:04:45,130
+So say live blogs
+
+66
+00:04:48,620 --> 00:04:50,800
+and I'm just going to copy this
+
+67
+00:04:54,310 --> 00:05:03,880
+and this is going to be light box dot men dot CSSA OK and the reason it wasn't here is because I copied
+
+68
+00:05:03,880 --> 00:05:09,020
+this from the index page in the theme and the index didn't include this file.
+
+69
+00:05:09,490 --> 00:05:15,730
+So now let's go down to the bottom here where we have the these stack the javascript and it's the same
+
+70
+00:05:15,730 --> 00:05:16,210
+idea.
+
+71
+00:05:16,210 --> 00:05:29,250
+So what we can do is again use our template tags and say static wrap this in single quotes like that
+
+72
+00:05:29,290 --> 00:05:31,170
+and then close it.
+
+73
+00:05:31,300 --> 00:05:34,250
+So I keep doing like a peach tag.
+
+74
+00:05:34,600 --> 00:05:41,380
+Actually that would be a dollar sign for BHP but we want to do the same kind of thing so let's actually
+
+75
+00:05:41,380 --> 00:05:43,540
+just copy like this
+
+76
+00:05:46,850 --> 00:05:55,980
+and that should actually be G-S slash and then let's do the same thing right here.
+
+77
+00:05:58,170 --> 00:06:05,390
+And then we want just the end to be a single quote and then a closing tag like that.
+
+78
+00:06:05,400 --> 00:06:11,190
+All right so again it should be looking in whatever our static folder is and then looking at these locations.
+
+79
+00:06:11,430 --> 00:06:12,230
+OK.
+
+80
+00:06:12,600 --> 00:06:16,320
+And then again we want to add the light box so I forgot about that.
+
+81
+00:06:16,320 --> 00:06:18,770
+So let's copy that down.
+
+82
+00:06:20,800 --> 00:06:27,390
+We'll do J.S. slash lightbox dot dot Yes.
+
+83
+00:06:27,420 --> 00:06:29,930
+All right so I'm sure that that's saved.
+
+84
+00:06:29,940 --> 00:06:36,230
+And let's go back to Crome and now you can see bootstrap is already working here.
+
+85
+00:06:36,580 --> 00:06:41,250
+And we just move this over a little bit go.
+
+86
+00:06:41,540 --> 00:06:41,780
+All right.
+
+87
+00:06:41,780 --> 00:06:43,440
+So bootstrap is kicked in.
+
+88
+00:06:43,440 --> 00:06:49,250
+And the only errors we're getting over here because we don't have the the Jay J.A.G. loading gif I don't
+
+89
+00:06:49,250 --> 00:06:51,430
+have that there and that's fine.
+
+90
+00:06:51,440 --> 00:07:00,240
+This enraged hemol is because if we look at our main J.S. So let's take a look at our main J.S..
+
+91
+00:07:00,520 --> 00:07:06,700
+What's going on is in the template there's a class of year div with the class of year or a span I think
+
+92
+00:07:06,700 --> 00:07:13,490
+it is and we're just putting in the year dynamically using javascript and that that span doesn't exist.
+
+93
+00:07:13,510 --> 00:07:19,420
+So it's giving us an error as soon as we add that that error will go away so there's no need to to worry
+
+94
+00:07:19,420 --> 00:07:20,770
+about that.
+
+95
+00:07:20,770 --> 00:07:25,110
+All right but this is how we implement static files inside of our template.
+
+96
+00:07:25,480 --> 00:07:31,690
+So now what we're going to do is start to bring over some of the stuff that we want on every page like
+
+97
+00:07:31,690 --> 00:07:34,710
+the nav bar the top bar things like that.
+
+98
+00:07:34,720 --> 00:07:44,290
+So if we head over to sublime texts where we have our theme let's go up to the top and let's grab the
+
+99
+00:07:44,290 --> 00:07:45,700
+top bar.
+
+100
+00:07:46,070 --> 00:07:47,700
+So I'm just going to grab this.
+
+101
+00:07:47,710 --> 00:07:48,310
+All of it.
+
+102
+00:07:48,310 --> 00:07:54,700
+And then also the nav bar which is directly under it and stop there because the showcase Obviously that
+
+103
+00:07:54,700 --> 00:07:58,500
+doesn't go on every page so we're going to going to copy this.
+
+104
+00:07:58,540 --> 00:08:00,420
+The nav bar on the top bar.
+
+105
+00:08:00,580 --> 00:08:01,730
+Go back to our base.
+
+106
+00:08:01,740 --> 00:08:02,980
+Each team now.
+
+107
+00:08:03,250 --> 00:08:07,830
+And let's put this right above the block content.
+
+108
+00:08:09,540 --> 00:08:15,390
+All right so you put that above the block content and then the other thing that goes on every page is
+
+109
+00:08:15,390 --> 00:08:16,320
+the footer.
+
+110
+00:08:16,590 --> 00:08:22,890
+So I'm going to go back to our theme and go all the way down and grab our footer and this is what I
+
+111
+00:08:22,890 --> 00:08:27,490
+was talking about a spam with the class of year this is where the year gets inserted.
+
+112
+00:08:27,630 --> 00:08:31,430
+And it wasn't finding that so it was giving us that console error.
+
+113
+00:08:31,470 --> 00:08:37,680
+So let's copy this and go back and put this after the block content.
+
+114
+00:08:37,680 --> 00:08:40,340
+So right here right.
+
+115
+00:08:40,470 --> 00:08:48,910
+And have prettier formatting on save anymore so she can fix that up a little bit.
+
+116
+00:08:48,910 --> 00:08:51,960
+All right so let's save that and let's go ahead and take a look.
+
+117
+00:08:53,870 --> 00:08:54,930
+And there we go.
+
+118
+00:08:55,280 --> 00:08:55,940
+All right cool.
+
+119
+00:08:55,940 --> 00:09:02,410
+So these are going to show on every page if we go to slash about and see this go to sleep.
+
+120
+00:09:02,410 --> 00:09:05,980
+No this goes to about age DML But we'll fix that.
+
+121
+00:09:05,980 --> 00:09:08,040
+But let's just check out slash about.
+
+122
+00:09:08,060 --> 00:09:11,390
+And you can see now we're on the About page.
+
+123
+00:09:11,540 --> 00:09:16,920
+One last thing I want to do before I end this video is is show you that we can use Parshall's.
+
+124
+00:09:17,030 --> 00:09:23,480
+OK so I don't want our base each team out to be cluttered up with all of this markup.
+
+125
+00:09:23,870 --> 00:09:31,730
+So what we can do is we can create a separate folder in our templates folder called Parshall's
+
+126
+00:09:34,560 --> 00:09:36,770
+right now inside Parshall's.
+
+127
+00:09:36,780 --> 00:09:42,670
+I want to put the nav bar everything we just brought in the nav bar the top bar in the footer.
+
+128
+00:09:42,840 --> 00:09:46,240
+So we want to separate full separate file for all of those.
+
+129
+00:09:46,290 --> 00:09:52,410
+Now since there Parshall's the convention is to use an underscore in front so we're going to say underscore
+
+130
+00:09:53,050 --> 00:10:01,820
+nav bar Daut aged him well and will create underscore top bar door age Himmel.
+
+131
+00:10:02,850 --> 00:10:07,560
+And let's also create underscore for Dot aged him.
+
+132
+00:10:08,070 --> 00:10:10,790
+OK and then we can simply bring that stuff in.
+
+133
+00:10:10,920 --> 00:10:12,780
+So we'll start off with the top bar.
+
+134
+00:10:12,780 --> 00:10:15,630
+I'm going to go from here.
+
+135
+00:10:15,810 --> 00:10:24,420
+Went too far down to here and just cut that and we're going to put that in the top bar each team out
+
+136
+00:10:24,420 --> 00:10:33,970
+and save K and just close it for now and then the nav bar will grab all that mark up which ends right
+
+137
+00:10:33,970 --> 00:10:35,080
+here.
+
+138
+00:10:35,080 --> 00:10:36,310
+Cut that out.
+
+139
+00:10:37,290 --> 00:10:40,420
+Put it in here and save.
+
+140
+00:10:40,710 --> 00:10:45,780
+And then finally the FOTR will cut that.
+
+141
+00:10:45,850 --> 00:10:52,580
+Put that in footer save that.
+
+142
+00:10:52,970 --> 00:10:55,060
+And now we just need to bring those in and that's.
+
+143
+00:10:55,060 --> 00:10:58,560
+That's very simple with using the template syntax.
+
+144
+00:10:58,610 --> 00:11:01,660
+I'm going to just put a comment and say top bar
+
+145
+00:11:04,560 --> 00:11:13,290
+here we want to use our template tags and we want to just to include it in the Parshall's folder and
+
+146
+00:11:13,440 --> 00:11:17,340
+underscore taught by DOT HMO.
+
+147
+00:11:17,610 --> 00:11:21,550
+OK so I'm just going to copy that.
+
+148
+00:11:21,810 --> 00:11:23,300
+Or go down below.
+
+149
+00:11:23,670 --> 00:11:27,600
+And this is going to be the nav bar.
+
+150
+00:11:27,600 --> 00:11:29,130
+So it will include
+
+151
+00:11:32,880 --> 00:11:35,130
+nav bar each time.
+
+152
+00:11:36,210 --> 00:11:36,680
+All right.
+
+153
+00:11:36,750 --> 00:11:41,790
+And here let's say main content.
+
+154
+00:11:41,790 --> 00:11:46,140
+And then lastly we want the faulter
+
+155
+00:11:52,750 --> 00:11:55,750
+underscore for each email.
+
+156
+00:11:55,830 --> 00:11:56,460
+So save.
+
+157
+00:11:56,480 --> 00:11:58,110
+Now we should get the same results.
+
+158
+00:11:58,120 --> 00:12:04,180
+Let's go back and reload and we get the same thing okay.
+
+159
+00:12:04,500 --> 00:12:06,120
+All the logo.
+
+160
+00:12:06,790 --> 00:12:10,540
+So the logo is also a static asset.
+
+161
+00:12:10,540 --> 00:12:15,280
+So if to do the same thing we did for this like the CSSA and the javascript and all that.
+
+162
+00:12:15,280 --> 00:12:22,080
+So we're going to go to our NAV bar partial because that's where the logo is you can see we still have
+
+163
+00:12:22,080 --> 00:12:24,590
+it pointing to like assets.
+
+164
+00:12:24,660 --> 00:12:26,460
+So we want to change that.
+
+165
+00:12:26,460 --> 00:12:37,070
+Now remember if we're going to be using static we need to up at the top we need to load static Kay.
+
+166
+00:12:37,420 --> 00:12:41,400
+And then once we go down to her we have our logo.
+
+167
+00:12:41,390 --> 00:12:49,000
+We're going to get rid of the assets and we're going to put in our template tag and say static and then
+
+168
+00:12:49,000 --> 00:12:53,730
+put this in single quotes and then end it.
+
+169
+00:12:53,890 --> 00:12:54,250
+All right.
+
+170
+00:12:54,250 --> 00:12:56,460
+So go ahead and save that.
+
+171
+00:12:56,920 --> 00:13:01,840
+And let's go back reload and there's our logo.
+
+172
+00:13:02,250 --> 00:13:05,110
+All right so we can close this up.
+
+173
+00:13:05,470 --> 00:13:10,710
+And in the next video I want to start to add some of the stuff for the index page.
+
+174
+00:13:10,850 --> 00:13:14,860
+Will move to the about will also take care of the links here.
+
+175
+00:13:14,890 --> 00:13:20,320
+We can use some special conditionals to make these active when we're on the correct page.
+
+176
+00:13:20,320 --> 00:13:21,940
+All right so I'll see you in the next video.
+

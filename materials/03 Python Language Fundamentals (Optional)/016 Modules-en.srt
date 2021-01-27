@@ -1,0 +1,484 @@
+1
+00:00:00,270 --> 00:00:00,790
+All right guys.
+
+2
+00:00:00,790 --> 00:00:05,340
+Now we're going to look at modules modules are very important especially in web development because
+
+3
+00:00:05,340 --> 00:00:11,100
+you're constantly bringing in different things basically a module is a file containing a set of functions
+
+4
+00:00:11,100 --> 00:00:15,780
+to include in your application there's core modules the core Python modules.
+
+5
+00:00:15,780 --> 00:00:18,110
+We don't have to do anything you can just bring them in.
+
+6
+00:00:18,210 --> 00:00:23,730
+You have modules that you can install using Pipp which is the package manager including Django jingoes
+
+7
+00:00:23,730 --> 00:00:29,100
+install with Pipp and then broke basically brought in as well as custom modules so you can create your
+
+8
+00:00:29,100 --> 00:00:33,330
+own custom files and I have a file here that I'm going to I'm going to bring in and show you how to
+
+9
+00:00:33,330 --> 00:00:34,260
+use.
+
+10
+00:00:34,290 --> 00:00:38,040
+So let's let's first take a look at using core modules.
+
+11
+00:00:38,040 --> 00:00:38,360
+OK.
+
+12
+00:00:38,370 --> 00:00:41,250
+So one of that one popular one is Date Time.
+
+13
+00:00:41,430 --> 00:00:45,750
+So we can say import and then date time.
+
+14
+00:00:45,960 --> 00:00:50,090
+And this has just a it has a bunch of things associated with it.
+
+15
+00:00:50,190 --> 00:00:57,300
+So it has something called data which has its own methods and date actually has a method called today
+
+16
+00:00:57,300 --> 00:00:58,930
+that will get today's date.
+
+17
+00:00:59,400 --> 00:01:04,890
+So let's say we wanted to pull that out or create a variable called today and set it to date time which
+
+18
+00:01:04,890 --> 00:01:11,080
+we just brought in and then Daut date and then Daut today which is a method.
+
+19
+00:01:11,310 --> 00:01:21,300
+And then we'll go ahead and print today and let's run this with Python 3 modules dot PI and we get today's
+
+20
+00:01:21,300 --> 00:01:21,960
+day.
+
+21
+00:01:22,500 --> 00:01:29,850
+So seeing that this date belongs to this date time module we can actually pull this out we can import
+
+22
+00:01:29,850 --> 00:01:34,550
+it in a different way where we're not importing this entire thing but we're polling data out.
+
+23
+00:01:34,740 --> 00:01:43,920
+And the way that we would do that is by saying from date time import date that we were just bringing
+
+24
+00:01:43,920 --> 00:01:44,790
+in what we need.
+
+25
+00:01:44,790 --> 00:01:48,770
+So this is what you'll see most of the time.
+
+26
+00:01:48,810 --> 00:01:54,390
+So what we could do now and I'm just going to copy this because I actually want to leave this you guys
+
+27
+00:01:54,390 --> 00:02:00,430
+have it as a reference but what we could do now since we just brought in day we import a day we can
+
+28
+00:02:00,430 --> 00:02:04,950
+just say date today and that should work ok.
+
+29
+00:02:04,980 --> 00:02:10,770
+If I didn't have this line though and I just imported date time and I run it it doesn't know what date
+
+30
+00:02:10,770 --> 00:02:12,250
+is it's not defined.
+
+31
+00:02:12,480 --> 00:02:17,300
+OK so it's very important to know that you can basically pull things out like this.
+
+32
+00:02:17,310 --> 00:02:20,790
+So another example would be the time module.
+
+33
+00:02:20,880 --> 00:02:32,040
+OK so we could say in port time and it actually has a method called time so see when it's going to create
+
+34
+00:02:32,070 --> 00:02:37,080
+a variable here called time stamp because that's what it does is it gives you the time stamp.
+
+35
+00:02:37,080 --> 00:02:43,110
+So I could say time Daut time and then print
+
+36
+00:02:45,700 --> 00:02:48,160
+time stamp.
+
+37
+00:02:48,490 --> 00:02:50,380
+And here it is.
+
+38
+00:02:50,380 --> 00:02:52,450
+So this is the time stamp right here.
+
+39
+00:02:52,960 --> 00:03:03,710
+But again I could actually pull this out by saying from time import time.
+
+40
+00:03:03,730 --> 00:03:07,190
+And then I could get rid of this first one.
+
+41
+00:03:07,640 --> 00:03:07,850
+OK.
+
+42
+00:03:07,960 --> 00:03:11,830
+So around that I get the same thing I get the time stamp.
+
+43
+00:03:11,830 --> 00:03:12,150
+All right.
+
+44
+00:03:12,150 --> 00:03:13,530
+So let's take a look at it.
+
+45
+00:03:13,540 --> 00:03:15,760
+You installing something with Pip.
+
+46
+00:03:15,940 --> 00:03:19,600
+OK and we're going to be using Pip quite a bit later.
+
+47
+00:03:19,780 --> 00:03:22,150
+It's a big part of Gengel development.
+
+48
+00:03:22,370 --> 00:03:24,590
+Or basically any kind of web development.
+
+49
+00:03:24,790 --> 00:03:30,940
+So since we didn't create a virtual environment right now and we need to use Python 3 we also need to
+
+50
+00:03:30,940 --> 00:03:32,460
+use Pipp 3.
+
+51
+00:03:32,470 --> 00:03:39,160
+Ok so if we want to install something we use Pipp 3 I'm actually going to install something very simple
+
+52
+00:03:39,160 --> 00:03:42,390
+it's called camel case and it's used to.
+
+53
+00:03:42,400 --> 00:03:49,690
+For instance if we have a string with multiple words it will capitalize the first letter of each word.
+
+54
+00:03:49,690 --> 00:03:54,100
+It's just something stupid and simple that I can give you an example with because I don't want to bring
+
+55
+00:03:54,100 --> 00:03:55,750
+in something that's complicated.
+
+56
+00:03:55,990 --> 00:04:04,780
+So what we do is we would say Pipp 3 install and it's called camel case.
+
+57
+00:04:04,780 --> 00:04:05,130
+OK.
+
+58
+00:04:05,140 --> 00:04:10,710
+So let's go ahead and run that says requirement already satisfied.
+
+59
+00:04:10,710 --> 00:04:13,620
+So that means that I already have it installed now.
+
+60
+00:04:13,750 --> 00:04:20,820
+There's a command called freeze if I do Pipp 3 and then freeze and we take a look here this is this
+
+61
+00:04:20,820 --> 00:04:26,220
+shows me all the packages that are available that are installed basically and you'll see camel cases
+
+62
+00:04:26,220 --> 00:04:27,300
+there.
+
+63
+00:04:27,300 --> 00:04:29,650
+Now what happens when you create a virtual environment.
+
+64
+00:04:29,670 --> 00:04:31,090
+We'll get into this later.
+
+65
+00:04:31,170 --> 00:04:37,520
+Is instead of having all of the stuff that you install global like this you'll have a specific environment
+
+66
+00:04:37,560 --> 00:04:42,030
+and whatever you install while you're in that environment will be put in there.
+
+67
+00:04:42,210 --> 00:04:48,570
+But once you exit the environment it'll no longer be available it'll only be in that environment.
+
+68
+00:04:48,610 --> 00:04:55,800
+All right it's it's it's very similar to again going javascript It's similar to NPM when you install
+
+69
+00:04:55,800 --> 00:04:56,760
+something globally.
+
+70
+00:04:56,760 --> 00:04:59,010
+That's basically what we're looking at here.
+
+71
+00:04:59,040 --> 00:05:03,120
+When you install it locally it's specific to that project.
+
+72
+00:05:03,120 --> 00:05:07,890
+So that's kind of that's kind of how virtual environments work with Pipp.
+
+73
+00:05:08,190 --> 00:05:13,050
+But anyways we have camel case installed so we should be able to bring that in just like we could bring
+
+74
+00:05:13,200 --> 00:05:22,340
+any of these and so on and is going to go right here and I'm going to say Pip module and the same port
+
+75
+00:05:23,660 --> 00:05:26,930
+camel case and let's go
+
+76
+00:05:29,820 --> 00:05:34,520
+I'm going to get rid of these prints actually and move that right there.
+
+77
+00:05:35,030 --> 00:05:38,850
+OK so let's do camel is going to create a variable called Camel.
+
+78
+00:05:38,870 --> 00:05:44,150
+I'm going to said it equals two camel case Daut
+
+79
+00:05:46,830 --> 00:05:48,970
+camel case I like that.
+
+80
+00:05:49,230 --> 00:05:52,100
+And then let's just create some text.
+
+81
+00:05:52,680 --> 00:05:57,950
+So just put a string and I'll say hello there world.
+
+82
+00:05:58,890 --> 00:06:01,370
+And let's go ahead and print.
+
+83
+00:06:01,830 --> 00:06:08,030
+We'll take that camel variable and now is a method called whump and we can pass in text.
+
+84
+00:06:08,160 --> 00:06:12,990
+And what that should do is make each first letter upper case so save this.
+
+85
+00:06:12,990 --> 00:06:17,870
+Clear this up and run the modules file and there we go hello there world.
+
+86
+00:06:18,120 --> 00:06:21,580
+OK which is nothing special what it's doing isn't important.
+
+87
+00:06:21,720 --> 00:06:25,900
+I just want you to understand that we can install things with Pipp and then we can import them.
+
+88
+00:06:25,920 --> 00:06:26,770
+OK.
+
+89
+00:06:27,290 --> 00:06:30,390
+And there's a lot of great modules out there.
+
+90
+00:06:30,780 --> 00:06:38,370
+So now what I want to do is import a custom module so I have this validator dot py file and this actually
+
+91
+00:06:38,370 --> 00:06:41,610
+imports R E which is the regular expressions.
+
+92
+00:06:41,700 --> 00:06:49,650
+So this imports a core module and uses it in this custom function which validates an e-mail address.
+
+93
+00:06:49,660 --> 00:06:55,260
+OK so basically we're just saying if the length of whatever's passed in which should be an e-mail address
+
+94
+00:06:55,590 --> 00:07:04,300
+is greater than 7 then we want to return either true or false based on this regular expression.
+
+95
+00:07:04,440 --> 00:07:11,780
+OK so this is a regular expression that should match you know something at something Doc whatever.
+
+96
+00:07:11,910 --> 00:07:19,440
+You know the format of an email address so I'm going to bring this in this validator so I'll go right
+
+97
+00:07:19,500 --> 00:07:21,390
+here and I'll say custom
+
+98
+00:07:27,250 --> 00:07:34,190
+and we're going to do import I'll do it both ways so we'll import the entire thing.
+
+99
+00:07:34,270 --> 00:07:44,740
+Poort validator and let's go down here and let's create a variable called email and just say test at
+
+100
+00:07:44,740 --> 00:07:53,570
+test dot com which should pass and then we're going to do if validator Daut.
+
+101
+00:07:53,620 --> 00:08:00,640
+And as you can see there's a method called validate email so we can access that by saying validate email
+
+102
+00:08:00,640 --> 00:08:08,390
+even pops up here and via's code and we want to pass in the email.
+
+103
+00:08:08,410 --> 00:08:08,780
+All right.
+
+104
+00:08:08,800 --> 00:08:17,850
+So we'll go ahead and print email is valid and then we'll do an else.
+
+105
+00:08:18,850 --> 00:08:19,930
+And we'll print
+
+106
+00:08:22,800 --> 00:08:25,610
+not an e-mail.
+
+107
+00:08:26,220 --> 00:08:26,520
+OK.
+
+108
+00:08:26,530 --> 00:08:29,940
+We should be able to use it like that so I'm going to save this.
+
+109
+00:08:29,940 --> 00:08:32,550
+Let's actually get rid of that print.
+
+110
+00:08:33,000 --> 00:08:34,860
+So this is the only thing.
+
+111
+00:08:35,070 --> 00:08:36,530
+And we get e-mail is valid.
+
+112
+00:08:36,540 --> 00:08:44,700
+If I go ahead and put like let's replace that with a number sign and we run it we get not an e-mail.
+
+113
+00:08:45,000 --> 00:08:46,660
+All right so that's working.
+
+114
+00:08:46,770 --> 00:08:53,350
+Now we can do the same thing as we did up here where we where we basically polled methods.
+
+115
+00:08:53,370 --> 00:08:55,550
+Oh we can do that with the validator.
+
+116
+00:08:55,620 --> 00:08:59,110
+I could say from validator.
+
+117
+00:08:59,220 --> 00:09:06,750
+I want to just import validate e-mail and then down here I could get rid of validate or Daut like that
+
+118
+00:09:06,780 --> 00:09:09,020
+and simply use validate e-mail.
+
+119
+00:09:09,180 --> 00:09:12,240
+And if I run that we get the same thing it works.
+
+120
+00:09:12,240 --> 00:09:16,140
+All right so that's going to be it for this video guys in the next one we're going to take a look at
+
+121
+00:09:16,140 --> 00:09:17,020
+classes.
+

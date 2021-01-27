@@ -1,0 +1,168 @@
+1
+00:00:00,180 --> 00:00:04,710
+All right guys in this video we're going to install Python 3 on a Mac and I already have it installed
+
+2
+00:00:04,710 --> 00:00:06,780
+but I'm going to go through the process anyway.
+
+3
+00:00:06,960 --> 00:00:14,340
+So if you open up your terminal and you type in Python dash dash version unless you've already installed
+
+4
+00:00:14,340 --> 00:00:21,060
+Python and you have a Python 3 and you've set up your environment variables and stuff you're probably
+
+5
+00:00:21,060 --> 00:00:29,580
+going to see Version 2 k 2.0 something probably 7.10 we don't want to use version to you you don't want
+
+6
+00:00:29,580 --> 00:00:33,370
+to use version 2 anymore for anything unless there's a specific reason.
+
+7
+00:00:33,390 --> 00:00:42,930
+So let's go ahead and say Python 3 dash dash version and you'll see that I have version 3.7 0 which
+
+8
+00:00:42,930 --> 00:00:44,340
+is the latest version.
+
+9
+00:00:44,400 --> 00:00:50,070
+If you see like not found or something like that that means that Python 3 is not installed on your system.
+
+10
+00:00:50,220 --> 00:00:56,550
+If you see an earlier version of three then you should go ahead and follow these instructions to upgrade.
+
+11
+00:00:56,790 --> 00:01:03,420
+So we're going to go to Python dot org and go to downloads click on 3.7 point zero or whatever the latest
+
+12
+00:01:03,420 --> 00:01:05,300
+version is at the time.
+
+13
+00:01:05,370 --> 00:01:12,210
+And let's open up the package that it downloads and it's just going to be just a simple installer that
+
+14
+00:01:12,210 --> 00:01:12,930
+we click through.
+
+15
+00:01:12,930 --> 00:01:14,270
+So let's click continue.
+
+16
+00:01:14,270 --> 00:01:17,000
+Continue and we're going to agree.
+
+17
+00:01:17,280 --> 00:01:22,020
+And here you can click install but I just want to show you if you click customize you can pick and choose
+
+18
+00:01:22,020 --> 00:01:28,470
+to and to disable like the Unix command line tools and stuff like that you want to make sure all of
+
+19
+00:01:28,470 --> 00:01:33,660
+this is checked especially this you want to make sure that Pip is installed which is the Python package
+
+20
+00:01:33,660 --> 00:01:34,390
+manager.
+
+21
+00:01:34,500 --> 00:01:38,430
+It's used to install third party packages including Django.
+
+22
+00:01:38,550 --> 00:01:40,470
+So we definitely need that.
+
+23
+00:01:40,470 --> 00:01:44,460
+And now we're just going to click install and you just put in your password
+
+24
+00:01:48,510 --> 00:01:52,870
+and it's going to go ahead and install Python 3.
+
+25
+00:01:52,870 --> 00:01:57,700
+All right so once it's installed you'll see something like this and we can go ahead and close it and
+
+26
+00:01:57,700 --> 00:01:59,800
+we'll move the installer to the trash.
+
+27
+00:01:59,800 --> 00:02:06,820
+So now what I want you to do is open your terminal up and do a Python 3 dash dash version and you should
+
+28
+00:02:06,820 --> 00:02:09,610
+see that you have the latest version installed.
+
+29
+00:02:09,640 --> 00:02:09,970
+All right.
+
+30
+00:02:09,970 --> 00:02:17,530
+So if we do just Python 3 it's going to bring us into the REPL or into the python console where we can
+
+31
+00:02:17,530 --> 00:02:20,830
+actually type out Python code and get a response.
+
+32
+00:02:20,830 --> 00:02:28,060
+So for instance we can do the print command and let's just say print hello and we'll run it and we get
+
+33
+00:02:28,090 --> 00:02:30,400
+hello as our output.
+
+34
+00:02:30,400 --> 00:02:37,330
+All right we can even do things like create variables so I could say name equals Brad and then we could
+
+35
+00:02:37,330 --> 00:02:41,600
+do print name and we get Brad.
+
+36
+00:02:41,630 --> 00:02:43,690
+OK but we're not going to do too much in here.
+
+37
+00:02:43,690 --> 00:02:49,900
+Well we want to do is create python files which are files with a dot PI extension and then we're going
+
+38
+00:02:49,900 --> 00:02:56,460
+to learn how to you know learn the basics of Python within the files and then we'll jump into Django.
+
+39
+00:02:56,470 --> 00:03:03,190
+All right so if we do a control d we can get out of the Python console here and in the next video I'm
+
+40
+00:03:03,190 --> 00:03:05,610
+going to show you how to install Python on Windows.
+
+41
+00:03:05,620 --> 00:03:09,270
+Obviously if you're not using Windows you don't really have to watch that video.
+
+42
+00:03:09,550 --> 00:03:16,090
+But after that we'll start to learn the basic syntax and then like I said move on to Django.
+

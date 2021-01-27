@@ -1,0 +1,448 @@
+1
+00:00:00,420 --> 00:00:04,710
+All right guys so in the last video we added the logo here in the admin area.
+
+2
+00:00:04,710 --> 00:00:07,970
+We changed up the colors to match the company branding.
+
+3
+00:00:07,980 --> 00:00:10,920
+Now I want to just mess with the this this a little bit.
+
+4
+00:00:10,920 --> 00:00:13,140
+I don't want just the name of the listing here.
+
+5
+00:00:13,140 --> 00:00:17,650
+I want to have some other data like the price and the list date stuff like that.
+
+6
+00:00:17,880 --> 00:00:25,740
+So to edit this we need to go into VS code and we need to go to our let's see you want to go to our
+
+7
+00:00:25,740 --> 00:00:34,080
+listings app and then admin dot pi k where we registered the model and we want to go right here and
+
+8
+00:00:34,080 --> 00:00:45,420
+create a class called the listing admin and this we want to pass in here admin Daut model admin and
+
+9
+00:00:45,420 --> 00:00:53,190
+then we can actually add certain variables here are certain properties that relate to how things are
+
+10
+00:00:53,190 --> 00:00:54,360
+displayed.
+
+11
+00:00:54,750 --> 00:01:01,680
+But before I forget this listing admin class we just defined what we need to do is pass it in here.
+
+12
+00:01:01,710 --> 00:01:02,280
+OK.
+
+13
+00:01:02,460 --> 00:01:04,650
+Or it won't work.
+
+14
+00:01:04,770 --> 00:01:09,120
+So I want to define what I want in the table or in the list.
+
+15
+00:01:09,120 --> 00:01:14,130
+So we say list display and you can see if you have a whole bunch of pop ups here of different things
+
+16
+00:01:14,130 --> 00:01:20,610
+we can do by let's do list display and we want to just set a set of parentheses and then the fields
+
+17
+00:01:20,610 --> 00:01:24,570
+we want so I actually want to show the ID.
+
+18
+00:01:24,840 --> 00:01:34,410
+I want to show the title which already is showing but I want to show that still I want to do is published
+
+19
+00:01:34,830 --> 00:01:41,040
+and what's really cool when you do a boolean value it actually shows like a little checkbox or like
+
+20
+00:01:41,040 --> 00:01:43,160
+an X if it's not published.
+
+21
+00:01:43,170 --> 00:01:44,860
+So I think that's pretty cool.
+
+22
+00:01:44,880 --> 00:01:48,740
+Does that automatically shows a little icon.
+
+23
+00:01:48,750 --> 00:01:50,050
+We could do like those.
+
+24
+00:01:50,070 --> 00:01:57,300
+The city and state and stuff like that but I'm not going to I'm going to do price and I'm going to do
+
+25
+00:01:58,860 --> 00:02:00,320
+list today.
+
+26
+00:02:01,050 --> 00:02:02,190
+And I'm going to do.
+
+27
+00:02:02,190 --> 00:02:05,450
+Realtor.
+
+28
+00:02:05,520 --> 00:02:08,350
+So let's save that.
+
+29
+00:02:08,530 --> 00:02:17,610
+I forgot I a pretty or enabled so let's save that let's go back and reload and there we go and see the
+
+30
+00:02:17,610 --> 00:02:18,570
+will is published.
+
+31
+00:02:18,570 --> 00:02:23,620
+You actually have these little checkboxes which is pretty cool.
+
+32
+00:02:24,280 --> 00:02:29,080
+And I'm going to show you how we can make it so that we can click these here and actually publish an
+
+33
+00:02:29,110 --> 00:02:31,360
+unpublished them without having to go in.
+
+34
+00:02:31,510 --> 00:02:39,310
+But first notice that I can't click on the title to get to the page I can click on the ID and the reason
+
+35
+00:02:39,310 --> 00:02:41,340
+for that is because it's the first one.
+
+36
+00:02:41,440 --> 00:02:47,050
+But I also want to be able to click on the titles so the way that we fix that is by adding right under
+
+37
+00:02:47,050 --> 00:02:56,830
+this we can say list display links right here so lists play links and then pass in any fields that we
+
+38
+00:02:56,830 --> 00:02:58,690
+want to actually link.
+
+39
+00:02:58,930 --> 00:03:09,270
+And for me what I want to choose is ID so will keep the ID and then also title OK so I'll save that.
+
+40
+00:03:09,300 --> 00:03:16,590
+Now let's go back and reload and now we can click on the title OK and you can make any of these go to
+
+41
+00:03:16,760 --> 00:03:19,950
+the page if you wanted to.
+
+42
+00:03:19,950 --> 00:03:22,930
+So let's see we can also filter.
+
+43
+00:03:23,010 --> 00:03:25,320
+I want to be able to filter by realtor.
+
+44
+00:03:25,410 --> 00:03:28,270
+I mean we could do like like this.
+
+45
+00:03:28,270 --> 00:03:32,520
+That I'll just kind of order it by the realtor or by any of these rather.
+
+46
+00:03:32,640 --> 00:03:37,120
+And that's that's that's some functionality that's included that we take for granted.
+
+47
+00:03:37,140 --> 00:03:41,800
+I mean it would take quite a bit of code to be able to do that.
+
+48
+00:03:41,910 --> 00:03:50,400
+So if we want to have like a little filter box we could just simply say list filter.
+
+49
+00:03:50,490 --> 00:03:53,280
+And I just want realtor
+
+50
+00:03:56,280 --> 00:04:02,370
+OK realtor and when we use parentheses like this we just want if it's only one value we want to have
+
+51
+00:04:02,370 --> 00:04:05,580
+a comma at the end or we or we'll probably get an error.
+
+52
+00:04:05,850 --> 00:04:08,260
+So we want to do that and reload.
+
+53
+00:04:08,490 --> 00:04:16,560
+And now over here we can filter by realtors say Kyle Brown and only show me Mikhail's properties which
+
+54
+00:04:16,560 --> 00:04:17,820
+is really cool.
+
+55
+00:04:17,820 --> 00:04:20,310
+And you can do this for any any field you want.
+
+56
+00:04:20,370 --> 00:04:23,220
+But I'm just going to leave it at realtor.
+
+57
+00:04:24,180 --> 00:04:29,150
+Now I'm going to do is make it so that I can click on the is published icon and it will publish.
+
+58
+00:04:29,190 --> 00:04:32,460
+And then of course I could publish it again if I click again.
+
+59
+00:04:32,460 --> 00:04:47,400
+So to do that we can add in the list underscore editable and we're going to set that to is published
+
+60
+00:04:47,830 --> 00:04:50,500
+with put a comma because there's only one value.
+
+61
+00:04:50,730 --> 00:04:54,590
+So now if I go back and reload they're actually going to check.
+
+62
+00:04:54,620 --> 00:05:00,780
+I forgot they they changed the check boxes so if I go ahead like that it's now unpublished if we go
+
+63
+00:05:00,780 --> 00:05:08,580
+in here and we look at the value actually because it's not oh you know what we have to save it we go.
+
+64
+00:05:08,630 --> 00:05:11,940
+Forgot all about that.
+
+65
+00:05:12,140 --> 00:05:13,630
+So we can publish it again.
+
+66
+00:05:14,000 --> 00:05:20,330
+So it's up to you if you want to have the check boxes here with the save button you can do that or you
+
+67
+00:05:20,330 --> 00:05:23,290
+can just display the X's and the checks.
+
+68
+00:05:23,750 --> 00:05:24,110
+OK.
+
+69
+00:05:24,110 --> 00:05:25,860
+Now what about searching.
+
+70
+00:05:25,880 --> 00:05:30,080
+OK so we have a ton of listings here we want to be able to search by certain fields.
+
+71
+00:05:30,080 --> 00:05:42,540
+We can do that so we can just say in here search fields and let's be let's make search by title so I'll
+
+72
+00:05:42,530 --> 00:05:44,790
+say title description
+
+73
+00:05:49,470 --> 00:05:50,700
+address
+
+74
+00:05:53,520 --> 00:05:54,420
+city
+
+75
+00:05:56,790 --> 00:05:57,840
+state
+
+76
+00:06:00,740 --> 00:06:05,190
+zip code and price.
+
+77
+00:06:05,570 --> 00:06:07,280
+OK so will be able to search by that.
+
+78
+00:06:07,280 --> 00:06:08,420
+So let's save this.
+
+79
+00:06:08,450 --> 00:06:14,390
+And if we go back and reload now we have a little search field up here so you can see we can kind of
+
+80
+00:06:14,390 --> 00:06:21,200
+build like we can really customize this without having to go into the actual Django admen code you never
+
+81
+00:06:21,200 --> 00:06:22,580
+want to do that.
+
+82
+00:06:23,180 --> 00:06:28,850
+We just have these extra methods that we can add to be able to do this stuff.
+
+83
+00:06:28,880 --> 00:06:37,640
+OK so if I search for let's say Essex and here it is so we can search.
+
+84
+00:06:37,640 --> 00:06:37,970
+All right.
+
+85
+00:06:37,970 --> 00:06:41,930
+So let's see just clear this up.
+
+86
+00:06:42,380 --> 00:06:49,730
+So the next thing I want to do is just define the amount of listings per page because I believe by default
+
+87
+00:06:49,730 --> 00:06:57,170
+it'll just keep going without pagination so I'm going to define right here list underscore per page
+
+88
+00:06:57,580 --> 00:07:02,630
+and I'm going to set it to 25 and save and that's it.
+
+89
+00:07:03,180 --> 00:07:12,060
+So now that we've done the listings Let's go to the realtors and let's go to admen dot PI here.
+
+90
+00:07:12,240 --> 00:07:19,650
+And let's let's change some things here to customize this so first of all we need to create our function.
+
+91
+00:07:19,710 --> 00:07:28,290
+So this is going to be I'm sorry not our function our class and this is going to be realtor admin and
+
+92
+00:07:28,290 --> 00:07:37,110
+this is going to take an admin Daut model admin and let's not forget to pass it in here.
+
+93
+00:07:37,410 --> 00:07:47,030
+So we want to also pass in the second parameter of Realtor admin.
+
+94
+00:07:47,440 --> 00:07:51,820
+And let's set our list display.
+
+95
+00:07:51,870 --> 00:08:00,180
+So this is what fields we want to display in the table will do same thing Id let's say name let's do
+
+96
+00:08:00,240 --> 00:08:07,290
+email and let's do hire date.
+
+97
+00:08:07,320 --> 00:08:07,690
+All right.
+
+98
+00:08:07,710 --> 00:08:21,180
+And then let's do the links so list display lengths we're going to set to just ID in name search fields
+
+99
+00:08:22,910 --> 00:08:24,760
+let's just do.
+
+100
+00:08:25,440 --> 00:08:26,370
+Well just to name
+
+101
+00:08:28,770 --> 00:08:35,780
+and with do lists per page and we'll set that to 25 as well.
+
+102
+00:08:35,880 --> 00:08:41,360
+So we'll save let's go back and check out realtors.
+
+103
+00:08:41,370 --> 00:08:42,080
+There we go.
+
+104
+00:08:42,080 --> 00:08:46,750
+So we have our name email higher date a search field up here.
+
+105
+00:08:47,450 --> 00:08:49,360
+Good.
+
+106
+00:08:49,430 --> 00:08:49,730
+All right.
+
+107
+00:08:49,730 --> 00:08:52,610
+So I think that we're pretty good with the admin area.
+
+108
+00:08:52,610 --> 00:08:55,920
+We can easily add realtors and listings now.
+
+109
+00:08:56,000 --> 00:09:00,420
+So in the next section we're going to start on the front end web site.
+
+110
+00:09:00,530 --> 00:09:06,590
+OK so for featured listings we want to be able to fetch into the database grab the listings that we've
+
+111
+00:09:06,590 --> 00:09:09,540
+added in the admin area and display them here.
+
+112
+00:09:09,710 --> 00:09:13,340
+Okay so that's what we're going to work on in the next video and in the next section.
+

@@ -1,0 +1,380 @@
+1
+00:00:00,180 --> 00:00:00,690
+All right guys.
+
+2
+00:00:00,700 --> 00:00:05,070
+Now we're going to take a look at tuples and sets which are two different data types.
+
+3
+00:00:05,070 --> 00:00:10,320
+We're going to take a look at two bills first which are collection which is ordered and unchangeable.
+
+4
+00:00:10,380 --> 00:00:17,850
+OK that's very important unchangeable allows duplicate members so let's go ahead and create a simple
+
+5
+00:00:17,850 --> 00:00:25,380
+tuple so to do that will create a variable I'm going to call it fruit underscore tuple and tuples or
+
+6
+00:00:25,470 --> 00:00:27,330
+they use parentheses.
+
+7
+00:00:27,330 --> 00:00:38,070
+OK so let's use brackets and tuples use parentheses and let's say Apple let's say orange and let's say
+
+8
+00:00:38,280 --> 00:00:39,230
+mango.
+
+9
+00:00:39,390 --> 00:00:48,180
+All right so if we do that and we go ahead and we print our fruit tuple and now we're one to make sure
+
+10
+00:00:48,180 --> 00:00:56,640
+you run the right file so Python 3 It's called What is it called tuple tuples underscore set start pi.
+
+11
+00:00:56,970 --> 00:00:57,590
+And there it is.
+
+12
+00:00:57,630 --> 00:00:59,200
+Those are our table.
+
+13
+00:00:59,520 --> 00:01:04,770
+So we want to get a actually before we do that I want to show you another way to create one and that's
+
+14
+00:01:04,770 --> 00:01:06,910
+using the constructor.
+
+15
+00:01:07,620 --> 00:01:10,590
+OK just like with less you can use a tuple constructor.
+
+16
+00:01:10,590 --> 00:01:20,820
+So if I wanted to say just copy this line here and we could say equals tuple and then just wrap that
+
+17
+00:01:20,820 --> 00:01:24,100
+like that comment that.
+
+18
+00:01:24,120 --> 00:01:25,870
+And that should give us the same result.
+
+19
+00:01:25,870 --> 00:01:30,790
+Ok so either way but I'm going to uncomment the first one in common this one no.
+
+20
+00:01:31,290 --> 00:01:33,710
+So if we want to get a single value
+
+21
+00:01:36,800 --> 00:01:47,070
+a single value so we could say print and say fruit tuple and just like as if it were a list we could
+
+22
+00:01:47,070 --> 00:01:52,540
+go ahead and put in a position let's say one and run it we get orange.
+
+23
+00:01:52,620 --> 00:02:00,780
+Now this is very important right here and this is that these are unchangeable So if I were to take that
+
+24
+00:02:00,780 --> 00:02:10,750
+position or that index and say equals let's change it to great.
+
+25
+00:02:12,100 --> 00:02:19,250
+I want to say cannot change values so let's try to run this and we get an error.
+
+26
+00:02:19,260 --> 00:02:22,550
+So it's this tuple object does not support item assignment.
+
+27
+00:02:22,550 --> 00:02:28,620
+K so it's constant you cannot cannot change any of these values and there's different situations where
+
+28
+00:02:28,620 --> 00:02:32,420
+you would use a tuple over a list and stuff like that.
+
+29
+00:02:32,430 --> 00:02:38,670
+Another thing to know about tuples is if they only have one value you should leave a trailing comma.
+
+30
+00:02:38,910 --> 00:02:49,060
+OK so the two tuples with one value should have trailing comma.
+
+31
+00:02:49,440 --> 00:02:53,620
+So for example if I say fruit tuple to.
+
+32
+00:02:53,880 --> 00:02:59,940
+And I wanted it just to have Apple what I would do is I'd say Apple actually let me show you what happens
+
+33
+00:02:59,940 --> 00:03:03,220
+if I print this out.
+
+34
+00:03:03,970 --> 00:03:06,930
+So say Print go to
+
+35
+00:03:10,360 --> 00:03:11,950
+website to comment.
+
+36
+00:03:11,960 --> 00:03:16,000
+So because it's throwing an error because I'm trying to assign something.
+
+37
+00:03:16,100 --> 00:03:16,330
+All right.
+
+38
+00:03:16,340 --> 00:03:18,910
+So we just get Apple like as a string.
+
+39
+00:03:18,920 --> 00:03:26,350
+But if I put an ending comma here and I print this out now it actually it it's the tuple.
+
+40
+00:03:26,420 --> 00:03:32,360
+OK so you want it and you want to include that because I noticed before I didn't have the parentheses.
+
+41
+00:03:32,480 --> 00:03:35,740
+If you want the length of course you can use the len
+
+42
+00:03:39,460 --> 00:03:41,100
+stew for a tuple
+
+43
+00:03:47,910 --> 00:03:50,910
+as if I go ahead and run that we get an error.
+
+44
+00:03:50,920 --> 00:03:56,640
+And that's because why is it unexpected.
+
+45
+00:03:56,880 --> 00:03:57,630
+Parsing
+
+46
+00:04:05,690 --> 00:04:10,020
+Oh I have a missing parentheses.
+
+47
+00:04:10,340 --> 00:04:10,790
+All right.
+
+48
+00:04:10,880 --> 00:04:21,260
+So let's run that and we get three so you cannot you can't delete individual items from the table but
+
+49
+00:04:21,260 --> 00:04:23,180
+you can delete the tuple as a whole.
+
+50
+00:04:23,180 --> 00:04:26,830
+So let's say this through tuple 1 we want to delete this.
+
+51
+00:04:26,960 --> 00:04:35,780
+We could just simply use del fruit table too and if I try to print that out or even a length of it we
+
+52
+00:04:35,780 --> 00:04:38,900
+get an error because true tuple 2 is no longer defined.
+
+53
+00:04:38,900 --> 00:04:42,390
+I deleted it using the Del del key word.
+
+54
+00:04:42,950 --> 00:04:45,590
+OK so now let's move on to sets.
+
+55
+00:04:45,590 --> 00:04:48,720
+So I'm actually going to comment though.
+
+56
+00:04:49,700 --> 00:04:56,390
+The prints here just so we don't get confused and we're going to move on to sets which are collections
+
+57
+00:04:56,750 --> 00:04:59,060
+which are unordered and an index.
+
+58
+00:04:59,060 --> 00:05:00,880
+And there's no duplicate members.
+
+59
+00:05:00,890 --> 00:05:01,250
+OK.
+
+60
+00:05:01,250 --> 00:05:06,910
+So it's important there's no duplicate numbers and sets sets use curly braces.
+
+61
+00:05:07,070 --> 00:05:13,080
+So what's it's clear that out and let's create a set.
+
+62
+00:05:13,370 --> 00:05:17,480
+OK so I'm going to say fruit from the score set.
+
+63
+00:05:17,810 --> 00:05:21,010
+And you want to use curly braces now.
+
+64
+00:05:22,560 --> 00:05:24,630
+Say Apple.
+
+65
+00:05:24,630 --> 00:05:28,780
+Orange and mango.
+
+66
+00:05:29,350 --> 00:05:33,610
+I will just say create set.
+
+67
+00:05:34,260 --> 00:05:45,760
+And if we go out here and print the fruit set and run this file shows us our set.
+
+68
+00:05:45,780 --> 00:05:57,180
+So if I try to add in Apple and I run this notice that it's not there OK it's going to basically just
+
+69
+00:05:57,180 --> 00:06:02,940
+ignore it because no duplicate members guy so keep that in mind.
+
+70
+00:06:03,950 --> 00:06:13,590
+But if we want to check to see if something is in a set we could do like and say check if in set so
+
+71
+00:06:13,590 --> 00:06:15,620
+we can do print.
+
+72
+00:06:16,390 --> 00:06:26,100
+And let's say our full in fruits and if we run that we get true.
+
+73
+00:06:26,310 --> 00:06:30,420
+If I say apples and we run now we get false.
+
+74
+00:06:30,450 --> 00:06:31,980
+If we want to add to a set
+
+75
+00:06:36,320 --> 00:06:40,880
+we can say fruit's set and we can use the Add method.
+
+76
+00:06:40,880 --> 00:06:44,440
+So Daut add in let's say Great.
+
+77
+00:06:44,720 --> 00:06:45,120
+OK.
+
+78
+00:06:45,140 --> 00:06:56,400
+So if we go down here and we print our fruit set and run that we notice that grape has been added.
+
+79
+00:06:56,690 --> 00:06:58,910
+If we want to remove something we can do that as well.
+
+80
+00:06:58,910 --> 00:07:03,110
+So I'm going to copy this and let's say Daut remove
+
+81
+00:07:06,000 --> 00:07:13,450
+say remove from set and now when I run it again grape is gone.
+
+82
+00:07:13,480 --> 00:07:14,760
+OK we removed it.
+
+83
+00:07:14,790 --> 00:07:19,170
+We can also clear the set completely.
+
+84
+00:07:19,170 --> 00:07:26,580
+So if we say fruit's that dog clear and we go ahead and run this and try to print it it's just going
+
+85
+00:07:26,580 --> 00:07:29,060
+to be just this empty set.
+
+86
+00:07:29,580 --> 00:07:32,360
+OK it's still there it's just there's nothing in it.
+
+87
+00:07:32,430 --> 00:07:37,360
+If you want to completely delete it then you use del.
+
+88
+00:07:37,550 --> 00:07:46,320
+OK so if we say Del fruits and we've run that then we're going to get an error saying that first set
+
+89
+00:07:46,320 --> 00:07:50,060
+is not defined so it's just like if we never even defined it at all.
+
+90
+00:07:50,340 --> 00:07:55,650
+OK so that's as far as we're going to go with tuples and sets in the next video we're going to take
+
+91
+00:07:55,650 --> 00:08:03,340
+a look at dictionaries which are very similar to javascript objects or Ruby on Rails or Ruby hashes.
+
+92
+00:08:03,420 --> 00:08:04,490
+They're very very.
+
+93
+00:08:04,520 --> 00:08:05,680
+They come in very handy.
+
+94
+00:08:05,700 --> 00:08:10,950
+And we'll be using them quite a bit in Django and you usually use them a lot in Python.
+
+95
+00:08:10,950 --> 00:08:13,010
+All right so we'll get to dictionaries next.
+

@@ -1,0 +1,328 @@
+1
+00:00:00,420 --> 00:00:00,840
+All right guys.
+
+2
+00:00:00,840 --> 00:00:06,810
+Now we're going to look at loop's so a for loop is used for iterating over a sequence that is either
+
+3
+00:00:06,810 --> 00:00:10,100
+a list a tuple dictionary a set or a string.
+
+4
+00:00:10,110 --> 00:00:14,000
+So we're going to do here is create a list of people.
+
+5
+00:00:14,280 --> 00:00:18,580
+So it's a John will
+
+6
+00:00:22,600 --> 00:00:23,380
+Janet
+
+7
+00:00:26,410 --> 00:00:29,550
+and Karen.
+
+8
+00:00:29,860 --> 00:00:35,180
+All right so we have a list of people and I want to loop through them.
+
+9
+00:00:35,450 --> 00:00:39,050
+So when I say four Whoops I'm sorry for person.
+
+10
+00:00:39,070 --> 00:00:44,980
+The first one here is going to be whatever you want to use within the loop to identify each value in
+
+11
+00:00:44,980 --> 00:00:46,020
+the iteration.
+
+12
+00:00:46,150 --> 00:00:53,230
+OK then we want to do one in and then the name and the list so for person people and then we can access
+
+13
+00:00:53,410 --> 00:00:54,220
+each person.
+
+14
+00:00:54,220 --> 00:00:56,100
+So let's do a print.
+
+15
+00:00:56,620 --> 00:00:57,790
+So say print.
+
+16
+00:00:57,820 --> 00:01:05,490
+And let's just say current person and put another parameter of person.
+
+17
+00:01:05,500 --> 00:01:05,800
+All right.
+
+18
+00:01:05,800 --> 00:01:11,470
+So let's run this spicing Python 3 loops dot PI and there we go.
+
+19
+00:01:11,470 --> 00:01:14,660
+Current person John will Janet and Karen.
+
+20
+00:01:15,130 --> 00:01:21,220
+All right so if we wanted to let's say break out of a loop at a certain point I'm going to copy this
+
+21
+00:01:21,310 --> 00:01:23,140
+and comment it out.
+
+22
+00:01:23,140 --> 00:01:28,970
+I also want to do a simple for loop.
+
+23
+00:01:29,000 --> 00:01:36,720
+All right so let's say break ups break out
+
+24
+00:01:40,270 --> 00:01:46,510
+OK so this is the same loop but I want to break out of the loop if the person when the person is Janet.
+
+25
+00:01:46,630 --> 00:01:54,970
+OK so what I'll do here is go under the print and say if person so just doing an if statement comparison
+
+26
+00:01:54,970 --> 00:01:58,600
+operators is going to be equals and then Janet.
+
+27
+00:01:59,230 --> 00:02:02,330
+OK so if that's true then I want to break.
+
+28
+00:02:02,650 --> 00:02:05,480
+So let's see what happens if we run this.
+
+29
+00:02:05,500 --> 00:02:12,800
+So right after Janet it breaks it in Prince Janet because this runs before before the IF.
+
+30
+00:02:12,850 --> 00:02:18,770
+But if I were to move this down here and then run again it stops it.
+
+31
+00:02:18,780 --> 00:02:23,190
+Well OK so the positioning of the break really matters.
+
+32
+00:02:23,710 --> 00:02:24,010
+All right.
+
+33
+00:02:24,010 --> 00:02:27,640
+So let's say we want to just kind of skip Janet.
+
+34
+00:02:27,640 --> 00:02:30,400
+So in that case we could use a continue.
+
+35
+00:02:30,470 --> 00:02:39,710
+And he's going to say continue and I'm going to copy this first loop comment this one out and go and
+
+36
+00:02:39,720 --> 00:02:54,740
+pace that in and uncomment and in here I'm going to say if it's true if person is equal to Janet then
+
+37
+00:02:54,740 --> 00:02:58,740
+I want to continue.
+
+38
+00:02:59,060 --> 00:03:01,820
+OK I'm going to clear this terminal up and run it.
+
+39
+00:03:02,000 --> 00:03:04,070
+And now we just get John will and Karen.
+
+40
+00:03:04,070 --> 00:03:04,790
+So we wanted.
+
+41
+00:03:04,810 --> 00:03:07,300
+We skipped Janet basically.
+
+42
+00:03:07,370 --> 00:03:07,700
+All right.
+
+43
+00:03:07,700 --> 00:03:10,150
+Now we're going to move on to range.
+
+44
+00:03:10,220 --> 00:03:15,190
+OK so range is used to loop through something a specific number of times.
+
+45
+00:03:15,430 --> 00:03:15,760
+OK.
+
+46
+00:03:15,770 --> 00:03:17,930
+So it's a range
+
+47
+00:03:21,510 --> 00:03:35,850
+so we're going to do for I in range and then here we could for instance take the number of values in
+
+48
+00:03:35,850 --> 00:03:37,780
+this people list let's do that.
+
+49
+00:03:37,810 --> 00:03:44,920
+Remember we can get the number of values with the len function so we can say Lenn and let's say people.
+
+50
+00:03:45,350 --> 00:03:46,000
+OK.
+
+51
+00:03:46,170 --> 00:03:52,860
+So for as many times as show for as many people that are in there let's go ahead and print
+
+52
+00:03:55,500 --> 00:04:05,570
+and we'll do we'll say current person and here we want to say people and then we use the current index
+
+53
+00:04:05,570 --> 00:04:06,960
+so we do it like that.
+
+54
+00:04:07,000 --> 00:04:12,850
+More like a traditional type a for loop and we get current person and we get all their names.
+
+55
+00:04:13,060 --> 00:04:13,480
+OK.
+
+56
+00:04:13,480 --> 00:04:19,330
+And we can specify the range like manually it doesn't have to be the length of a certain list or anything
+
+57
+00:04:19,330 --> 00:04:19,810
+like that.
+
+58
+00:04:19,810 --> 00:04:29,980
+For instance if I want to do for I in range and I could say let's start at zero and go to 10 and then
+
+59
+00:04:29,980 --> 00:04:38,550
+let's just print oh say number and let's put it here.
+
+60
+00:04:38,600 --> 00:04:38,940
+All right.
+
+61
+00:04:38,940 --> 00:04:42,600
+So that gives us let's actually comment this one out.
+
+62
+00:04:43,730 --> 00:04:50,230
+So run that and we get what we actually get 1 through 9 because it's going to be up to this number.
+
+63
+00:04:50,240 --> 00:04:53,640
+So if I want if I actually wanted 10 I could go like that.
+
+64
+00:04:53,770 --> 00:04:55,340
+And that would give us 10.
+
+65
+00:04:55,340 --> 00:04:58,510
+All right so it's more like a traditional for loop.
+
+66
+00:04:58,520 --> 00:05:02,150
+So we also have while loops just like we do in many languages.
+
+67
+00:05:02,160 --> 00:05:06,740
+And while loops execute a set of statements as long as a condition is true.
+
+68
+00:05:07,280 --> 00:05:13,430
+Let me just clear this up down here real quick and then let's create a simple while loop so I'm actually
+
+69
+00:05:13,430 --> 00:05:18,830
+going to create a variable outside of the loop called Count I'm going to set it to 0 and I'm going to
+
+70
+00:05:18,830 --> 00:05:34,760
+say while count is less than or equal to 10 then I want to print and I'm going to say count and space
+
+71
+00:05:34,760 --> 00:05:37,560
+here and then let's do count.
+
+72
+00:05:37,730 --> 00:05:44,870
+OK and then we need to increment it so to increment it we're in the same count plus equals 1 which is
+
+73
+00:05:44,870 --> 00:05:52,520
+the same as saying count equals count plus 1 it's just a shorter way of incrementing by 1.
+
+74
+00:05:52,520 --> 00:05:54,970
+So let's save that exit's comment.
+
+75
+00:05:54,980 --> 00:06:01,130
+This part I will save this and we'll run it and we get count and we get up to 10.
+
+76
+00:06:01,130 --> 00:06:01,900
+All right.
+
+77
+00:06:02,060 --> 00:06:04,610
+So I think that's that's it for loops guys.
+
+78
+00:06:04,700 --> 00:06:08,980
+And we'll be using these throughout the throw the course in Django in the next video.
+
+79
+00:06:08,980 --> 00:06:14,900
+Want to take a look at module's these are going to modules are a huge part of Python especially with
+
+80
+00:06:14,900 --> 00:06:18,880
+web development you're always using different packages including different files.
+
+81
+00:06:18,880 --> 00:06:21,980
+So that's something that's really important to understand.
+
+82
+00:06:21,980 --> 00:06:24,270
+So that's what we're going to look at next.
+
