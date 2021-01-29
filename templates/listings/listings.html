@@ -1,6 +1,9 @@
 {% extends 'base.html' %} 
 {% load static %}
 {% load humanize %}
+
+{% block title %} Listings {% endblock title %}
+
 {% block content %}
 
 <section
@@ -89,6 +92,7 @@
         <p>No Listings Available</p>
       </div>
       {% endif %}
+      
     </div>
 
     <div class="row">
